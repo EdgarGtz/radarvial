@@ -1,0 +1,917 @@
+orden,Intersecciones,Lat,Lon,hin,prioridad,tamaño,color
+1,Diaz Ordaz con Corregidora,25.6749788,-100.4029541,3609.831191,1,32,#a60000
+2,Morones Prieto con Canteras,25.6711127,-100.3962071,3135.867657,1,33,#a60000
+3,Diaz Ordaz con Oro,25.67551965,-100.4176618,2929.059765,1,32,#a60000
+4,Jose Vasconcelos con Montes Rocallosos,25.65374753,-100.3420169,2662.215178,1,31,#a60000
+5,Morones Prieto con Humberto Lobo,25.6677653,-100.3798867,2422.343351,2,30,#cf0202
+6,Lazaro Cardenas con Montes Celestes,25.65477805,-100.3389784,2406.272729,2,29,#cf0202
+7,Lazaro Cardenas con Jose Maria Escriva,25.649816,-100.330152,2405.163055,2,28,#cf0202
+8,Lazaro Cardenas con Jesus Reyes Fereyra,25.6439648,-100.321718,2243.73457,2,27,#cf0202
+9,Ricardo Margain con Valle Sol,25.66249532,-100.3525379,2169.757363,2,26,#cf0202
+10,Morones Prieto con Benito Juarez,25.67110547,-100.398001,1783.163962,3,25,#ed3232
+11,Diaz Ordaz con Maria Cantu,25.6749852,-100.4071043,1599.492105,3,24,#ed3232
+12,Morones Prieto con Santa Barbara,25.66901098,-100.3833419,1570.162216,3,23,#ed3232
+13,Gomez Morin con Rio Guadalquivir,25.6584166,-100.356326,1472.422293,4,22,#ed5732
+14,Lazaro Cardenas con Lomas Del Mar,25.65697156,-100.3417357,1441.316379,4,21,#ed5732
+15,Morones Prieto con Corregidora,25.67030898,-100.4022678,1434.021858,4,20,#ed5732
+16,Lazaro Cardenas con San Alberto,25.655963,-100.34015,1407.529734,4,19,#ed5732
+17,Diaz Ordaz con Zinc,25.675118,-100.414306,1399.781636,4,18,#ed5732
+18,Lazaro Cardenas con Diego Rivera,25.65152099,-100.3338736,1381.003845,4,17,#ed5732
+19,Morones Prieto con Rio Suchiate,25.6676505,-100.3740832,1361.789402,4,16,#ed5732
+20,Calzada San Pedro con Rio Mississippi,25.65952771,-100.3695088,1359.893914,4,15,#ed5732
+21,Calzada San Pedro con Rio Missouri,25.66251784,-100.3685436,1342.898293,4,14,#ed5732
+22,Calzada Del Rosario con Privada Esperanza,25.65405266,-100.3860537,1325.043478,4,13,#ed5732
+23,Lazaro Cardenas con Torrevillas,25.652719,-100.335409,1323.257893,4,12,#ed5732
+24,Cobalto con Platino,25.68324941,-100.4157891,1322.645133,4,11,#ed5732
+25,Morones Prieto con Manuel Santos,25.668145,-100.382007,1279.564807,4,10,#ed5732
+26,Alfonso Reyes con La Escondida,25.6409231,-100.367945,1271.653576,4,9,#ed5732
+27,Jose Vasconcelos con Los Rosales,25.65330168,-100.3506393,1261.740752,4,8,#ed5732
+28,Lazaro Cardenas con Dr Atl,25.6484496,-100.3283367,1257.216867,4,7,#ed5732
+29,Eugenio Garza Laguera con Lomas De San Agustin,25.63797112,-100.3344636,1245.984572,4,6,#ed5732
+30,Morones Prieto con Rio Bravo,25.66771791,-100.3763452,1233.454418,4,5,#ed5732
+31,Ricardo Margain con Roble,25.65017783,-100.3528011,1139.14446,4,4,#ed5732
+32,Calzada Del Valle con Rio Grijalva,25.65690125,-100.3689393,1106.841515,4,3,#ed5732
+33,Morones Prieto con Francisco Villa,25.6657629,-100.4163627,854.7568767,5,1,#ed7a32
+34,Calzada Del Valle con Calzada San Pedro,25.65729362,-100.3703024,807.1677019,5,1,#ed7a32
+35,Jose Vasconcelos con Morones Prieto,25.6660205,-100.412679,773.9991127,5,1,#ed7a32
+36,Morones Prieto con Jimenez,25.66678711,-100.4082209,760.2942916,5,1,#ed7a32
+37,Eugenio Garza Laguera con Rufino Tamayo,25.64310199,-100.3268706,716.0023662,5,1,#ed7a32
+38,Jose Vasconcelos con Benito Juarez,25.6625133,-100.4034977,587.4554865,5,1,#ed7a32
+39,Lazaro Cardenas con Rio Tamuin,25.6593225,-100.344796,563.6923987,5,1,#ed7a32
+40,Lazaro Cardenas con Pedro Ramirez Vazquez,25.641171,-100.317294,539.697131,5,1,#ed7a32
+41,Alfonso Reyes con Padre Mier,25.6583772,-100.413168,506.2360248,5,1,#ed7a32
+42,Jose Vasconcelos con Neil Armstrong,25.6571908,-100.3896779,485.5814848,6,1,#c6cc14
+43,Gomez Morin con Roberto Garza Sada,25.6352813,-100.3633564,478.6285123,6,1,#c6cc14
+44,Morones Prieto con Niños Heroes,25.66842043,-100.4055015,471.3342206,6,1,#c6cc14
+45,Jose Vasconcelos con Treviño,25.660998,-100.3990452,453.0739426,6,1,#c6cc14
+46,Morones Prieto con Hortelanos,25.6708413,-100.3947244,451.2868974,6,1,#c6cc14
+47,Callejon De Los Ayala con Rio Jordan,25.6615397,-100.3844354,436.2768412,6,1,#c6cc14
+48,Calzada Del Valle con Humberto Lobo,25.66093579,-100.3829665,423.5832594,6,1,#c6cc14
+49,Morones Prieto con Monte Palatino,25.66886158,-100.3652524,403.7281869,6,1,#c6cc14
+50,Lazaro Cardenas con Rufino Tamayo,25.646085,-100.324608,394.4194025,6,1,#c6cc14
+51,Jose Vasconcelos con Gomez Morin,25.6523322,-100.358263,390.426501,6,1,#c6cc14
+52,Gomez Morin con Rio Mississippi,25.656211,-100.3569801,387.4223602,6,1,#c6cc14
+53,Morones Prieto con Calzada San Pedro,25.66800814,-100.366441,385.5332742,6,1,#c6cc14
+54,Jose Vasconcelos con Manuel Doblado,25.6584071,-100.3919931,375.5823721,6,1,#c6cc14
+55,Lazaro Cardenas con Real San Agustin,25.65415392,-100.3380417,367.8852411,6,1,#c6cc14
+56,Santa Barbara con Callejon De Capellania,25.66539235,-100.3898037,364.5344573,6,1,#c6cc14
+57,Jose Vasconcelos con Rio Suchiate,25.6526482,-100.3789387,350.6066253,6,1,#c6cc14
+58,Jose Vasconcelos con Rio Moctezuma,25.6520757,-100.3643882,342.9988169,6,1,#c6cc14
+59,Jose Vasconcelos con Santa Barbara,25.6592674,-100.3936923,340.8589175,6,1,#c6cc14
+60,Benito Juarez con Callejon De Capellania,25.6692385,-100.3997877,328.4501627,6,1,#c6cc14
+61,Calzada Del Valle con Rio Suchiate,25.65920332,-100.3769394,323.1058858,6,1,#c6cc14
+62,Jose Vasconcelos con Jeronimo Siller,25.6518289,-100.3658824,322.2020112,6,1,#c6cc14
+63,Lazaro Cardenas con Paseo Olga,25.643059,-100.319428,313.7101449,6,1,#c6cc14
+64,Alfonso Reyes con Ricardo Margain,25.642237,-100.352639,310.1697723,6,1,#c6cc14
+65,Jose Vasconcelos con Bosques De Canada,25.6513911,-100.3734946,299.2085182,6,1,#c6cc14
+66,Batallon De San Patricio con Diego Rivera,25.648579,-100.335053,290.9405501,6,1,#c6cc14
+67,Alfonso Reyes con Priv. Campestre,25.6386587,-100.338945,289.2082224,6,1,#c6cc14
+68,Morones Prieto con San Patricio,25.6701233,-100.3882295,283.4998521,6,1,#c6cc14
+69,Jose Vasconcelos con Rio Lys,25.6564474,-100.3882041,275.1455191,6,1,#c6cc14
+70,Jose Vasconcelos con Ricardo Margain,25.6531913,-100.3527601,270.5007394,6,1,#c6cc14
+71,Jose Vasconcelos con Humberto Lobo,25.65527133,-100.3852726,269.3649808,6,1,#c6cc14
+72,Gomez Morin con Calzada Del Valle,25.6531846,-100.3582344,261.1304348,6,1,#c6cc14
+73,Gomez Morin con Magnolia,25.6463963,-100.3600735,258.9650991,6,1,#c6cc14
+74,Jose Vasconcelos con Rio Bravo,25.6538101,-100.3812344,252.649512,6,1,#c6cc14
+75,Jose Vasconcelos con Conquistadores,25.6562642,-100.3877767,248.3114463,7,1,#c6cc14
+76,Calzada Del Valle con Rio Tamazunchale,25.65608956,-100.3661202,245.8136646,7,1,#c6cc14
+77,Alfonso Reyes con Real San Agustin,25.638133,-100.33785,237.1396037,7,1,#c6cc14
+78,Corregidora con Francisco Villa,25.672123,-100.402707,232.3842059,7,1,#c6cc14
+79,Alfonso Reyes con Matamoros,25.6536038,-100.399341,230.8512274,7,1,#c6cc14
+80,Diaz Ordaz con Hidalgo,25.674437,-100.419445,228.2818693,7,1,#c6cc14
+81,Gomez Morin con Roble,25.650217,-100.3586787,226.6193434,7,1,#c6cc14
+82,Jose Vasconcelos con San Agustin,25.6531807,-100.3460289,222.2156167,7,1,#c6cc14
+83,Jose Vasconcelos con Rosales,25.6533997,-100.3506118,219.5601893,7,1,#c6cc14
+84,Jose Vasconcelos con Olmos,25.6533232,-100.3550737,218.5539781,7,1,#c6cc14
+85,Alfonso Reyes con Corregidora,25.6566337,-100.407889,216.0961254,7,1,#c6cc14
+86,Lazaro Cardenas con Los Arcangeles,25.6586226,-100.343506,214.8358474,7,1,#c6cc14
+87,Jose Vasconcelos con Gral Naranjo,25.6607114,-100.3981799,212.0434783,7,1,#c6cc14
+88,Calzada Del Valle con Rio Bravo,25.65981431,-100.3791151,211.6583851,7,1,#c6cc14
+89,Calzada San Pedro con Rio Volga,25.65506281,-100.3711067,211.6255546,7,1,#c6cc14
+90,Real San Agustin con Montes Rocallosos,25.6519107,-100.339051,211.5696539,7,1,#c6cc14
+91,Jose Vasconcelos con Zaragoza,25.6613015,-100.3999431,209.5968648,7,1,#c6cc14
+92,Calzada San Pedro con Rio Amazonas,25.66150976,-100.3688396,207.7491866,7,1,#c6cc14
+93,Alfonso Reyes con Rio Akumal,25.6390177,-100.356325,207.4055013,7,1,#c6cc14
+94,Alfonso Reyes con Gomez Morin,25.6400588,-100.36181,206.0470275,7,1,#c6cc14
+95,Santa Barbara con Callejon De Los Ayala,25.66388592,-100.3910848,198.0073943,8,1,#c6cc14
+96,Corregidora con Manuel J. Clouthier,25.677965,-100.402316,195.9650991,8,1,#c6cc14
+97,Jose Vasconcelos con Matamoros,25.6601039,-100.3963868,195.7982845,8,1,#c6cc14
+98,Jose Vasconcelos con Guillermo Prieto,25.6588549,-100.3928269,195.7471162,8,1,#c6cc14
+99,Eugenio Garza Laguera con Jesus Reyes Fereyra,25.64197483,-100.3239866,194.2969536,8,1,#c6cc14
+100,Jose Vasconcelos con Bosques Del Valle,25.65143575,-100.3757474,190.9035788,8,1,#c6cc14
+101,Morones Prieto con Udem,25.66562164,-100.4197453,190.0967169,8,1,#c6cc14
+102,Ricardo Margain con Eucalipto,25.6525481,-100.3527744,188.4779651,8,1,#c6cc14
+103,Corregidora con Callejon De Los Arizpe,25.668185,-100.403089,188.1632653,8,1,#c6cc14
+104,Jose Vasconcelos con Rio Rosas,25.65242776,-100.3614216,187.8370305,8,1,#c6cc14
+105,Rio Tamazunchale con Rio Volga,25.653852,-100.366902,185.9171843,8,1,#c6cc14
+106,Eugenio Garza Laguera con Batallon De San Patricio,25.64345432,-100.3324125,185.170068,8,1,#c6cc14
+107,Enrique Garcia Leal con Zinc,25.6789422,-100.413746,184.3315587,8,1,#c6cc14
+108,Gomez Morin con Rio Missouri,25.6589394,-100.3561615,183.7962141,8,1,#c6cc14
+109,Lazaro Cardenas con David A. Siqueiros,25.6430298,-100.320259,180.5871044,8,1,#c6cc14
+110,Calzada Del Valle con Rio Tamesis,25.66043254,-100.3812499,178.805383,8,1,#c6cc14
+111,Rio Mississippi con Rio Grijalva,25.659113,-100.368151,173.7367643,8,1,#c6cc14
+112,Alfonso Reyes con Genaro Garza Garcia,25.653936,-100.40022,172.5341615,8,1,#c6cc14
+113,Alfonso Reyes con Neil Armstrong,25.6512606,-100.392396,168.681751,8,1,#c6cc14
+114,Alfonso Reyes con Jeronimo Siller,25.641176,-100.369308,167.2863058,8,1,#c6cc14
+115,Lazaro Cardenas con Ricardo Margain,25.662231,-100.352557,165.3620231,8,1,#c6cc14
+116,Manuel J. Clouthier con Oro,25.6808695,-100.4167181,161.845312,8,1,#c6cc14
+117,Jose Vasconcelos con Degollado,25.6579477,-100.3911347,161.5320911,8,1,#c6cc14
+118,Alfonso Reyes con Las Sendas,25.6573628,-100.410073,161.4333038,8,1,#c6cc14
+119,Jose Vasconcelos con Genaro Garza Garcia,25.660406,-100.3972882,161.0629991,8,1,#c6cc14
+120,Jose Vasconcelos con Juan I. Ramon,25.6594845,-100.3946049,160.3330376,8,1,#c6cc14
+121,Jose Vasconcelos con Corregidora,25.663104,-100.4052327,159.9914227,8,1,#c6cc14
+122,Benito Juarez con Reforma,25.6641073,-100.4027884,155.0822242,8,1,#c6cc14
+123,Alfonso Reyes con Lomas Del Valle,25.645636,-100.380249,154.3374741,8,1,#c6cc14
+124,Jose Vasconcelos con Los Aldama,25.6628138,-100.4043582,153.9370009,8,1,#c6cc14
+125,Jose Vasconcelos con Rio Sena,25.6520527,-100.3647066,151.6779059,8,1,#c6cc14
+126,Jose Vasconcelos con Guerrero,25.6619297,-100.4017379,149.3093759,9,1,#c6cc14
+127,Jose Vasconcelos con Morelos,25.6622271,-100.4026299,148.8985507,9,1,#c6cc14
+128,Santa Barbara con Santa Monica,25.66872391,-100.3849967,148.8811003,9,1,#c6cc14
+129,Humberto Lobo con Rio Orinoco,25.66440275,-100.3814622,148.6199349,9,1,#c6cc14
+130,Jose Vasconcelos con Manuel Gonzalez,25.6616236,-100.4008434,147.2274475,9,1,#c6cc14
+131,Las Torres con Oro,25.6802257,-100.4169206,147.1357587,9,1,#c6cc14
+132,L. Garza Ayala con Diego Saldivar,25.6646545,-100.4125886,145.5847382,9,1,#c6cc14
+133,Rio Suchiate con Rio Sena,25.6538639,-100.3788233,145.502514,9,1,#c6cc14
+134,Jimenez con Las Palmas,25.65910193,-100.4109356,144.2901508,9,1,#c6cc14
+135,Gomez Morin con Priv. Encinos,25.6377431,-100.3625238,144.1381248,9,1,#c6cc14
+136,Roberto Garza Sada con Sierra Azul,25.6381464,-100.37984,144.0405206,9,1,#c6cc14
+137,Morones Prieto con Santa Catarina,25.6711663,-100.3954182,143.8778468,9,1,#c6cc14
+138,Calzada Del Valle con La Alianza,25.6537886,-100.3593212,143.6113576,9,1,#c6cc14
+139,Humberto Lobo con Rio Elba,25.65669447,-100.3847443,143.5776398,9,1,#c6cc14
+140,Rio Rosas con Rio Guadalquivir,25.659238,-100.359073,143.4436557,9,1,#c6cc14
+141,Corregidora con 16 De Sep.,25.660678,-100.406228,142.0118308,9,1,#c6cc14
+142,Roberto Garza Sada con Alejandrina,25.6398302,-100.3857,140.4782609,9,1,#c6cc14
+143,Calzada Del Valle con Rio Moctezuma,25.65524999,-100.3632643,137.4060929,9,1,#c6cc14
+144,Real San Agustin con Batallon De San Patricio,25.647961,-100.339515,137.2540668,9,1,#c6cc14
+145,Alfonso Reyes con Jimenez,25.6577335,-100.411452,135.971606,9,1,#c6cc14
+146,Santa Barbara con Porfirio Diaz,25.66001831,-100.3933659,133.2795031,9,1,#c6cc14
+147,Jose Vasconcelos con Rio Tamesis,25.6547355,-100.3832654,132.2416445,9,1,#c6cc14
+148,Batallon De San Patricio con Maria Izquierdo,25.647349,-100.332751,132.1641526,9,1,#c6cc14
+149,Alfonso Reyes con Las Olimpiadas,25.64806,-100.386097,126.9636202,9,1,#c6cc14
+150,Lazaro Cardenas con Casolar,25.6511431,-100.332534,125.8089323,9,1,#c6cc14
+151,Jose Vasconcelos con Sabino,25.6530879,-100.3558104,124.7695948,9,1,#c6cc14
+152,Jose Vasconcelos con Plutarco Elias Calles,25.6537106,-100.3810531,121.6897368,9,1,#c6cc14
+153,Jose Vasconcelos con Priv. Jesus Mata,25.6559031,-100.3868943,120.9618456,9,1,#c6cc14
+154,Corregidora con Enrique Garcia Leal,25.677554,-100.402536,118.5598935,9,1,#c6cc14
+155,Alfonso Reyes con Dublin Poniente,25.6424746,-100.349255,118.3448684,9,1,#c6cc14
+156,Morones Prieto con Libertad,25.66697122,-100.4078492,118.2398699,9,1,#c6cc14
+157,Roberto Garza Sada con Lomas Del Valle,25.6389381,-100.382605,118.2058563,9,1,#c6cc14
+158,Alfonso Reyes con Lopez Mateos,25.6406781,-100.365739,118.1969831,9,1,#c6cc14
+159,Calzada Del Valle con Rio Rosas,25.65452509,-100.3607191,117.9012127,9,1,#c6cc14
+160,Jose Vasconcelos con Rio Balsas,25.6518279,-100.3768564,116.1523218,9,1,#c6cc14
+161,Jimenez con 5 De Mayo,25.66108266,-100.4101147,115.2552499,9,1,#c6cc14
+162,Santa Barbara con Callejon De Los Arizpe,25.66226798,-100.3920303,114.3007986,9,1,#c6cc14
+163,Alfonso Reyes con Guillermo Prieto,25.6524647,-100.395754,113.7432712,9,1,#c6cc14
+164,Rio Orinoco con Rio Tamazunchale,25.65928364,-100.3649872,112.2688554,9,1,#c6cc14
+165,Alfonso Reyes con Dublin Oriente,25.6421565,-100.34798,111.8695652,9,1,#c6cc14
+166,Rio Missouri con Olivos,25.658311,-100.353997,111.4708666,9,1,#c6cc14
+167,Alfonso Reyes con Bosques Del Valle,25.6422314,-100.372958,110.6214138,9,1,#c6cc14
+168,Humberto Lobo con Rio Sena,25.65612982,-100.3849411,109.6805679,9,1,#c6cc14
+169,Jose Vasconcelos con Calzada San Pedro,25.65151366,-100.3715025,108.9565217,9,1,#c6cc14
+170,Gomez Morin con Rio Amazonas,25.6579556,-100.3564188,108.6557232,9,1,#c6cc14
+171,Corregidora con Plan Del Rio,25.672657,-100.402618,108.5986395,9,1,#c6cc14
+172,Rufino Tamayo con Humberto Junco,25.647838,-100.323279,107.1227448,9,1,#c6cc14
+173,Jose Vasconcelos con Privada Rio Rosas,25.652409,-100.3611419,107.043774,9,1,#c6cc14
+174,Ricardo Margain con Canelos,25.6568226,-100.3526958,107.0183378,9,1,#c6cc14
+175,Jimenez con L. Garza Ayala,25.66357125,-100.4092088,105.3611358,9,1,#c6cc14
+176,Rio Suchiate con Rio Amazonas,25.6634029,-100.375454,104.8630583,9,1,#c6cc14
+177,Grafito con Fierro,25.6845717,-100.4168673,104.4146702,9,1,#c6cc14
+178,Calzada Del Valle con Rio Jordan,25.6615397,-100.3844354,104.2218279,9,1,#c6cc14
+179,Alfonso Reyes con Vereda,25.6480327,-100.384845,104.1771665,9,1,#c6cc14
+180,Rio Mississippi con Rio Rosas,25.657025,-100.359861,104.1177167,9,1,#c6cc14
+181,Rio Mississippi con Rio Tamazunchale,25.658303,-100.365325,103.2812777,9,1,#c6cc14
+182,Emiliano Zapata con Niceforo Zambrano,25.682184,-100.406673,103.0973085,9,1,#c6cc14
+183,Enrique Garcia Leal con 20 De Noviembre,25.6783451,-100.418299,103.0496894,9,1,#c6cc14
+184,Real San Agustin con Lampazos,25.6450978,-100.339034,102.4306418,9,1,#c6cc14
+185,Cobalto con Fierro,25.6833867,-100.4170153,102.2318841,9,1,#c6cc14
+186,Corregidora con Libertad,25.6655441,-100.4042267,102.0529429,9,1,#c6cc14
+187,Ricardo Margain con Rio Pantepec,25.66096101,-100.3524556,102.0215912,9,1,#c6cc14
+188,Alfonso Reyes con Bosques De Cuernavaca,25.6426747,-100.373576,101.8393966,9,1,#c6cc14
+189,Corregidora con 5 De Mayo,25.659905,-100.406569,101.4655427,9,1,#c6cc14
+190,Rio Orinoco con Rio Tamesis,25.6639868,-100.3799898,101.436853,9,1,#c6cc14
+191,Cobalto con Zinc,25.6830854,-100.4135673,101.4262053,9,1,#c6cc14
+192,Ricardo Margain con Rio Parana,25.66098292,-100.3526968,101.4066844,9,1,#c6cc14
+193,Rio Suchiate con Rio Volga,25.6569797,-100.3777213,101.0390417,9,1,#c6cc14
+194,Rio Suchiate con Via Triumphalis,25.666107,-100.3745246,100.9509021,9,1,#c6cc14
+195,Real San Agustin con San Agustin,25.6471395,-100.339368,100.9331559,9,1,#c6cc14
+196,Emiliano Zapata con Plan De Gpe.,25.681886,-100.408833,100.3744454,9,1,#c6cc14
+197,Roberto Garza Sada con La Riviera,25.635247,-100.358177,99.26264419,10,1,#c6cc14
+198,Rio Orinoco con Rio Moctezuma,25.6589006,-100.3619903,98.82431233,10,1,#c6cc14
+199,Morones Prieto con Via Popilia,25.6679156,-100.3721402,98.13339249,10,1,#c6cc14
+200,Gomez Morin con Rio De La Plata,25.6544422,-100.3574994,94.76515824,10,1,#c6cc14
+201,Jose Vasconcelos con Monte Icutu,25.6535615,-100.3441929,93.54155575,10,1,#c6cc14
+202,Ricardo Margain con De La Industria,25.64582583,-100.3528054,90.25820763,10,1,#c6cc14
+203,Gomez Morin con Rio Manzanares,25.6550493,-100.3573284,89.65306122,10,1,#c6cc14
+204,Corregidora con Lucio Blanco,25.6725,-100.402747,83.52114759,10,1,#c6cc14
+205,Alfonso Reyes con Santa Barbara,25.6527836,-100.396646,83.46169772,10,1,#c6cc14
+206,Humberto Lobo con Rio Madeira,25.66381156,-100.3817746,82.45312038,10,1,#c6cc14
+207,Calzada San Pedro con Fuentes Del Valle,25.66533504,-100.3683481,80.69565217,10,1,#c6cc14
+208,Calzada Del Valle con Rio Balsas,25.65848368,-100.3744996,78.19018042,10,1,#c6cc14
+209,Calzada San Pedro con Via Angelica,25.666904,-100.3684305,75.78852411,10,1,#c6cc14
+210,Jose Vasconcelos con Rio Nazas,25.6533269,-100.3462134,75.31647442,10,1,#c6cc14
+211,Jose Vasconcelos con J. M. Montemayor,25.6548049,-100.3835143,73.08932269,10,1,#c6cc14
+212,Humberto Lobo con Rio Mississippi,25.66312021,-100.3821249,73.06743567,10,1,#c6cc14
+213,Jose Vasconcelos con Jimenez,25.66439137,-100.4088611,72.32209406,10,1,#c6cc14
+214,Jose Vasconcelos con Rio Mosa,25.6561557,-100.3875139,71.72463768,10,1,#c6cc14
+215,Morones Prieto con Diego Saldivar,25.6660117,-100.412673,69.40727595,10,1,#c6cc14
+216,Jose Vasconcelos con Diego Saldivar,25.66545908,-100.412529,69.19461698,10,1,#c6cc14
+217,Jose Vasconcelos con 20 De Noviembre,25.6530924,-100.3798591,68.5220349,10,1,#c6cc14
+218,Ricardo Margain con Sofia,25.64845567,-100.3527718,66.62880804,10,1,#c6cc14
+219,Benito Juarez con Libertad,25.6649217,-100.4024307,65.66104703,10,1,#c6cc14
+220,Emiliano Zapata con Pedro N. Perales,25.679351,-100.403781,65.52351375,10,1,#c6cc14
+221,Jose Vasconcelos con Bosques De Chapultepec,25.6519282,-100.3771272,64.99970423,10,1,#c6cc14
+222,Alfonso Reyes con Bosques Del Olivo,25.6449247,-100.377433,64.94025436,10,1,#c6cc14
+223,Humberto Lobo con Rio De La Plata,25.6619336,-100.3827032,64.85093168,10,1,#c6cc14
+224,Jose Vasconcelos con Rio Tamazunchale,25.6517169,-100.3672727,64.70659568,10,1,#c6cc14
+225,Real San Agustin con Montes Apalaches,25.6515012,-100.33929,64.61431529,10,1,#c6cc14
+226,Ricardo Margain con Rio Missouri,25.657925,-100.352673,64.04347826,10,1,#c6cc14
+227,Jose Vasconcelos con Lomas Del Valle,25.6522007,-100.3778948,63.95652174,10,1,#c6cc14
+228,Roberto Garza Sada con Jeronimo Siller,25.6355777,-100.370135,63.63856847,10,1,#c6cc14
+229,Ricardo Margain con Arbol,25.6554059,-100.3527234,62.31824904,10,1,#c6cc14
+230,Jose Vasconcelos con Rio Tigris,25.6515205,-100.3712416,62.06388642,10,1,#c6cc14
+231,Lazaro Cardenas con Montes Carpatos,25.655294,-100.339617,62.05826678,10,1,#c6cc14
+232,Manuel J. Clouthier con Bernardo Reyes,25.6782121,-100.4033912,61.93936705,10,1,#c6cc14
+233,Emiliano Zapata con Jose Benitez,25.68121,-100.405108,61.77136942,10,1,#c6cc14
+234,Humberto Lobo con Rio Danubio,25.6592152,-100.3834471,61.26234842,10,1,#c6cc14
+235,Grafito con Zinc,25.6844631,-100.4135873,61.1703638,10,1,#c6cc14
+236,Manuel J. Clouthier con Cobre,25.6801636,-100.4131268,61.14788524,10,1,#c6cc14
+237,Alfonso Reyes con Sierra Verde,25.6452219,-100.378824,61.0801538,10,1,#c6cc14
+238,Manuel J. Clouthier con Plata,25.6803983,-100.4143884,60.9949719,10,1,#c6cc14
+239,Jose Vasconcelos con Lic. Verdad,25.6654202,-100.4118374,60.95711328,10,1,#c6cc14
+240,Alfonso Reyes con Priv. La Herradura,25.6469955,-100.383154,60.89736764,10,1,#c6cc14
+241,Bosques Del Valle con Bosques Del Alamo,25.649238,-100.376208,60.84915705,10,1,#c6cc14
+242,Manuel J. Clouthier con Cromo,25.6810973,-100.4177538,60.78941142,10,1,#c6cc14
+243,Alfonso Reyes con Privada Centenario,25.6465736,-100.382453,60.50961254,10,1,#c6cc14
+244,Manuel J. Clouthier con Benjamin Hill,25.6776681,-100.4008134,60.40934635,10,1,#c6cc14
+245,Roberto Garza Sada con Alberto R. Gonzalez,25.6353393,-100.364071,60.39219166,10,1,#c6cc14
+246,Lomas Del Valle con Cascada,25.6420641,-100.381506,60.30346051,10,1,#c6cc14
+247,Manuel J. Clouthier con Alejandro Vi,25.6765048,-100.398812,60.25110914,10,1,#c6cc14
+248,Eugenio Garza Laguera con Vereda De Las Privanzas,25.63801296,-100.3180442,60.19905353,10,1,#c6cc14
+249,Gomez Morin con Los Barragan,25.6336135,-100.3639723,60.19284235,10,1,#c6cc14
+250,Lomas Del Valle con Rio Pilon,25.6447753,-100.3805646,60.19047619,10,1,#c6cc14
+251,Manuel J. Clouthier con Division Del Norte,25.6799222,-100.4119831,60.16947649,10,1,#c6cc14
+252,Zinc con Plomo,25.6817917,-100.4135482,60.144336,10,1,#c6cc14
+253,Jose Vasconcelos con Allende,25.6637421,-100.4070182,60.13339249,10,1,#c6cc14
+254,Eugenio Garza Laguera con La Ceiba,25.64257158,-100.3332958,60.12333629,10,1,#c6cc14
+255,Calzada San Pedro con Via Triumphalis,25.6663539,-100.36852,60.07749187,10,1,#c6cc14
+256,Emiliano Zapata con Antonio I. Villarreal,25.682058,-100.407689,59.96716948,10,1,#c6cc14
+257,Jimenez con Porfirio Diaz,25.66517642,-100.4085078,59.85862171,10,1,#c6cc14
+258,Corregidora con Reforma,25.664729,-100.404572,59.83288968,10,1,#c6cc14
+259,Rio Missouri con Rio Bravo,25.66506,-100.37727,59.77343981,10,1,#c6cc14
+260,Gomez Morin con Gral. Treviño,25.6372266,-100.3627679,59.72522922,10,1,#c6cc14
+261,Roberto Garza Sada con Rio Suchiate,25.6393621,-100.384033,59.67790594,10,1,#c6cc14
+262,Humberto Lobo con Rio Guadalquivir,25.665532,-100.3807716,59.54273883,10,1,#c6cc14
+263,Grafito con Oro,25.6845245,-100.416458,59.4829932,10,1,#c6cc14
+264,Emiliano Zapata con Flores Magon,25.681846,-100.409466,59.47678202,10,1,#c6cc14
+265,Benito Juarez con Callejon De Los Ayala,25.6683982,-100.4005203,59.46613428,10,1,#c6cc14
+266,Cobalto con Oro,25.6833459,-100.4166036,59.45696539,10,1,#c6cc14
+267,Calzada Del Valle con Rio Caura,25.6547092,-100.3622156,59.38095238,10,1,#c6cc14
+268,Alfonso Reyes con Gruta,25.6398662,-100.353297,59.25495416,10,1,#c6cc14
+269,L. Garza Ayala con J. M. Montemayor,25.653788,-100.383921,59.24105294,10,1,#c6cc14
+270,Porfirio Diaz con Manuel Gonzalez,25.66242,-100.4005,59.17509613,10,1,#c6cc14
+271,Porfirio Diaz con Guerrero,25.6627261,-100.4014065,59.15587104,10,1,#c6cc14
+272,Plutarco Elias Calles con Galeana,25.6521586,-100.3821421,58.76042591,10,1,#c6cc14
+273,Corregidora con Callejon De Los Ayala,25.669367,-100.402602,58.74504584,10,1,#c6cc14
+274,Cobalto con Potasio,25.6823831,-100.4118842,58.65424431,10,1,#c6cc14
+275,Morones Prieto con Maria Cantu,25.66729883,-100.4078978,58.55989352,10,1,#c6cc14
+276,Humberto Lobo con Rio Navia,25.66663823,-100.3803301,58.5010352,10,1,#c6cc14
+277,Rio Moctezuma con Rio Colorado,25.658339,-100.362171,58.38331854,10,1,#c6cc14
+278,Real San Agustin con Montes Altos,25.6498487,-100.33975,58.37562851,10,1,#c6cc14
+279,Calzada San Pedro con Via Savotino,25.663975,-100.3681926,58.33895297,10,1,#c6cc14
+280,Grafito con Potasio,25.6837031,-100.4118999,58.33629104,10,1,#c6cc14
+281,Corregidora con Callejon De Capellania,25.670271,-100.402207,58.31647442,10,1,#c6cc14
+282,Roberto Garza Sada con Perseverancia,25.637524,-100.37771,58.18692694,10,1,#c6cc14
+283,Eugenio Garza Laguera con Lomas Del Sol,25.64327195,-100.332281,58.17154688,10,1,#c6cc14
+284,Montes Rocallosos con Sierra Nevada,25.6529675,-100.3405198,58.15173026,10,1,#c6cc14
+285,Guillermo Prieto con 16 De Sep.,25.6564718,-100.3939192,58.11535049,10,1,#c6cc14
+286,Gomez Morin con Priv. Magdalena,25.64696724,-100.359883,57.98136646,10,1,#c6cc14
+287,Morones Prieto con Davila Reyes,25.6714942,-100.3924621,57.95918367,10,1,#c6cc14
+288,Genaro Garza Garcia con 2 De Abril,25.6564219,-100.399095,57.62170955,10,1,#c6cc14
+289,Bosques Del Valle con Bosques De Austria,25.649745,-100.376174,57.14788524,10,1,#c6cc14
+290,Guillermo Prieto con 2 De Abril,25.6548664,-100.3946541,57.09080154,10,1,#c6cc14
+291,Hidalgo con 5 De Mayo,25.660171,-100.40744,56.963916,10,1,#c6cc14
+292,Eugenio Garza Laguera con Pedro Ramirez Vazquez,25.63971261,-100.3198018,56.91304348,10,1,#c6cc14
+293,Porfirio Diaz con Treviño,25.6618306,-100.3986933,56.76604555,10,1,#c6cc14
+294,Santa Barbara con 5 De Mayo,25.65598656,-100.3951867,56.6923987,10,1,#c6cc14
+295,Rio Bravo con Rio Guadalquivir,25.664567,-100.377448,56.54392192,10,1,#c6cc14
+296,Roberto Garza Sada con Francisco Beltran,25.6353495,-100.36582,56.37237504,10,1,#c6cc14
+297,Rio Suchiate con Via Angelica,25.6665721,-100.3743582,55.81987578,10,1,#c6cc14
+298,Gomez Morin con Sauces,25.6544422,-100.3574994,55.27270038,10,1,#c6cc14
+299,Rio Moctezuma con Rio Volga,25.653326,-100.363987,55.09168885,10,1,#c6cc14
+300,Gomez Morin con Monte Blanco,25.628945,-100.3646016,54.74238391,10,1,#c6cc14
+301,Real San Agustin con Eugenio Garza Laguera,25.6383554,-100.337795,54.08695652,10,1,#c6cc14
+302,Gomez Morin con Palmas,25.656211,-100.3569801,52.6823425,10,1,#c6cc14
+303,Humberto Lobo con Manuel Santos,25.66560582,-100.3808542,50.82608696,10,1,#c6cc14
+304,Calzada Del Valle con Rio Guayalejo,25.65767478,-100.3716631,49.91304348,11,1,#c6cc14
+305,Rufino Tamayo con Frida Kahlo,25.647284,-100.323704,46.73913043,11,1,#c6cc14
+306,Gomez Morin con Rio San Lorenzo,25.6597931,-100.3559056,42.34782609,11,1,#c6cc14
+307,Alfonso Reyes con Monte Falco,25.6544794,-100.401997,40.7826087,11,1,#c6cc14
+308,Lazaro Cardenas con Rio Tuxpan,25.661677,-100.351066,40.43478261,11,1,#c6cc14
+309,Gomez Morin con Via Collatina,25.6610277,-100.3555583,40.17391304,11,1,#c6cc14
+310,Alfonso Reyes con Hidalgo,25.656943,-100.408752,39.43478261,11,1,#c6cc14
+311,Alfonso Reyes con Treviño,25.6545958,-100.401964,37.04347826,11,1,#c6cc14
+312,Alfonso Reyes con Benito Juarez,25.656125,-100.406415,36.66341319,11,1,#c6cc14
+313,Alfonso Reyes con Jardines Coloniales,25.6523748,-100.395764,35.26086957,11,1,#c6cc14
+314,Jose Vasconcelos con Rio Eufrates,25.6514675,-100.3722209,34.91304348,11,1,#c6cc14
+315,Gomez Morin con Via Savotino,25.6603884,-100.3557192,33.39130435,11,1,#c6cc14
+316,Diaz Ordaz con 20 De Noviembre,25.67466,-100.420163,32.52173913,11,1,#c6cc14
+317,Calzada Del Valle con Rio De La Plata,25.6551887,-100.3622256,31.34782609,11,1,#c6cc14
+318,Gomez Morin con Rio Panuco,25.6593627,-100.3560353,31.2173913,11,1,#c6cc14
+319,Alfonso Reyes con Barranca,25.638858,-100.355068,30.99230997,11,1,#c6cc14
+320,Lazaro Cardenas con Corporativo,25.652171,-100.334431,30.65217391,11,1,#c6cc14
+321,Alfonso Reyes con Manuel Gonzalez,25.6551818,-100.403727,30.17391304,11,1,#c6cc14
+322,Lazaro Cardenas con Rio Blanco,25.6600958,-100.346877,28.60869565,11,1,#c6cc14
+323,Alfonso Reyes con Degollado,25.651787,-100.394003,28.13043478,11,1,#c6cc14
+324,Eugenio Garza Laguera con Lomas Del Campestre,25.63919958,-100.333855,28.08695652,11,1,#c6cc14
+325,Rio Orinoco con Rio Grijalva,25.6601221,-100.3677997,27.95652174,11,1,#c6cc14
+326,Alfonso Reyes con Diego De Montemayor,25.6533791,-100.398411,27.91304348,11,1,#c6cc14
+327,Gomez Morin con Priv Cristal,25.6489826,-100.359053,27.60869565,11,1,#c6cc14
+328,Lazaro Cardenas con Callejon Del Caballo,25.653263,-100.336374,26.2173913,11,1,#c6cc14
+329,Lazaro Cardenas con Paseo Gabriela,25.642808,-100.319129,24.82608696,11,1,#c6cc14
+330,Alfonso Reyes con Ticoman,25.6551818,-100.403727,24.30434783,11,1,#c6cc14
+331,Jose Vasconcelos con Rio Presas,25.6515927,-100.3689419,23.26086957,11,1,#c6cc14
+332,Gomez Morin con Rio Hudson,25.6556186,-100.3571379,22.56521739,11,1,#c6cc14
+333,Jose Vasconcelos con Diego De Montemayor,25.6597843,-100.3954933,22.30434783,11,1,#c6cc14
+334,Roberto Garza Sada con Bosques Del Valle,25.6363663,-100.373806,22.26086957,11,1,#c6cc14
+335,Lazaro Cardenas con Rio Tonala,25.6608719,-100.34895,21.82608696,11,1,#c6cc14
+336,Alfonso Reyes con Rio Suchiate,25.6461408,-100.381665,21.56521739,11,1,#c6cc14
+337,Jose Vasconcelos con Hidalgo,25.6634384,-100.4061284,20.69565217,11,1,#c6cc14
+338,Alfonso Reyes con Guerrero,25.6554854,-100.404584,20.26086957,11,1,#c6cc14
+339,Roberto Garza Sada con Rio Akumal,25.635401,-100.356393,20.04347826,11,1,#c6cc14
+340,Jose Vasconcelos con Montes Himalaya,25.6533671,-100.344484,19.95652174,11,1,#c6cc14
+341,Corregidora con Independencia,25.6663686,-100.4038683,19.2173913,11,1,#c6cc14
+342,Calzada San Pedro con Rio Sena,25.65263111,-100.3715656,19.17391304,11,1,#c6cc14
+343,Rufino Tamayo con Maria Izquierdo,25.645674,-100.325659,19,11,1,#c6cc14
+344,Alfonso Reyes con Sierra Azul,25.6448346,-100.377469,18.43478261,11,1,#c6cc14
+345,Rio Grijalva con Rio Amazonas,25.6611056,-100.3674718,18.04347826,11,1,#c6cc14
+346,Alfonso Reyes con Altamirano,25.6564394,-100.407986,17.9299024,11,1,#c6cc14
+347,Corregidora con Niños Heroes,25.667173,-100.403526,17.86956522,11,1,#c6cc14
+348,Alfonso Reyes con Manuel Doblado,25.6521096,-100.394896,17.7826087,11,1,#c6cc14
+349,Real San Agustin con Alejandria,25.6318874,-100.336709,17.7826087,11,1,#c6cc14
+350,Gomez Morin con Maria De Los Angeles,25.6430958,-100.3610808,17.52173913,11,1,#c6cc14
+351,Humberto Lobo con Rio Volga,25.65848759,-100.3837608,17.2173913,11,1,#c6cc14
+352,Jose Vasconcelos con Paso De La Sierra,25.6521829,-100.362986,17,11,1,#c6cc14
+353,Jose Vasconcelos con Priv. Jose Vasconcelos,25.65165468,-100.3763797,16.65217391,11,1,#c6cc14
+354,Alfonso Reyes con Juan I. Ramon,25.653081,-100.397541,16.47826087,11,1,#c6cc14
+355,Gomez Morin con Rio Parana,25.6616015,-100.3550994,15.95652174,11,1,#c6cc14
+356,Calzada San Pedro con Rio Guadalquivir,25.66200635,-100.3686492,15.82608696,11,1,#c6cc14
+357,Alfonso Reyes con A. Lopez Mateos,25.6406781,-100.365739,15.82401656,11,1,#c6cc14
+358,Humberto Lobo con Rio Rhin,25.65782828,-100.3843474,15.60869565,11,1,#c6cc14
+359,Benito Juarez con Independencia,25.665743,-100.4020606,14.47826087,11,1,#c6cc14
+360,Benito Juarez con Porfirio Diaz,25.6633055,-100.4031394,14.26086957,11,1,#c6cc14
+361,Alfonso Reyes con Los Aldama,25.6563218,-100.406978,14.2173913,11,1,#c6cc14
+362,Rio Mississippi con Rio Moctezuma,25.65777,-100.362372,14.13043478,11,1,#c6cc14
+363,Alfonso Reyes con Morelos,25.655818,-100.405468,13.7826087,11,1,#c6cc14
+364,Alfonso Reyes con Gral Naranjo,25.654232,-100.401131,13.08695652,11,1,#c6cc14
+365,Ricardo Margain con Los Alamos,25.6562537,-100.3527054,13,11,1,#c6cc14
+366,Jose Vasconcelos con Privada Labastida,25.6515784,-100.3699145,12.91304348,11,1,#c6cc14
+367,Grafito con Cromo,25.6845904,-100.4172862,12.7826087,11,1,#c6cc14
+368,Rio Rosas con Rio San Lorenzo,25.66058183,-100.3586018,12.47826087,11,1,#c6cc14
+369,Ricardo Margain con Fresnos,25.6593178,-100.3526361,12.08695652,11,1,#c6cc14
+370,Rio Grijalva con Rio De La Plata,25.6581213,-100.3685162,11.91304348,11,1,#c6cc14
+371,Jose Vasconcelos con La Alianza,25.65265411,-100.359694,11.73913043,11,1,#c6cc14
+372,Batallon De San Patricio con Lampazos,25.644465,-100.333213,11.39130435,11,1,#c6cc14
+373,Manuel J. Clouthier con Fierro,25.6810109,-100.4173106,11.39130435,11,1,#c6cc14
+374,Humberto Lobo con Rio Caura,25.6599602,-100.3831928,11.13043478,11,1,#c6cc14
+375,Humberto Lobo con Rio Nilo,25.65727098,-100.384557,11.08695652,11,1,#c6cc14
+376,Ricardo Margain con Palmas,25.6550026,-100.3527331,11.08695652,11,1,#c6cc14
+377,Lomas Del Valle con 16 De Sep.,25.649973,-100.378711,10.95652174,11,1,#c6cc14
+378,Jose Vasconcelos con Rio Rodano,25.6520822,-100.3775382,10.82608696,11,1,#c6cc14
+379,Manuel J. Clouthier con Antonio I. Villarreal,25.6791773,-100.4082718,10.56521739,11,1,#c6cc14
+380,Rio Moctezuma con Rio Vistula,25.652757,-100.364175,10.43478261,11,1,#c6cc14
+381,Roberto Garza Sada con Mont Matre,25.6352537,-100.360068,10.17391304,11,1,#c6cc14
+382,Alfonso Reyes con Convento,25.6462359,-100.382061,10.13043478,11,1,#c6cc14
+383,Alfonso Reyes con Zaragoza,25.6549176,-100.402839,10.13043478,11,1,#c6cc14
+384,Manuel J. Clouthier con Emiliano Zapata,25.6779942,-100.4024466,10.08695652,11,1,#c6cc14
+385,Callejon De Los Ayala con Centaya,25.6621905,-100.3871215,10.04347826,11,1,#c6cc14
+386,Alfonso Reyes con Cañada,25.6392135,-100.357383,9.826086957,11,1,#c6cc14
+387,Eugenio Garza Laguera con Pedro Coronel,25.64249432,-100.3253451,9.695652174,11,1,#c6cc14
+388,Alfonso Reyes con Bosques De Tahiti,25.64205,-100.372162,9.565217391,11,1,#c6cc14
+389,Morones Prieto con Articulo 27,25.671163,-100.3967649,9.565217391,11,1,#c6cc14
+390,Alfonso Reyes con El Caido,25.6409609,-100.368329,9.565217391,11,1,#c6cc14
+391,Gomez Morin con Ant. Carr. A Chipinque,25.6318932,-100.3643932,9.52173913,11,1,#c6cc14
+392,Jeronimo Siller con Sierra Mojada,25.6470305,-100.3674069,9.347826087,11,1,#c6cc14
+393,Corregidora con Porfirio Diaz,25.663919,-100.404889,9.173913043,11,1,#c6cc14
+394,Eugenio Garza Laguera con Las Privanzas,25.63709297,-100.3157217,9.130434783,11,1,#c6cc14
+395,Enrique Garcia Leal con Antonio I. Villarreal,25.6782361,-100.40834,9,11,1,#c6cc14
+396,Grafito con Aluminio,25.684483,-100.4160434,8.913043478,11,1,#c6cc14
+397,Alfonso Reyes con Cuauhtemoc,25.6482692,-100.385968,8.826086957,11,1,#c6cc14
+398,Gomez Morin con Rio Orinoco,25.6573688,-100.3565941,8.739130435,11,1,#c6cc14
+399,Alfonso Reyes con Jose Calderon,25.659352,-100.423342,8.695652174,11,1,#c6cc14
+400,Ricardo Margain con Los Nogales,25.6571116,-100.352689,8.695652174,11,1,#c6cc14
+401,Real San Agustin con La Hacienda,25.640319,-100.338109,8.565217391,11,1,#c6cc14
+402,Gomez Morin con Rio Colorado,25.6567521,-100.3568126,8.52173913,11,1,#c6cc14
+403,Humberto Lobo con Rio Amazonas,25.6650657,-100.3810616,8.52173913,11,1,#c6cc14
+404,Rio Tamazunchale con Rio Amazonas,25.6603073,-100.3646291,8.434782609,11,1,#c6cc14
+405,Roberto Garza Sada con Baptisterio,25.6354787,-100.369568,8.434782609,11,1,#c6cc14
+406,Las Torres con Division Del Norte,25.678991,-100.411884,8.260869565,11,1,#c6cc14
+407,Via Savotino con Via Servio Tulio,25.6613344,-100.3590093,8.217391304,11,1,#c6cc14
+408,Rio Mississippi con Rio Potosi,25.657925,-100.363217,8.173913043,11,1,#c6cc14
+409,Jose Vasconcelos con Ebanos,25.65345249,-100.3533941,8.130434783,11,1,#c6cc14
+410,Alfonso Reyes con Sierra Nevada,25.6414054,-100.370081,8.130434783,11,1,#c6cc14
+411,Rio Rosas con Rio Colorado,25.657591,-100.359661,8.130434783,11,1,#c6cc14
+412,Roberto Garza Sada con Bosques De Irlanda,25.6360348,-100.373182,8.086956522,11,1,#c6cc14
+413,Las Torres con Plata,25.679752,-100.414459,8.043478261,11,1,#c6cc14
+414,Fuentes Del Valle con Via Settembre,25.6652704,-100.367161,8.043478261,11,1,#c6cc14
+415,Jimenez con 2 De Abril,25.66030197,-100.4104186,8,11,1,#c6cc14
+416,Rio Tamesis con Rio Volga,25.6580019,-100.3820984,8,11,1,#c6cc14
+417,Jose Vasconcelos con Priv. Los Angeles,25.6514838,-100.3758708,7.913043478,11,1,#c6cc14
+418,Alfonso Reyes con Plutarco Elias Calles,25.64792609,-100.384943,7.826086957,11,1,#c6cc14
+419,Roberto Garza Sada con San Angel,25.63542039,-100.3701188,7.652173913,11,1,#c6cc14
+420,Jose Vasconcelos con La Sierra,25.651973,-100.3646941,7.565217391,11,1,#c6cc14
+421,Rio Tamazunchale con Rio De La Plata,25.6573151,-100.3656949,7.47826087,11,1,#c6cc14
+422,L. Garza Ayala con Plutarco Elias Calles,25.65295,-100.381584,7.347826087,11,1,#c6cc14
+423,Alfonso Reyes con Los Rayones,25.658126,-100.412275,7.260869565,11,1,#c6cc14
+424,Humberto Junco con Cristobal Colon,25.649518,-100.3268622,7.260869565,11,1,#c6cc14
+425,Benito Juarez con Callejon De Los Arizpe,25.6676007,-100.4011992,7.217391304,11,1,#c6cc14
+426,Las Torres con Zinc,25.67958,-100.413634,7.217391304,11,1,#c6cc14
+427,Manuel J. Clouthier con Adan Hernandez,25.6784073,-100.4044573,7.217391304,11,1,#c6cc14
+428,Jose Vasconcelos con Bosques De Siberia,25.651326,-100.3744742,7,11,1,#c6cc14
+429,Rio Rosas con Rio De La Plata,25.655316,-100.360455,6.913043478,11,1,#c6cc14
+430,Manuel J. Clouthier con Platino,25.6807386,-100.4160664,6.782608696,11,1,#c6cc14
+431,Roberto Garza Sada con Camilo Flammarion,25.6357302,-100.372231,6.782608696,11,1,#c6cc14
+432,Gomez Morin con Priv. Savotino,25.6604999,-100.3556852,6.652173913,11,1,#c6cc14
+433,Rio Moctezuma con Rio Guadalquivir,25.659964,-100.361617,6.608695652,11,1,#c6cc14
+434,Jeronimo Siller con Monserrat,25.6450847,-100.3680414,6.565217391,11,1,#c6cc14
+435,Rio Moctezuma con Rio De La Plata,25.656059,-100.362997,6.565217391,11,1,#c6cc14
+436,Rio Moctezuma con Rio Amazonas,25.659473,-100.361796,6.47826087,11,1,#c6cc14
+437,Jose Vasconcelos con Rio Pilon,25.6513342,-100.3741104,6.391304348,11,1,#c6cc14
+438,Benito Juarez con Priv. Juarez,25.65654606,-100.4062244,6.304347826,11,1,#c6cc14
+439,Alfonso Reyes con Moralillo,25.647377,-100.384012,6.260869565,11,1,#c6cc14
+440,Lazaro Cardenas con Alto Claro,25.660879,-100.348678,6.260869565,11,1,#c6cc14
+441,Real San Agustin con Mar Adriatico,25.6343985,-100.335931,6.217391304,11,1,#c6cc14
+442,Rio Rosas con Rio Panuco,25.660144,-100.35875,6.217391304,11,1,#c6cc14
+443,Rio Suchiate con Rio Guadalquivir,25.6639324,-100.3752607,6.217391304,11,1,#c6cc14
+444,Humberto Lobo con Rio Missouri,25.66602252,-100.3806049,6.173913043,11,1,#c6cc14
+445,Fuentes Del Valle con Via Valeria,25.6655399,-100.367641,6.130434783,11,1,#c6cc14
+446,Roberto Garza Sada con Mirador De La Sierra,25.6374368,-100.37738,6.043478261,11,1,#c6cc14
+447,Alfonso Reyes con Bosque,25.641198,-100.353263,5.918663117,11,1,#c6cc14
+448,Alfonso Reyes con Ladera,25.63951,-100.353277,5.869565217,11,1,#c6cc14
+449,Jose Vasconcelos con Priv. Tamazunchale,25.6517891,-100.3667152,5.869565217,11,1,#c6cc14
+450,L. Garza Ayala con Treviño,25.6602027,-100.3994312,5.869565217,11,1,#c6cc14
+451,Plutarco Elias Calles con Diego Saldivar,25.6500822,-100.3834274,5.739130435,11,1,#c6cc14
+452,Santa Barbara con Puebla,25.65356854,-100.3962858,5.739130435,11,1,#c6cc14
+453,Jose Vasconcelos con Cerro De La Luz,25.6538858,-100.3413859,5.739130435,11,1,#c6cc14
+454,Porfirio Diaz con Zaragoza,25.6620895,-100.3995533,5.695652174,11,1,#c6cc14
+455,Jimenez con Reforma,25.6659783,-100.4082301,5.608695652,11,1,#c6cc14
+456,Gomez Morin con Cristal,25.6489826,-100.359053,5.565217391,11,1,#c6cc14
+457,Jose Vasconcelos con Montes Apalaches,25.6536556,-100.3421153,5.52173913,11,1,#c6cc14
+458,Calzada Del Rosario con La Gloria,25.65022825,-100.3874345,5.52173913,11,1,#c6cc14
+459,Jose Vasconcelos con Rio Vistula,25.6522939,-100.3627011,5.434782609,11,1,#c6cc14
+460,Eugenio Garza Laguera con San Patricio,25.64345432,-100.3324125,5.304347826,11,1,#c6cc14
+461,Plutarco Elias Calles con 16 De Sep.,25.6506942,-100.3828766,5.304347826,11,1,#c6cc14
+462,Emiliano Zapata con Fco. I. Madero,25.680749,-100.404817,5.260869565,11,1,#c6cc14
+463,Alfonso Reyes con Bosques De Pirineos,25.6429852,-100.374188,5.241940254,11,1,#c6cc14
+464,Rio Missouri con Rio Rosas,25.659715,-100.35891,5.217391304,11,1,#c6cc14
+465,Enrique Garcia Leal con Las Torres,25.678691,-100.410998,5.130434783,11,1,#c6cc14
+466,Alfonso Reyes con Camilo Flammarion,25.6414717,-100.370388,5.130434783,11,1,#c6cc14
+467,Emiliano Zapata con Felipe Angeles,25.681916,-100.409882,5.086956522,11,1,#c6cc14
+468,Lomas Del Valle con Galeana,25.6508407,-100.3784101,5,11,1,#c6cc14
+469,Manuel J. Clouthier con Landon,25.67749382,-100.3999301,5,11,1,#c6cc14
+470,Real San Agustin con Monte Blanco,25.65096,-100.339454,5,11,1,#c6cc14
+471,Rio Bravo con Rio Sena,25.654496,-100.380978,4.956521739,11,1,#c6cc14
+472,Rio Rosas con Rio Manzanares,25.65589157,-100.3602643,4.956521739,11,1,#c6cc14
+473,Calzada San Pedro con Via Latina,25.6640586,-100.3686513,4.913043478,11,1,#c6cc14
+474,Alfonso Reyes con Volcan,25.6405115,-100.353279,4.826086957,11,1,#c6cc14
+475,Jeronimo Siller con Maria De Los Angeles,25.6441019,-100.3683701,4.826086957,11,1,#c6cc14
+476,Benito Juarez con 16 De Sep.,25.6601378,-100.4045824,4.608695652,11,1,#c6cc14
+477,Jimenez con Paras,25.66247266,-100.4096449,4.52173913,11,1,#c6cc14
+478,Alfonso Reyes con Cordillera,25.6388059,-100.354011,4.47826087,11,1,#c6cc14
+479,Alfonso Reyes con Gral. Treviño,25.6545958,-100.401964,4.47826087,11,1,#c6cc14
+480,Rio De La Plata con Rio Jordan,25.66233043,-100.3841537,4.47826087,11,1,#c6cc14
+481,Santa Barbara con Emilio Carranza,25.65437803,-100.3959268,4.47826087,11,1,#c6cc14
+482,Calzada San Pedro con Via Sacra,25.6631747,-100.3687269,4.434782609,11,1,#c6cc14
+483,Jimenez con Los Pinos,25.65988077,-100.4105762,4.391304348,11,1,#c6cc14
+484,Callejon De Capellania con Rio Jordan,25.6632309,-100.3838505,4.347826087,11,1,#c6cc14
+485,Fuentes Del Valle con Via Corso Pte.,25.664812,-100.361994,4.347826087,11,1,#c6cc14
+486,Rio Tamesis con Rio Sena,25.6555579,-100.3829672,4.347826087,11,1,#c6cc14
+487,Roberto Garza Sada con Sierra Verde,25.6385174,-100.381259,4.347826087,11,1,#c6cc14
+488,Benito Juarez con Privada Fco I Madero,25.66712736,-100.4014212,4.304347826,11,1,#c6cc14
+489,Roberto Garza Sada con Barranca,25.6363569,-100.355059,4.304347826,11,1,#c6cc14
+490,Jose Vasconcelos con Abasolo,25.6640312,-100.4078797,4.260869565,11,1,#c6cc14
+491,Jose Vasconcelos con Monte Everest,25.6535162,-100.3432222,4.260869565,11,1,#c6cc14
+492,Rio Orinoco con Rio Rosas,25.6581603,-100.3594571,4.260869565,11,1,#c6cc14
+493,Real San Agustin con Mar Mediterraneo,25.632319,-100.336501,4.260869565,11,1,#c6cc14
+494,Rio Tamazunchale con Rio Colorado,25.6592395,-100.365006,4.217391304,11,1,#c6cc14
+495,Roberto Garza Sada con Sierra Bella,25.6372988,-100.376923,4.217391304,11,1,#c6cc14
+496,Guillermo Prieto con Galeana,25.6572775,-100.3935464,4.173913043,11,1,#c6cc14
+497,Jose Vasconcelos con Calzada Del Valle,25.6531319,-100.3555798,4.130434783,11,1,#c6cc14
+498,L. Garza Ayala con Gral Naranjo,25.659892,-100.3985404,4.130434783,11,1,#c6cc14
+499,Calzada Del Rosario con Ana Cristina,25.65386171,-100.3859987,4.086956522,11,1,#c6cc14
+500,Las Torres con Carbono,25.679668,-100.414064,4.086956522,11,1,#c6cc14
+501,Rio Tigris con Rio Ganges,25.6484611,-100.3711258,4,11,1,#c6cc14
+502,Roberto Garza Sada con Ing. Arturo Gonzalez,25.6353598,-100.367715,4,11,1,#c6cc14
+503,Benito Juarez con Emilio Carranza,25.6577471,-100.4056625,3.956521739,11,1,#c6cc14
+504,Calzada San Pedro con Priv. San Pedro,25.6608223,-100.3688226,3.913043478,11,1,#c6cc14
+505,Humberto Lobo con Rio Potomac,25.66254697,-100.382398,3.869565217,11,1,#c6cc14
+506,Alfonso Reyes con Bosques De Viena,25.6432989,-100.374955,3.826086957,11,1,#c6cc14
+507,Via Savotino con Via Settembre,25.6637384,-100.3672841,3.782608696,11,1,#c6cc14
+508,Emiliano Zapata con A. B. De La Garza,25.681499,-100.405402,3.739130435,11,1,#c6cc14
+509,Los Soles con Casolar,25.6528692,-100.3316691,3.739130435,11,1,#c6cc14
+510,Alfonso Reyes con Meseta,25.6392232,-100.353671,3.739130435,11,1,#c6cc14
+511,Jimenez con 16 De Sep.,25.66189624,-100.4098179,3.695652174,11,1,#c6cc14
+512,L. Garza Ayala con Guillermo Prieto,25.6580685,-100.3932034,3.695652174,11,1,#c6cc14
+513,Rio Moctezuma con Rio Hudson,25.657181,-100.362565,3.695652174,11,1,#c6cc14
+514,Calzada San Pedro con Via Augusta,25.66761333,-100.3689818,3.652173913,11,1,#c6cc14
+515,Gomez Morin con Aristoteles,25.6301004,-100.3642254,3.565217391,11,1,#c6cc14
+516,Jeronimo Siller con Alvaro Obregon,25.6431204,-100.368682,3.565217391,11,1,#c6cc14
+517,Santa Barbara con L. Garza Ayala,25.65837452,-100.3941186,3.565217391,11,1,#c6cc14
+518,Cobalto con Cromo,25.683432,-100.417419,3.434782609,11,1,#c6cc14
+519,Guillermo Prieto con Emilio Carranza,25.654077,-100.395035,3.391304348,11,1,#c6cc14
+520,Rio Rosas con Rio Amazonas,25.658728,-100.359252,3.391304348,11,1,#c6cc14
+521,Rio Rosas con Rio Danubio,25.653137,-100.361222,3.391304348,11,1,#c6cc14
+522,Santa Barbara con 2 De Abril,25.65520162,-100.3955567,3.391304348,11,1,#c6cc14
+523,Cobalto con Uranio,25.6831305,-100.4148293,3.347826087,11,1,#c6cc14
+524,Rio Tamuin con Rio Necaxa,25.6573785,-100.3456795,3.347826087,11,1,#c6cc14
+525,Rio Moctezuma con Rio San Lorenzo,25.661306,-100.361133,3.304347826,11,1,#c6cc14
+526,Calzada Del Valle con Rio San Juan,25.6582555,-100.3727985,3.304347826,11,1,#c6cc14
+527,Rio Tamazunchale con Rio Guadalquivir,25.6607885,-100.364459,3.304347826,11,1,#c6cc14
+528,Rio Suchiate con Sierra Nevada,25.6379877,-100.384554,3.260869565,11,1,#c6cc14
+529,Genaro Garza Garcia con 5 De Mayo,25.6572136,-100.3987346,3.260869565,11,1,#c6cc14
+530,Lomas Del Valle con Moralillo,25.6438716,-100.3808683,3.260869565,11,1,#c6cc14
+531,Porfirio Diaz con Los Aldama,25.6636028,-100.4039993,3.260869565,11,1,#c6cc14
+532,Fuentes Del Valle con Via Corso Ote.,25.6647496,-100.360908,3.217391304,11,1,#c6cc14
+533,Rio Suchiate con Rio Pilon,25.6451884,-100.3819865,3.217391304,11,1,#c6cc14
+534,Fuentes Del Valle con Via Servio Tulio,25.6639808,-100.35806,3.173913043,11,1,#c6cc14
+535,Rufino Tamayo con Jose Clemente Orozco,25.6447248,-100.3255476,3.173913043,11,1,#c6cc14
+536,Via Savotino con Via Corso Ote.,25.6622961,-100.3622158,3.173913043,11,1,#c6cc14
+537,Jose Vasconcelos con Privada Carranza,25.6513135,-100.3747211,3.130434783,11,1,#c6cc14
+538,Real San Agustin con Monte Everest,25.6504096,-100.339622,3.130434783,11,1,#c6cc14
+539,Rio Suchiate con 16 De Sep.,25.65041773,-100.379893,3.130434783,11,1,#c6cc14
+540,Humberto Junco con Jose Maria Escriva,25.6505916,-100.3295926,3.086956522,11,1,#c6cc14
+541,Jimenez con Emilio Carranza,25.65949664,-100.4107241,3.086956522,11,1,#c6cc14
+542,L. Garza Ayala con Manuel Gonzalez,25.660807,-100.4011924,3.043478261,11,1,#c6cc14
+543,Alfonso Reyes con Priv. Escobedo,25.6580161,-100.411931,3.043478261,11,1,#c6cc14
+544,Emiliano Zapata con Lucio Blanco,25.682011,-100.40801,3.043478261,11,1,#c6cc14
+545,Jose Vasconcelos con Padre Mier,25.6650703,-100.4105996,3.043478261,11,1,#c6cc14
+546,Rio Mississippi con Rio La Silla,25.658164,-100.364657,3.043478261,11,1,#c6cc14
+547,Cobalto con Aluminio,25.6832898,-100.4161825,3,11,1,#c6cc14
+548,Porfirio Diaz con Allende,25.6645336,-100.4066652,3,11,1,#c6cc14
+549,Rio Mississippi con Rio Suchiate,25.661446,-100.376143,3,11,1,#c6cc14
+550,L. Garza Ayala con 20 De Noviembre,25.6524266,-100.3801643,3,11,1,#c6cc14
+551,Via Savotino con Via Corso Pte.,25.6624156,-100.3627595,2.956521739,11,1,#c6cc14
+552,Hidalgo con Puebla,25.657767,-100.408419,2.956521739,11,1,#c6cc14
+553,Hidalgo con Reforma,25.665031,-100.405448,2.913043478,11,1,#c6cc14
+554,Rio Suchiate con Rio Elba,25.6544451,-100.378635,2.913043478,11,1,#c6cc14
+555,Fuentes Del Valle con Monte Aventino,25.6634555,-100.355326,2.869565217,11,1,#c6cc14
+556,Rio Mississippi con Rio Guayalejo,25.659896,-100.370892,2.869565217,11,1,#c6cc14
+557,Roberto Garza Sada con Bosque Negro,25.6369289,-100.375683,2.826086957,11,1,#c6cc14
+558,Callejon De Capellania con San Patricio,25.6657931,-100.3913349,2.826086957,11,1,#c6cc14
+559,Corregidora con Paseo Del Seminario,25.673197,-100.402694,2.826086957,11,1,#c6cc14
+560,Manuel J. Clouthier con A. Ruiz Cortinez,25.6788948,-100.4068806,2.826086957,11,1,#c6cc14
+561,Benito Juarez con 2 De Abril,25.6585405,-100.4052963,2.782608696,11,1,#c6cc14
+562,Lazaro Cardenas con Paseo Belinda,25.641702,-100.317545,2.782608696,11,1,#c6cc14
+563,Manuel J. Clouthier con Felix I,25.6775631,-100.4003989,2.782608696,11,1,#c6cc14
+564,Plutarco Elias Calles con Cuauhtemoc,25.6495824,-100.3837256,2.782608696,11,1,#c6cc14
+565,Rio Moctezuma con Rio Manzanares,25.656637,-100.362772,2.782608696,11,1,#c6cc14
+566,Hidalgo con Libertad,25.665856,-100.405128,2.739130435,11,1,#c6cc14
+567,Rio De La Plata con Rio Balsas,25.6598429,-100.3744053,2.739130435,11,1,#c6cc14
+568,Humberto Junco con Casolar,25.6516869,-100.3322158,2.739130435,11,1,#c6cc14
+569,Alfonso Reyes con Sierra Linda,25.6443337,-100.376426,2.739130435,11,1,#c6cc14
+570,Roberto Garza Sada con Mirador De Coatzacoalco,25.6377018,-100.378292,2.695652174,11,1,#c6cc14
+571,Corregidora con Emilio Carranza,25.658279,-100.407217,2.695652174,11,1,#c6cc14
+572,Humberto Lobo con Callejon De Capellania,25.66304628,-100.3822471,2.695652174,11,1,#c6cc14
+573,Real San Agustin con Santa Cruz,25.6431038,-100.338677,2.652173913,11,1,#c6cc14
+574,Manuel J. Clouthier con Flores Magon,25.67943274,-100.4094924,2.652173913,11,1,#c6cc14
+575,Jose Vasconcelos con Priv. Franco,25.6514488,-100.3724865,2.608695652,11,1,#c6cc14
+576,Real San Agustin con Encino,25.6370465,-100.337736,2.608695652,11,1,#c6cc14
+577,Rio Grijalva con Rio Volga,25.6546617,-100.369724,2.565217391,11,1,#c6cc14
+578,Fuentes Del Valle con Via Ostiensis,25.6649743,-100.364412,2.565217391,11,1,#c6cc14
+579,Grafito con Uranio,25.6844513,-100.414822,2.565217391,11,1,#c6cc14
+580,Porfirio Diaz con Matamoros,25.6608965,-100.3960051,2.565217391,11,1,#c6cc14
+581,Rio Tamesis con Rio Guadalquivir,25.66516,-100.3795794,2.565217391,11,1,#c6cc14
+582,Rio Tamesis con Rio Nilo,25.6566974,-100.3825484,2.565217391,11,1,#c6cc14
+583,Bosques Del Valle con Bosques Del Istmo,25.648443,-100.376229,2.52173913,11,1,#c6cc14
+584,Fuentes Del Valle con Via Popilia,25.665592,-100.371933,2.52173913,11,1,#c6cc14
+585,Humberto Lobo con Rio Yukon,25.66729983,-100.380159,2.52173913,11,1,#c6cc14
+586,Roberto Garza Sada con Bosques De Noruega,25.6372059,-100.376629,2.52173913,11,1,#c6cc14
+587,Calzada Del Valle con Priv. Calzada Del Valle,25.6610915,-100.3842711,2.47826087,11,1,#c6cc14
+588,Rio Tamazunchale con Rio Missouri,25.6612824,-100.36428,2.47826087,11,1,#c6cc14
+589,Rio Moctezuma con Rio Panuco,25.660897,-100.361282,2.47826087,11,1,#c6cc14
+590,Las Torres con Cromo,25.6804101,-100.41787,2.434782609,11,1,#c6cc14
+591,Porfirio Diaz con Morelos,25.6625063,-100.4025891,2.434782609,11,1,#c6cc14
+592,Rio Mississippi con Rio Salinas,25.658082,-100.364059,2.391304348,11,1,#c6cc14
+593,Bosques Del Valle con Bosques De Pirineos,25.645924,-100.374486,2.391304348,11,1,#c6cc14
+594,Corregidora con 2 De Abril,25.659097,-100.40688,2.391304348,11,1,#c6cc14
+595,Rio Bravo con Rio De La Plata,25.660771,-100.378768,2.391304348,11,1,#c6cc14
+596,Morones Prieto con Callejon De Capellania,25.6703439,-100.4021788,2.347826087,11,1,#c6cc14
+597,L. Garza Ayala con Genaro Garza Garcia,25.659601,-100.397654,2.304347826,11,1,#c6cc14
+598,L. Garza Ayala con Juan I. Ramon,25.658681,-100.394988,2.304347826,11,1,#c6cc14
+599,Rio Moctezuma con Rio Missouri,25.660464,-100.361435,2.304347826,11,1,#c6cc14
+600,Alfonso Reyes con Santa Martha,25.648142,-100.386162,2.260869565,11,1,#c6cc14
+601,Calzada Del Rosario con Gertrudis,25.65483016,-100.385725,2.260869565,11,1,#c6cc14
+602,Fuentes Del Valle con Via Aemilia,25.6658597,-100.370531,2.260869565,11,1,#c6cc14
+603,L. Garza Ayala con Simon De La Garza Melo,25.6638103,-100.4098495,2.260869565,11,1,#c6cc14
+604,Via Savotino con Via Galvani,25.6632391,-100.3656369,2.260869565,11,1,#c6cc14
+605,Gomez Morin con Socrates,25.6339636,-100.3636765,2.260869565,11,1,#c6cc14
+606,Callejon De Capellania con Hortelanos,25.6683255,-100.3972023,2.217391304,11,1,#c6cc14
+607,Rio De La Plata con Rio Mosela,25.6621684,-100.3834751,2.217391304,11,1,#c6cc14
+608,Santa Barbara con Galeana,25.65759189,-100.3944503,2.217391304,11,1,#c6cc14
+609,Jimenez con Puebla,25.65869629,-100.411127,2.173913043,11,1,#c6cc14
+610,Rio Grijalva con Rio Sena,25.6527094,-100.3701718,2.173913043,11,1,#c6cc14
+611,Rio Tamesis con Rio Caura,25.659482,-100.3815857,2.173913043,11,1,#c6cc14
+612,Hidalgo con Priv. Corregidora,25.659786,-100.407606,2.130434783,11,1,#c6cc14
+613,Rio Missouri con Rio Grijalva,25.662104,-100.367124,2.130434783,11,1,#c6cc14
+614,L. Garza Ayala con Manuel Doblado,25.6577699,-100.3923057,2.130434783,11,1,#c6cc14
+615,Real San Agustin con Priv. San Roberto,25.6411418,-100.33827,2.130434783,11,1,#c6cc14
+616,Gomez Morin con Aranjuez,25.62648398,-100.3649359,2.086956522,11,1,#c6cc14
+617,Rio Suchiate con Rio Danubio,25.6579948,-100.3773755,2.086956522,11,1,#c6cc14
+618,Alfonso Reyes con Roberto Garza Sada,25.6419003,-100.370996,2.043478261,11,1,#c6cc14
+619,Callejon De Capellania con Rio Mosela,25.6630617,-100.3832068,2.043478261,11,1,#c6cc14
+620,Ricardo Margain con Rio Amacuzac,25.6615111,-100.3524801,2.043478261,11,1,#c6cc14
+621,Grafito con Platino,25.6844416,-100.4156367,2.043478261,11,1,#c6cc14
+622,Manuel J. Clouthier con Zinc,25.6802417,-100.4135467,2.043478261,11,1,#c6cc14
+623,Lomas Del Valle con Corona,25.6429742,-100.3811949,2,11,1,#c6cc14
+624,Jeronimo Siller con Gral. Treviño,25.6382843,-100.3702494,1.913043478,11,1,#c6cc14
+625,Rio Missouri con Rio Balsas,25.663595,-100.372276,1.913043478,11,1,#c6cc14
+626,Zinc con Mercurio,25.6791156,-100.4137277,1.913043478,11,1,#c6cc14
+627,Rio Tamuin con Rio Pantepec,25.6584773,-100.3451873,1.913043478,11,1,#c6cc14
+628,Emiliano Zapata con P. Gonzalez Garza,25.682166,-100.411109,1.869565217,11,1,#c6cc14
+629,Rio Mississippi con Rio Bravo,25.662067,-100.378324,1.869565217,11,1,#c6cc14
+630,Rio Rosas con Rio Volga,25.652587,-100.361408,1.826086957,11,1,#c6cc14
+631,Gomez Morin con Priv. Rio Amazonas,25.6578092,-100.3564645,1.826086957,11,1,#c6cc14
+632,Cobalto con Cobre,25.6829347,-100.4131355,1.782608696,11,1,#c6cc14
+633,Cobalto con Sodio,25.6825753,-100.4123156,1.782608696,11,1,#c6cc14
+634,Gomez Morin con Lidio A. Torres,25.6362891,-100.3631311,1.782608696,11,1,#c6cc14
+635,Humberto Junco con Paseo Olga,25.6454504,-100.3185892,1.782608696,11,1,#c6cc14
+636,Jose Vasconcelos con Privada Viena,25.6513535,-100.3753149,1.782608696,11,1,#c6cc14
+637,Lomas Del Valle con Tuxtepec,25.6411613,-100.3818371,1.782608696,11,1,#c6cc14
+638,Rio Tamuin con Rio Amacuzac,25.6589989,-100.34495,1.782608696,11,1,#c6cc14
+639,Callejon De Los Ayala con Zaragoza,25.66669,-100.3967311,1.739130435,11,1,#c6cc14
+640,L. Garza Ayala con Allende,25.6629263,-100.4073578,1.739130435,11,1,#c6cc14
+641,Los Soles con Corporativo,25.6536719,-100.3336929,1.739130435,11,1,#c6cc14
+642,Rio Suchiate con Via Augusta,25.6670504,-100.3742356,1.739130435,11,1,#c6cc14
+643,L. Garza Ayala con Hidalgo,25.662619,-100.406478,1.695652174,11,1,#c6cc14
+644,Rio Bravo con Rio Rhin,25.65662,-100.380247,1.695652174,11,1,#c6cc14
+645,Rio Tigris con Rio Tiber,25.6498248,-100.3711405,1.695652174,11,1,#c6cc14
+646,Rio Grijalva con Rio Guadalquivir,25.6616116,-100.3672946,1.652173913,11,1,#c6cc14
+647,Rio Bravo con Rio Volga,25.657591,-100.379879,1.608695652,11,1,#c6cc14
+648,Rio Tamesis con Rio Amazonas,25.664654,-100.3797398,1.608695652,11,1,#c6cc14
+649,Callejon De Los Ayala con Mimbre,25.665819,-100.394987,1.608695652,11,1,#c6cc14
+650,Porfirio Diaz con Juan I. Ramon,25.660291,-100.394223,1.608695652,11,1,#c6cc14
+651,Rio Suchiate con Rio Tajo,25.6532955,-100.3790249,1.608695652,11,1,#c6cc14
+652,Jose Vasconcelos con Cedros,25.6533194,-100.3469238,1.565217391,11,1,#c6cc14
+653,Benito Juarez con Galeana,25.660913,-100.404228,1.565217391,11,1,#c6cc14
+654,Roberto Garza Sada con Bosques Del Encino,25.6369546,-100.375793,1.52173913,11,1,#c6cc14
+655,Manuel J. Clouthier con Uranio,25.6804986,-100.4148076,1.52173913,11,1,#c6cc14
+656,Rio Orinoco con Rio Bravo,25.6633963,-100.3778538,1.52173913,11,1,#c6cc14
+657,Rio Tamazunchale con Rio Panuco,25.6617162,-100.3641355,1.52173913,11,1,#c6cc14
+658,Alfonso Reyes con Doblado,25.6521096,-100.394896,1.47826087,11,1,#c6cc14
+659,L. Garza Ayala con Abasolo,25.6632433,-100.4082121,1.47826087,11,1,#c6cc14
+660,Jeronimo Siller con Sierra Del Carmen,25.6402241,-100.3696184,1.47826087,11,1,#c6cc14
+661,Morones Prieto con Primera De Monte Palatino,25.6685389,-100.3655218,1.47826087,11,1,#c6cc14
+662,Rio Tamesis con Rio Danubio,25.6587335,-100.3818563,1.47826087,11,1,#c6cc14
+663,Rio Tamuin con Rio Nazas,25.6564621,-100.3460818,1.47826087,11,1,#c6cc14
+664,Roberto Garza Sada con Onix,25.6413489,-100.389488,1.47826087,11,1,#c6cc14
+665,Benito Juarez con 5 De Mayo,25.6593417,-100.404931,1.434782609,11,1,#c6cc14
+666,Cobalto con Carbono,25.6831044,-100.4139765,1.434782609,11,1,#c6cc14
+667,L. Garza Ayala con Morelos,25.6581302,-100.3937266,1.434782609,11,1,#c6cc14
+668,Rio Suchiate con Galeana,25.6512507,-100.3795209,1.434782609,11,1,#c6cc14
+669,Emiliano Zapata con Division Del Norte,25.682254,-100.411524,1.391304348,11,1,#c6cc14
+670,Enrique Garcia Leal con Oro,25.6785132,-100.417203,1.391304348,11,1,#c6cc14
+671,Gomez Morin con De La Paz,25.6389061,-100.3621994,1.391304348,11,1,#c6cc14
+672,Guillermo Prieto con 5 De Mayo,25.6556691,-100.3942947,1.391304348,11,1,#c6cc14
+673,Rio Missouri con Via Settembre,25.66225083,-100.3675644,1.391304348,11,1,#c6cc14
+674,Bosques Del Valle con Bosques Del Olivo,25.647088,-100.375933,1.347826087,11,1,#c6cc14
+675,Genaro Garza Garcia con Galeana,25.6587891,-100.3980081,1.347826087,11,1,#c6cc14
+676,Rio Suchiate con Moralillo,25.6442905,-100.3823017,1.347826087,11,1,#c6cc14
+677,L. Garza Ayala con Padre Mier,25.6641782,-100.4108907,1.304347826,11,1,#c6cc14
+678,Rio Suchiate con L. Garza Ayala,25.6520824,-100.3791671,1.304347826,11,1,#c6cc14
+679,Zinc con Azufre,25.6857901,-100.4136016,1.304347826,11,1,#c6cc14
+680,Los Soles con Cristobal Colon,25.6511537,-100.3266145,1.304347826,11,1,#c6cc14
+681,Alfonso Reyes con Candelaria,25.6559522,-100.406245,1.260869565,11,1,#c6cc14
+682,Gomez Morin con Via Romulo,25.66172217,-100.3553716,1.260869565,11,1,#c6cc14
+683,Jeronimo Siller con Sierra Morena,25.6460633,-100.3677337,1.260869565,11,1,#c6cc14
+684,Real San Agustin con Queranzas,25.635975,-100.336689,1.260869565,11,1,#c6cc14
+685,Rio Missouri con Via Popilia,25.663595,-100.372276,1.260869565,11,1,#c6cc14
+686,Rio Orinoco con Rio Guayalejo,25.6609115,-100.3705314,1.260869565,11,1,#c6cc14
+687,Rio Suchiate con Laredo,25.6469945,-100.3813673,1.260869565,11,1,#c6cc14
+688,Rio Tamazunchale con Rio Danubio,25.6548379,-100.3665484,1.260869565,11,1,#c6cc14
+689,Jimenez con Lucio Blanco,25.6696902,-100.4088071,1.260869565,11,1,#c6cc14
+690,Rio Tamesis con Rio Madeira,25.6633384,-100.3801977,1.260869565,11,1,#c6cc14
+691,Rio Grijalva con Rio Danubio,25.6556876,-100.3693674,1.217391304,11,1,#c6cc14
+692,Rio Rosas con Rio Hudson,25.656467,-100.360047,1.217391304,11,1,#c6cc14
+693,L. Garza Ayala con Zaragoza,25.6604991,-100.4002904,1.217391304,11,1,#c6cc14
+694,Rio Tamazunchale con Rio Sena,25.6528606,-100.3671842,1.217391304,11,1,#c6cc14
+695,Cobalto con Division Del Norte,25.6822828,-100.4115304,1.173913043,11,1,#c6cc14
+696,Gomez Morin con Janitzio,25.6270658,-100.371132,1.173913043,11,1,#c6cc14
+697,Los Soles con Callejon Del Caballo,25.6544719,-100.3357138,1.173913043,11,1,#c6cc14
+698,Rio Suchiate con Rio Rhin,25.6559906,-100.3780893,1.173913043,11,1,#c6cc14
+699,Alfonso Reyes con Eugenio Garza Laguera,25.638133,-100.33785,1.130434783,11,1,#c6cc14
+700,Callejon De Capellania con Privada Capellania,25.6639732,-100.3872281,1.130434783,11,1,#c6cc14
+701,Rio Bravo con Rio Amazonas,25.664044,-100.377607,1.130434783,11,1,#c6cc14
+702,Rio Mississippi con Rio Tamesis,25.662701,-100.380451,1.130434783,11,1,#c6cc14
+703,Rio Tamesis con Rio Rhin,25.6572632,-100.3823555,1.130434783,11,1,#c6cc14
+704,Rio Tigris con Priv. Molday,25.6460645,-100.3711486,1.130434783,11,1,#c6cc14
+705,Emiliano Zapata con A. Ruiz Cortinez,25.681726,-100.405708,1.086956522,11,1,#c6cc14
+706,Fuentes Del Valle con Via Luovise,25.6655842,-100.366615,1.086956522,11,1,#c6cc14
+707,Jimenez con Cedros,25.66149505,-100.4099594,1.086956522,11,1,#c6cc14
+708,Las Torres con Platino,25.680063,-100.416115,1.086956522,11,1,#c6cc14
+709,Lomas Del Valle con Mirador De La Sierra,25.6402804,-100.3821389,1.086956522,11,1,#c6cc14
+710,Manuel J. Clouthier con Aluminio,25.680829,-100.4165027,1.086956522,11,1,#c6cc14
+711,Ricardo Margain con Santa Engracia,25.6518266,-100.3527816,1.086956522,11,1,#c6cc14
+712,Roberto Garza Sada con Privada Roberto Garza Sada,25.635252,-100.360643,1.086956522,11,1,#c6cc14
+713,Alfonso Reyes con Valle De Chipinque,25.6409231,-100.367945,1.043478261,11,1,#c6cc14
+714,Benito Juarez con Antonio Lopez,25.6565449,-100.4062301,1.043478261,11,1,#c6cc14
+715,Cobalto con Priv. Platino,25.6832541,-100.4157861,1.043478261,11,1,#c6cc14
+716,Corregidora con Lopez Mateos,25.66637104,-100.4038721,1.043478261,11,1,#c6cc14
+717,Emiliano Zapata con Anacleto Guerrero,25.682195,-100.406978,1.043478261,11,1,#c6cc14
+718,Enrique Garcia Leal con Fierro,25.6784613,-100.417615,1.043478261,11,1,#c6cc14
+719,Fuentes Del Valle con Primera De Monte Palatino,25.6654992,-100.361118,1.043478261,11,1,#c6cc14
+720,Grafito con Cobre,25.684321,-100.413188,1.043478261,11,1,#c6cc14
+721,Hidalgo con Privada Carranza,25.658978,-100.407952,1.043478261,11,1,#c6cc14
+722,Jeronimo Siller con Treviño,25.6382843,-100.3702494,1.043478261,11,1,#c6cc14
+723,L. Garza Ayala con Dalmonte,25.6634261,-100.4087577,1.043478261,11,1,#c6cc14
+724,L. Garza Ayala con Rio Tamuin,25.6581302,-100.3937266,1.043478261,11,1,#c6cc14
+725,Las Torres con Juan De Zumarraga,25.676774,-100.40061,1.043478261,11,1,#c6cc14
+726,Las Torres con Titanio,25.679913,-100.415281,1.043478261,11,1,#c6cc14
+727,Las Torres con Uranio,25.679824,-100.414875,1.043478261,11,1,#c6cc14
+728,Lomas Del Valle con Rio Suchil,25.6485061,-100.3792364,1.043478261,11,1,#c6cc14
+729,Morones Prieto con Rio Las Palmas,25.6676812,-100.3749464,1.043478261,11,1,#c6cc14
+730,Ricardo Margain con Privada Villas De Sta Engarcia,25.6616077,-100.3526881,1.043478261,11,1,#c6cc14
+731,Rio De La Plata con Rio Guayalejo,25.6589254,-100.3712663,1.043478261,11,1,#c6cc14
+732,Rio Mississippi con Rio Mosela,25.663065,-100.383171,1.043478261,11,1,#c6cc14
+733,Rio Suchiate con Cascada,25.6424927,-100.3829428,1.043478261,11,1,#c6cc14
+734,Rio Tamesis con Rio De La Plata,25.6614041,-100.3809164,1.043478261,11,1,#c6cc14
+735,Rio Tamuin con Rio Don,25.6568284,-100.3459156,1.043478261,11,1,#c6cc14
+736,Bosques Del Valle con Bosques De Catemaco,25.64043033,-100.3732841,1,11,1,#c6cc14
+737,Jimenez con Libertad,25.6666932,-100.407575,1,11,1,#c6cc14
+738,Callejon De Capellania con Santa Monica,25.6646597,-100.3885498,0.956521739,11,1,#c6cc14
+739,Rio Bravo con Via Angelica,25.666913,-100.376595,0.956521739,11,1,#c6cc14
+740,Santa Barbara con 16 De Sep.,25.65676862,-100.3947976,0.956521739,11,1,#c6cc14
+741,Grafito con Antimonio,25.6841144,-100.4127533,0.956521739,11,1,#c6cc14
+742,Emiliano Zapata con Plan De Ayala,25.681951,-100.408423,0.913043478,11,1,#c6cc14
+743,Fuentes Del Valle con Rio Suchiate,25.6655504,-100.374733,0.913043478,11,1,#c6cc14
+744,Hidalgo con 16 De Sep.,25.660988,-100.407142,0.913043478,11,1,#c6cc14
+745,Jimenez con Maria Cantu,25.66909119,-100.4087476,0.913043478,11,1,#c6cc14
+746,L. Garza Ayala con Justo Sierra,25.653249,-100.382483,0.913043478,11,1,#c6cc14
+747,Emiliano Zapata con Miguel Aleman,25.681977,-100.406027,0.869565217,11,1,#c6cc14
+748,Via Savotino con Via Salaria,25.662712,-100.3637393,0.869565217,11,1,#c6cc14
+749,Benito Juarez con L. Garza Ayala,25.6617316,-100.40386,0.826086957,11,1,#c6cc14
+750,Corregidora con L. Garza Ayala,25.662295,-100.405591,0.826086957,11,1,#c6cc14
+751,Hidalgo con Emilio Carranza,25.6585673,-100.4081052,0.826086957,11,1,#c6cc14
+752,Alfonso Reyes con Bos. De Viena,25.643298,-100.374954,0.812777285,11,1,#c6cc14
+753,Hidalgo con Independencia,25.666657,-100.404717,0.782608696,11,1,#c6cc14
+754,L. Garza Ayala con Degollado,25.6574417,-100.3914042,0.782608696,11,1,#c6cc14
+755,Calzada Del Rosario con Santa Cecilia,25.64840711,-100.388946,0.739130435,11,1,#c6cc14
+756,Hidalgo con 2 De Abril,25.659379,-100.407775,0.739130435,11,1,#c6cc14
+757,L. Garza Ayala con Matamoros,25.6592895,-100.3967464,0.739130435,11,1,#c6cc14
+758,Manuel J. Clouthier con Ruiz Cortines,25.6788948,-100.4068806,0.739130435,11,1,#c6cc14
+759,Rio De La Plata con Rio Salinas,25.6568453,-100.3645325,0.739130435,11,1,#c6cc14
+760,Rio Orinoco con Rio Balsas,25.6617207,-100.3733716,0.739130435,11,1,#c6cc14
+761,Cobalto con Antimonio,25.6827559,-100.4127249,0.695652174,11,1,#c6cc14
+762,Gomez Morin con Uxmal,25.6210279,-100.3655562,0.695652174,11,1,#c6cc14
+763,Grafito con Carbono,25.6844771,-100.4139929,0.695652174,11,1,#c6cc14
+764,Jimenez con Los Fresnos,25.66070068,-100.41027,0.695652174,11,1,#c6cc14
+765,Jose Vasconcelos con Montes Urales,25.65405005,-100.3407041,0.695652174,11,1,#c6cc14
+766,L. Garza Ayala con Guerrero,25.6581302,-100.3937266,0.695652174,11,1,#c6cc14
+767,Porfirio Diaz con Hidalgo,25.66423,-100.405791,0.695652174,11,1,#c6cc14
+768,Real San Agustin con Lirios,25.6303831,-100.337864,0.695652174,11,1,#c6cc14
+769,Rio Bravo con Rio Las Palmas,25.667096,-100.376544,0.695652174,11,1,#c6cc14
+770,Rio Bravo con Rio Potomac,25.661428,-100.378535,0.695652174,11,1,#c6cc14
+771,Rio Suchiate con Rio Nilo,25.6549948,-100.3784314,0.695652174,11,1,#c6cc14
+772,Rio Tamuin con Rio Mayo,25.6579345,-100.345426,0.695652174,11,1,#c6cc14
+773,Plutarco Elias Calles con Hacienda Del Valle,25.647134,-100.3849892,0.652173913,11,1,#c6cc14
+774,Rio Suchiate con Tuxtepec,25.6415831,-100.3832726,0.608695652,11,1,#c6cc14
+775,Los Soles con Torrevillas,25.6540578,-100.3347163,0.608695652,11,1,#c6cc14
+776,Montes Rocallosos con Sierra Mijes,25.654997,-100.343743,0.608695652,11,1,#c6cc14
+777,Cobalto con Plata,25.6831037,-100.4144069,0.565217391,11,1,#c6cc14
+778,Corregidora con Galeana,25.661491,-100.405931,0.565217391,11,1,#c6cc14
+779,Hidalgo con Galeana,25.661825,-100.406834,0.565217391,11,1,#c6cc14
+780,L. Garza Ayala con Lic. Verdad,25.6645798,-100.4121478,0.565217391,11,1,#c6cc14
+781,Lazaro Cardenas con Savila,25.661458,-100.35018,0.565217391,11,1,#c6cc14
+782,Bosques Del Valle con Prol. Maria De Los Angeles,25.64489121,-100.3730972,0.52173913,11,1,#c6cc14
+783,Bosques Del Valle con Sierra De Juarez,25.640162,-100.373339,0.52173913,11,1,#c6cc14
+784,Callejon De Capellania con Mimbre,25.666936,-100.3942906,0.52173913,11,1,#c6cc14
+785,Fuentes Del Valle con Via Julio Cesar,25.6636832,-100.354391,0.52173913,11,1,#c6cc14
+786,Grafito con Sodio,25.6839202,-100.4123105,0.52173913,11,1,#c6cc14
+787,Hidalgo con Priv. Parque,25.661394,-100.406981,0.52173913,11,1,#c6cc14
+788,L. Garza Ayala con Diego De Montemayor,25.6589839,-100.3958712,0.52173913,11,1,#c6cc14
+789,Los Soles con Mirador Del Campestre,25.6551246,-100.3372677,0.52173913,11,1,#c6cc14
+790,Manuel J. Clouthier con Carbono,25.6803148,-100.4139664,0.52173913,11,1,#c6cc14
+791,Plutarco Elias Calles con Laredo,25.648654,-100.3842298,0.52173913,11,1,#c6cc14
+792,Porfirio Diaz con Gral Naranjo,25.6615331,-100.3978226,0.52173913,11,1,#c6cc14
+793,Real San Agustin con Jaguarundi,25.6345616,-100.336001,0.52173913,11,1,#c6cc14
+794,Rio Mississippi con Rio Balsas,25.660874,-100.374162,0.52173913,11,1,#c6cc14
+795,Rio Missouri con Via Lata,25.66159,-100.365319,0.52173913,11,1,#c6cc14
+796,Rio Moctezuma con Rio Danubio,25.653878,-100.363761,0.52173913,11,1,#c6cc14
+797,Benito Juarez con Puebla,25.6569487,-100.406037,0.47826087,11,1,#c6cc14
+798,Emiliano Zapata con Luis Cabrera,25.681994,-100.410286,0.47826087,11,1,#c6cc14
+799,Fuentes Del Valle con Via Appia,25.6653808,-100.365367,0.47826087,11,1,#c6cc14
+800,Hidalgo con Priv. Hidalgo,25.6605743,-100.4072809,0.47826087,11,1,#c6cc14
+801,Jeronimo Siller con Cerro Prieto,25.6376449,-100.3704499,0.47826087,11,1,#c6cc14
+802,Jimenez con Granada,25.6670235,-100.4070724,0.47826087,11,1,#c6cc14
+803,Jimenez con Niños Heroes,25.668238,-100.4053551,0.47826087,11,1,#c6cc14
+804,L. Garza Ayala con A. Siller,25.6652296,-100.4150926,0.47826087,11,1,#c6cc14
+805,Las Torres con Alejandro Vi,25.676411,-100.398862,0.47826087,11,1,#c6cc14
+806,Rio Bravo con Rio Nilo,25.655624,-100.38059,0.47826087,11,1,#c6cc14
+807,Rio Missouri con Rio Tamesis,25.66565,-100.379405,0.47826087,11,1,#c6cc14
+808,Rio Moctezuma con Rio Caura,25.654451,-100.363544,0.47826087,11,1,#c6cc14
+809,Rio Orinoco con Rio Suchiate,25.662772,-100.375674,0.47826087,11,1,#c6cc14
+810,Rio Suchiate con Priv. Tuxtepec,25.6409908,-100.3834643,0.47826087,11,1,#c6cc14
+811,Rio Suchiate con Rio De La Plata,25.6601454,-100.3766105,0.47826087,11,1,#c6cc14
+812,Rio Suchiate con Rio Potomac,25.6608061,-100.3763717,0.47826087,11,1,#c6cc14
+813,Roberto Garza Sada con Bosques Mexicanos,25.6361306,-100.373359,0.47826087,11,1,#c6cc14
+814,Roberto Garza Sada con Priv. Colina Azul,25.6376642,-100.378167,0.47826087,11,1,#c6cc14
+815,L. Garza Ayala con Los Aldama,25.6620002,-100.4046964,0.434782609,11,1,#c6cc14
+816,Bosques Del Valle con Bosques De Irlanda,25.63729,-100.373572,0.391304348,11,1,#c6cc14
+817,Bosques Del Valle con Bosques De Tahiti,25.6441,-100.372774,0.391304348,11,1,#c6cc14
+818,Hidalgo con Niños Heroes,25.667646,-100.404087,0.391304348,11,1,#c6cc14
+819,L. Garza Ayala con Natividad Garcia,25.665097,-100.414536,0.391304348,11,1,#c6cc14
+820,Porfirio Diaz con Genaro Garza Garcia,25.6610753,-100.3969609,0.391304348,11,1,#c6cc14
+821,Roberto Garza Sada con Juan Crouset,25.6353547,-100.365014,0.391304348,11,1,#c6cc14
+822,Lazaro Cardenas con Sierra Leona,25.658566,-100.343759,0.347826087,11,1,#c6cc14
+823,Lomas Del Valle con Priv. Laredo,25.6472026,-100.3797001,0.347826087,11,1,#c6cc14
+824,Rio Moctezuma con Via Savotino,25.661856,-100.360916,0.347826087,11,1,#c6cc14
+825,Rio Suchiate con Rio Missouri,25.6644027,-100.3751286,0.347826087,11,1,#c6cc14
+826,Rio Tigris con Maria De Los Angeles,25.6448688,-100.3711017,0.347826087,11,1,#c6cc14
+827,Rio Tigris con Rio Brenta,25.6477842,-100.3710997,0.347826087,11,1,#c6cc14
+828,Alfonso Reyes con Frente Colegio Cecvac,25.639717,-100.341675,0.304347826,11,1,#c6cc14
+829,Benito Juarez con Fco. I. Madero,25.67203874,-100.3971317,0.304347826,11,1,#c6cc14
+830,Bosques Del Valle con Bosques De Francia,25.644616,-100.372933,0.304347826,11,1,#c6cc14
+831,Bosques Del Valle con Bosques De Saigon,25.638061,-100.373453,0.304347826,11,1,#c6cc14
+832,Corregidora con Eulalio Guzman,25.679118,-100.401905,0.304347826,11,1,#c6cc14
+833,Corregidora con Priv. Parque,25.657882,-100.40738,0.304347826,11,1,#c6cc14
+834,Corregidora con Puebla,25.657472,-100.407547,0.304347826,11,1,#c6cc14
+835,Diaz Ordaz con Paseo Del Molino,25.674881,-100.399687,0.304347826,11,1,#c6cc14
+836,Emiliano Zapata con Fco. Cardenas,25.682125,-100.407289,0.304347826,11,1,#c6cc14
+837,Genaro Garza Garcia con Risco,25.651551,-100.401316,0.304347826,11,1,#c6cc14
+838,Hidalgo con Privada Sierra Madre,25.658171,-100.408247,0.304347826,11,1,#c6cc14
+839,Jeronimo Siller con Sierra De Juarez,25.6392496,-100.3699387,0.304347826,11,1,#c6cc14
+840,L. Garza Ayala con Gral. Treviño,25.6602027,-100.3994312,0.304347826,11,1,#c6cc14
+841,Lazaro Cardenas con Privada Villas De Santa Engracia,25.66212572,-100.3535162,0.304347826,11,1,#c6cc14
+842,Lomas Del Valle con Privada Usumacinta,25.6489699,-100.379071,0.304347826,11,1,#c6cc14
+843,Porfirio Diaz con Abasolo,25.6648453,-100.4075549,0.304347826,11,1,#c6cc14
+844,Rio De La Plata con Rio Potosi,25.6564489,-100.3637617,0.304347826,11,1,#c6cc14
+845,Rio Orinoco con Rio San Juan,25.6612565,-100.3717909,0.304347826,11,1,#c6cc14
+846,Rio Suchiate con Rio Suchil,25.6479055,-100.3809681,0.304347826,11,1,#c6cc14
+847,Rio Tamesis con Rio Navia,25.6663,-100.379158,0.304347826,11,1,#c6cc14
+848,Alfonso Reyes con Priv. Rio Akumal,25.6390177,-100.356325,0.260869565,11,1,#c6cc14
+849,Alfonso Reyes con Prol. Monte Falco,25.6544794,-100.401997,0.260869565,11,1,#c6cc14
+850,Calzada Del Rosario con Genoveva,25.64619235,-100.3898083,0.260869565,11,1,#c6cc14
+851,Calzada Del Rosario con Maria De Los Angeles,25.6444805,-100.3889342,0.260869565,11,1,#c6cc14
+852,Calzada Del Rosario con Santa Martha,25.64947269,-100.3879596,0.260869565,11,1,#c6cc14
+853,Corregidora con Fco. I. Madero,25.680591,-100.401756,0.260869565,11,1,#c6cc14
+854,Corregidora con Parque,25.661096,-100.406087,0.260869565,11,1,#c6cc14
+855,Diaz Ordaz con Paseo Del Seminario,25.674909,-100.39808,0.260869565,11,1,#c6cc14
+856,Emiliano Zapata con R. Gonzalez Garza,25.682091,-100.410686,0.260869565,11,1,#c6cc14
+857,Eugenio Garza Laguera con Callejon De Las Privanzas,25.63956321,-100.3200654,0.260869565,11,1,#c6cc14
+858,Genaro Garza Garcia con Peñas,25.6520932,-100.4010601,0.260869565,11,1,#c6cc14
+859,Genaro Garza Garcia con Puebla,25.6548028,-100.3998277,0.260869565,11,1,#c6cc14
+860,Gomez Morin con Loma Blanca,25.6342646,-100.3637396,0.260869565,11,1,#c6cc14
+861,Gomez Morin con Versalles,25.62660899,-100.3652761,0.260869565,11,1,#c6cc14
+862,Guillermo Prieto con Puebla,25.6532724,-100.3953984,0.260869565,11,1,#c6cc14
+863,Jeronimo Siller con Cerrada De Los Nogales,25.6425065,-100.3688867,0.260869565,11,1,#c6cc14
+864,Jeronimo Siller con El Duomo,25.6363055,-100.3705501,0.260869565,11,1,#c6cc14
+865,Jeronimo Siller con Torre De Pisa,25.6370785,-100.370643,0.260869565,11,1,#c6cc14
+866,Jose Vasconcelos con Priv. Carranza,25.6513135,-100.3747211,0.260869565,11,1,#c6cc14
+867,L. Garza Ayala con Priv. Acuerdos,25.6649222,-100.4138105,0.260869565,11,1,#c6cc14
+868,Las Torres con Aluminio,25.680151,-100.41653,0.260869565,11,1,#c6cc14
+869,Manuel J. Clouthier con Andador De Corregidora,25.6779109,-100.4023703,0.260869565,11,1,#c6cc14
+870,Plutarco Elias Calles con Privada 1,25.6475362,-100.3850872,0.260869565,11,1,#c6cc14
+871,Rio Bravo con Rio Madeira,25.662752,-100.378088,0.260869565,11,1,#c6cc14
+872,Rio De La Plata con Rio De La Silla,25.6624406,-100.3828868,0.260869565,11,1,#c6cc14
+873,Rio De La Plata con Rio La Silla,25.6570819,-100.3650269,0.260869565,11,1,#c6cc14
+874,Rio De La Plata con Rio Pilon,25.6596154,-100.3736153,0.260869565,11,1,#c6cc14
+875,Rio De La Plata con Rio San Juan,25.6592537,-100.3724434,0.260869565,11,1,#c6cc14
+876,Rio Mississippi con Rio San Juan,25.660254,-100.372131,0.260869565,11,1,#c6cc14
+877,Rio Missouri con Via Clodia,25.664089,-100.374002,0.260869565,11,1,#c6cc14
+878,Rio Suchiate con Corona,25.6433883,-100.3826206,0.260869565,11,1,#c6cc14
+879,Rio Suchiate con Palmas,25.6373852,-100.3848944,0.260869565,11,1,#c6cc14
+880,Rio Suchiate con Rio Madeira,25.6621223,-100.3759151,0.260869565,11,1,#c6cc14
+881,Rio Tamesis con Palmas,25.667084,-100.378907,0.260869565,11,1,#c6cc14
+882,Rio Tamesis con Rio Elba,25.6561244,-100.382758,0.260869565,11,1,#c6cc14
+883,Rio Tamesis con Rio Las Palmas,25.6670869,-100.3789091,0.260869565,11,1,#c6cc14
+884,Rio Tamuin con Rio Atoyac,25.6563219,-100.3461596,0.260869565,11,1,#c6cc14
+885,Roberto Garza Sada con Maria De Los Angeles,25.6353529,-100.368763,0.260869565,11,1,#c6cc14
+886,Roberto Garza Sada con Priv. Rio Akumal,25.63554,-100.355942,0.260869565,11,1,#c6cc14
+887,Roberto Garza Sada con Privada Del Retorno,25.6391586,-100.3834,0.260869565,11,1,#c6cc14
+888,Via Savotino con Tiberio Graco,25.6618626,-100.3609126,0.260869565,11,1,#c6cc14
+889,Alfonso Reyes con Herradura,25.6469955,-100.383154,0.217391304,11,1,#c6cc14
+890,Rio Bravo con Rio Danubio,25.658599,-100.379541,0.173913043,11,1,#c6cc14
+891,Rio Bravo con Rio Navia,25.665683,-100.377048,0.173913043,11,1,#c6cc14
+892,Rio Tigris con Rio Ebro,25.6491327,-100.3711398,0.173913043,11,1,#c6cc14
+893,Lazaro Cardenas con Paseo Elizabeth,25.641438,-100.317146,0.130434783,11,1,#c6cc14
+894,Roberto Garza Sada con A. Gonzalez,25.6352667,-100.367619,0.130434783,11,1,#c6cc14
+895,Alfonso Reyes con Centenario,25.6465736,-100.382453,0.086956522,11,1,#c6cc14
+896,Alfonso Reyes con Priv. J.I. Ramon,25.653045,-100.397778,0.086956522,11,1,#c6cc14
+897,Corregidora con Las Torres,25.677908,-100.402368,0.086956522,11,1,#c6cc14
+898,Corregidora con Lerdo De Tejada,25.678594,-100.402112,0.086956522,11,1,#c6cc14
+899,Corregidora con Rincon De Las Mitras,25.6684308,-100.4029949,0.086956522,11,1,#c6cc14
+900,Fuentes Del Valle con Monte Esquilino,25.6645205,-100.359026,0.086956522,11,1,#c6cc14
+901,Fuentes Del Valle con Via Trionfa,25.663154,-100.3575,0.086956522,11,1,#c6cc14
+902,Gomez Morin con Via Julio Cesar,25.66363177,-100.3537023,0.086956522,11,1,#c6cc14
+903,Grafito con Plata,25.6844809,-100.4144176,0.086956522,11,1,#c6cc14
+904,Jeronimo Siller con Profa. Enedina Garcia,25.6477696,-100.3671679,0.086956522,11,1,#c6cc14
+905,L. Garza Ayala con Epigmenio Garcia,25.6653097,-100.4155127,0.086956522,11,1,#c6cc14
+906,Lazaro Cardenas con Paseo Sandra,25.640618,-100.315853,0.086956522,11,1,#c6cc14
+907,Manuel J. Clouthier con Colinas Del Valle,25.6755983,-100.3967359,0.086956522,11,1,#c6cc14
+908,Plutarco Elias Calles con Privada 16 De Septiembre,25.6513898,-100.3826233,0.086956522,11,1,#c6cc14
+909,Porfirio Diaz con Diego De Montemayor,25.6606054,-100.3951184,0.086956522,11,1,#c6cc14
+910,Real San Agustin con Ant. Cam A San Agustin,25.6318616,-100.336784,0.086956522,11,1,#c6cc14
+911,Rio Mississippi con Rio Pilon,25.660602,-100.373252,0.086956522,11,1,#c6cc14
+912,Rio Missouri con Rio Guayalejo,25.662914,-100.369913,0.086956522,11,1,#c6cc14
+913,Rio Suchiate con Usumacinta,25.6492124,-100.380405,0.086956522,11,1,#c6cc14
+914,Rio Tigris con Privada Rio Tigris,25.6441167,-100.3710834,0.086956522,11,1,#c6cc14
+915,Santa Barbara con Priv. Isaac Garza,25.65718111,-100.394617,0.086956522,11,1,#c6cc14
+916,Gomez Morin con Teotihuacan,25.6227064,-100.3690304,0.043478261,11,1,#c6cc14

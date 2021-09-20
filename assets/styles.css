@@ -160,3 +160,19 @@
     font-weight: normal !important;
 }
 
+
+
+/* Estilos de checklist blancos y negros */
+
+.btn-group .btn-secondary {
+  border-color: #ededed;
+  background-color: #ededed;
+  color: #535353;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: black;
+    background-color: white;
+    border-color: black;
+    border-width: 2px;
+}
