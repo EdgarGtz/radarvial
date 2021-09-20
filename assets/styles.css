@@ -149,17 +149,11 @@
 }
 
 
-
+/* Borde y color de cuadro calendario */
 .DateRangePickerInput__withBorder
 {
-  border:1px solid #545B62 !important;
+  border:2px solid #000 !important;
 }
-
-.tabla_int_row th
-{
-    font-weight: normal !important;
-}
-
 
 
 /* Estilos de checklist blancos y negros */

@@ -99,6 +99,8 @@ layout = html.Div([
 
             html.Br(),html.Br(),
 
+            html.Div([
+
                 # Calendario
                 html.Div([
 
@@ -109,7 +111,7 @@ layout = html.Div([
                         start_date = dt(2015, 1, 1),
                         end_date = dt(2020, 12, 31),
                         first_day_of_week = 1,
-                        #className="d-flex justify-content-center"
+                        className="p-0", #d-flex justify-content-center
                     ),
 
                 ]),
@@ -119,7 +121,7 @@ layout = html.Div([
                 # Días de la semana
                 dbc.Checklist(
                     id = 'checklist_dias_pub',
-                    className = 'radio-group btn-group', #d-flex justify-content-center
+                    className = 'radio-group btn-group p-0', #d-flex justify-content-center
                     labelClassName = 'btn btn-secondary',
                     labelCheckedClassName = 'active',
                     options=[
@@ -157,10 +159,13 @@ layout = html.Div([
                     allowCross=False,
                     dots=True,
                     tooltip={'always_visible': False , "placement":"bottom"},
-                    updatemode='mouseup'
+                    updatemode='mouseup',
+                    className='p-2'
                 ),
 
-                html.Br(),html.Br(),
+            ]),
+
+            html.Br(),html.Br(),
 
             # Gravedad
             html.Div([
