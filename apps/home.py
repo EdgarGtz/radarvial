@@ -165,7 +165,9 @@ layout = html.Div([
 
             ]),
 
-            html.Br(),html.Br(),
+            html.Br(),
+
+            html.Hr(className='pb-3'),
 
             # Gravedad
             html.Div([
@@ -230,7 +232,7 @@ layout = html.Div([
 
             dbc.RadioItems(
                 id = 'hv_graves_opciones_pub',
-                className = 'radio-group btn-group',
+                className = 'radio-group btn-group pb-3',
                 labelClassName = 'btn btn-secondary',
                 labelCheckedClassName = 'active',
                 value = 'todos',
@@ -241,7 +243,9 @@ layout = html.Div([
                 ]
             ),
 
-            html.Br(),html.Br(),html.Br(),
+            html.Br(),
+
+            html.Hr(className='pb-3'),
 
             # Tipo de Usuario
             html.Div([
@@ -311,7 +315,7 @@ layout = html.Div([
 
             dbc.Checklist(
                 id = 'checklist_tipo_usu_pub',
-                className = 'radio-group btn-group',
+                className = 'radio-group btn-group pb-3',
                 labelClassName = 'btn btn-secondary',
                 labelCheckedClassName = 'active',
                 options=[
@@ -328,7 +332,9 @@ layout = html.Div([
                 style={'display':'inline-block'},
             ),
 
-            html.Br(),html.Br(),html.Br(),
+            html.Br(),
+
+            html.Hr(className='pb-3'),
 
             # Red Vial de Lesiones Graves
             html.Div([
