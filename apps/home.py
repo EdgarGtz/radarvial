@@ -393,7 +393,7 @@ layout = html.Div([
                 className='px-4'
             )
 
-        ], className='pl-5',
+        ], className='pl-2',
         lg=4, md=4),
 
         # Mapa
