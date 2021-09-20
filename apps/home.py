@@ -320,7 +320,7 @@ layout = html.Div([
                     {'label': ' 🚂', 'value': 'Tren'},
                 ],
                 value=['Peaton','Bicicleta','Motocicleta','Camión de pasajeros', 'Auto','Camioneta','Carga pesada','Tren'],
-                style={}
+                style={'display':'inline-block'},
             ),
 
             html.Br(),html.Br(),html.Br(),
@@ -393,7 +393,7 @@ layout = html.Div([
                 className='px-4'
             )
 
-        ], className='pl-2',
+        ], className='pl-4',
         lg=4, md=4),
 
         # Mapa
@@ -414,7 +414,7 @@ layout = html.Div([
         ], style={'padding':'0', 'background-color':'#353433'}
         , lg=8, md=8),
     
-    ], className='p-0'),
+    ]),
 
 
     # Footer 
