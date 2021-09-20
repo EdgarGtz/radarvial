@@ -49,6 +49,8 @@ from apps import home, visualizaciones, radarvial
 
 from apps.home import (render_mapa_pub, toggle_modal_fecha, toggle_modal_g, toggle_modal_u, toggle_modal_rvlg)
 
+from apps.visualizaciones import (render_pub_periodo)
+
 # App Layout
 
 app.layout = html.Div([
@@ -149,6 +151,14 @@ def toggle_modal_rvlg(open_rvlg, close_rvlg, modal_rvlg):
     if open_rvlg or close_rvlg:
         return not modal_rvlg
     return modal_rvlg
+
+# Periodo
+@app.callback(Output('pub_periodo', 'figure'),
+    [Input('periodo_pub_tabs', 'active_tab')])
+
+def update_output(periodo_pub_tabs):
+    return render_pub_periodo(periodo_pub_tabs)
+
 
 if __name__ == '__main__':
 	app.run_server(debug=True)
