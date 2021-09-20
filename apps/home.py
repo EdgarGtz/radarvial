@@ -111,17 +111,15 @@ layout = html.Div([
                         start_date = dt(2015, 1, 1),
                         end_date = dt(2020, 12, 31),
                         first_day_of_week = 1,
-                        className="p-0", #d-flex justify-content-center
+                        className="p-0 pb-2", #d-flex justify-content-center
                     ),
 
                 ]),
 
-                html.Br(),
-
                 # Días de la semana
                 dbc.Checklist(
                     id = 'checklist_dias_pub',
-                    className = 'radio-group btn-group p-0', #d-flex justify-content-center
+                    className = 'radio-group btn-group p-0 pb-2', #d-flex justify-content-center
                     labelClassName = 'btn btn-secondary',
                     labelCheckedClassName = 'active',
                     options=[
@@ -137,7 +135,7 @@ layout = html.Div([
                     style={'display':'inline-block'}
                 ),
 
-                html.Br(),html.Br(),
+                html.Br(),
 
                 # Hora
                 dcc.RangeSlider(
