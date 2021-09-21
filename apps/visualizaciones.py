@@ -665,7 +665,7 @@ layout = html.Div([
                 style = {'textAlign': 'right'}))
     ], className='px-3 py-4 mx-0', style={'background-color': 'black','color': 'white'})
 
-], style={'background-color': '#fafafa'})
+], style={'background-color': '#fafafa'}) 
 
 # Por mes y dia del año
 def render_pub_periodo(pub_tiempos):
