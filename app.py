@@ -4,6 +4,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc 
 from dash.dependencies import Input, Output, State
 import dash_auth
+import base64
 
 
 app = dash.Dash(__name__, title='Radar Vial',
@@ -49,24 +50,65 @@ from apps import home, visualizaciones, radarvial
 
 from apps.home import (render_mapa_pub, toggle_modal_fecha, toggle_modal_g, toggle_modal_u, toggle_modal_rvlg)
 
-from apps.visualizaciones import (render_pub_periodo)
+from apps.visualizaciones import (render_pub_periodo, render_pub_vulne, render_pub_time)
+
+radar_img = "https://cdn-icons-png.flaticon.com/512/188/188595.png"
 
 # App Layout
 
 app.layout = html.Div([
 
-	dbc.NavbarSimple(
-		[
-			dbc.Button('Visualizaciones', href='/apps/visualizaciones', color='light'),
+  dbc.Row([
 
-			dbc.Button('¿Qué es Radar Vial?', href = '/apps/radarvial', color = 'light')
+    dbc.Col([
 
-		],
-		brand='Radar Vial',
-		brand_href='/apps/home'
-	),
+      html.A(
 
-	html.Div(id='page-content', children=[]),
+        dbc.Row([
+
+            dbc.Col([
+
+              html.Img(src=radar_img, height="40px",),
+              dbc.NavbarBrand(
+                html.H1("Radar Vial"), 
+                className="ml-2 pt-3", 
+                style={'color':'#fff','font-family':'Times New Roman'})
+
+            ], className='d-flex align-items-center pl-3',),
+
+          ],
+
+          align="center",
+          no_gutters=True,
+
+        ),
+
+        href="/apps/home",
+        className='ml-0'
+      ),
+
+    ], className='d-flex align-items-center'),
+
+    dbc.Col([
+
+      dbc.NavbarSimple([
+
+          dbc.Button('Visualizaciones', href='/apps/visualizaciones', color='#2A4A71', style={'color':'#fff'}),
+
+          dbc.Button('¿Qué es Radar Vial?', href = '/apps/radarvial', color = '#2A4A71', style={'color':'#fff'})
+
+          ],
+          brand_href='/apps/home',
+          style={'height':'80px',},
+          color="",
+      ),
+
+    ])
+
+
+  ], style={'background-color':'#2A4A71'}, className='mx-0'),
+
+	html.Div(id='page-content', children=[],),
 	dcc.Location(id='url', refresh=False)
 
 ])
@@ -86,6 +128,7 @@ def display_page(pathname):
 
 #----------
 
+# Mapa
 @app.callback(Output('mapa_pub', 'figure'), 
     [Input('calendario_pub', 'start_date'),
     Input('calendario_pub', 'end_date'),
@@ -152,13 +195,29 @@ def toggle_modal_rvlg(open_rvlg, close_rvlg, modal_rvlg):
         return not modal_rvlg
     return modal_rvlg
 
-# Periodo
+
+# Por mes y dia del año
 @app.callback(Output('pub_periodo', 'figure'),
-    [Input('periodo_pub_tabs', 'active_tab')])
+    [Input('pub_tiempos', 'value')])
 
-def update_output(periodo_pub_tabs):
-    return render_pub_periodo(periodo_pub_tabs)
+def update_output(pub_tiempos):
+    return render_pub_periodo(pub_tiempos)
 
+
+# Por vulnerabilidad de usuario
+@app.callback(Output('pub_vulne', 'figure'),
+    [Input('pub_vul_año', 'value')])
+
+def update_output(pub_vulne):
+    return render_pub_vulne(pub_vulne)
+
+
+# Por tipo de usuario
+@app.callback(Output('pub_time', 'figure'),
+    [Input('pub_gravedad', 'value')])
+
+def update_output(pub_gravedad):
+    return render_pub_time(pub_gravedad)
 
 if __name__ == '__main__':
 	app.run_server(debug=True)

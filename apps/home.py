@@ -26,13 +26,7 @@ encoded_img2 = base64.b64encode(open(img2, 'rb').read()).decode('ascii')
 layout = html.Div([
 
     # Banner Principal
-
-    dbc.Row(
-
-        style={'background-color':'#2A4A71','color':'white','height':'5vh','padding':'0'},
-    ),
-
-        
+       
     dbc.Row([
 
         # Filtros
@@ -423,18 +417,22 @@ layout = html.Div([
         ], style={'padding':'0', 'background-color':'#353433'}
         , lg=8, md=8),
     
-    ]),
+    ], className='mx-0'),
 
 
     # Footer 
 
     dbc.Row([
         dbc.Col(
-            html.H6('Instituto Municipal de Planeación y Gestión Urbana')),
+            html.H6('Instituto Municipal de Planeación y Gestión Urbana'),
+            lg=6, md=6,),
         dbc.Col(
             html.H6('San Pedro Garza García, Nuevo León, México',
-                style = {'textAlign': 'right'}))
-    ], className='px-3 py-4', style={'background-color': 'black','color': 'white'})
+                style = {'textAlign': 'right'}),
+            lg=6, md=6,
+        )
+    ], className='px-3 py-4 mx-0',
+    style={'background-color': 'black','color': 'white'})
 
 
 ])

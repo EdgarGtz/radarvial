@@ -19,7 +19,7 @@ layout = html.Div([
             html.H1('¿Qué es Radar Vial?',
                 style={'position': 'absolute', 'top': '50%', 'left': '50%',
                 'transform': 'translate(-50%, -50%)','color': 'white','text-align':'center'})
-        ])
+        ]), className='mx-0'
     ),
 
 
@@ -31,7 +31,7 @@ layout = html.Div([
         dbc.Col(
             html.H6('San Pedro Garza García, Nuevo León, México',
                 style = {'textAlign': 'right'}))
-    ], className='px-3 py-4', style={'background-color': 'black','color': 'white'})
+    ], className='px-3 py-4 mx-0', style={'background-color': 'black','color': 'white'})
 
 
 ])
