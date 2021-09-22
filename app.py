@@ -136,12 +136,14 @@ def display_page(pathname):
     Input('checklist_dias_pub', 'value'),
     Input('hv_graves_opciones_pub', 'value'), 
     Input('rvlg', 'on'),
+    Input('rvlg_intg', 'on'),
+    Input('rvlg_int', 'on'),
     Input('checklist_tipo_usu_pub', 'value'),
     ],
             prevent_initial_call=False)
 
-def get(start_date, end_date, slider_hora_pub, checklist_dias_pub, hv_graves_opciones_pub, rvlg, checklist_tipo_usu_pub):
-    return render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, hv_graves_opciones_pub, rvlg, checklist_tipo_usu_pub)
+def get(start_date, end_date, slider_hora_pub, checklist_dias_pub, hv_graves_opciones_pub, rvlg, rvlg_intg, rvlg_int, checklist_tipo_usu_pub):
+    return render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, hv_graves_opciones_pub, rvlg, rvlg_intg, rvlg_int, checklist_tipo_usu_pub)
 
 
 #Modal Fecha

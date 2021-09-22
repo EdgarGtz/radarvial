@@ -152,7 +152,7 @@
 /* Borde y color de cuadro calendario */
 .DateRangePickerInput__withBorder
 {
-  border:2px solid #000 !important;
+  border:1px solid #000 !important;
 }
 
 
@@ -168,5 +168,5 @@
     color: black;
     background-color: white;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
 }

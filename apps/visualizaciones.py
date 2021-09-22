@@ -600,7 +600,7 @@ layout = html.Div([
 
                 dbc.CardBody([
 
-                    html.H1(['Por tipo de hecho vial y sus causas']),
+                    html.H1(['Por tipo y sus causas']),
                     html.Hr(),
 
                     dcc.Graph(
@@ -622,7 +622,7 @@ layout = html.Div([
 
         ], lg=6, md=6),
 
-        # Pending
+        # Por lesionados y fallecidos
         dbc.Col([
 
             dbc.Card([
