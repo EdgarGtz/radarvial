@@ -524,52 +524,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
     # Calles
     elif checklist_dias_pub != [] and hv_graves_opciones_pub == 'todos' and rvlg == True and rvlg_intg == False and rvlg_int == False:
 
-        hvi = pd.read_csv("assets/hechosviales_lite.csv", encoding='ISO-8859-1')
-        
-        # Cambiar variables a string
-        hvi["año"] = hvi["año"].astype(str)
-        hvi["mes"] = hvi["mes"].astype(str)
-        hvi["dia"] = hvi["dia"].astype(str)
-
-        # Crear variable datetime
-        hvi["fecha"] = hvi["dia"] +"/"+ hvi["mes"] + "/"+ hvi["año"]
-        hvi["fecha"]  = pd.to_datetime(hvi["fecha"], dayfirst = True, format ='%d/%m/%Y') # - %H
-
-        # Duplicar columna de fecha y set index
-        hvi["fecha2"] = hvi["fecha"]
-        hvi = hvi.set_index("fecha")
-        hvi = hvi.sort_index()
-
-        # Filtro por calendario
-        hvi_cal = hvi.loc[start_date:end_date]
-
-        # Filtro por día de la semana
-        hvi_cal_dsm = hvi_cal[hvi_cal["dia_semana"].isin(checklist_dias_pub)]
-
-        # Filtro por hora
-        hvi_cal_dsm_hora = hvi_cal_dsm[(hvi_cal_dsm['hora']>=slider_hora_pub[0])&(hvi_cal_dsm['hora']<=slider_hora_pub[1])]
-
-        # Filtro por tipo de usuario
-        hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
-
-        # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-        
-        # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con coordenadas y hechos viales
-        join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
-
-        # Tabla de intersecciones con coordenadas, hechos viales y lesionados y fallecidos
-        join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
-
-        # Cambiar nombre
-        mapa_data = join_hv_lf 
-
         # HIGH INJURY NETWORK
 
         hni_p1 = gpd.read_file('assets/hin/p1.geojson')
@@ -577,7 +531,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         hni_p3 = gpd.read_file('assets/hin/p3.geojson')
         hni_p4 = gpd.read_file('assets/hin/p4.geojson')
         hni_p5 = gpd.read_file('assets/hin/p5.geojson')
-        hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
 
         lats_p1 = []
         lons_p1 = []
@@ -684,67 +637,26 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
                 lons_p5 = np.append(lons_p5, None)
                 names_p5 = np.append(names_p5, None)
 
-        mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
-        colores = mapa_data.color_todos
-
         #-- Graph
-        mapa_pub = go.Figure(
-            px.scatter_mapbox(mapa_data, lat="Lat", lon="Lon",
-            size = 'hechos_viales',
-            size_max=20, 
-            zoom=12.5, 
-            custom_data=['lesionados', 'fallecidos','interseccion'],
-            hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
-            opacity=0))
-        mapa_pub.update_traces(marker_color="#42f581",
-            hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
+        trace_list2 = [
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lat=lats_p1, lon=lons_p1, line = {'color': '#a60000','width':4},opacity=0.7),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p2, lat = lats_p2, line = {'color': '#cf0202','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p3, lat = lats_p3, line = {'color': '#ed3232','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p4, lat = lats_p4, line = {'color': '#ed5732','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p5, lat = lats_p5, line = {'color': '#ed7a32','width':4, }, opacity=0.7),
+        ]
+
+        mapa_pub = go.Figure(data=trace_list2)
         mapa_pub.update_layout(clickmode='event+select', 
-             mapbox=dict(
-                accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
-                style="dark"
-            ),
-            showlegend=False,
-            margin = dict(t=0, l=0, r=0, b=0)
-        )
+                     mapbox=dict(
+                        accesstoken=mapbox_access_token,
+                        center=dict(lat=25.6572, lon=-100.3689),
+                        style="dark",
+                        zoom=12.5,
+                    ),
+                    showlegend=False,
+                    margin = dict(t=0, l=0, r=0, b=0),
+                )
 
         return mapa_pub
 
@@ -1293,62 +1205,30 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         colores = mapa_data.color_todos
 
         #-- Graph
-        mapa_pub = go.Figure(
-            px.scatter_mapbox(mapa_data, lat="Lat", lon="Lon",
-            size = 'hechos_viales',
-            size_max=20, 
-            zoom=12.5, 
-            custom_data=['lesionados', 'fallecidos','interseccion'],
-            hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
-            opacity=1))
+        trace_list2 = [
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lat=lats_p1, lon=lons_p1, line = {'color': '#a60000','width':4},opacity=0.7),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p2, lat = lats_p2, line = {'color': '#cf0202','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p3, lat = lats_p3, line = {'color': '#ed3232','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p4, lat = lats_p4, line = {'color': '#ed5732','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p5, lat = lats_p5, line = {'color': '#ed7a32','width':4, }, opacity=0.7),
+        ]
+
+        trace_list1 = [
+            go.Scattermapbox(lat=mapa_data.Lat, lon=mapa_data.Lon, mode="markers", marker = go.scattermapbox.Marker(size=mapa_data.hechos_viales,color=colores,opacity=1, sizemode='area')),
+        ]
+
+        mapa_pub = go.Figure(data=trace_list1+trace_list2)
         mapa_pub.update_traces(marker_color="#42f581",
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
         mapa_pub.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
                 center=dict(lat=25.6572, lon=-100.3689),
-                style="dark"
+                style="dark",
+                zoom=12.5,
             ),
             showlegend=False,
-            margin = dict(t=0, l=0, r=0, b=0)
+            margin = dict(t=0, l=0, r=0, b=0),
         )
 
         return mapa_pub  
@@ -1402,122 +1282,10 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Cambiar nombre
         mapa_data = join_hv_lf 
 
-        # HIGH INJURY NETWORK
-
-        hni_p1 = gpd.read_file('assets/hin/p1.geojson')
-        hni_p2 = gpd.read_file('assets/hin/p2.geojson')
-        hni_p3 = gpd.read_file('assets/hin/p3.geojson')
-        hni_p4 = gpd.read_file('assets/hin/p4.geojson')
-        hni_p5 = gpd.read_file('assets/hin/p5.geojson')
         hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
 
-        lats_p1 = []
-        lons_p1 = []
-        names_p1 = []
-
-        for feature, name in zip(hni_p1.geometry, hni_p1.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p1 = np.append(lats_p1, y)
-                lons_p1 = np.append(lons_p1, x)
-                names_p1 = np.append(names_p1, [name]*len(y))
-                
-                lats_p1 = np.append(lats_p1, None)
-                lons_p1 = np.append(lons_p1, None)
-                names_p1 = np.append(names_p1, None)
-
-        lats_p2 = []
-        lons_p2 = []
-        names_p2 = []
-
-        for feature, name in zip(hni_p2.geometry, hni_p2.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p2 = np.append(lats_p2, y)
-                lons_p2 = np.append(lons_p2, x)
-                names_p2 = np.append(names_p2, [name]*len(y))
-                
-                lats_p2 = np.append(lats_p2, None)
-                lons_p2 = np.append(lons_p2, None)
-                names_p2 = np.append(names_p2, None)
-                
-        lats_p3 = []
-        lons_p3 = []
-        names_p3 = []
-
-        for feature, name in zip(hni_p3.geometry, hni_p3.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p3 = np.append(lats_p3, y)
-                lons_p3 = np.append(lons_p3, x)
-                names_p3 = np.append(names_p3, [name]*len(y))
-                
-                lats_p3 = np.append(lats_p3, None)
-                lons_p3 = np.append(lons_p3, None)
-                names_p3 = np.append(names_p3, None)
-                
-        lats_p4 = []
-        lons_p4 = []
-        names_p4 = []
-
-        for feature, name in zip(hni_p4.geometry, hni_p4.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p4 = np.append(lats_p4, y)
-                lons_p4 = np.append(lons_p4, x)
-                names_p4 = np.append(names_p4, [name]*len(y))
-                
-                lats_p4 = np.append(lats_p4, None)
-                lons_p4 = np.append(lons_p4, None)
-                names_p4 = np.append(names_p4, None)
-
-        lats_p5 = []
-        lons_p5 = []
-        names_p5 = []
-
-        for feature, name in zip(hni_p5.geometry, hni_p5.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p5 = np.append(lats_p5, y)
-                lons_p5 = np.append(lons_p5, x)
-                names_p5 = np.append(names_p5, [name]*len(y))
-                
-                lats_p5 = np.append(lats_p5, None)
-                lons_p5 = np.append(lons_p5, None)
-                names_p5 = np.append(names_p5, None)
-
         mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
-        colores = mapa_data.color_transp
+        colores = mapa_data.color_todos
 
         #-- Graph
         mapa_pub = go.Figure(
@@ -1528,46 +1296,8 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
             custom_data=['lesionados', 'fallecidos','interseccion'],
             hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
             opacity=1))
-        mapa_pub.update_traces(marker_color="#42f581",
+        mapa_pub.update_traces(marker_color=colores,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
         mapa_pub.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
@@ -1814,55 +1544,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
     # Calles
     elif checklist_dias_pub != [] and hv_graves_opciones_pub == 'lesionados' and rvlg == True and rvlg_intg == False and rvlg_int == False:
 
-        hvi = pd.read_csv("assets/hechosviales_lite.csv", encoding='ISO-8859-1')
-        
-        # Cambiar variables a string
-        hvi["año"] = hvi["año"].astype(str)
-        hvi["mes"] = hvi["mes"].astype(str)
-        hvi["dia"] = hvi["dia"].astype(str)
-
-        # Crear variable datetime
-        hvi["fecha"] = hvi["dia"] +"/"+ hvi["mes"] + "/"+ hvi["año"]
-        hvi["fecha"]  = pd.to_datetime(hvi["fecha"], dayfirst = True, format ='%d/%m/%Y') # - %H
-
-        # Duplicar columna de fecha y set index
-        hvi["fecha2"] = hvi["fecha"]
-        hvi = hvi.set_index("fecha")
-        hvi = hvi.sort_index()
-
-        # Filtro por calendario
-        hvi_cal = hvi.loc[start_date:end_date]
-
-        # Filtro por día de la semana
-        hvi_cal_dsm = hvi_cal[hvi_cal["dia_semana"].isin(checklist_dias_pub)]
-
-        # Filtro por hora
-        hvi_cal_dsm_hora = hvi_cal_dsm[(hvi_cal_dsm['hora']>=slider_hora_pub[0])&(hvi_cal_dsm['hora']<=slider_hora_pub[1])]
-
-        # Filtro por tipo de usuario
-        hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
-
-        # Filtro por hechos viales lesionados
-        hvi_cal_dsm_hora_usu_les = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.lesionados != 0]
-
-        # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-        
-        # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con coordenadas y hechos viales
-        join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
-
-        # Tabla de intersecciones con coordenadas, hechos viales y lesionados y fallecidos
-        join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
-
-        # Cambiar nombre
-        mapa_data = join_hv_lf 
-
         # HIGH INJURY NETWORK
 
         hni_p1 = gpd.read_file('assets/hin/p1.geojson')
@@ -1870,7 +1551,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         hni_p3 = gpd.read_file('assets/hin/p3.geojson')
         hni_p4 = gpd.read_file('assets/hin/p4.geojson')
         hni_p5 = gpd.read_file('assets/hin/p5.geojson')
-        hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
 
         lats_p1 = []
         lons_p1 = []
@@ -1977,67 +1657,26 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
                 lons_p5 = np.append(lons_p5, None)
                 names_p5 = np.append(names_p5, None)
 
-        mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
-        colores = mapa_data.color_todos
-
         #-- Graph
-        mapa_pub = go.Figure(
-            px.scatter_mapbox(mapa_data, lat="Lat", lon="Lon",
-            size = 'hechos_viales',
-            size_max=20, 
-            zoom=12.5, 
-            custom_data=['lesionados', 'fallecidos','interseccion'],
-            hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
-            opacity=0))
-        mapa_pub.update_traces(marker_color="#c6cc14",
-            hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
+        trace_list2 = [
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lat=lats_p1, lon=lons_p1, line = {'color': '#a60000','width':4},opacity=0.7),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p2, lat = lats_p2, line = {'color': '#cf0202','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p3, lat = lats_p3, line = {'color': '#ed3232','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p4, lat = lats_p4, line = {'color': '#ed5732','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p5, lat = lats_p5, line = {'color': '#ed7a32','width':4, }, opacity=0.7),
+        ]
+
+        mapa_pub = go.Figure(data=trace_list2)
         mapa_pub.update_layout(clickmode='event+select', 
-             mapbox=dict(
-                accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
-                style="dark"
-            ),
-            showlegend=False,
-            margin = dict(t=0, l=0, r=0, b=0)
-        )
+                     mapbox=dict(
+                        accesstoken=mapbox_access_token,
+                        center=dict(lat=25.6572, lon=-100.3689),
+                        style="dark",
+                        zoom=12.5,
+                    ),
+                    showlegend=False,
+                    margin = dict(t=0, l=0, r=0, b=0),
+                )
 
         return mapa_pub
 
@@ -2148,17 +1787,14 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Filtro por tipo de usuario
         hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
 
-        # Filtro por hechos viales lesionados
-        hvi_cal_dsm_hora_usu_les = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.lesionados != 0]
-
         # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
+        coords = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        hechosviales = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
         
         # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        les_fall = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con coordenadas y hechos viales
         join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
@@ -2172,8 +1808,8 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # HIGH INJURY NETWORK
 
         hin_colores = pd.read_csv("assets/hin/hin_colores_int.csv", encoding='ISO-8859-1')
-        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left').fillna(0)
-        colores = mapa_data.color_les
+        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left')
+        colores = mapa_data.color_transp
 
         #-- Graph
         mapa_pub = go.Figure(
@@ -2710,119 +2346,7 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Cambiar nombre
         mapa_data = join_hv_lf  
 
-        # HIGH INJURY NETWORK
-
-        hni_p1 = gpd.read_file('assets/hin/p1.geojson')
-        hni_p2 = gpd.read_file('assets/hin/p2.geojson')
-        hni_p3 = gpd.read_file('assets/hin/p3.geojson')
-        hni_p4 = gpd.read_file('assets/hin/p4.geojson')
-        hni_p5 = gpd.read_file('assets/hin/p5.geojson')
         hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
-
-        lats_p1 = []
-        lons_p1 = []
-        names_p1 = []
-
-        for feature, name in zip(hni_p1.geometry, hni_p1.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p1 = np.append(lats_p1, y)
-                lons_p1 = np.append(lons_p1, x)
-                names_p1 = np.append(names_p1, [name]*len(y))
-                
-                lats_p1 = np.append(lats_p1, None)
-                lons_p1 = np.append(lons_p1, None)
-                names_p1 = np.append(names_p1, None)
-
-        lats_p2 = []
-        lons_p2 = []
-        names_p2 = []
-
-        for feature, name in zip(hni_p2.geometry, hni_p2.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p2 = np.append(lats_p2, y)
-                lons_p2 = np.append(lons_p2, x)
-                names_p2 = np.append(names_p2, [name]*len(y))
-                
-                lats_p2 = np.append(lats_p2, None)
-                lons_p2 = np.append(lons_p2, None)
-                names_p2 = np.append(names_p2, None)
-                
-        lats_p3 = []
-        lons_p3 = []
-        names_p3 = []
-
-        for feature, name in zip(hni_p3.geometry, hni_p3.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p3 = np.append(lats_p3, y)
-                lons_p3 = np.append(lons_p3, x)
-                names_p3 = np.append(names_p3, [name]*len(y))
-                
-                lats_p3 = np.append(lats_p3, None)
-                lons_p3 = np.append(lons_p3, None)
-                names_p3 = np.append(names_p3, None)
-                
-        lats_p4 = []
-        lons_p4 = []
-        names_p4 = []
-
-        for feature, name in zip(hni_p4.geometry, hni_p4.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p4 = np.append(lats_p4, y)
-                lons_p4 = np.append(lons_p4, x)
-                names_p4 = np.append(names_p4, [name]*len(y))
-                
-                lats_p4 = np.append(lats_p4, None)
-                lons_p4 = np.append(lons_p4, None)
-                names_p4 = np.append(names_p4, None)
-
-        lats_p5 = []
-        lons_p5 = []
-        names_p5 = []
-
-        for feature, name in zip(hni_p5.geometry, hni_p5.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p5 = np.append(lats_p5, y)
-                lons_p5 = np.append(lons_p5, x)
-                names_p5 = np.append(names_p5, [name]*len(y))
-                
-                lats_p5 = np.append(lats_p5, None)
-                lons_p5 = np.append(lons_p5, None)
-                names_p5 = np.append(names_p5, None)
 
         mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
         colores = mapa_data.color_les
@@ -2836,46 +2360,8 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
             custom_data=['lesionados', 'fallecidos','interseccion'],
             hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
             opacity=1))
-        mapa_pub.update_traces(marker_color="#c6cc14",
+        mapa_pub.update_traces(marker_color=colores,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
         mapa_pub.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
@@ -2919,17 +2405,14 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Filtro por tipo de usuario
         hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
 
-        # Filtro por hechos viales lesionados
-        hvi_cal_dsm_hora_usu_les = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.lesionados != 0]
-
         # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
+        coords = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        hechosviales = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
         
         # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_les.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        les_fall = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con coordenadas y hechos viales
         join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
@@ -2938,7 +2421,7 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
 
         # Cambiar nombre
-        mapa_data = join_hv_lf  
+        mapa_data = join_hv_lf 
 
         # HIGH INJURY NETWORK
 
@@ -3054,7 +2537,7 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
                 lons_p5 = np.append(lons_p5, None)
                 names_p5 = np.append(names_p5, None)
 
-        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left').fillna(0)
+        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left')
         colores = mapa_data.color_todos
 
         #-- Graph
@@ -3124,55 +2607,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
     # Calles
     elif checklist_dias_pub != [] and hv_graves_opciones_pub == 'fallecidos' and rvlg == True and rvlg_intg == False and rvlg_int == False:
 
-        hvi = pd.read_csv("assets/hechosviales_lite.csv", encoding='ISO-8859-1')
-        
-        # Cambiar variables a string
-        hvi["año"] = hvi["año"].astype(str)
-        hvi["mes"] = hvi["mes"].astype(str)
-        hvi["dia"] = hvi["dia"].astype(str)
-
-        # Crear variable datetime
-        hvi["fecha"] = hvi["dia"] +"/"+ hvi["mes"] + "/"+ hvi["año"]
-        hvi["fecha"]  = pd.to_datetime(hvi["fecha"], dayfirst = True, format ='%d/%m/%Y') # - %H
-
-        # Duplicar columna de fecha y set index
-        hvi["fecha2"] = hvi["fecha"]
-        hvi = hvi.set_index("fecha")
-        hvi = hvi.sort_index()
-
-        # Filtro por calendario
-        hvi_cal = hvi.loc[start_date:end_date]
-
-        # Filtro por día de la semana
-        hvi_cal_dsm = hvi_cal[hvi_cal["dia_semana"].isin(checklist_dias_pub)]
-
-        # Filtro por hora
-        hvi_cal_dsm_hora = hvi_cal_dsm[(hvi_cal_dsm['hora']>=slider_hora_pub[0])&(hvi_cal_dsm['hora']<=slider_hora_pub[1])]
-
-        # Filtro por tipo de usuario
-        hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
-
-        # Filtro por hechos viales fallecidos
-        hvi_cal_dsm_hora_usu_fall = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.fallecidos != 0]
-
-        # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-        
-        # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
-
-        # Tabla de intersecciones con coordenadas y hechos viales
-        join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
-
-        # Tabla de intersecciones con coordenadas, hechos viales y lesionados y fallecidos
-        join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
-
-        # Cambiar nombre
-        mapa_data = join_hv_lf 
-
         # HIGH INJURY NETWORK
 
         hni_p1 = gpd.read_file('assets/hin/p1.geojson')
@@ -3180,7 +2614,6 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         hni_p3 = gpd.read_file('assets/hin/p3.geojson')
         hni_p4 = gpd.read_file('assets/hin/p4.geojson')
         hni_p5 = gpd.read_file('assets/hin/p5.geojson')
-        hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
 
         lats_p1 = []
         lons_p1 = []
@@ -3287,67 +2720,26 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
                 lons_p5 = np.append(lons_p5, None)
                 names_p5 = np.append(names_p5, None)
 
-        mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
-        colores = mapa_data.color_todos
-
         #-- Graph
-        mapa_pub = go.Figure(
-            px.scatter_mapbox(mapa_data, lat="Lat", lon="Lon",
-            size = 'hechos_viales',
-            size_max=20, 
-            zoom=12.5, 
-            custom_data=['lesionados', 'fallecidos','interseccion'],
-            hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
-            opacity=0))
-        mapa_pub.update_traces(marker_color="#f54242",
-            hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
+        trace_list2 = [
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lat=lats_p1, lon=lons_p1, line = {'color': '#a60000','width':4},opacity=0.7),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p2, lat = lats_p2, line = {'color': '#cf0202','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p3, lat = lats_p3, line = {'color': '#ed3232','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p4, lat = lats_p4, line = {'color': '#ed5732','width':4}, opacity=0.7,),
+            go.Scattermapbox(hoverinfo="skip", mode = "lines", lon = lons_p5, lat = lats_p5, line = {'color': '#ed7a32','width':4, }, opacity=0.7),
+        ]
+
+        mapa_pub = go.Figure(data=trace_list2)
         mapa_pub.update_layout(clickmode='event+select', 
-             mapbox=dict(
-                accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
-                style="dark"
-            ),
-            showlegend=False,
-            margin = dict(t=0, l=0, r=0, b=0)
-        )
+                     mapbox=dict(
+                        accesstoken=mapbox_access_token,
+                        center=dict(lat=25.6572, lon=-100.3689),
+                        style="dark",
+                        zoom=12.5,
+                    ),
+                    showlegend=False,
+                    margin = dict(t=0, l=0, r=0, b=0),
+                )
 
         return mapa_pub
 
@@ -3458,17 +2850,14 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Filtro por tipo de usuario
         hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
 
-        # Filtro por hechos viales fallecidos
-        hvi_cal_dsm_hora_usu_fall = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.fallecidos != 0]
-
         # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
+        coords = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        hechosviales = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
         
         # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        les_fall = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con coordenadas y hechos viales
         join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
@@ -3477,13 +2866,13 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
 
         # Cambiar nombre
-        mapa_data = join_hv_lf  
+        mapa_data = join_hv_lf 
 
         # HIGH INJURY NETWORK
 
         hin_colores = pd.read_csv("assets/hin/hin_colores_int.csv", encoding='ISO-8859-1')
-        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left').fillna(0)
-        colores = mapa_data.color_les
+        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left')
+        colores = mapa_data.color_transp
 
         #-- Graph
         mapa_pub = go.Figure(
@@ -4018,124 +3407,12 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
 
         # Cambiar nombre
-        mapa_data = join_hv_lf   
+        mapa_data = join_hv_lf  
 
-        # HIGH INJURY NETWORK
-
-        hni_p1 = gpd.read_file('assets/hin/p1.geojson')
-        hni_p2 = gpd.read_file('assets/hin/p2.geojson')
-        hni_p3 = gpd.read_file('assets/hin/p3.geojson')
-        hni_p4 = gpd.read_file('assets/hin/p4.geojson')
-        hni_p5 = gpd.read_file('assets/hin/p5.geojson')
         hin_colores = pd.read_csv("assets/hin/hin_colores.csv", encoding='ISO-8859-1')
 
-        lats_p1 = []
-        lons_p1 = []
-        names_p1 = []
-
-        for feature, name in zip(hni_p1.geometry, hni_p1.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p1 = np.append(lats_p1, y)
-                lons_p1 = np.append(lons_p1, x)
-                names_p1 = np.append(names_p1, [name]*len(y))
-                
-                lats_p1 = np.append(lats_p1, None)
-                lons_p1 = np.append(lons_p1, None)
-                names_p1 = np.append(names_p1, None)
-
-        lats_p2 = []
-        lons_p2 = []
-        names_p2 = []
-
-        for feature, name in zip(hni_p2.geometry, hni_p2.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p2 = np.append(lats_p2, y)
-                lons_p2 = np.append(lons_p2, x)
-                names_p2 = np.append(names_p2, [name]*len(y))
-                
-                lats_p2 = np.append(lats_p2, None)
-                lons_p2 = np.append(lons_p2, None)
-                names_p2 = np.append(names_p2, None)
-                
-        lats_p3 = []
-        lons_p3 = []
-        names_p3 = []
-
-        for feature, name in zip(hni_p3.geometry, hni_p3.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p3 = np.append(lats_p3, y)
-                lons_p3 = np.append(lons_p3, x)
-                names_p3 = np.append(names_p3, [name]*len(y))
-                
-                lats_p3 = np.append(lats_p3, None)
-                lons_p3 = np.append(lons_p3, None)
-                names_p3 = np.append(names_p3, None)
-                
-        lats_p4 = []
-        lons_p4 = []
-        names_p4 = []
-
-        for feature, name in zip(hni_p4.geometry, hni_p4.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p4 = np.append(lats_p4, y)
-                lons_p4 = np.append(lons_p4, x)
-                names_p4 = np.append(names_p4, [name]*len(y))
-                
-                lats_p4 = np.append(lats_p4, None)
-                lons_p4 = np.append(lons_p4, None)
-                names_p4 = np.append(names_p4, None)
-
-        lats_p5 = []
-        lons_p5 = []
-        names_p5 = []
-
-        for feature, name in zip(hni_p5.geometry, hni_p5.NOMBRE):
-            if isinstance(feature, shapely.geometry.linestring.LineString):
-                linestrings = [feature]
-            elif isinstance(feature, shapely.geometry.multilinestring.MultiLineString):
-                linestrings = feature.geoms
-            else:
-                continue
-            for linestring in linestrings:
-                x, y = linestring.xy
-                lats_p5 = np.append(lats_p5, y)
-                lons_p5 = np.append(lons_p5, x)
-                names_p5 = np.append(names_p5, [name]*len(y))
-                
-                lats_p5 = np.append(lats_p5, None)
-                lons_p5 = np.append(lons_p5, None)
-                names_p5 = np.append(names_p5, None)
-
         mapa_data = pd.merge(mapa_data, hin_colores, on ='interseccion', how ='left')
-        colores = mapa_data.color_les
+        colores = mapa_data.color_fall
 
         #-- Graph
         mapa_pub = go.Figure(
@@ -4146,46 +3423,8 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
             custom_data=['lesionados', 'fallecidos','interseccion'],
             hover_data={'Lat':False, 'Lon':False, 'interseccion':True, 'hechos_viales':True, 'lesionados':True, 'fallecidos':True, },
             opacity=1))
-        mapa_pub.update_traces(marker_color="#f54242",
+        mapa_pub.update_traces(marker_color=colores,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p5,
-            lat = lats_p5,
-            line = {'color': '#ed7a32','width':4, },
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p4,
-            lat = lats_p4,
-            line = {'color': '#ed5732','width':4},
-            opacity=0.7,
-            ))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p3,
-            lat = lats_p3,
-            line = {'color': '#ed3232','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            mode = "lines",
-            lon = lons_p2,
-            lat = lats_p2,
-            line = {'color': '#cf0202','width':4},
-            opacity=0.7,))
-        mapa_pub.add_traces(go.Scattermapbox(
-            hoverinfo="skip",
-            lat=lats_p1, 
-            lon=lons_p1, 
-            mode="lines",
-            line = {'color': '#a60000','width':4},
-            opacity=0.7,
-            ))
         mapa_pub.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
@@ -4229,17 +3468,14 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         # Filtro por tipo de usuario
         hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(checklist_tipo_usu_pub))]
 
-        # Filtro por hechos viales fallecidos
-        hvi_cal_dsm_hora_usu_fall = hvi_cal_dsm_hora_usu[hvi_cal_dsm_hora_usu.fallecidos != 0]
-
         # Tabla de intersecciones con coordenadas mapeadas
-        coords = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
+        coords = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["Lat","Lon"]).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con suma de hechos viales
-        hechosviales = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        hechosviales = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
         
         # Tabla de intersecciones con suma de lesionados y fallecidos
-        les_fall = hvi_cal_dsm_hora_usu_fall.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
+        les_fall = hvi_cal_dsm_hora_usu.pivot_table(index="interseccion", values=["lesionados","fallecidos"], aggfunc=np.sum).reset_index().rename_axis(None, axis=1)
 
         # Tabla de intersecciones con coordenadas y hechos viales
         join_hv = pd.merge(coords, hechosviales, on ='interseccion', how ='left')
@@ -4248,7 +3484,7 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
         join_hv_lf = pd.merge(join_hv, les_fall, on ='interseccion', how ='left')
 
         # Cambiar nombre
-        mapa_data = join_hv_lf   
+        mapa_data = join_hv_lf 
 
         # HIGH INJURY NETWORK
 
@@ -4364,7 +3600,7 @@ def render_mapa_pub(start_date, end_date, slider_hora_pub, checklist_dias_pub, h
                 lons_p5 = np.append(lons_p5, None)
                 names_p5 = np.append(names_p5, None)
 
-        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left').fillna(0)
+        mapa_data = pd.merge(hin_colores, mapa_data, on ='interseccion', how ='left')
         colores = mapa_data.color_todos
 
         #-- Graph

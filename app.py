@@ -106,7 +106,7 @@ app.layout = html.Div([
     ])
 
 
-  ], style={'background-color':'#2A4A71'}, className='mx-0'),
+  ], style={'background-color':'#555B61'}, className='mx-0'),
 
 	html.Div(id='page-content', children=[],),
 	dcc.Location(id='url', refresh=False)
