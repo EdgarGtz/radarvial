@@ -119,15 +119,15 @@ pub_tipycau.add_trace(go.Bar(
             color='#90c6e1',
             )
 ))
-pub_tipycau.add_trace(go.Bar(
-            y=['Volcadura','Incendio','Estrellamiento','Choque de Reversa','Choque de Crucero','Choque de Frente','Choque Lateral','Choque Diverso','Caida de Persona','Atropello','Alcance'],
-            x=df_new['Sin causa registrada'],
-            name='Sin causa registrada',
-            orientation='h',
-            marker=dict(
-            color='#e190d9',
-            )
-))
+# pub_tipycau.add_trace(go.Bar(
+#             y=['Volcadura','Incendio','Estrellamiento','Choque de Reversa','Choque de Crucero','Choque de Frente','Choque Lateral','Choque Diverso','Caida de Persona','Atropello','Alcance'],
+#             x=df_new['Sin causa registrada'],
+#             name='Sin causa registrada',
+#             orientation='h',
+#             marker=dict(
+#             color='#e190d9',
+#             )
+# ))
 pub_tipycau.add_trace(go.Bar(
             y=['Volcadura','Incendio','Estrellamiento','Choque de Reversa','Choque de Crucero','Choque de Frente','Choque Lateral','Choque Diverso','Caida de Persona','Atropello','Alcance'],
             x=df_new['Otros'],
