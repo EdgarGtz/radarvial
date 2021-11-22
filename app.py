@@ -79,7 +79,6 @@ app.layout = html.Div([
           ],
 
           align="center",
-          no_gutters=True,
 
         ),
 
