@@ -48,7 +48,9 @@ server = app.server
 # Connect to app pages
 from apps import home, visualizaciones, radarvial
 
-from apps.home import (render_mapa_pub, toggle_modal_fecha, toggle_modal_g, toggle_modal_u, toggle_modal_rvlg)
+from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
+  render_opciones_dos_dos, toggle_modal_thv, render_collapse_button_bavan, toggle_modal_afres, render_hv_totales, render_hv_les_totales, 
+  render_hv_fall_totales, render_mapa_interac, render_mapa_interac_movil, render_tabla_mapa_top, render_mapa_data, render_down_data_csv)
 
 from apps.visualizaciones import (render_pub_periodo, render_pub_vulne, render_pub_time)
 
@@ -79,7 +81,6 @@ app.layout = html.Div([
           ],
 
           align="center",
-          no_gutters=True,
 
         ),
 
