@@ -2189,6 +2189,7 @@ def mapa():
 
                 dbc.Offcanvas([
 
+                    # FILTROS FECHA
                     dbc.Card([
 
                         dbc.CardBody([
@@ -2271,15 +2272,272 @@ def mapa():
                                             tooltip={'always_visible': False , "placement":"bottom"},
                                             updatemode='mouseup'
                             )
-                            ], style = {'padding': '0px', 'margin': '0px'})
-                    ], style = {'padding-top': '15px', 'padding-left': '15px', 'padding-right': '15px'}),
+                        ], style = {'padding': '0px', 'margin': '0px'})
+                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'}),
 
                     html.Br(),
 
+                    # FILTROS HECHOS VIALES
                     dbc.Card([
 
-                        dbc.CardBody([])
-                    ])
+                        dbc.CardBody([
+
+                            # TÍTULO
+                            html.Div([
+
+                                html.P([
+                                    'Hechos Viales'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px'}),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                                    html.Div([
+                                        
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_sev_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-sev-movil",
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-sev-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Gravedad de Hechos Viales")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Todos:'),' Hechos viales con lesionados + hechos viales con fallecidos + hechos viales sin lesionados y fallecidos.']),
+                                                    html.Li([html.B('Lesionados:'),' Hechos viales en los que resultaron personas lesionadas.']),
+                                                    html.Li([html.B('Fallecidos:'),' Hechos viales en los que resultaron personas fallecidas.']),
+                                                ], style={'list-style-type':'none'}, className="p-1"),
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_sev_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_sev_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Gravedad',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+    
+                                    ]),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_graves_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Lesionados', 'value': 'lesionados'},
+                                            {'label': 'Fallecidos', 'value': 'fallecidos'},
+                                        ]
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.Div([
+
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_usaf_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-usaf-movil",
+                                            style={"textDecoration": "underline", "cursor": "pointer"},
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-usaf-movil"
+                                        ),
+                                    
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Usuario")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Auto:'),' Acumulado de personas que conducen auto, camión de pasajeros, camioneta, carga pesada, mini van, pickup, trailer y tren.']),
+                                                    html.Li([html.B('Peatón:'),' Personas que caminan.']),
+                                                    html.Li([html.B('Ciclista:'),' Personas que utilizan la bicicleta como modo de transporte.']),
+                                                    html.Li([html.B('Motociclista:'),' Personas que utilizan la motocicleta como modo de transporte.']),
+                                                ], style={'list-style-type':'none'}, className="p-1")
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_usaf_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_usaf_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Usuario', style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    ]),
+
+                                    dbc.Checklist(
+                                        id = 'hv_usu_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        value = ['Motorizado','Peaton','Bicicleta','Motocicleta'],
+                                        options = [
+                                            {'label': 'Auto', 'value': 'Motorizado'},
+                                            {'label': 'Peatón', 'value': 'Peaton'},
+                                            {'label': 'Ciclista', 'value': 'Bicicleta'},
+                                            {'label': 'Motociclista', 'value': 'Motocicleta'}
+                                        ],
+                                        style = {'display':'inline-block'}
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.Div([
+
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_thv_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-thv-movil",
+                                            style={"textDecoration": "underline", "cursor": "pointer"},
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-thv-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Tipos de Hechos Viales")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Alcance:'),' Sucede cuando un conductor impacta con su vehículo en la parte trasera de otro.']),
+                                                    html.Li([html.B('Atropello:'),' Ocurre cuando un vehículo en movimiento impacta con una persona. La persona puede estar estática o en movimiento ya sea caminando, corriendo o montando en patines, patinetas, o cualquier juguete similar, o trasladándose asistiéndose de aparatos o de vehículos no regulados por este reglamento, esto en el caso de las personas con discapacidad. Es imporante destacar que este tipo de hevho vial se asocia únicamente con peatones.']),
+                                                    html.Li([html.B('Caída de persona:'),' Ocurre cuando una persona cae hacia fuera o dentro de un vehículo en movimiento, comúnmente dentro de un autobús de transporte público. ']),
+                                                    html.Li([html.B('Choque de crucero:'),' Ocurre entre dos o más vehículos provenientes de arroyos de circulación que convergen o se cruzan, invadiendo un vehículo parcial o totalmente el arroyo de circulación de otro. ']),
+                                                    html.Li([html.B('Choque de Reversa:'),' Ocurre cuando un vehículo choca con otro al ir de reversa.']),
+                                                    html.Li([html.B('Choque de Frente:'),' Ocurre entre dos o más vehículos provenientes de arroyos de circulación opuestos, los cuales chocan cuando uno de ellos invade parcial o totalmente el carril, arroyo de circulación o trayectoria contraria. ']),
+                                                    html.Li([html.B('Choque Diverso:'),' En esta clasificación queda cualquier hecho de tránsito no especificado en los puntos anteriores. ']),
+                                                    html.Li([html.B('Choque Lateral:'),' Ocurre entre dos o más vehículos cuyos conductores circulan en carriles o con trayectorias paralelas, en el mismo sentido chocando los vehículos entre sí, cuando uno de ellos invada parcial o totalmente el carril o trayectoria donde circula el otro.']),
+                                                    html.Li([html.B('Estrellamiento:'),' Ocurre cuando un vehículo en movimiento en cualquier sentido choca con algo que se encuentra provisional o permanentemente estático.']),
+                                                    html.Li([html.B('Incendio:'),' Ocurre cuando existe un incendio por un percance vial.']),
+                                                    html.Li([html.B('Volcadura:'),' Ocurre cuando un vehículo pierde completamente el contacto entre llantas y superficie de rodamiento originándose giros verticales o transversales']),
+
+                                                ], style={'list-style-type':'none'}, className="p-1")
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_thv_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_thv_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Tipo de hecho vial', style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    ]),
+
+                                    dbc.Checklist(
+                                        id = 'checklist_tipo_hv_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        style={'display':'inline-block'},
+                                        value = [],
+                                        options = [],
+                                    ),
+                        
+                        ], style = {'padding': '0px', 'margin': '0px'})
+                            
+                            
+                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'})
 
                 ], 
                 placement = 'bottom', 
