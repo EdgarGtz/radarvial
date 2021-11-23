@@ -869,6 +869,76 @@ def resumen():
 
             html.Br(),
 
+            # PÁRRAFO RESUMEN
+            dbc.Row([
+
+              dbc.Col([
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            dbc.Row([
+
+                                dbc.Col([
+
+                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro, si quieres conocer más sobre como se obtinen los datos da ', 
+                          
+                                        html.B('click aquí'),
+                                        
+                                        '.',
+
+                                        html.Br(),
+
+                                        'Por otro lado el municipio desarrollo el diagnóstico de seguridad vial que es la guía para mejorar la seguridad de la ciudad, conoce el diagnóstico ',
+
+                                        html.B('aquí'),
+                                        
+                                        '.',
+
+                                    ])  
+
+                                ]),
+
+                            ]),
+                            
+                        ], style={'background-color':'#BBC3C8'})
+                    ])
+
+                ]),
+
+            ], className='mx-0'),
+
+            html.Br(),
+
+            # BOTON MAPA
+            dbc.Row([
+
+                dbc.Col([
+
+                      dbc.Card([
+
+                          dbc.CardBody([
+
+                              dbc.Row([
+
+                                  dbc.Col([
+
+                                      html.Img(src='assets/foto_mapa.png', className='img-fluid'),
+
+                                  ]),
+
+                              ]),
+                              
+                          ])
+                      ])
+
+                ]),
+
+            ], className='mx-0'),
+
+            html.Br(),
+
             # Tarjetas Indicadores
             dbc.Row([
 
@@ -901,7 +971,7 @@ def resumen():
                         ])
                     ])
 
-                ]),
+                ], lg = 3, md = 12, sm = 12),
 
                 dbc.Col([
 
@@ -932,7 +1002,7 @@ def resumen():
                         ])
                     ])
 
-                ]),
+                ], lg = 3, md = 12, sm = 12),
 
                 dbc.Col([
                     dbc.Card([
@@ -962,7 +1032,7 @@ def resumen():
                         ])
                     ])
 
-                ]),
+                ], lg = 3, md = 12, sm = 12),
 
                 dbc.Col([
 
@@ -993,7 +1063,7 @@ def resumen():
                         ])
                     ])
 
-                ]),
+                ], lg = 3, md = 12, sm = 12),
             
             ], className='mx-0'),
 
