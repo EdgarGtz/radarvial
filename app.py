@@ -62,7 +62,7 @@ app.layout = html.Div([
 
   dbc.Row([
 
-    dbc.Col([
+dbc.Col([
 
       html.A(
 
@@ -172,7 +172,6 @@ def toggle_modal_g(open_g, close_g, modal_g):
         return not modal_g
     return modal_g
 
-
 #Modal Usuario
 @app.callback(
     Output("modal_u", "is_open"),
@@ -184,7 +183,6 @@ def toggle_modal_u(open_u, close_u, modal_u):
     if open_u or close_u:
         return not modal_u
     return modal_u
-
 
 #Modal Red Vial
 @app.callback(
@@ -198,14 +196,12 @@ def toggle_modal_rvlg(open_rvlg, close_rvlg, modal_rvlg):
         return not modal_rvlg
     return modal_rvlg
 
-
 # Por mes y dia del año
 @app.callback(Output('pub_periodo', 'figure'),
     [Input('pub_tiempos', 'value')])
 
 def update_output(pub_tiempos):
     return render_pub_periodo(pub_tiempos)
-
 
 # Por vulnerabilidad de usuario
 @app.callback(Output('pub_vulne', 'figure'),
@@ -214,13 +210,199 @@ def update_output(pub_tiempos):
 def update_output(pub_vulne):
     return render_pub_vulne(pub_vulne)
 
-
 # Por tipo de usuario
 @app.callback(Output('pub_time', 'figure'),
     [Input('pub_gravedad', 'value')])
 
 def update_output(pub_gravedad):
     return render_pub_time(pub_gravedad)
+
+### -------
+
+# RADAR VIAL - MAPA: CARGAR OPCIONES POR USUARIO
+@app.callback(
+    Output('checklist_tipo_hv', 'options'),
+    Input('hv_usu_opciones', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    prevent_initial_call=False)
+def get_opciones_dos(hv_usu_opciones, hv_graves_opciones):
+    return render_opciones_dos(hv_usu_opciones, hv_graves_opciones)
+
+# RADAR VIAL - MAPA: CARGAR VALORES POR USUARIO
+@app.callback(
+    Output('checklist_tipo_hv', 'value'),
+    Input('hv_usu_opciones', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    prevent_initial_call=False)
+def get_opciones_dos_dos(hv_usu_opciones, hv_graves_opciones):
+    return render_opciones_dos_dos(hv_usu_opciones, hv_graves_opciones)
+
+# RADAR VIAL - MAPA: HECHOS VIALES TOTALES
+@app.callback(
+    Output('hv_totales', 'children'), 
+    [Input('calendario', 'start_date'),
+    Input('calendario', 'end_date'),
+    Input('slider_hora', 'value'),
+    Input('checklist_dias', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    Input('hv_usu_opciones', 'value'),
+    Input('checklist_tipo_hv', 'value'),
+    Input('hv_afres_opciones', 'value'),
+    Input('hv_sexo_opciones', 'value'),
+    Input('checklist_tipo_veh', 'value'),
+    Input('slider_edad', 'value')])
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_hv_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: LESIONADOS
+@app.callback(
+    Output('hv_les_totales', 'children'), 
+    [Input('calendario', 'start_date'),
+    Input('calendario', 'end_date'),
+    Input('slider_hora', 'value'),
+    Input('checklist_dias', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    Input('hv_usu_opciones', 'value'),
+    Input('checklist_tipo_hv', 'value'),
+    Input('hv_afres_opciones', 'value'),
+    Input('hv_sexo_opciones', 'value'),
+    Input('checklist_tipo_veh', 'value'),
+    Input('slider_edad', 'value')])
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_hv_les_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: FALLECIDOS
+@app.callback(
+    Output('hv_fall_totales', 'children'), 
+    [Input('calendario', 'start_date'),
+    Input('calendario', 'end_date'),
+    Input('slider_hora', 'value'),
+    Input('checklist_dias', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    Input('hv_usu_opciones', 'value'),
+    Input('checklist_tipo_hv', 'value'),
+    Input('hv_afres_opciones', 'value'),
+    Input('hv_sexo_opciones', 'value'),
+    Input('checklist_tipo_veh', 'value'),
+    Input('slider_edad', 'value')])
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_hv_fall_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: MAPA INTERACTIVO
+@app.callback(
+    [Output('mapa_interac', 'figure'),
+     Output('mapa_data_top', 'data')], 
+    [Input('calendario', 'start_date'),
+     Input('calendario', 'end_date'),
+     Input('slider_hora', 'value'),
+     Input('checklist_dias', 'value'),
+     Input('hv_graves_opciones', 'value'),
+     Input('hv_usu_opciones', 'value'),
+     Input('checklist_tipo_hv', 'value'),
+     Input('hv_afres_opciones', 'value'),
+     Input('hv_sexo_opciones', 'value'),
+     Input('checklist_tipo_veh', 'value'),
+     Input('slider_edad', 'value')],
+            prevent_initial_call=False)
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+@app.callback(
+    Output('mapa_interac_movil', 'figure'),
+     #Output('mapa_data_top', 'data')], 
+    [Input('calendario', 'start_date'),
+     Input('calendario', 'end_date'),
+     Input('slider_hora', 'value'),
+     Input('checklist_dias', 'value'),
+     Input('hv_graves_opciones', 'value'),
+     Input('hv_usu_opciones', 'value'),
+     Input('checklist_tipo_hv', 'value'),
+     Input('hv_afres_opciones', 'value'),
+     Input('hv_sexo_opciones', 'value'),
+     Input('checklist_tipo_veh', 'value'),
+     Input('slider_edad', 'value')],
+            prevent_initial_call=False)
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: MAPA DATA
+@app.callback(Output('mapa_data', 'data'), 
+    [Input('calendario', 'start_date'),
+    Input('calendario', 'end_date'),
+    Input('slider_hora', 'value'),
+    Input('checklist_dias', 'value'),
+    Input('hv_graves_opciones', 'value'),
+    Input('hv_usu_opciones', 'value'),
+    Input('checklist_tipo_hv', 'value'),
+    Input('hv_afres_opciones', 'value'),
+    Input('hv_sexo_opciones', 'value'),
+    Input('checklist_tipo_veh', 'value'),
+    Input('slider_edad', 'value')])
+def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
+    return render_mapa_data(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: TABLA TOP INTERSECCIONES
+@app.callback(
+    Output('tabla_mapa_top', 'figure'), 
+    Input('mapa_data_top', 'data'))  
+def update_output(mapa_data_top):
+    return render_tabla_mapa_top(mapa_data_top)
+
+# RADAR VIAL - MAPA: DESCARGA TU BÚSQUEDA
+@app.callback(
+    Output("download-personal-csv", "data"),
+    Input("btn_perso_csv", "n_clicks"),
+    State('mapa_data', 'data'),
+    prevent_initial_call=True,)
+def func(n_clicks, data):
+    return render_down_data_csv(n_clicks, data)
+
+# RADAR VIAL - MAPA: MODAL GRAVEDAD
+@app.callback(
+    Output("modal_sev", "is_open"),
+    [Input("open1_sev", "n_clicks"), 
+    Input("close1_sev", "n_clicks")],
+    [State("modal_sev", "is_open")],)
+def toggle_modal_sev(open1_sev, close1_sev, modal_sev):
+    if open1_sev or open1_sev:
+        return not modal_sev
+    return modal_sev
+
+# RADAR VIAL - MAPA: MODAL USUARIO
+@app.callback(
+    Output("modal_usaf", "is_open"),
+    [Input("open1_usaf", "n_clicks"), 
+    Input("close1_usaf", "n_clicks")],
+    [State("modal_usaf", "is_open")],)
+def toggle_modal_usaf(open1_usaf, close1_usaf, modal_usaf):
+    if open1_usaf or close1_usaf:
+        return not modal_usaf
+    return modal_usaf
+
+# RADAR VIAL - MAPA: MODAL TIPO DE HECHOS VIAL
+@app.callback(
+    Output("modal_thv", "is_open"),
+    [Input("open1_thv", "n_clicks"), 
+    Input("close1_thv", "n_clicks")],
+    [State("modal_thv", "is_open")],)
+def toggle_modal_thv(open1_thv, close1_thv, modal_thv):
+    if open1_thv or close1_thv:
+        return not modal_thv
+    return modal_thv
+
+# RADAR VIAL - MAPA: MODAL AFECTADO O RESPONSABLE 
+@app.callback(
+    Output("modal_afres", "is_open"),
+    [Input("open1_afres", "n_clicks"), 
+    Input("close1_afres", "n_clicks")],
+    [State("modal_afres", "is_open")],)
+def toggle_modal_afres(open1_afres, close1_afres, modal_afres):
+    if open1_afres or close1_afres:
+        return not modal_afres
+    return modal_afres
+
+### -------
+
 
 if __name__ == '__main__':
 	app.run_server(debug=True)

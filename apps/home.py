@@ -769,8 +769,6 @@ layout = html.Div([
 
             dbc.Col([
 
-                
-
                 dcc.Loading([
                     
                     dbc.Button(
