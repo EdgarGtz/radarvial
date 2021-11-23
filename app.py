@@ -2195,23 +2195,33 @@ def mapa():
 
                             html.Div([
 
-                                html.P(['Fecha'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+                                html.P([
+                                    'Fecha'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px'}),
 
                             html.Hr(style = {'margin-top': '0px'}),
 
                             html.Div([
 
-                                            dcc.DatePickerRange(
-                                                id = 'calendario_movil',
-                                                min_date_allowed = dt(2015, 1, 1),
-                                                max_date_allowed = dt(2021, 9, 30),
-                                                start_date = dt(2015, 1, 1),
-                                                end_date = dt(2021, 9, 30),
-                                                first_day_of_week = 1,
-                                                className="d-flex justify-content-center",
-                                                style = {'padding': '0px', 'margin': '0px', 'size': '10px'}
-                                            ),
+                                dcc.DatePickerRange(
+                                    id = 'calendario_movil',
+                                    min_date_allowed = dt(2015, 1, 1),
+                                    max_date_allowed = dt(2021, 9, 30),
+                                    start_date = dt(2015, 1, 1),
+                                    end_date = dt(2021, 9, 30),
+                                    first_day_of_week = 1,
+                                    className="d-flex justify-content-center",
+                                    style = {
+                                        'padding': '0px', 
+                                        'margin': '0px'
+                                    }
+                                ),
 
                             ], className ='d-flex align-items-center justify-content-center', style = {'padding': '0px', 'margin': '0px'}),
 
@@ -2262,14 +2272,27 @@ def mapa():
                                             updatemode='mouseup'
                             )
                             ], style = {'padding': '0px', 'margin': '0px'})
-                    ], style = {'padding-top': '10px', 'padding-left': '5px', 'padding-right': '5px'}),
+                    ], style = {'padding-top': '15px', 'padding-left': '15px', 'padding-right': '15px'}),
+
+                    html.Br(),
 
                     dbc.Card([
 
                         dbc.CardBody([])
                     ])
 
-                ], placement = 'end', close_button = False, style = {'width': '70%', 'padding-top': '5px', 'padding-left': '5px', 'padding-right': '5px', 'margin': '0px', 'background-color': '#F8F9FB'}, id = 'filtros-movil', is_open = False)
+                ], 
+                placement = 'bottom', 
+                close_button = False, 
+                style = {
+                    'padding-top': '5px', 
+                    'padding-left': '5px', 
+                    'padding-right': '5px', 
+                    'margin': '0px', 
+                    'background-color': '#F8F9FB',
+                    'height': '50%'
+                }, 
+                id = 'filtros-movil', is_open = False)
 
             ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
