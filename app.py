@@ -2535,8 +2535,205 @@ def mapa():
                                     ),
                         
                         ], style = {'padding': '0px', 'margin': '0px'})
-                            
-                            
+
+                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'}),
+
+                    html.Br(),
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+
+                                html.P([
+                                    'Búsqueda Avanzada'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px'}),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                            html.Div([
+                                        
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_afres_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                                ),
+
+                                            id="tooltip-target-afres-movil",
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-afres-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Afectado o Responsable")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Afectado:'),' Sujeto perjudicado del siniestro vial.']),
+                                                    html.Li([html.B('Responsable:'),' Sujeto causante del siniestro vial.']),
+                                                    html.Br(),
+                                                    html.Li([
+                                                        html.P([html.B('Nota:'), 
+                                                            ' Es importante destacar que, para el caso de los atropellos al momento de registrar la información sólo se captura de manera digital la información sobre el contexto del hecho vial y de los vehículos, mientras que la información del perfil de las personas que no transitan en un vehículo (peatonas) sólo se registra de manera física en el parte vial y no digital, por lo que actualmente no es posible conocer el perfil demográfico (edad, sexo) de las personas atropelladas.',]),
+                                                            ])
+                                                ], style={'list-style-type':'none'}, className="p-1"),
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_afres_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_afres_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Afectado o responsable',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                            ]),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_afres_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Afectados', 'value': 'afectados'},
+                                            {'label': 'Responsables', 'value': 'responsables'},
+                                        ]
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P(' Sexo',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_sexo_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Masculino', 'value': 'Masculino'},
+                                            {'label': 'Femenino', 'value': 'Femenino'},
+                                        ],
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P(' Edad',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    html.Br(),
+
+                                    dcc.RangeSlider(
+                                        id='slider_edad_movil',
+                                        min=0,
+                                        max=85,
+                                        value=[0,85],
+                                        step=5,
+                                        marks={
+                                            1: {'label': '0'},
+                                            5: {'label': '5'},
+                                            10: {'label': '10'},
+                                            15: {'label': '15'},
+                                            20: {'label': '20'},
+                                            25: {'label': '25'},
+                                            30: {'label': '30'},
+                                            35: {'label': '35'},
+                                            40: {'label': '40'},
+                                            45: {'label': '45'},
+                                            50: {'label': '50'},
+                                            55: {'label': '55'},
+                                            60: {'label': '60'},
+                                            65: {'label': '65'},
+                                            70: {'label': '70'},
+                                            75: {'label': '75'},
+                                            80: {'label': '80'},
+                                            85: {'label': '85+'},
+                                        },
+                                        allowCross=False,
+                                        dots=True,
+                                        tooltip={'always_visible': False , "placement":"bottom"},
+                                        updatemode='mouseup',
+                                        className='px-2 pt-2',
+                                    ),
+
+                                    html.Br(),
+
+                                    html.P(' Tipo de vehículo',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    dbc.Checklist(
+                                        id = 'checklist_tipo_veh_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        options=[
+                                            {'label': ' Auto', 'value': 'Auto'},
+                                            {'label': ' Bicicleta', 'value': 'Bicicleta'},
+                                            {'label': ' Camión de pasajeros', 'value': 'Camión de pasajeros'},
+                                            {'label': ' Camioneta', 'value': 'Camioneta'},
+                                            {'label': ' Carga pesada', 'value': 'Carga pesada'},
+                                            {'label': ' Mini Van', 'value': 'Mini Van'},
+                                            {'label': ' Motocicleta', 'value': 'Motocicleta'},
+                                            {'label': ' Pick Up', 'value': 'Pick Up'},
+                                            {'label': ' Tracción animal', 'value': 'Tracción animal'},
+                                            {'label': ' Trailer', 'value': 'Trailer'},
+                                            {'label': ' Tren', 'value': 'Tren'},
+                                        ],
+                                        value=['Auto', 'Bicicleta','Camión de pasajeros','Camioneta','Carga pesada','Mini Van','Motocicleta','Pick Up','Tracción animal','Trailer','Tren'],
+                                        style={'display':'inline-block'}
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P([
+                                        html.I([
+                                            html.B('Nota:'),
+                                            ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
+                                            ])
+                                    ]),
+
+                        ], style = {'padding': '0px', 'margin': '0px'})
                     ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'})
 
                 ], 
