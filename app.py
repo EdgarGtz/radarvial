@@ -2745,7 +2745,7 @@ def mapa():
                     'padding-right': '5px', 
                     'margin': '0px', 
                     'background-color': '#F8F9FB',
-                    'height': '50%'
+                    'height': '400px'
                 }, 
                 id = 'filtros-movil', is_open = False)
 
