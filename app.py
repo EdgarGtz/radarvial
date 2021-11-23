@@ -2272,8 +2272,8 @@ def mapa():
                                             tooltip={'always_visible': False , "placement":"bottom"},
                                             updatemode='mouseup'
                             )
-                        ], style = {'padding': '0px', 'margin': '0px'})
-                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'}),
+                        ], style = {'padding': '0px', 'margin': '10px'})
+                    ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
 
                     html.Br(),
 
@@ -2534,9 +2534,9 @@ def mapa():
                                         options = [],
                                     ),
                         
-                        ], style = {'padding': '0px', 'margin': '0px'})
+                        ], style = {'padding': '0px', 'margin': '10px'})
 
-                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'}),
+                    ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
 
                     html.Br(),
 
@@ -2733,8 +2733,8 @@ def mapa():
                                             ])
                                     ]),
 
-                        ], style = {'padding': '0px', 'margin': '0px'})
-                    ], style = {'padding-top': '15px', 'padding-left': '10px', 'padding-right': '20px'})
+                        ], style = {'padding': '0px', 'margin': '10px'})
+                    ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
 
                 ], 
                 placement = 'bottom', 
