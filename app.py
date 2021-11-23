@@ -1365,7 +1365,7 @@ def mapa():
 
   return html.Div([
 
-        # Mapa y filtros
+        # Mapa y filtros DESKTOP
         dbc.Row([
 
             # Controles
@@ -2089,6 +2089,8 @@ def mapa():
 
         ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
 
+        # Mapa y filtros MÓVIL
+
         dbc.Row([
 
             dbc.Col([
@@ -2098,7 +2100,9 @@ def mapa():
                     dbc.Button(
                     'Filtros',
                     color = 'light',
-                    class_name = 'filtros_small'
+                    class_name = 'filtros_small',
+                    id = 'collapse-filtros-movil',
+                    n_clicks = 0
                     ),
 
                     dcc.Graph(
@@ -2112,6 +2116,90 @@ def mapa():
                     ),
                     
                 ], color="#2cdb63", type="cube"),
+
+                dbc.Offcanvas([
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+
+                                html.P(['Fecha'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                            html.Div([
+
+                                            dcc.DatePickerRange(
+                                                id = 'calendario_movil',
+                                                min_date_allowed = dt(2015, 1, 1),
+                                                max_date_allowed = dt(2021, 9, 30),
+                                                start_date = dt(2015, 1, 1),
+                                                end_date = dt(2021, 9, 30),
+                                                first_day_of_week = 1,
+                                                className="d-flex justify-content-center",
+                                                style = {'padding': '0px', 'margin': '0px', 'size': '10px'}
+                                            ),
+
+                            ], className ='d-flex align-items-center justify-content-center', style = {'padding': '0px', 'margin': '0px'}),
+
+                            html.Br(),
+
+                            html.Div([
+
+                                            dbc.Checklist(
+                                            id = 'checklist_dias_movil',
+                                            class_name = 'radio-group btn-group d-flex flex-wrap justify-content-center',
+                                            label_class_name = 'btn btn-secondary',
+                                            label_checked_class_name  = 'active',
+                                            options=[
+                                                {'label': ' LU', 'value': 'Lunes'},
+                                                {'label': ' MA', 'value': 'Martes'},
+                                                {'label': ' MI', 'value': 'Miércoles'},
+                                                {'label': ' JU', 'value': 'Jueves'},
+                                                {'label': ' VI', 'value': 'Viernes'},
+                                                {'label': ' SA', 'value': 'Sábado'},
+                                                {'label': ' DO', 'value': 'Domingo'},
+                                            ],
+                                            value=['Lunes', 'Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
+                                            style={'display':'inline-block'}
+                                            ),
+                            ], style = {'padding-left': '10px', 'padding-right': '10px'}),
+
+                            html.Br(),
+
+                            dcc.RangeSlider(
+                                            id='slider_hora_movil',
+                                            min=0,
+                                            max=23,
+                                            value=[0, 23],
+                                            marks={
+                                                0: {'label': '0'},
+                                                3: {'label': '3'},
+                                                6: {'label': '6'},
+                                                9: {'label': '9'},
+                                                12: {'label': '12'},
+                                                15: {'label': '15'},
+                                                18: {'label': '18'},
+                                                21: {'label': '21'},
+                                                23: {'label': '23'}
+                                            },
+                                            allowCross=False,
+                                            dots=True,
+                                            tooltip={'always_visible': False , "placement":"bottom"},
+                                            updatemode='mouseup'
+                            )
+                            ], style = {'padding': '0px', 'margin': '0px'})
+                    ], style = {'padding-top': '10px', 'padding-left': '5px', 'padding-right': '5px'}),
+
+                    dbc.Card([
+
+                        dbc.CardBody([])
+                    ])
+
+                ], placement = 'end', close_button = False, style = {'width': '70%', 'padding-top': '5px', 'padding-left': '5px', 'padding-right': '5px', 'margin': '0px', 'background-color': '#F8F9FB'}, id = 'filtros-movil', is_open = False)
 
             ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
@@ -2364,6 +2452,16 @@ def toggle_modal_afres(open1_afres, close1_afres, modal_afres):
     if open1_afres or close1_afres:
         return not modal_afres
     return modal_afres
+
+# COLLAPSE FILTROS MOVIL
+@app.callback(
+    Output("filtros-movil", "is_open"),
+    [Input("collapse-filtros-movil", "n_clicks")],
+    [State("filtros-movil", "is_open")])
+def toggle_collapse_filtros_movil(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 ### -------
 

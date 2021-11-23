@@ -171,3 +171,10 @@
     border-width: 1px;
 }
 
+
+
+.filtros_small {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
