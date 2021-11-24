@@ -1193,7 +1193,7 @@ def mapa():
                                     style={'font-size':'16px'},
                                 ),
 
-                            ], style={'text-align':'center'}, class_name='p-0 d-none d-lg-block'),
+                            ], style={'text-align':'center'}, class_name='p-0'),
 
                             dbc.Collapse(
 
@@ -1264,9 +1264,9 @@ def mapa():
 
                         ], class_name = 'd-none d-lg-block')
 
-                    ], lg=12, md=12, sm = 12, class_name = 'd-none d-lg-block'),
+                    ], lg=12, md=12, sm = 12),
 
-                ], class_name="d-flex justify-content-between d-none d-lg-block",),
+                ], class_name="d-flex justify-content-between",),
 
                 html.Br(),
 
@@ -1537,11 +1537,11 @@ def mapa():
                                 is_open=True,
                             ),
 
-                        ], class_name = 'd-none d-lg-block'),
+                        ]),
 
-                    ],lg=12, md=12, class_name = 'd-none d-lg-block'),
+                    ],lg=12, md=12),
 
-                ], class_name = 'd-none d-lg-block'),
+                ]),
 
                 html.Br(),
                 
@@ -1752,11 +1752,11 @@ def mapa():
                                 is_open=False,
                             ),
 
-                        ], class_name = 'd-none d-lg-block'),
+                        ]),
                         
-                    ], lg=12, md=12, class_name = 'd-none d-lg-block'),
+                    ], lg=12, md=12),
 
-                ], class_name = 'd-none d-lg-block'),
+                ]),
 
                 html.Br(),
 
@@ -1779,10 +1779,10 @@ def mapa():
                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
                             ),
                         ], class_name='p-0', style={'background-color':'transparent'})#, d-lg-none'
-                    ], class_name = 'd-none d-lg-block')
-                ], class_name = 'd-none d-lg-block')
+                    ])
+                ])
 
-            ],lg=4, md=4, class_name = 'd-none d-lg-block'),
+            ],lg=4, md=4, style={'float': 'left'}),
             
             # Mapa
             dbc.Col([
@@ -1887,9 +1887,9 @@ def mapa():
 
                 ], class_name='tarjeta_map'), 
 
-            ],lg=8, md=8, class_name = 'd-none d-lg-block'),
+            ],lg=8, md=8, style={'float': 'left'}),
 
-        ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
+        ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name = 'd-none d-lg-block'),
 
         # Mapa y filtros MÓVIL
 
