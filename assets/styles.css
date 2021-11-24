@@ -289,5 +289,5 @@ button:focus { outline: none !important; box-shadow: none !important; }
 .filtros_small {
   position: absolute;
   right: 0;
-  
+  z-index: 5;
 }

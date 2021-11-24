@@ -334,300 +334,164 @@ app.layout = html.Div([
                     ),
 
                     # MODAL
-                    html.Div([
+                    # html.Div([
 
-                        # BOTÓN
-                        html.Span(
-                            dbc.Button(
-                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-                                        style={'float':'right'},
-                                        className="p-0 img-fluid"), 
-                                id="open_titulo", 
-                                n_clicks=0, 
-                                style={'display':'inline-block',
-                                        'float':'left','padding':'0', 
-                                        'width':'18px','background-color':'transparent',
-                                        'border-color':'transparent'},
-                                class_name='rounded-circle ml-4 pb-1'
+                    #     # BOTÓN
+                    #     html.Span(
+                    #         dbc.Button(
+                    #             html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                    #                     style={'float':'right'},
+                    #                     className="p-0 img-fluid"), 
+                    #             id="open_titulo", 
+                    #             n_clicks=0, 
+                    #             style={'display':'inline-block',
+                    #                     'float':'left','padding':'0', 
+                    #                     'width':'18px','background-color':'transparent',
+                    #                     'border-color':'transparent'},
+                    #             class_name='rounded-circle ml-4 pb-1'
 
-                            ),
+                    #         ),
 
-                            id="tooltip-sidebar-titulo",
-                        ),
+                    #         id="tooltip-sidebar-titulo",
+                    #     ),
 
-                        # TOOLTIP
-                        dbc.Tooltip(
-                            "Más información",
-                            target="tooltip-sidebar-titulo",
-                            placement = 'auto'
-                        ),
+                    #     # TOOLTIP
+                    #     dbc.Tooltip(
+                    #         "Más información",
+                    #         target="tooltip-sidebar-titulo",
+                    #         placement = 'auto'
+                    #     ),
 
-                        # CONTENIDO MODAL
-                        dbc.Modal([
+                    #     # CONTENIDO MODAL
+                    #     dbc.Modal([
 
-                            dbc.ModalHeader(html.B("Radar Vial")),
+                    #         dbc.ModalHeader(html.B("Radar Vial")),
 
-                            dbc.ModalBody([
+                    #         dbc.ModalBody([
                             
-                                dbc.Row([
+                    #             dbc.Row([
 
-                                    dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-                                        html.I(' Última actualización: Septiembre 2021')
-                                        ]),
+                    #                 dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
+                    #                     html.I(' Última actualización: Septiembre 2021')
+                    #                     ]),
 
-                                ]),
+                    #             ]),
 
-                                html.Br(),
+                    #             html.Br(),
 
-                                dbc.Row([
+                    #             dbc.Row([
 
-                                    dbc.Col([
+                    #                 dbc.Col([
                                     
-                                        html.Div([
+                    #                     html.Div([
 
-                                            html.Span(
+                    #                         html.Span(
                                                 
-                                                html.Button([
-                                                    html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-                                                            style={'width':'8%','float':'left'},
-                                                            className="pt-1"),
-                                                    html.B("Descargar Excel"),
-                                                    ], 
-                                                    id="btn_csv",
-                                                    className="btn",
-                                                    n_clicks=None,
-                                                    style={'float':'right','background-color':'#BBC3C8','color':'white'}
-                                                ),
+                    #                             html.Button([
+                    #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
+                    #                                         style={'width':'8%','float':'left'},
+                    #                                         className="pt-1"),
+                    #                                 html.B("Descargar Excel"),
+                    #                                 ], 
+                    #                                 id="btn_csv",
+                    #                                 className="btn",
+                    #                                 n_clicks=None,
+                    #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
+                    #                             ),
 
-                                                id="tooltip-target-descbd",
-                                            ),
+                    #                             id="tooltip-target-descbd",
+                    #                         ),
 
-                                            dbc.Tooltip(
-                                                "Descarga toda la base de datos",
-                                                target="tooltip-target-descbd",
-                                            ),
+                    #                         dbc.Tooltip(
+                    #                             "Descarga toda la base de datos",
+                    #                             target="tooltip-target-descbd",
+                    #                         ),
 
                                             
-                                            Download(id="download-dataframe-csv")
-                                        ], className='d-flex justify-content-center'),
+                    #                         Download(id="download-dataframe-csv")
+                    #                     ], className='d-flex justify-content-center'),
 
-                                    ], lg=4, md=4),
+                    #                 ], lg=4, md=4),
 
-                                    dbc.Col([
+                    #                 dbc.Col([
 
-                                        html.Div([
+                    #                     html.Div([
 
-                                            html.Span(
+                    #                         html.Span(
 
-                                                html.Button([
-                                                    html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-                                                            style={'width':'8%','float':'left'},
-                                                            className="pt-1"),
-                                                    html.B("Descargar SHP"),
-                                                    ], 
-                                                    id="btn_shp",
-                                                    className="btn",
-                                                    n_clicks=None,
-                                                    style={'float':'right','background-color':'#BBC3C8','color':'white'}
-                                                ),
+                    #                             html.Button([
+                    #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
+                    #                                         style={'width':'8%','float':'left'},
+                    #                                         className="pt-1"),
+                    #                                 html.B("Descargar SHP"),
+                    #                                 ], 
+                    #                                 id="btn_shp",
+                    #                                 className="btn",
+                    #                                 n_clicks=None,
+                    #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
+                    #                             ),
                                                         
 
-                                                id="tooltip-target-shp",
-                                            ),
+                    #                             id="tooltip-target-shp",
+                    #                         ),
 
-                                            dbc.Tooltip(
-                                                "Descarga toda la base de datos en SHP",
-                                                target="tooltip-target-shp",
-                                            ),
+                    #                         dbc.Tooltip(
+                    #                             "Descarga toda la base de datos en SHP",
+                    #                             target="tooltip-target-shp",
+                    #                         ),
 
-                                            Download(id="download-dataframe-shp")
-                                        ], className='d-flex justify-content-center')
+                    #                         Download(id="download-dataframe-shp")
+                    #                     ], className='d-flex justify-content-center')
 
-                                    ], lg=4, md=4)
+                    #                 ], lg=4, md=4)
 
-                                ], class_name='d-flex justify-content-center'),
+                    #             ], class_name='d-flex justify-content-center'),
 
-                            ],style={"textAlign":"justify",'font-size':'100%'}),
+                    #         ],style={"textAlign":"justify",'font-size':'100%'}),
 
-                            dbc.ModalFooter([
+                    #         dbc.ModalFooter([
                                 
-                                dbc.Button(
-                                    "Cerrar", 
-                                    id="close_titulo", 
-                                    class_name="ml-auto btn btn-secondary", 
-                                    n_clicks=0
-                                )
-                            ]),
+                    #             dbc.Button(
+                    #                 "Cerrar", 
+                    #                 id="close_titulo", 
+                    #                 class_name="ml-auto btn btn-secondary", 
+                    #                 n_clicks=0
+                    #             )
+                    #         ]),
 
-                            ],
-                            id="modal_titulo",
-                            centered=True,
-                            size="lg",
-                            is_open=False,
-                            style={'font-family':'Arial'}
-                        ),
-                    ]),
+                    #         ],
+                    #         id="modal_titulo",
+                    #         centered=True,
+                    #         size="lg",
+                    #         is_open=False,
+                    #         style={'font-family':'Arial'}
+                    #     ),
+                    # ]),
 
                 ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
 
             ], class_name='m-0 pt-3 w-50 d-none d-lg-block'), 
 
-            # # TITULO MOVIL
-            # dbc.Row([
+            # TITULO MOVIL
+            dbc.Row([
 
-            #     dbc.Col([
+                dbc.Col([
 
-            #         html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
-            #                     className="pt-0",
-            #                     style={'width':'33px', 'height': '33px', 'float':'left', 'margin-right': '15px'}
-            #             ),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
+                                className="pt-0",
+                                style={'width':'33px', 'height': '33px', 'float':'left', 'margin-right': '15px'}
+                        ),
 
-            #         html.H2('Radar Vial', 
-            #             style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
-            #             className='pl-3 pt-1 '
-            #         ),
+                    html.H2('Radar Vial', 
+                        style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
+                        className='pl-3 pt-1 '
+                    ),
 
-            #         # MODAL
-            #         html.Div([
+                ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
 
-            #             # BOTÓN
-            #             html.Span(
-            #                 dbc.Button(
-            #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-            #                             style={'float':'right'},
-            #                             className="p-0 img-fluid"), 
-            #                     id="open_titulo_movil", 
-            #                     n_clicks=0, 
-            #                     style={'display':'inline-block',
-            #                             'float':'left','padding':'0', 
-            #                             'width':'18px','background-color':'transparent',
-            #                             'border-color':'transparent'},
-            #                     class_name='rounded-circle ml-2 pb-1'
+            ], class_name='m-0 pt-3 w-100 d-md-none'),
 
-            #                 ),
-
-            #                 id="tooltip-sidebar-titulo",
-            #             ),
-
-            #             # TOOLTIP
-            #             dbc.Tooltip(
-            #                 "Más información",
-            #                 target="tooltip-sidebar-titulo"
-            #             ),
-
-            #             # CONTENIDO MODAL
-            #             dbc.Modal([
-
-            #                 dbc.ModalHeader(
-            #                     html.B("Radar Vial")
-            #                 ),
-
-            #                 dbc.ModalBody([
-                            
-            #                     dbc.Row([
-
-            #                         dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-            #                             html.I(' Última actualización: Septiembre 2021')
-            #                             ]),
-
-            #                     ]),
-
-            #                     # html.Br(),
-
-            #                     # dbc.Row([
-
-            #                     #     dbc.Col([
-                                    
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-                                                
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar Excel"),
-            #                     #                     ], 
-            #                     #                     id="btn_csv",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-
-            #                     #                 id="tooltip-target-descbd",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos",
-            #                     #                 target="tooltip-target-descbd",
-            #                     #             ),
-
-                                            
-            #                     #             Download(id="download-dataframe-csv")
-            #                     #         ], className='d-flex justify-content-center'),
-
-            #                     #     ], lg=4, md=4),
-
-            #                     #     dbc.Col([
-
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar SHP"),
-            #                     #                     ], 
-            #                     #                     id="btn_shp",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-                                                        
-
-            #                     #                 id="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos en SHP",
-            #                     #                 target="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             Download(id="download-dataframe-shp")
-            #                     #         ], className='d-flex justify-content-center')
-
-            #                     #     ], lg=4, md=4)
-
-            #                     # ], class_name='d-flex justify-content-center'),
-
-            #                 ],style={"textAlign":"justify",'font-size':'100%'}),
-
-            #                 dbc.ModalFooter([
-                                
-            #                     dbc.Button(
-            #                         "Cerrar", 
-            #                         id="close_titulo_movil", 
-            #                         class_name="ml-auto btn btn-secondary", 
-            #                         n_clicks=0
-            #                     )
-            #                 ]),
-
-            #             ],
-            #             id="modal_titulo_movil",
-            #             centered=True,
-            #             size="lg",
-            #             is_open=False,
-            #             style={'font-family':'Arial'}
-            #             ),
-            #         ]),
-
-            #     ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
-
-            # ], style={'position':'absolute','left':'1px','top':'10px',}, class_name='m-0 pt-3 w-100 d-md-none'),
-
-            # # TITULO MD
+            # TITULO MD
             # dbc.Row([
 
             #     dbc.Col([
@@ -642,145 +506,11 @@ app.layout = html.Div([
             #             className='pl-3 pt-1 '
             #         ),
 
-            #         # MODAL
-            #         html.Div([
-
-            #             # BOTÓN
-            #             html.Span(
-            #                 dbc.Button(
-            #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-            #                             style={'float':'right'},
-            #                             className="p-0 img-fluid"), 
-            #                     id="open_titulo_md", 
-            #                     n_clicks=0, 
-            #                     style={'display':'inline-block',
-            #                             'float':'left','padding':'0', 
-            #                             'width':'18px','background-color':'transparent',
-            #                             'border-color':'transparent'},
-            #                     class_name='rounded-circle ml-2 pb-1'
-
-            #                 ),
-
-            #                 id="tooltip-sidebar-titulo-md",
-            #             ),
-
-            #             # TOOLTIP
-            #             dbc.Tooltip(
-            #                 "Más información",
-            #                 target="tooltip-sidebar-titulo-md",
-            #             ),
-
-            #             # CONTENIDO MODAL
-            #             dbc.Modal([
-
-            #                 dbc.ModalHeader(html.B("Radar Vial")),
-
-            #                 dbc.ModalBody([
-                            
-            #                     dbc.Row([
-
-            #                         dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-            #                             html.I(' Última actualización: Septiembre 2021')
-            #                             ]),
-
-            #                     ]),
-
-            #                     # html.Br(),
-
-            #                     # dbc.Row([
-
-            #                     #     dbc.Col([
-                                    
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-                                                
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar Excel"),
-            #                     #                     ], 
-            #                     #                     id="btn_csv",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-
-            #                     #                 id="tooltip-target-descbd",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos",
-            #                     #                 target="tooltip-target-descbd",
-            #                     #             ),
-
-                                            
-            #                     #             Download(id="download-dataframe-csv")
-            #                     #         ], className='d-flex justify-content-center'),
-
-            #                     #     ], lg=4, md=4),
-
-            #                     #     dbc.Col([
-
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar SHP"),
-            #                     #                     ], 
-            #                     #                     id="btn_shp",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-                                                        
-
-            #                     #                 id="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos en SHP",
-            #                     #                 target="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             Download(id="download-dataframe-shp")
-            #                     #         ], className='d-flex justify-content-center')
-
-            #                     #     ], lg=4, md=4)
-
-            #                     # ], class_name='d-flex justify-content-center'),
-
-            #                 ],style={"textAlign":"justify",'font-size':'100%'}),
-
-            #                 dbc.ModalFooter([
-                                
-            #                     dbc.Button(
-            #                         "Cerrar", 
-            #                         id="close_titulo_md", 
-            #                         class_name="ml-auto btn btn-secondary", 
-            #                         n_clicks=0
-            #                     )
-            #                 ]),
-
-            #                 ],
-            #                 id="modal_titulo_md",
-            #                 centered=True,
-            #                 size="lg",
-            #                 is_open=False,
-            #                 style={'font-family':'Arial'}
-            #             ),
-            #         ]),
-
             #     ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
 
             # ], style={'position':'absolute','left':'1px','top':'10px',}, class_name='m-0 pt-3 w-100 d-none d-md-block d-lg-none')
 
-        ], className='titulo-top'),
+        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
 
         # Tabs
         dbc.Row(
@@ -2191,29 +1921,41 @@ def mapa():
 
                 dbc.Offcanvas([
 
+                    # FILTROS FECHA
                     dbc.Card([
 
                         dbc.CardBody([
 
                             html.Div([
 
-                                html.P(['Fecha'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+                                html.P([
+                                    'Fecha'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
-                            html.Hr(style = {'margin-top': '0px'}),
+                            html.Hr(style = {'margin-top': '0px', 'padding-top': '0px'}),
 
                             html.Div([
 
-                                            dcc.DatePickerRange(
-                                                id = 'calendario_movil',
-                                                min_date_allowed = dt(2015, 1, 1),
-                                                max_date_allowed = dt(2021, 9, 30),
-                                                start_date = dt(2015, 1, 1),
-                                                end_date = dt(2021, 9, 30),
-                                                first_day_of_week = 1,
-                                                className="d-flex justify-content-center",
-                                                style = {'padding': '0px', 'margin': '0px', 'size': '10px'}
-                                            ),
+                                dcc.DatePickerRange(
+                                    id = 'calendario_movil',
+                                    min_date_allowed = dt(2015, 1, 1),
+                                    max_date_allowed = dt(2021, 9, 30),
+                                    start_date = dt(2015, 1, 1),
+                                    end_date = dt(2021, 9, 30),
+                                    first_day_of_week = 1,
+                                    className="d-flex justify-content-center",
+                                    style = {
+                                        'padding': '0px', 
+                                        'margin': '0px'
+                                    }
+                                ),
 
                             ], className ='d-flex align-items-center justify-content-center', style = {'padding': '0px', 'margin': '0px'}),
 
@@ -2263,15 +2005,487 @@ def mapa():
                                             tooltip={'always_visible': False , "placement":"bottom"},
                                             updatemode='mouseup'
                             )
-                            ], style = {'padding': '0px', 'margin': '0px'})
-                    ], style = {'padding-top': '10px', 'padding-left': '5px', 'padding-right': '5px'}),
+                        
+                        ], style = {'padding': '0px', 'margin': '10px'})
+
+                    ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
+
+                    html.Br(),
+
+                    # FILTROS HECHOS VIALES
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            # TÍTULO
+                            html.Div([
+
+                                html.P([
+                                    'Hechos Viales'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px'}),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                                    html.Div([
+                                        
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_sev_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-sev-movil",
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-sev-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Gravedad de Hechos Viales")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Todos:'),' Hechos viales con lesionados + hechos viales con fallecidos + hechos viales sin lesionados y fallecidos.']),
+                                                    html.Li([html.B('Lesionados:'),' Hechos viales en los que resultaron personas lesionadas.']),
+                                                    html.Li([html.B('Fallecidos:'),' Hechos viales en los que resultaron personas fallecidas.']),
+                                                ], style={'list-style-type':'none'}, className="p-1"),
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_sev_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_sev_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Gravedad',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+    
+                                    ]),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_graves_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Lesionados', 'value': 'lesionados'},
+                                            {'label': 'Fallecidos', 'value': 'fallecidos'},
+                                        ]
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.Div([
+
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_usaf_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-usaf-movil",
+                                            style={"textDecoration": "underline", "cursor": "pointer"},
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-usaf-movil"
+                                        ),
+                                    
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Usuario")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Auto:'),' Acumulado de personas que conducen auto, camión de pasajeros, camioneta, carga pesada, mini van, pickup, trailer y tren.']),
+                                                    html.Li([html.B('Peatón:'),' Personas que caminan.']),
+                                                    html.Li([html.B('Ciclista:'),' Personas que utilizan la bicicleta como modo de transporte.']),
+                                                    html.Li([html.B('Motociclista:'),' Personas que utilizan la motocicleta como modo de transporte.']),
+                                                ], style={'list-style-type':'none'}, className="p-1")
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_usaf_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_usaf_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Usuario', style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    ]),
+
+                                    dbc.Checklist(
+                                        id = 'hv_usu_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        value = ['Motorizado','Peaton','Bicicleta','Motocicleta'],
+                                        options = [
+                                            {'label': 'Auto', 'value': 'Motorizado'},
+                                            {'label': 'Peatón', 'value': 'Peaton'},
+                                            {'label': 'Ciclista', 'value': 'Bicicleta'},
+                                            {'label': 'Motociclista', 'value': 'Motocicleta'}
+                                        ],
+                                        style = {'display':'inline-block'}
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.Div([
+
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_thv_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                            ),
+
+                                            id="tooltip-target-thv-movil",
+                                            style={"textDecoration": "underline", "cursor": "pointer"},
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-thv-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Tipos de Hechos Viales")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Alcance:'),' Sucede cuando un conductor impacta con su vehículo en la parte trasera de otro.']),
+                                                    html.Li([html.B('Atropello:'),' Ocurre cuando un vehículo en movimiento impacta con una persona. La persona puede estar estática o en movimiento ya sea caminando, corriendo o montando en patines, patinetas, o cualquier juguete similar, o trasladándose asistiéndose de aparatos o de vehículos no regulados por este reglamento, esto en el caso de las personas con discapacidad. Es imporante destacar que este tipo de hevho vial se asocia únicamente con peatones.']),
+                                                    html.Li([html.B('Caída de persona:'),' Ocurre cuando una persona cae hacia fuera o dentro de un vehículo en movimiento, comúnmente dentro de un autobús de transporte público. ']),
+                                                    html.Li([html.B('Choque de crucero:'),' Ocurre entre dos o más vehículos provenientes de arroyos de circulación que convergen o se cruzan, invadiendo un vehículo parcial o totalmente el arroyo de circulación de otro. ']),
+                                                    html.Li([html.B('Choque de Reversa:'),' Ocurre cuando un vehículo choca con otro al ir de reversa.']),
+                                                    html.Li([html.B('Choque de Frente:'),' Ocurre entre dos o más vehículos provenientes de arroyos de circulación opuestos, los cuales chocan cuando uno de ellos invade parcial o totalmente el carril, arroyo de circulación o trayectoria contraria. ']),
+                                                    html.Li([html.B('Choque Diverso:'),' En esta clasificación queda cualquier hecho de tránsito no especificado en los puntos anteriores. ']),
+                                                    html.Li([html.B('Choque Lateral:'),' Ocurre entre dos o más vehículos cuyos conductores circulan en carriles o con trayectorias paralelas, en el mismo sentido chocando los vehículos entre sí, cuando uno de ellos invada parcial o totalmente el carril o trayectoria donde circula el otro.']),
+                                                    html.Li([html.B('Estrellamiento:'),' Ocurre cuando un vehículo en movimiento en cualquier sentido choca con algo que se encuentra provisional o permanentemente estático.']),
+                                                    html.Li([html.B('Incendio:'),' Ocurre cuando existe un incendio por un percance vial.']),
+                                                    html.Li([html.B('Volcadura:'),' Ocurre cuando un vehículo pierde completamente el contacto entre llantas y superficie de rodamiento originándose giros verticales o transversales']),
+
+                                                ], style={'list-style-type':'none'}, className="p-1")
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_thv_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_thv_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Tipo de hecho vial', style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    ]),
+
+                                    dbc.Checklist(
+                                        id = 'checklist_tipo_hv_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        style={'display':'inline-block'},
+                                        value = [],
+                                        options = [],
+                                    ),
+
+                        ], style = {'padding': '0px', 'margin': '10px'})
+                        
+                    ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
+
+                    html.Br(),
 
                     dbc.Card([
 
-                        dbc.CardBody([])
-                    ])
+                        dbc.CardBody([
 
-                ], placement = 'end', close_button = False, style = {'width': '70%', 'padding-top': '5px', 'padding-left': '5px', 'padding-right': '5px', 'margin': '0px', 'background-color': '#F8F9FB'}, id = 'filtros-movil', is_open = False)
+                            html.Div([
+
+                                html.P([
+                                    'Búsqueda Avanzada'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px'}),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                            html.Div([
+                                        
+                                        html.Span(
+                                            dbc.Button(
+                                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                                        style={'float':'right'},
+                                                        className="p-0 img-fluid"), 
+                                                id="open1_afres_movil", 
+                                                n_clicks=0, 
+                                                style={'display':'inline-block',
+                                                        'float':'left','padding':'0', 
+                                                        'width':'15px','background-color':'transparent',
+                                                        'border-color':'transparent','padding-top':'5px'},
+                                                class_name='rounded-circle'
+
+                                                ),
+
+                                            id="tooltip-target-afres-movil",
+                                        ),
+
+                                        dbc.Tooltip(
+                                            "Más información",
+                                            target="tooltip-target-afres-movil",
+                                        ),
+                                            
+                                        dbc.Modal([
+
+                                            dbc.ModalHeader(html.B("Afectado o Responsable")),
+
+                                            dbc.ModalBody([
+                                                html.Ul([
+                                                    html.Li([html.B('Afectado:'),' Sujeto perjudicado del siniestro vial.']),
+                                                    html.Li([html.B('Responsable:'),' Sujeto causante del siniestro vial.']),
+                                                    html.Br(),
+                                                    html.Li([
+                                                        html.P([html.B('Nota:'), 
+                                                            ' Es importante destacar que, para el caso de los atropellos al momento de registrar la información sólo se captura de manera digital la información sobre el contexto del hecho vial y de los vehículos, mientras que la información del perfil de las personas que no transitan en un vehículo (peatonas) sólo se registra de manera física en el parte vial y no digital, por lo que actualmente no es posible conocer el perfil demográfico (edad, sexo) de las personas atropelladas.',]),
+                                                            ])
+                                                ], style={'list-style-type':'none'}, className="p-1"),
+
+                                            ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                            dbc.ModalFooter([
+                                                
+                                                dbc.Button(
+                                                    "Cerrar", 
+                                                    id="close1_afres_movil", 
+                                                    class_name="ml-auto btn btn-secondary", 
+                                                    n_clicks=0
+                                                )
+                                            ]),
+
+                                            ],
+                                            id="modal_afres_movil",
+                                            centered=True,
+                                            size="lg",
+                                            is_open=False,
+                                            style={'font-family':'Arial'}
+                                        ),
+
+                                        html.P(' Afectado o responsable',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                            ]),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_afres_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Afectados', 'value': 'afectados'},
+                                            {'label': 'Responsables', 'value': 'responsables'},
+                                        ]
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P(' Sexo',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    dbc.RadioItems(
+                                        id = 'hv_sexo_opciones_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name = 'active',
+                                        value = 'todos',
+                                        options = [
+                                            {'label': 'Todos', 'value': 'todos'},
+                                            {'label': 'Masculino', 'value': 'Masculino'},
+                                            {'label': 'Femenino', 'value': 'Femenino'},
+                                        ],
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P(' Edad',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    html.Br(),
+
+                                    dcc.RangeSlider(
+                                        id='slider_edad_movil',
+                                        min=0,
+                                        max=85,
+                                        value=[0,85],
+                                        step=5,
+                                        marks={
+                                            1: {'label': '0'},
+                                            5: {'label': '5'},
+                                            10: {'label': '10'},
+                                            15: {'label': '15'},
+                                            20: {'label': '20'},
+                                            25: {'label': '25'},
+                                            30: {'label': '30'},
+                                            35: {'label': '35'},
+                                            40: {'label': '40'},
+                                            45: {'label': '45'},
+                                            50: {'label': '50'},
+                                            55: {'label': '55'},
+                                            60: {'label': '60'},
+                                            65: {'label': '65'},
+                                            70: {'label': '70'},
+                                            75: {'label': '75'},
+                                            80: {'label': '80'},
+                                            85: {'label': '85+'},
+                                        },
+                                        allowCross=False,
+                                        dots=True,
+                                        tooltip={'always_visible': False , "placement":"bottom"},
+                                        updatemode='mouseup',
+                                        className='px-2 pt-2',
+                                    ),
+
+                                    html.Br(),
+
+                                    html.P(' Tipo de vehículo',
+                                            style={'width':'90%','float':'left'}, className='pl-1'),
+
+                                    dbc.Checklist(
+                                        id = 'checklist_tipo_veh_movil',
+                                        class_name = 'radio-group btn-group',
+                                        label_class_name = 'btn btn-secondary',
+                                        label_checked_class_name  = 'active',
+                                        options=[
+                                            {'label': ' Auto', 'value': 'Auto'},
+                                            {'label': ' Bicicleta', 'value': 'Bicicleta'},
+                                            {'label': ' Camión de pasajeros', 'value': 'Camión de pasajeros'},
+                                            {'label': ' Camioneta', 'value': 'Camioneta'},
+                                            {'label': ' Carga pesada', 'value': 'Carga pesada'},
+                                            {'label': ' Mini Van', 'value': 'Mini Van'},
+                                            {'label': ' Motocicleta', 'value': 'Motocicleta'},
+                                            {'label': ' Pick Up', 'value': 'Pick Up'},
+                                            {'label': ' Tracción animal', 'value': 'Tracción animal'},
+                                            {'label': ' Trailer', 'value': 'Trailer'},
+                                            {'label': ' Tren', 'value': 'Tren'},
+                                        ],
+                                        value=['Auto', 'Bicicleta','Camión de pasajeros','Camioneta','Carga pesada','Mini Van','Motocicleta','Pick Up','Tracción animal','Trailer','Tren'],
+                                        style={'display':'inline-block'}
+                                    ),
+
+                                    html.Br(),
+                                    html.Br(),
+
+                                    html.P([
+                                        html.I([
+                                            html.B('Nota:'),
+                                            ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
+                                            ])
+                                    ]),
+
+                        ], style = {'padding': '0px', 'margin': '10px'})
+
+                    ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
+
+                ], 
+                placement = 'bottom', 
+                close_button = False, 
+                style = {
+                    'padding-top': '5px', 
+                    'padding-left': '5px', 
+                    'padding-right': '5px', 
+                    'margin': '0px', 
+                    'background-color': '#F8F9FB',
+                    'height': '400px'
+                }, 
+                id = 'filtros-movil', is_open = False)
 
             ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
