@@ -924,7 +924,7 @@ def resumen():
 
                                   dbc.Col([
 
-                                      html.Img(src='assets/foto_mapa.png', className='img-fluid'),
+                                      html.Img(src='assets/mapa_foto.png', className='img-fluid'),
 
                                       html.H1('Mapa', )
 
