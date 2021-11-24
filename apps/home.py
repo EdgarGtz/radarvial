@@ -6046,7 +6046,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
         margin = dict(t=0, l=0, r=0, b=0)
@@ -6130,7 +6130,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6220,7 +6220,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6310,7 +6310,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6395,7 +6395,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6488,7 +6488,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6581,7 +6581,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6671,7 +6671,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6764,7 +6764,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6857,7 +6857,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -6942,7 +6942,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7035,7 +7035,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7128,7 +7128,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7218,7 +7218,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7311,7 +7311,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7404,7 +7404,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7492,7 +7492,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7588,7 +7588,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
@@ -7684,7 +7684,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias,
         mapa_interac_movil.update_layout(clickmode='event+select', 
              mapbox=dict(
                 accesstoken=mapbox_access_token,
-                center=dict(lat=25.6572, lon=-100.3689),
+                center=dict(lat=25.6452, lon=-100.3689),
                 style="streets"
             ),
             margin = dict(t=0, l=0, r=0, b=0)
