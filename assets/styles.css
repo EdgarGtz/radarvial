@@ -1,5 +1,6 @@
-
-
+body, html {
+  height: 100%;
+}
 .radio-group .custom-control-input ~ .custom-control-label::before {
   content: none;
 }
@@ -77,7 +78,7 @@
     color: #535353;
 }
 
-
+/* SLIDER */
 
 .rc-slider-track {
   background-color: #545B62;
@@ -102,6 +103,8 @@
 }
 
 
+
+
 .DateInput_input {
   text-align: center !important;
 }
@@ -112,69 +115,179 @@
 
 }
 
-.custom-input-check {
-    position: relative;
-    margin-top: 0rem;
-    margin-left: 0rem;
+
+
+.form-check-input {
+  position: relative !important;
+  margin-top: 0rem;
+  margin-left: 0rem;
+  display: none;
 }
 
 
-.custom-control
+.form-check /* custom-control + custom-checkbox */
 {
   display: inline-block !important;
   z-index: 0 !important;
+  margin: 4px 4px 4px -4px !important;
+  padding: 4px;
 }
 
-.custom-checkbox
-{
-  margin: 4px !important;
-  padding-top: 4px;
-}
-
-
-
-.custom-control-label::after {
+.form-check-label::after { /* custom-control-label */
   content: none !important;
 }
 
-.tarjeta_map
-{
-  border:#000000 !important;
-  background-color: #343332;
+.btn-secondary.active{
+    color: #fff !important;
+    background-color: #565e64 !important;
+    border-color: #51585e !important;
 }
 
-.tarjeta_arriba_map
+/* .tarjeta_map
+{
+  border:#BBC3C8 !important;
+  background-color: #BBC3C8;
+} */
+
+ .tarjeta_arriba_map
 {
   border-radius: .25rem .25rem 0 0 !important;
+  background-color: #565e64 !important;
 }
 
 
-/* Borde y color de cuadro calendario */
+
 .DateRangePickerInput__withBorder
 {
-  border:1px solid #000 !important;
+  border:1px solid #545B62 !important;
+}
+
+.tabla_int_row th
+{
+    font-weight: normal !important;
 }
 
 
-/* Estilos de checklist blancos y negros */
 
-.btn-group .btn-secondary {
-  border-color: #ededed;
-  background-color: #ededed;
-  color: #535353;
+/* SIDEBAR COLORS*/
+
+a.sidebar-link.nav-link
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: #BBC3C8;
+  font-size: 16px;
 }
 
-.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
-    color: black;
-    background-color: white;
-    border-color: black;
-    border-width: 1px;
+a.sidebar-link.nav-link:hover
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: white;
+}
+
+a.sidebar-link.nav-link:focus
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: white;
+}
+
+a.sidebar-link-movil.nav-link
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: #BBC3C8;
+  font-size: 16px;
+}
+
+a.sidebar-link-movil.nav-link:hover
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: white;
+}
+
+a.sidebar-link-movil.nav-link:focus
+{
+  background-color: transparent;
+  border-radius: 0;
+  color: white;
+}
+
+/* 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link
+{
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  color: white !important;
+} */
+
+/* TITULOS TOP*/
+
+.titulo-top span
+{ 
+  margin-top: -20px: 
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -10px; !important;
 }
 
 
+/*Boton cerrar*/
+.btn-close  {
+  background-color: white;
+  color: white;
+  margin-left: 70px;
+  filter: invert(1) grayscale(100%) brightness(200%);
+  width: 20.47px;
+  height: 20.47px;
+}
+
+/*Offcanvas */
+.offcanvas-body {
+  padding: 0;
+  }
+
+.offcanvas-header {
+  position: absolute;
+  margin: 35px 0 0 80px;
+}
+
+/* .sidebar-list .flex-column .nav a:hover
+{
+    background-color: transparent;
+    color: red !important;
+    border-radius: 0;
+    margin: 0 0 0 0 !important;
+}
+
+
+/*Tabla ICU*/
+table, th, td {
+  border:1px solid black;
+  text-align: center;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display:none;
+}
+
+/* Expand button hover effect */
+.expand-button {
+  background-color: white;
+}
+
+.expand-button:hover {
+  background-color: #D9DBDD !important;
+}
+
+button:focus { outline: none !important; box-shadow: none !important; }
 
 .filtros_small {
   position: absolute;
   right: 0;
-  z-index: 5;
+  
 }
