@@ -468,7 +468,7 @@ app.layout = html.Div([
                     #     ),
                     # ]),
 
-                ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
+                ], class_name='d-flex align-items-center justify-content-center', style={'width':'100%'})
 
             ], class_name='m-0 pt-3 w-50 d-none d-lg-block'), 
 
@@ -489,7 +489,7 @@ app.layout = html.Div([
 
                 ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
 
-            ], class_name='m-0 pt-3 w-100 d-md-none'),
+            ], class_name='m-0 pt-3 w-100 d-lg-none'),
 
             # TITULO MD
             # dbc.Row([
@@ -569,7 +569,7 @@ app.layout = html.Div([
 
         ),
 
-    ], style={'font-family':'Arial'})
+], style={'font-family':'Arial'})
 
 
 #------
