@@ -334,298 +334,162 @@ app.layout = html.Div([
                     ),
 
                     # MODAL
-                    html.Div([
+                    # html.Div([
 
-                        # BOTÓN
-                        html.Span(
-                            dbc.Button(
-                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-                                        style={'float':'right'},
-                                        className="p-0 img-fluid"), 
-                                id="open_titulo", 
-                                n_clicks=0, 
-                                style={'display':'inline-block',
-                                        'float':'left','padding':'0', 
-                                        'width':'18px','background-color':'transparent',
-                                        'border-color':'transparent'},
-                                class_name='rounded-circle ml-4 pb-1'
+                    #     # BOTÓN
+                    #     html.Span(
+                    #         dbc.Button(
+                    #             html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                    #                     style={'float':'right'},
+                    #                     className="p-0 img-fluid"), 
+                    #             id="open_titulo", 
+                    #             n_clicks=0, 
+                    #             style={'display':'inline-block',
+                    #                     'float':'left','padding':'0', 
+                    #                     'width':'18px','background-color':'transparent',
+                    #                     'border-color':'transparent'},
+                    #             class_name='rounded-circle ml-4 pb-1'
 
-                            ),
+                    #         ),
 
-                            id="tooltip-sidebar-titulo",
-                        ),
+                    #         id="tooltip-sidebar-titulo",
+                    #     ),
 
-                        # TOOLTIP
-                        dbc.Tooltip(
-                            "Más información",
-                            target="tooltip-sidebar-titulo",
-                            placement = 'auto'
-                        ),
+                    #     # TOOLTIP
+                    #     dbc.Tooltip(
+                    #         "Más información",
+                    #         target="tooltip-sidebar-titulo",
+                    #         placement = 'auto'
+                    #     ),
 
-                        # CONTENIDO MODAL
-                        dbc.Modal([
+                    #     # CONTENIDO MODAL
+                    #     dbc.Modal([
 
-                            dbc.ModalHeader(html.B("Radar Vial")),
+                    #         dbc.ModalHeader(html.B("Radar Vial")),
 
-                            dbc.ModalBody([
+                    #         dbc.ModalBody([
                             
-                                dbc.Row([
+                    #             dbc.Row([
 
-                                    dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-                                        html.I(' Última actualización: Septiembre 2021')
-                                        ]),
+                    #                 dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
+                    #                     html.I(' Última actualización: Septiembre 2021')
+                    #                     ]),
 
-                                ]),
+                    #             ]),
 
-                                html.Br(),
+                    #             html.Br(),
 
-                                dbc.Row([
+                    #             dbc.Row([
 
-                                    dbc.Col([
+                    #                 dbc.Col([
                                     
-                                        html.Div([
+                    #                     html.Div([
 
-                                            html.Span(
+                    #                         html.Span(
                                                 
-                                                html.Button([
-                                                    html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-                                                            style={'width':'8%','float':'left'},
-                                                            className="pt-1"),
-                                                    html.B("Descargar Excel"),
-                                                    ], 
-                                                    id="btn_csv",
-                                                    className="btn",
-                                                    n_clicks=None,
-                                                    style={'float':'right','background-color':'#BBC3C8','color':'white'}
-                                                ),
+                    #                             html.Button([
+                    #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
+                    #                                         style={'width':'8%','float':'left'},
+                    #                                         className="pt-1"),
+                    #                                 html.B("Descargar Excel"),
+                    #                                 ], 
+                    #                                 id="btn_csv",
+                    #                                 className="btn",
+                    #                                 n_clicks=None,
+                    #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
+                    #                             ),
 
-                                                id="tooltip-target-descbd",
-                                            ),
+                    #                             id="tooltip-target-descbd",
+                    #                         ),
 
-                                            dbc.Tooltip(
-                                                "Descarga toda la base de datos",
-                                                target="tooltip-target-descbd",
-                                            ),
+                    #                         dbc.Tooltip(
+                    #                             "Descarga toda la base de datos",
+                    #                             target="tooltip-target-descbd",
+                    #                         ),
 
                                             
-                                            Download(id="download-dataframe-csv")
-                                        ], className='d-flex justify-content-center'),
+                    #                         Download(id="download-dataframe-csv")
+                    #                     ], className='d-flex justify-content-center'),
 
-                                    ], lg=4, md=4),
+                    #                 ], lg=4, md=4),
 
-                                    dbc.Col([
+                    #                 dbc.Col([
 
-                                        html.Div([
+                    #                     html.Div([
 
-                                            html.Span(
+                    #                         html.Span(
 
-                                                html.Button([
-                                                    html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-                                                            style={'width':'8%','float':'left'},
-                                                            className="pt-1"),
-                                                    html.B("Descargar SHP"),
-                                                    ], 
-                                                    id="btn_shp",
-                                                    className="btn",
-                                                    n_clicks=None,
-                                                    style={'float':'right','background-color':'#BBC3C8','color':'white'}
-                                                ),
+                    #                             html.Button([
+                    #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
+                    #                                         style={'width':'8%','float':'left'},
+                    #                                         className="pt-1"),
+                    #                                 html.B("Descargar SHP"),
+                    #                                 ], 
+                    #                                 id="btn_shp",
+                    #                                 className="btn",
+                    #                                 n_clicks=None,
+                    #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
+                    #                             ),
                                                         
 
-                                                id="tooltip-target-shp",
-                                            ),
+                    #                             id="tooltip-target-shp",
+                    #                         ),
 
-                                            dbc.Tooltip(
-                                                "Descarga toda la base de datos en SHP",
-                                                target="tooltip-target-shp",
-                                            ),
+                    #                         dbc.Tooltip(
+                    #                             "Descarga toda la base de datos en SHP",
+                    #                             target="tooltip-target-shp",
+                    #                         ),
 
-                                            Download(id="download-dataframe-shp")
-                                        ], className='d-flex justify-content-center')
+                    #                         Download(id="download-dataframe-shp")
+                    #                     ], className='d-flex justify-content-center')
 
-                                    ], lg=4, md=4)
+                    #                 ], lg=4, md=4)
 
-                                ], class_name='d-flex justify-content-center'),
+                    #             ], class_name='d-flex justify-content-center'),
 
-                            ],style={"textAlign":"justify",'font-size':'100%'}),
+                    #         ],style={"textAlign":"justify",'font-size':'100%'}),
 
-                            dbc.ModalFooter([
+                    #         dbc.ModalFooter([
                                 
-                                dbc.Button(
-                                    "Cerrar", 
-                                    id="close_titulo", 
-                                    class_name="ml-auto btn btn-secondary", 
-                                    n_clicks=0
-                                )
-                            ]),
+                    #             dbc.Button(
+                    #                 "Cerrar", 
+                    #                 id="close_titulo", 
+                    #                 class_name="ml-auto btn btn-secondary", 
+                    #                 n_clicks=0
+                    #             )
+                    #         ]),
 
-                            ],
-                            id="modal_titulo",
-                            centered=True,
-                            size="lg",
-                            is_open=False,
-                            style={'font-family':'Arial'}
-                        ),
-                    ]),
+                    #         ],
+                    #         id="modal_titulo",
+                    #         centered=True,
+                    #         size="lg",
+                    #         is_open=False,
+                    #         style={'font-family':'Arial'}
+                    #     ),
+                    # ]),
 
-                ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
+                ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
 
             ], class_name='m-0 pt-3 w-50 d-none d-lg-block'), 
 
-            # # TITULO MOVIL
-            # dbc.Row([
+            # TITULO MOVIL
+            dbc.Row([
 
-            #     dbc.Col([
+                dbc.Col([
 
-            #         html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
-            #                     className="pt-0",
-            #                     style={'width':'33px', 'height': '33px', 'float':'left', 'margin-right': '15px'}
-            #             ),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
+                                className="pt-0",
+                                style={'width':'33px', 'height': '33px', 'float':'left', 'margin-right': '15px'}
+                        ),
 
-            #         html.H2('Radar Vial', 
-            #             style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
-            #             className='pl-3 pt-1 '
-            #         ),
+                    html.H2('Radar Vial', 
+                        style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
+                        className='pl-3 pt-1 '
+                    ),
 
-            #         # MODAL
-            #         html.Div([
+                ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
 
-            #             # BOTÓN
-            #             html.Span(
-            #                 dbc.Button(
-            #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-            #                             style={'float':'right'},
-            #                             className="p-0 img-fluid"), 
-            #                     id="open_titulo_movil", 
-            #                     n_clicks=0, 
-            #                     style={'display':'inline-block',
-            #                             'float':'left','padding':'0', 
-            #                             'width':'18px','background-color':'transparent',
-            #                             'border-color':'transparent'},
-            #                     class_name='rounded-circle ml-2 pb-1'
-
-            #                 ),
-
-            #                 id="tooltip-sidebar-titulo",
-            #             ),
-
-            #             # TOOLTIP
-            #             dbc.Tooltip(
-            #                 "Más información",
-            #                 target="tooltip-sidebar-titulo"
-            #             ),
-
-            #             # CONTENIDO MODAL
-            #             dbc.Modal([
-
-            #                 dbc.ModalHeader(
-            #                     html.B("Radar Vial")
-            #                 ),
-
-            #                 dbc.ModalBody([
-                            
-            #                     dbc.Row([
-
-            #                         dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-            #                             html.I(' Última actualización: Septiembre 2021')
-            #                             ]),
-
-            #                     ]),
-
-            #                     # html.Br(),
-
-            #                     # dbc.Row([
-
-            #                     #     dbc.Col([
-                                    
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-                                                
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar Excel"),
-            #                     #                     ], 
-            #                     #                     id="btn_csv",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-
-            #                     #                 id="tooltip-target-descbd",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos",
-            #                     #                 target="tooltip-target-descbd",
-            #                     #             ),
-
-                                            
-            #                     #             Download(id="download-dataframe-csv")
-            #                     #         ], className='d-flex justify-content-center'),
-
-            #                     #     ], lg=4, md=4),
-
-            #                     #     dbc.Col([
-
-            #                     #         html.Div([
-
-            #                     #             html.Span(
-
-            #                     #                 html.Button([
-            #                     #                     html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #                     #                             style={'width':'8%','float':'left'},
-            #                     #                             className="pt-1"),
-            #                     #                     html.B("Descargar SHP"),
-            #                     #                     ], 
-            #                     #                     id="btn_shp",
-            #                     #                     className="btn",
-            #                     #                     n_clicks=None,
-            #                     #                     style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #                     #                 ),
-                                                        
-
-            #                     #                 id="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             dbc.Tooltip(
-            #                     #                 "Descarga toda la base de datos en SHP",
-            #                     #                 target="tooltip-target-shp",
-            #                     #             ),
-
-            #                     #             Download(id="download-dataframe-shp")
-            #                     #         ], className='d-flex justify-content-center')
-
-            #                     #     ], lg=4, md=4)
-
-            #                     # ], class_name='d-flex justify-content-center'),
-
-            #                 ],style={"textAlign":"justify",'font-size':'100%'}),
-
-            #                 dbc.ModalFooter([
-                                
-            #                     dbc.Button(
-            #                         "Cerrar", 
-            #                         id="close_titulo_movil", 
-            #                         class_name="ml-auto btn btn-secondary", 
-            #                         n_clicks=0
-            #                     )
-            #                 ]),
-
-            #             ],
-            #             id="modal_titulo_movil",
-            #             centered=True,
-            #             size="lg",
-            #             is_open=False,
-            #             style={'font-family':'Arial'}
-            #             ),
-            #         ]),
-
-            #     ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
-
-            # ], style={'position':'absolute','left':'1px','top':'10px',}, class_name='m-0 pt-3 w-100 d-md-none'),
+            ], class_name='m-0 pt-3 w-100 d-md-none'),
 
             # # TITULO MD
             # dbc.Row([
@@ -780,7 +644,7 @@ app.layout = html.Div([
 
             # ], style={'position':'absolute','left':'1px','top':'10px',}, class_name='m-0 pt-3 w-100 d-none d-md-block d-lg-none')
 
-        ], className='titulo-top'),
+        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
 
         # Tabs
         dbc.Row(
