@@ -292,3 +292,10 @@ button:focus { outline: none !important; box-shadow: none !important; }
   top: 70%;
   z-index: 5;
 }
+
+.indicadores_small {
+  position: absolute;
+  right: 5%;
+  top: 75%;
+  z-index: 5;
+}

@@ -1905,6 +1905,14 @@ def mapa():
                     n_clicks = 0
                 ),
 
+                dbc.Button(
+                    'Indicadores',
+                    color = 'light',
+                    class_name = 'indicadores_small',
+                    id = 'collapse-indicadores-movil',
+                    n_clicks = 0
+                ),
+
                 dcc.Graph(
                     id = 'mapa_interac_movil',
                     figure = {},
@@ -2491,6 +2499,98 @@ def mapa():
                 }, 
                 id = 'filtros-movil', is_open = False)
             ], class_name = 'd-lg-none')
+        ], class_name = 'd-lg-none'),
+
+        dbc.Row([
+
+            dbc.Col([
+
+                dbc.Offcanvas([
+
+                    # INDICADOR HECHOS VIALES
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+
+                                html.P([
+                                    'Hechos Viales Totales'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),                            
+                        
+                        ], style = {'padding': '0px', 'margin': '10px'})
+
+                    ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
+
+                    html.Br(),
+
+                    # FILTROS HECHOS VIALES
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+
+                                html.P([
+                                    'Lesionados'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                        ], style = {'padding': '0px', 'margin': '10px'})
+                        
+                    ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
+
+                    html.Br(),
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+
+                                html.P([
+                                    'Fallecidos'
+                                ], 
+                                style = {
+                                    'font-size': '18px', 
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '5px'
+                                    }
+                                )
+                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                        ], style = {'padding': '0px', 'margin': '10px'})
+
+                    ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
+
+                ], 
+                placement = 'bottom', 
+                close_button = False, 
+                style = {
+                    'padding-top': '5px', 
+                    'padding-left': '5px', 
+                    'padding-right': '5px', 
+                    'margin': '0px', 
+                    'background-color': '#F8F9FB',
+                    'height': '400px'
+                }, 
+                id = 'indicadores-movil', is_open = False)
+
+            ], class_name = 'd-lg-none')
+
         ], class_name = 'd-lg-none')
 
     ], className = 'w-100 h-100', style = {'padding': '0px', 'margin': '0px'})
@@ -2816,6 +2916,16 @@ def toggle_modal_afres(open1_afres, close1_afres, modal_afres):
     [Input("collapse-filtros-movil", "n_clicks")],
     [State("filtros-movil", "is_open")])
 def toggle_collapse_filtros_movil(n, is_open):
+    if n:
+        return not is_open
+    return is_open
+
+# COLLAPSE INDICADORES MOVIL
+@app.callback(
+    Output("indicadores-movil", "is_open"),
+    [Input("collapse-indicadores-movil", "n_clicks")],
+    [State("indicadores-movil", "is_open")])
+def toggle_collapse_indicadores_movil(n, is_open):
     if n:
         return not is_open
     return is_open
