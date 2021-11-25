@@ -9550,7 +9550,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
         mapa_interac_movil.update_traces(#marker_color="#565e64",
             unselected_marker_opacity=1)
     
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     
     # -------------------------------------------
@@ -9635,7 +9635,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
     
     # HECHOS VIALES TODOS -- Afectados -- Todos (M/F)
 
@@ -9725,7 +9725,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     # HECHOS VIALES TODOS -- Responsables -- Todos (M/F)
 
@@ -9815,7 +9815,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     
     # ----------------
@@ -9900,7 +9900,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     # HECHOS VIALES TODOS -- Afectados -- Masculino o Femenino
 
@@ -9993,7 +9993,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     # HECHOS VIALES TODOS -- Responsables -- Masculino o Femenino
 
@@ -10086,7 +10086,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos viales Totales: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
 
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
 
 
@@ -10176,7 +10176,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
        
     # HECHOS VIALES LESIONADOS -- Afectados -- Todos (M/F)
 
@@ -10269,7 +10269,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
     
     # HECHOS VIALES LESIONADOS -- Responsables -- Todos (M/F)
 
@@ -10362,7 +10362,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
 
     # ----------------
@@ -10447,7 +10447,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
     
     # HECHOS VIALES LESIONADOS -- Afectados -- Masculino o Femenino
 
@@ -10540,7 +10540,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
     
     # HECHOS VIALES LESIONADOS -- Responsables -- Masculino o Femenino
 
@@ -10633,7 +10633,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
 
 
@@ -10723,7 +10723,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
    
     # HECHOS VIALES FALLECIDOS -- Afectados -- Todos (M/F)
 
@@ -10816,7 +10816,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     # HECHOS VIALES FALLECIDOS -- Responsables
 
@@ -10909,7 +10909,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
 
     # ----------------
@@ -10997,7 +10997,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
     # HECHOS VIALES FALLECIDOS -- Afectados -- Todos (M/F)
 
@@ -11093,7 +11093,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
     
     # HECHOS VIALES FALLECIDOS -- Responsables
 
@@ -11189,7 +11189,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Fallecidos: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
-        return mapa_interac_movil
+        return mapa_interac_movil, mapa_data_top_movil
 
 
     # -------------------------------------------
@@ -11218,6 +11218,30 @@ def render_tabla_mapa_top(datos_tabla_mapa):
 
 
     return tabla_mapa_top
+
+# RADAR VIAL - MAPA: TABLA TOP 10
+def render_tabla_mapa_top_movil(datos_tabla_mapa_movil):   
+
+    # Tabla
+    datos_tabla_mapa_movil = pd.read_json(datos_tabla_mapa_movil)
+    
+    tabla_mapa_top_movil = go.Figure(
+            [go.Table(
+                columnwidth = [100, 50, 50, 50],
+                header=dict(values=['Intersección','Hechos viales','Lesionados','Fallecidos'],
+                    fill_color='#343332',
+                    font=dict(color='white', family='Arial', size = 16),
+                    align='center'),
+                cells=dict(values=[datos_tabla_mapa_movil.interseccion, datos_tabla_mapa_movil.hechos_viales, datos_tabla_mapa_movil.lesionados, datos_tabla_mapa_movil.fallecidos],
+                   fill_color='#F7F7F7',
+                   font=dict(color='black', family='Arial', size = 16),
+                   align=['left', 'center', 'center', 'center'],
+                   height=35))
+            ])
+    tabla_mapa_top_movil.update_layout(margin = dict(t=20, l=0, r=0, b=10))
+
+
+    return tabla_mapa_top_movil
 
 # RADAR VIAL - MAPA: MAPA (DATA)
 def render_mapa_data(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, hv_sexo_opciones, checklist_tipo_veh, slider_edad):
@@ -13818,6 +13842,7 @@ def render_mapa_data_movil(start_date, end_date, slider_hora_movil, checklist_di
     return mapa_data_movil
 
     # -------------------------------------------
+
 
 # RADAR VIAL - MAPA: DESCARGA TU BUSQUEDA
 def render_down_data_csv(n_clicks, data):

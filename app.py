@@ -55,7 +55,7 @@ server = app.server
 # Connect to app pages
 from apps import home, visualizaciones, radarvial
 
-from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, render_hv_totales_movil, render_hv_fall_totales_movil, render_hv_les_totales_movil, render_opciones_dos_dos_movil, render_opciones_dos_movil, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
+from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, render_hv_totales_movil, render_hv_fall_totales_movil, render_hv_les_totales_movil, render_opciones_dos_dos_movil, render_opciones_dos_movil, render_tabla_mapa_top_movil, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
   render_opciones_dos_dos, toggle_modal_thv, render_collapse_button_bavan, toggle_modal_afres, render_hv_totales, render_hv_les_totales, 
   render_hv_fall_totales, render_mapa_interac, render_mapa_interac_movil, render_tabla_mapa_top, render_mapa_data, render_mapa_data_movil, render_down_data_csv)
 
@@ -2602,6 +2602,30 @@ def mapa():
 
                         ], style = {'padding': '0px', 'margin': '10px'})
 
+                    ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'}),
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            dcc.Store(id='mapa_data_top_movil'),
+
+                            dcc.Graph(
+                                id = 'tabla_mapa_top_movil',
+                                figure = {},
+                                config={
+                                        'modeBarButtonsToRemove':
+                                        ['lasso2d', 'pan2d',
+                                        'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                                        'resetScale2d', 'hoverClosestCartesian',
+                                        'hoverCompareCartesian', 'toggleSpikelines',
+                                        'select2d',],
+                                        'displaylogo': False
+                                    },
+                            )
+
+                        ], style = {'padding': '0px', 'margin': '10px'})
+
                     ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
 
                 ], 
@@ -2845,8 +2869,8 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
 
 # RADAR VIAL - MAPA: MAPA MOVIL
 @app.callback(
-    Output('mapa_interac_movil', 'figure'),
-     #Output('mapa_data_top', 'data')], 
+    [Output('mapa_interac_movil', 'figure'),
+    Output('mapa_data_top_movil', 'data')], 
     [Input('calendario_movil', 'start_date'),
     Input('calendario_movil', 'end_date'),
     Input('slider_hora_movil', 'value'),
@@ -2901,6 +2925,13 @@ def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves
     Input('mapa_data_top', 'data'))  
 def update_output(mapa_data_top):
     return render_tabla_mapa_top(mapa_data_top)
+
+# RADAR VIAL - MAPA: TABLA TOP INTERSECCIONES - MOVIL
+@app.callback(
+    Output('tabla_mapa_top_movil', 'figure'), 
+    Input('mapa_data_top_movil', 'data'))  
+def update_output(mapa_data_top_movil):
+    return render_tabla_mapa_top_movil(mapa_data_top_movil)
 
 # RADAR VIAL - MAPA: DESCARGA TU BÚSQUEDA
 @app.callback(
