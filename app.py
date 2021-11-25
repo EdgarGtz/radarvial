@@ -49,6 +49,8 @@ app.index_string = '''
 </html>
 '''
 
+app.config.suppress_callback_exceptions = True
+
 server = app.server
 
 # Connect to app pages
