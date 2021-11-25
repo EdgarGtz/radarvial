@@ -1919,6 +1919,14 @@ def mapa():
                     
                 ], color="#2cdb63", type="cube"),
 
+            ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
+
+        ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px', 'height': '700px'}),
+
+        dbc.Row([
+
+            dbc.Col([
+
                 dbc.Offcanvas([
 
                     # FILTROS FECHA
@@ -2486,10 +2494,8 @@ def mapa():
                     'height': '400px'
                 }, 
                 id = 'filtros-movil', is_open = False)
-
-            ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
-
-        ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px', 'height': '700px'})
+            ], class_name = 'd-lg-none')
+        ], class_name = 'd-lg-none')
 
     ], className = 'w-100 h-100', style = {'padding': '0px', 'margin': '0px'})
 
