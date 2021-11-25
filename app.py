@@ -55,9 +55,9 @@ server = app.server
 # Connect to app pages
 from apps import home, visualizaciones, radarvial
 
-from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, render_hv_fall_totales_movil, render_hv_les_totales_movil, render_opciones_dos_dos_movil, render_opciones_dos_movil, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
+from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, render_hv_totales_movil, render_hv_fall_totales_movil, render_hv_les_totales_movil, render_opciones_dos_dos_movil, render_opciones_dos_movil, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
   render_opciones_dos_dos, toggle_modal_thv, render_collapse_button_bavan, toggle_modal_afres, render_hv_totales, render_hv_les_totales, 
-  render_hv_fall_totales, render_mapa_interac, render_mapa_interac_movil, render_tabla_mapa_top, render_mapa_data, render_down_data_csv)
+  render_hv_fall_totales, render_mapa_interac, render_mapa_interac_movil, render_tabla_mapa_top, render_mapa_data, render_mapa_data_movil, render_down_data_csv)
 
 from apps.visualizaciones import (render_pub_periodo, render_pub_vulne, render_pub_time)
 
@@ -2523,7 +2523,16 @@ def mapa():
                                     'margin-bottom': '5px'
                                     }
                                 )
-                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),                            
+                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                            html.Table([
+
+                                    html.Tr([
+                                        #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
+                                        html.Th(id = 'hv_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                    ], style = {'border': '0px'}),
+
+                            ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
                         
                         ], style = {'padding': '0px', 'margin': '10px'})
 
@@ -2531,7 +2540,7 @@ def mapa():
 
                     html.Br(),
 
-                    # FILTROS HECHOS VIALES
+                    # INDICADOR LESIONADOS
                     dbc.Card([
 
                         dbc.CardBody([
@@ -2549,12 +2558,22 @@ def mapa():
                                 )
                             ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
+                            html.Table([
+
+                                    html.Tr([
+                                        #html.Th('Lesionados: ', style={'font-weight':'normal', 'border': '0px'}),
+                                        html.Th(id = 'hv_les_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                    ], style = {'border': '0px'}),
+
+                            ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
+
                         ], style = {'padding': '0px', 'margin': '10px'})
                         
                     ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
 
                     html.Br(),
 
+                    # INDICADOR FALLECIDOS
                     dbc.Card([
 
                         dbc.CardBody([
@@ -2571,6 +2590,15 @@ def mapa():
                                     }
                                 )
                             ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                            html.Table([
+
+                                    html.Tr([
+                                        #html.Th('Fallecidos: ', style={'font-weight':'normal', 'border': '0px'}),
+                                        html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                    ], style = {'border': '0px'}),
+
+                            ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
 
                         ], style = {'padding': '0px', 'margin': '10px'})
 
@@ -2711,7 +2739,7 @@ def get_opciones_dos_dos_movil(hv_usu_opciones_movil, hv_graves_opciones_movil):
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_hv_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
 
-# RADAR VIAL - MAPA: HECHOS VIALES TOTALES
+# RADAR VIAL - MAPA: HECHOS VIALES TOTALES - MOVIL
 @app.callback(
     Output('hv_totales_movil', 'children'), 
     [Input('calendario_movil', 'start_date'),
@@ -2831,8 +2859,8 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
     Input('checklist_tipo_veh_movil', 'value'),
     Input('slider_edad_movil', 'value')],
             prevent_initial_call=False)
-def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
-    return render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil):
+    return render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil)
 
 # RADAR VIAL - MAPA: MAPA DATA
 @app.callback(Output('mapa_data', 'data'), 
@@ -2849,6 +2877,23 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
     Input('slider_edad', 'value')])
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_mapa_data(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: MAPA DATA - MOVIL
+@app.callback(Output('mapa_data_movil', 'data'), 
+    [Input('calendario_movil', 'start_date'),
+    Input('calendario_movil', 'end_date'),
+    Input('slider_hora_movil', 'value'),
+    Input('checklist_dias_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('checklist_tipo_hv_movil', 'value'),
+    Input('hv_afres_opciones_movil', 'value'),
+    Input('hv_sexo_opciones_movil', 'value'),
+    Input('checklist_tipo_veh_movil', 'value'),
+    Input('slider_edad_movil', 'value')])
+def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil):
+    return render_mapa_data(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil)
+
 
 # RADAR VIAL - MAPA: TABLA TOP INTERSECCIONES
 @app.callback(
