@@ -55,7 +55,7 @@ server = app.server
 # Connect to app pages
 from apps import home, visualizaciones, radarvial
 
-from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
+from apps.home import (render_collapse_button_fecha, render_collapse_button_hv, render_hv_fall_totales_movil, render_hv_les_totales_movil, render_opciones_dos_dos_movil, render_opciones_dos_movil, toggle_modal_sev, toggle_modal_usaf, render_opciones_dos,
   render_opciones_dos_dos, toggle_modal_thv, render_collapse_button_bavan, toggle_modal_afres, render_hv_totales, render_hv_les_totales, 
   render_hv_fall_totales, render_mapa_interac, render_mapa_interac_movil, render_tabla_mapa_top, render_mapa_data, render_down_data_csv)
 
@@ -2565,6 +2565,15 @@ def update_output(pub_gravedad):
 def get_opciones_dos(hv_usu_opciones, hv_graves_opciones):
     return render_opciones_dos(hv_usu_opciones, hv_graves_opciones)
 
+# RADAR VIAL - MAPA: CARGAR OPCIONES POR USUARIO - MOVIL
+@app.callback(
+    Output('checklist_tipo_hv_movil', 'options'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    prevent_initial_call=False)
+def get_opciones_dos_movil(hv_usu_opciones_movil, hv_graves_opciones_movil):
+    return render_opciones_dos_movil(hv_usu_opciones_movil, hv_graves_opciones_movil)
+
 # RADAR VIAL - MAPA: CARGAR VALORES POR USUARIO
 @app.callback(
     Output('checklist_tipo_hv', 'value'),
@@ -2573,6 +2582,15 @@ def get_opciones_dos(hv_usu_opciones, hv_graves_opciones):
     prevent_initial_call=False)
 def get_opciones_dos_dos(hv_usu_opciones, hv_graves_opciones):
     return render_opciones_dos_dos(hv_usu_opciones, hv_graves_opciones)
+
+# RADAR VIAL - MAPA: CARGAR VALORES POR USUARIO - MOVIL
+@app.callback(
+    Output('checklist_tipo_hv_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    prevent_initial_call=False)
+def get_opciones_dos_dos_movil(hv_usu_opciones_movil, hv_graves_opciones_movil):
+    return render_opciones_dos_dos_movil(hv_usu_opciones_movil, hv_graves_opciones_movil)
 
 # RADAR VIAL - MAPA: HECHOS VIALES TOTALES
 @app.callback(
@@ -2591,6 +2609,23 @@ def get_opciones_dos_dos(hv_usu_opciones, hv_graves_opciones):
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_hv_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
 
+# RADAR VIAL - MAPA: HECHOS VIALES TOTALES
+@app.callback(
+    Output('hv_totales_movil', 'children'), 
+    [Input('calendario_movil', 'start_date'),
+    Input('calendario_movil', 'end_date'),
+    Input('slider_hora_movil', 'value'),
+    Input('checklist_dias_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('checklist_tipo_hv_movil', 'value'),
+    Input('hv_afres_opciones_movil', 'value'),
+    Input('hv_sexo_opciones_movil', 'value'),
+    Input('checklist_tipo_veh_movil', 'value'),
+    Input('slider_edad_movil', 'value')])
+def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil):
+    return render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil)
+
 # RADAR VIAL - MAPA: LESIONADOS
 @app.callback(
     Output('hv_les_totales', 'children'), 
@@ -2608,6 +2643,23 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_hv_les_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
 
+# RADAR VIAL - MAPA: LESIONADOS - MOVIL
+@app.callback(
+    Output('hv_les_totales_movil', 'children'), 
+    [Input('calendario_movil', 'start_date'),
+    Input('calendario_movil', 'end_date'),
+    Input('slider_hora_movil', 'value'),
+    Input('checklist_dias_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('checklist_tipo_hv_movil', 'value'),
+    Input('hv_afres_opciones_movil', 'value'),
+    Input('hv_sexo_opciones_movil', 'value'),
+    Input('checklist_tipo_veh_movil', 'value'),
+    Input('slider_edad_movil', 'value')])
+def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil):
+    return render_hv_les_totales_movil(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil)
+
 # RADAR VIAL - MAPA: FALLECIDOS
 @app.callback(
     Output('hv_fall_totales', 'children'), 
@@ -2624,6 +2676,23 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
     Input('slider_edad', 'value')])
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_hv_fall_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
+
+# RADAR VIAL - MAPA: FALLECIDOS - MOVIL
+@app.callback(
+    Output('hv_fall_totales_movil', 'children'), 
+    [Input('calendario_movil', 'start_date'),
+    Input('calendario_movil', 'end_date'),
+    Input('slider_hora_movil', 'value'),
+    Input('checklist_dias_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('checklist_tipo_hv_movil', 'value'),
+    Input('hv_afres_opciones_movil', 'value'),
+    Input('hv_sexo_opciones_movil', 'value'),
+    Input('checklist_tipo_veh_movil', 'value'),
+    Input('slider_edad_movil', 'value')])
+def get(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil):
+    return render_hv_fall_totales_movil(start_date, end_date, slider_hora_movil, checklist_dias_movil, hv_graves_opciones_movil, hv_usu_opciones_movil, checklist_tipo_hv_movil, hv_afres_opciones_movil, hv_sexo_opciones_movil, checklist_tipo_veh_movil, slider_edad_movil)
 
 # RADAR VIAL - MAPA: MAPA INTERACTIVO
 @app.callback(
@@ -2648,17 +2717,17 @@ def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, h
 @app.callback(
     Output('mapa_interac_movil', 'figure'),
      #Output('mapa_data_top', 'data')], 
-    [Input('calendario', 'start_date'),
-     Input('calendario', 'end_date'),
-     Input('slider_hora', 'value'),
-     Input('checklist_dias', 'value'),
-     Input('hv_graves_opciones', 'value'),
-     Input('hv_usu_opciones', 'value'),
-     Input('checklist_tipo_hv', 'value'),
-     Input('hv_afres_opciones', 'value'),
-     Input('hv_sexo_opciones', 'value'),
-     Input('checklist_tipo_veh', 'value'),
-     Input('slider_edad', 'value')],
+    [Input('calendario_movil', 'start_date'),
+    Input('calendario_movil', 'end_date'),
+    Input('slider_hora_movil', 'value'),
+    Input('checklist_dias_movil', 'value'),
+    Input('hv_graves_opciones_movil', 'value'),
+    Input('hv_usu_opciones_movil', 'value'),
+    Input('checklist_tipo_hv_movil', 'value'),
+    Input('hv_afres_opciones_movil', 'value'),
+    Input('hv_sexo_opciones_movil', 'value'),
+    Input('checklist_tipo_veh_movil', 'value'),
+    Input('slider_edad_movil', 'value')],
             prevent_initial_call=False)
 def get(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones):
     return render_mapa_interac_movil(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, checklist_tipo_veh, slider_edad, hv_sexo_opciones)
