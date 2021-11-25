@@ -1,6 +1,4 @@
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash, dcc, html
 import dash_bootstrap_components as dbc
 import plotly.express as px
 from datetime import datetime as dt
