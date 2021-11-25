@@ -2267,14 +2267,14 @@ def render_hv_totales(start_date, end_date, slider_hora, checklist_dias, hv_grav
         # Filtro por hora
         hvi_cal_dsm_hora = hvi_cal_dsm[(hvi_cal_dsm['hora']>=slider_hora[0])&(hvi_cal_dsm['hora']<=slider_hora[1])]
 
-        # Filtro por usuario
+        # # # Filtro por usuario
         hvi_cal_dsm_hora_usu = hvi_cal_dsm_hora[(hvi_cal_dsm_hora['tipo_usu'].isin(hv_usu_opciones))]
 
-        # Filtro por tipo de hecho vial
-        hvi_cal_dsm_hora_usu_thv = hvi_cal_dsm_hora_usu[(hvi_cal_dsm_hora_usu['tipo_accidente'].isin(checklist_tipo_hv))]
+        # # # Filtro por tipo de hecho vial
+        # hvi_cal_dsm_hora_usu_thv = hvi_cal_dsm_hora_usu[(hvi_cal_dsm_hora_usu['tipo_accidente'].isin(checklist_tipo_hv))]
 
         # Total de hechos viales
-        hv_totales = hvi_cal_dsm_hora_usu_thv.tipo_accidente.count()
+        hv_totales = hvi_cal_dsm_hora_usu.tipo_accidente.count()
 
         return 'Totales: {:,.0f}'.format(hv_totales)
     
