@@ -2634,7 +2634,8 @@ def mapa():
                                     },
                             )
 
-                        ], style = {'padding': '0px', 'margin': '10px'})
+                        ], style = {'padding': '0px', 'margin': '10px', 'white-space': 'nowrap', 'overflow-x': 'auto'},
+                        class_name = 'd-flex flex-nowrap')
 
                     ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
 

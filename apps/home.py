@@ -3209,7 +3209,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
     
     # HECHOS VIALES TODOS -- Afectados -- Todos (M/F)
 
@@ -3259,7 +3259,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv_afect_edad_tveh.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
 
     # HECHOS VIALES TODOS -- Responsables -- Todos (M/F)
 
@@ -3309,7 +3309,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv_resp_edad_tveh.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
 
     
     # ----------------
@@ -3354,7 +3354,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
 
     # HECHOS VIALES TODOS -- Afectados -- Masculino o Femenino
 
@@ -3407,7 +3407,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv_afect_sexo_edad_tveh.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
 
     # HECHOS VIALES TODOS -- Responsables -- Masculino o Femenino
 
@@ -3460,7 +3460,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_totales = hvi_cal_dsm_hora_usu_thv_resp_sexo_edad_tveh.tipo_accidente.count()
 
-        return hv_totales
+        return '{:,.0f}'.format(hv_totales)
 
 
 
