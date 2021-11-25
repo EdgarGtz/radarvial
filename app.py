@@ -13,6 +13,7 @@ from dash_extensions.snippets import send_data_frame
 
 
 app = dash.Dash(__name__, title='Radar Vial',
+                #
 				external_stylesheets = [dbc.themes.BOOTSTRAP],
 				meta_tags=[{'name': 'viewport',
                              'content': 'width=device-width, initial-scale=1.0'},])
@@ -616,7 +617,7 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro, si quieres conocer más sobre como se obtinen los datos da ', 
+                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro, si quieres conocer más sobre como se obtienen los datos da ', 
                           
                                         html.B('click aquí'),
                                         
@@ -624,7 +625,7 @@ def resumen():
 
                                         html.Br(),
 
-                                        'Por otro lado el municipio desarrollo el diagnóstico de seguridad vial que es la guía para mejorar la seguridad de la ciudad, conoce el diagnóstico ',
+                                        'Por otro lado el municipio desarrolló el diagnóstico de seguridad vial que es la guía para mejorar la seguridad de la ciudad, conoce el diagnóstico ',
 
                                         html.B('aquí'),
                                         
@@ -705,7 +706,7 @@ def resumen():
                             html.P('en el 2021'),                    
 
                         ])
-                    ])
+                    ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
 
@@ -736,7 +737,7 @@ def resumen():
                             html.P('en el 2021'),   
 
                         ])
-                    ])
+                    ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
 
@@ -766,7 +767,7 @@ def resumen():
                             html.P('en el 2021'),   
 
                         ])
-                    ])
+                    ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
 
@@ -797,13 +798,13 @@ def resumen():
                             html.P('en el 2021'),   
 
                         ])
-                    ])
+                    ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
             
             ], className='mx-0'),
 
-            html.Br(),
+            #html.Br(),
 
             # Por tipo de usuario // Vulnerabilidad de Usuarios
             dbc.Row([
