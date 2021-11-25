@@ -1896,28 +1896,24 @@ def mapa():
         dbc.Row([
 
             dbc.Col([
-
-                dcc.Loading([
                     
-                    dbc.Button(
+                dbc.Button(
                     'Filtros',
                     color = 'light',
                     class_name = 'filtros_small',
                     id = 'collapse-filtros-movil',
                     n_clicks = 0
-                    ),
+                ),
 
-                    dcc.Graph(
-                        id = 'mapa_interac_movil',
-                        figure = {},
-                        config={
+                dcc.Graph(
+                    id = 'mapa_interac_movil',
+                    figure = {},
+                    config={
                         'displayModeBar': False
-                        },
-                        style={'position':'relative', 'z-index':'1'},
-                        className = 'vh-100'
-                    ),
-                    
-                ], color="#2cdb63", type="cube"),
+                    },
+                    style={'position':'relative', 'z-index':'1'},
+                    className = 'vh-100'
+                ),
 
             ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
