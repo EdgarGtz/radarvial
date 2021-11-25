@@ -76,6 +76,12 @@ encoded_img3 = base64.b64encode(open(img3, 'rb').read()).decode('ascii')
 img4 = 'assets/radarvial_logo_bn.png' # replace with your own image
 encoded_img4 = base64.b64encode(open(img4, 'rb').read()).decode('ascii')
 
+img5 = 'assets/boton_filtros_movil.png' # replace with your own image
+encoded_img5 = base64.b64encode(open(img5, 'rb').read()).decode('ascii')
+
+img6 = 'assets/line_chart_down.png' # replace with your own image
+encoded_img6 = base64.b64encode(open(img6, 'rb').read()).decode('ascii')
+
 peat = 'assets/peaton.png' # replace with your own image
 peat_img = base64.b64encode(open(peat, 'rb').read()).decode('ascii')
 
@@ -1204,9 +1210,9 @@ def mapa():
                                         dcc.DatePickerRange(
                                             id = 'calendario',
                                             min_date_allowed = dt(2015, 1, 1),
-                                            max_date_allowed = dt(2021, 9, 30),
+                                            max_date_allowed = dt(2021, 10, 31),
                                             start_date = dt(2015, 1, 1),
-                                            end_date = dt(2021, 9, 30),
+                                            end_date = dt(2021, 10, 31),
                                             first_day_of_week = 1,
                                             className="d-flex justify-content-center"
                                         ),
@@ -1898,7 +1904,10 @@ def mapa():
             dbc.Col([
                     
                 dbc.Button(
-                    'Filtros',
+                    html.Img(src = 'data:image/png;base64,{}'.format(encoded_img5),
+                    className = 'img-fluid',
+                    style = {'width': '75%', 'height': '75%'}),
+                    #'Filtros',
                     color = 'light',
                     class_name = 'filtros_small',
                     id = 'collapse-filtros-movil',
@@ -1906,7 +1915,10 @@ def mapa():
                 ),
 
                 dbc.Button(
-                    'Indicadores',
+                    html.Img(src = 'data:image/png;base64,{}'.format(encoded_img6),
+                    className = 'img-fluid',
+                    style = {'width': '75%', 'height': '75%'}),
+                    #'Indicadores',
                     color = 'light',
                     class_name = 'indicadores_small',
                     id = 'collapse-indicadores-movil',
@@ -1958,9 +1970,9 @@ def mapa():
                                 dcc.DatePickerRange(
                                     id = 'calendario_movil',
                                     min_date_allowed = dt(2015, 1, 1),
-                                    max_date_allowed = dt(2021, 9, 30),
+                                    max_date_allowed = dt(2021, 10, 31),
                                     start_date = dt(2015, 1, 1),
-                                    end_date = dt(2021, 9, 30),
+                                    end_date = dt(2021, 10, 31),
                                     first_day_of_week = 1,
                                     className="d-flex justify-content-center",
                                     style = {
