@@ -896,7 +896,7 @@ app.layout = html.Div([
                     #     ),
                     # ]),
 
-                ], class_name='d-flex align-items-center justify-content-center', style={'width':'100%'})
+                ], class_name='d-flex align-items-center justify-content-center', style={'width':'100%'}),
 
             ], class_name='m-0 pt-3 w-50 d-none d-lg-block'), 
 
@@ -913,6 +913,16 @@ app.layout = html.Div([
                     html.H2('Radar Vial', 
                         style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
                         className='pl-3 pt-1 '
+                    ),
+
+                    dbc.Button(
+                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
+                                style = {'width': '15px', 'height': '15px'})], 
+                        id="boton_test", 
+                        n_clicks=0, 
+                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                        class_name = 'expand-button'
                     ),
 
                 ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
@@ -3510,22 +3520,29 @@ def mapa():
 # CALLBACKS HEADER
 
 # CARGAR CONTENIDO TABS
-def render_hechosviales(tab):
-    if tab == 'resumen':
+@app.callback(
+    Output('hechosviales_content', 'children'), 
+    [Input('tabs', 'active_tab'),
+     Input('boton_test', 'n_clicks')]) 
+def render_hechosviales(tabs, n_clicks):
+    if tabs == 'resumen':
         return resumen()
 
-    elif tab == 'mapa':
+    elif tabs == 'mapa':
+        return mapa()
+
+    elif tabs == 'resumen' and n_clicks != 0:
         return mapa()
 
     else:
         return resumen()
 
 # CARGAR TABS
-@app.callback(
-    Output('hechosviales_content', 'children'), 
-    [Input('tabs', 'active_tab')])
-def get_hechosviales(tab):
-    return render_hechosviales(tab)
+# @app.callback(
+#     Output('hechosviales_content', 'children'), 
+#     [Input('tabs', 'active_tab')])
+# def get_hechosviales(tab):
+#     return render_hechosviales(tab)
 
 #-----------
 
