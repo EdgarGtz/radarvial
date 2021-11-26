@@ -974,7 +974,7 @@ app.layout = html.Div([
 
                         ],
                         id='tabs',
-                        active_tab="mapa",
+                        active_tab="resumen",
                         class_name='d-flex flex-nowrap', #overflow-scroll'
                         style = {'font-size': '16px'}
                         ),
@@ -1066,7 +1066,7 @@ def resumen():
 
                             dbc.CardBody(
                                   [
-                                      html.H1('Mapa', className = 'card-title d-flex justify-content-center align-content-center')
+                                      html.H1('Mapa', className = 'card-title d-flex justify-content-center align-content-center', style = {'padding-top': '30px'})
                                   ]
                               )
                           )
@@ -3518,7 +3518,7 @@ def render_hechosviales(tab):
         return mapa()
 
     else:
-        return mapa()
+        return resumen()
 
 # CARGAR TABS
 @app.callback(
