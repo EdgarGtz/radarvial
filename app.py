@@ -3524,14 +3524,14 @@ def mapa():
     Output('hechosviales_content', 'children'), 
     [Input('tabs', 'active_tab'),
      Input('boton_test', 'n_clicks')]) 
-def render_hechosviales(tabs, n_clicks):
+def render_hechosviales(tabs, boton_test):
     if tabs == 'resumen':
         return resumen()
 
     elif tabs == 'mapa':
         return mapa()
 
-    elif tabs == 'resumen' and n_clicks != 0:
+    elif tabs == 'resumen' and boton_test != 0:
         return mapa()
 
     else:
