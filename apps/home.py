@@ -2225,6 +2225,8 @@ def toggle_modal_afres(open1_afres, close1_afres, modal_afres):
         return not modal_afres
     return modal_afres
 
+
+
 # RADAR VIAL - MAPA: HECHOS VIALES TOTALES 
 def render_hv_totales(start_date, end_date, slider_hora, checklist_dias, hv_graves_opciones, hv_usu_opciones, checklist_tipo_hv, hv_afres_opciones, hv_sexo_opciones, checklist_tipo_veh, slider_edad):
 
