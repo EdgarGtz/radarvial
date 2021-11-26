@@ -50,7 +50,7 @@ app.index_string = '''
 </html>
 '''
 
-#app.config.suppress_callback_exceptions = True
+app.config.suppress_callback_exceptions = True
 
 server = app.server
 
