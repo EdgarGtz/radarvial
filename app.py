@@ -1030,56 +1030,25 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro, si quieres conocer más sobre como se obtienen los datos da ', 
-                          
+                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
+
+                                        html.Br(),
+
+                                        html.Br(),
+
+                                        'Conoce más sobre la plataforma dando ',
+
                                         html.B('click aquí'),
                                         
                                         '.',
 
-                                        html.Br(),
-
-                                        'Por otro lado el municipio desarrolló el diagnóstico de seguridad vial que es la guía para mejorar la seguridad de la ciudad, conoce el diagnóstico ',
-
-                                        html.B('aquí'),
-                                        
-                                        '.',
-
-                                    ])  
+                                    ], style = {'font-size': '14px', 'margin-bottom': '0px'})  
 
                                 ]),
 
-                            ]),
+                            ], style = {'margin-bottom': '0px'}),
                             
                         ], style={'background-color':'#BBC3C8'})
-                    ])
-
-                ]),
-
-            ], className='mx-0'),
-
-            html.Br(),
-
-            # BOTON MAPA
-            dbc.Row([
-
-                dbc.Col([
-
-                    dbc.Card([
-
-                        dbc.CardImg(
-                            src='assets/mapa_foto.png', 
-                            top = True, 
-                            class_name = 'img-fluid'
-                        ),
-
-                        dbc.CardImgOverlay(
-
-                            dbc.CardBody(
-                                  [
-                                      html.H1('Mapa', className = 'card-title d-flex justify-content-center align-content-center', style = {'padding-top': '30px'})
-                                  ]
-                              )
-                          )
                     ])
 
                 ]),
@@ -1103,21 +1072,21 @@ def resumen():
 
                                     html.Div([
 
-                                        html.H1('2,554'),
-                                        html.P('Hechos Viales'),
+                                        html.P('3,920', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px'}, className = 'd-flex justify-content-end'),
+                                        html.P('hechos viales en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px'}),
 
-                                    ],style={'float':'left'},),
+                                    ],style={'float':'right'},),
                                     html.Img(src='data:image/png;base64,{}'.format(hv_img), 
-                                        style={'float':'left', 'width':'14%'},
+                                        style={'float':'left', 'width':'35%', 'padding-left': '20px', 'margin-bottom': '0px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ]),
 
                             ]),
                             
-                            html.P('en el 2021'),                    
+                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px'}),                    
 
-                        ])
+                        ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
@@ -1134,21 +1103,21 @@ def resumen():
 
                                     html.Div([
 
-                                        html.H1('40'),
-                                        html.P('Lesionados'),
+                                        html.P('55', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px'}, className = 'd-flex justify-content-end'),
+                                        html.P('lesionados en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px'}),
 
-                                    ],style={'float':'left'},),
+                                    ],style={'float':'right'},),
                                     html.Img(src='data:image/png;base64,{}'.format(lesionado_img), 
-                                        style={'float':'left', 'width':'14%'},
+                                        style={'float':'left', 'width':'35%', 'padding-left': '20px', 'margin-bottom': '0px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ]),
 
                             ]),
                             
-                            html.P('en el 2021'),   
+                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px'}),                    
 
-                        ])
+                        ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
@@ -1164,59 +1133,56 @@ def resumen():
 
                                     html.Div([
 
-                                        html.H1('3'),
-                                        html.P('Fatalidades'),
+                                        html.P('5', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px'}, className = 'd-flex justify-content-end'),
+                                        html.P('fallecidos en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px'}),
 
-                                    ],style={'float':'left'},),
+                                    ],style={'float':'right'},),
                                     html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
-                                        style={'float':'left', 'width':'14%'},
+                                        style={'float':'left', 'width':'35%', 'padding-left': '20px', 'margin-bottom': '0px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ]),
 
                             ]),
+                            
+                            html.P('38% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px'}),                    
 
-                            html.P('en el 2021'),   
-
-                        ])
-                    ], style = {'margin-bottom': '15px'})
-
-                ], lg = 3, md = 12, sm = 12),
-
-                dbc.Col([
-
-                    dbc.Card([
-
-                        dbc.CardBody([
-
-                            dbc.Row([
-
-                                dbc.Col([
-
-                                    html.Div([
-
-                                        html.H1('40'),
-                                        html.P('Atropellos'),
-
-                                    ],style={'float':'left'},),
-                                    html.Img(src='data:image/png;base64,{}'.format(peat_img), 
-                                        style={'float':'left', 'width':'14%'},
-                                        className="pl-3 pt-2 img-fluid"), 
-
-                                ]),
-
-                            ]),
-
-                            html.P('en el 2021'),   
-
-                        ])
+                        ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
                 ], lg = 3, md = 12, sm = 12),
             
             ], className='mx-0'),
 
-            #html.Br(),
+            # BOTON MAPA
+            dbc.Row([
+
+                dbc.Col([
+
+                    dbc.Card([
+
+                        # dbc.CardImg(
+                        #     src='assets/mapa_foto.png', 
+                        #     top = True, 
+                        #     class_name = 'img-fluid'
+                        # ),
+
+                        #dbc.CardImgOverlay(
+
+                            dbc.CardBody(
+                                  [
+                                      html.P('Ver Datos en Mapa Interactivo', className = 'd-flex justify-content-center align-content-center', style = {'padding-top': '30px', 'font-size': '40px'})
+                                  ],
+                                  className = 'd-flex justify-content-center align-content-center'
+                              )
+                          #)
+                    ], style = {'height': '335px'}, className = 'd-flex justify-content-center align-content-center')
+
+                ]),
+
+            ], className='mx-0'),
+
+            html.Br(),
 
             # Hechos viales totales // Hechos viales promedio
             dbc.Row([
@@ -1323,95 +1289,6 @@ def resumen():
 
                 ], lg=6, md=6, sm = 12),
 
-                # Hechos viales promedio
-                dbc.Col([
-
-                    dbc.Card([
-                        
-                        dbc.CardBody([
-
-                            html.Div([
-                                html.P(['Hechos viales promedio'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
-
-                            html.Div([
-
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_hvprom", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
-
-                                        ),
-
-                                    id="tooltip-target-hvprom",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
-
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-hvprom",
-                                    placement = 'top'
-                                ),
-                                    
-                                dbc.Modal([
-
-                                    dbc.ModalHeader(html.B("Hechos viales promedio")),
-
-                                    dbc.ModalBody([
-
-                                        dcc.Graph(
-                                            id = 'tot_prom',
-                                            figure = tot_prom_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
-                                    
-                                    ],
-                                    id="modal_hvprom",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
-
-                            html.Hr(style = {'margin-top': '0px'}),
-
-                            dcc.Graph(
-                                id = 'tot_prom',
-                                figure = tot_prom,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
-                                    'displaylogo': False
-                                },
-                            )
-                        ]),
-                    ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
-
-            ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
-            
-            # Personas // Por día de la semana
-            dbc.Row([
-
                 # Personas
                 dbc.Col([
 
@@ -1496,177 +1373,10 @@ def resumen():
 
                 ], lg=6, md=6),
 
-                # Día de la semana y hora
-                dbc.Col([
-
-                    dbc.Card([
-
-                        dbc.CardBody([
-
-                            html.Div([
-                                html.P(['Por día de la semana y hora'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
-
-                            html.Div([
-
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_semhora", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
-
-                                        ),
-
-                                    id="tooltip-target-semhora",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
-
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-semhora",
-                                    placement = 'top'
-                                ),
-                                    
-                                dbc.Modal([
-
-                                    dbc.ModalHeader(html.B("Por día de la semana y hora")),
-
-                                    dbc.ModalBody([
-
-                                        dcc.Graph(
-                                            id = 'heatmap',
-                                            figure = heatmap_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
-                                    
-                                    ],
-                                    id="modal_semhora",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
-
-                            html.Hr(style = {'margin-top': '0px'}),
-
-                            dcc.Graph(
-                                id = 'heatmap',
-                                figure = heatmap,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
-                                    'displaylogo': False
-                                },
-                            )
-                        ]),
-                    ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
-
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}),
-
-            # Por tipo de hecho vial // Lesionados y fallecidos
+            ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
+            
+            # Personas // Por día de la semana
             dbc.Row([
-
-                # Por tipo de hecho vial
-                dbc.Col([
-
-                    dbc.Card([
-
-                        dbc.CardBody([
-
-                            html.Div([
-                                html.P(['Por tipo y causa'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
-
-                            html.Div([
-
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})],
-                                        id="open1_tipocausa", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
-                                        ),
-
-                                    id="tooltip-target-tipocausa",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
-
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-tipocausa",
-                                    placement = 'top'
-                                ),
-                                    
-                                dbc.Modal([
-
-                                    dbc.ModalHeader(html.B("Por tipo y causa")),
-
-                                    dbc.ModalBody([
-
-                                        dcc.Graph(
-                                            id = 'treemap',
-                                            figure = treemap_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
-                                    
-                                    ],
-                                    id="modal_tipocausa",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
-
-                            html.Hr(style = {'margin-top': '0px'}),
-
-                            dcc.Graph(
-                                id = 'treemap',
-                                figure = treemap,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
-                                    'displaylogo': False
-                                },
-                            )
-                        ]),
-                    ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
 
                 # Lesionados y Fallecidos
                 dbc.Col([
@@ -1738,6 +1448,90 @@ def resumen():
                             dcc.Graph(
                                 id = 'lf_tipo_hv',
                                 figure = lf_tipo_hv,
+                                config={
+                                    'modeBarButtonsToRemove':
+                                    ['lasso2d', 'pan2d','zoom2d',
+                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                                    'resetScale2d', 'hoverClosestCartesian',
+                                    'hoverCompareCartesian', 'toggleSpikelines',
+                                    'select2d',],
+                                    'displaylogo': False
+                                },
+                            )
+                        ]),
+                    ], style = {'margin-bottom': '20px'})
+                ], lg=6, md=6),
+
+                # Día de la semana y hora
+                dbc.Col([
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+                                html.P(['Por día de la semana y hora'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+
+                            html.Div([
+
+                                html.Span(
+                                    dbc.Button(
+                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
+                                                style = {'width': '15px', 'height': '15px'})], 
+                                        id="open1_semhora", 
+                                        n_clicks=0, 
+                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                                        class_name = 'expand-button'
+
+                                        ),
+
+                                    id="tooltip-target-semhora",
+                                    style={"textDecoration": "underline", "cursor": "pointer"},
+                                ),
+
+                                dbc.Tooltip(
+                                    "Ampliar vista",
+                                    target="tooltip-target-semhora",
+                                    placement = 'top'
+                                ),
+                                    
+                                dbc.Modal([
+
+                                    dbc.ModalHeader(html.B("Por día de la semana y hora")),
+
+                                    dbc.ModalBody([
+
+                                        dcc.Graph(
+                                            id = 'heatmap',
+                                            figure = heatmap_modal,
+                                            config={
+                                                'modeBarButtonsToRemove':
+                                                ['lasso2d', 'pan2d','zoom2d',
+                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                                                'resetScale2d', 'hoverClosestCartesian',
+                                                'hoverCompareCartesian', 'toggleSpikelines',
+                                                'select2d',],
+                                                'displaylogo': False
+                                            },
+                                        )
+                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+                                    
+                                    ],
+                                    id="modal_semhora",
+                                    centered=True,
+                                    size="xl",
+                                    is_open=False,
+                                    style={'font-family':'Arial'}
+                                ),
+                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                            dcc.Graph(
+                                id = 'heatmap',
+                                figure = heatmap,
                                 config={
                                     'modeBarButtonsToRemove':
                                     ['lasso2d', 'pan2d','zoom2d',
@@ -1925,6 +1719,38 @@ def resumen():
                 ], lg=6, md=6),
             ], style = {'padding-left': '15px', 'padding-right': '15px'}),
 
+            # PÁRRAFO DIAGNÓSTICO
+            dbc.Row([
+
+              dbc.Col([
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            dbc.Row([
+
+                                dbc.Col([
+
+                                    html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
+
+                                        html.B('Diagnóstico de Seguridad Vial 2021'),
+                                        
+                                        '.',
+
+                                    ], style = {'font-size': '14px', 'margin-bottom': '0px'})  
+
+                                ]),
+
+                            ], style = {'margin-bottom': '0px'}),
+                            
+                        ], style={'background-color':'#BBC3C8'})
+                    ])
+
+                ]),
+
+            ], className='mx-0'),
+
             html.Br(),
 
             # FOOTER
@@ -1937,44 +1763,9 @@ def resumen():
                         dbc.Col([
 
                             html.Img(src='assets/logo_spgg.png', style={'width':'128.33px', 'height': '70px', 'float':'left'}),
-                            html.Img(src='assets/implang_logo.png', style={'width':'121.7px', 'height': '49.2px', 'float':'left'}),
+                            html.Img(src='assets/implang_logo.png', style={'width':'121.7px', 'height': '49.2px', 'float':'right', 'margin-top': '15px'}),
 
-                        ], style={'padding-left': '15px'}, className='d-lg-flex justify-content-between my-3'),
-
-                    ]),
-
-                    dbc.Row([
-
-                        dbc.Col([
-
-                            html.B("Conmutador:"),
-                            html.Br(),
-                            "81 8400 4400"
-
-                        ]),
-
-                        dbc.Col([
-
-                            html.B("Atención Ciudadana:"),
-                            html.Br(),
-                            "81 1365 5262"
-
-                        ])
-
-                    ]),
-
-                    dbc.Row([
-
-                        dbc.Col([
-
-                            'atencion@sanpedro.gob.mx',
-                            html.Br(),
-
-                            html.B("Dirección:"),
-                            html.Br(),
-                            "Calle Juárez 101, Centro de San Pedro Garza García, N.L. C.P. 66200"
-
-                        ])
+                        ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
 
                     ]),
 
@@ -1991,7 +1782,7 @@ def resumen():
                                 style={'display':'inline-block',
                                         'float':'left','padding':'0', 
                                         'width':'18px','background-color':'transparent',
-                                        'border-color':'transparent'},
+                                        'border-color':'transparent', 'margin-left': '45px'},
                                 class_name='rounded-circle ml-4 pb-1'
 
                             ),
@@ -2005,14 +1796,18 @@ def resumen():
                                 style={'display':'inline-block',
                                         'float':'left','padding':'0', 
                                         'width':'18px','background-color':'transparent',
-                                        'border-color':'transparent'},
+                                        'border-color':'transparent', 'margin-right': '40px', 'margin-left': '35px'},
                                 class_name='rounded-circle ml-4 pb-1'
 
                             ),
 
+                            html.B("Comentarios sobre Radar Vial", style = {'font-size': '12px'}),
+                            html.Br(),
+                            html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '155px', 'font-size': '12px'})
+
                         ])
 
-                    ])
+                    ], style = {'padding-top': '25px'}),
 
                 ])
 
