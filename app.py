@@ -1038,17 +1038,56 @@ def resumen():
 
                                         'Conoce más sobre la plataforma dando ',
 
-                                        html.B('click aquí'),
-                                        
-                                        '.',
+                                        dbc.Button(
+                                            [html.B('click aquí')], 
+                                            id="open1_inforadar", 
+                                            n_clicks=0, 
+                                            style={'display':'inline-block', 'background-color':'transparent',
+                                                'border-color':'transparent', 'padding': '0px', 'margin': '0px', 'color': '#279FD7', 'font-size': '14px'}
+                                        ),
 
-                                    ], style = {'font-size': '14px', 'margin-bottom': '0px'})  
+                                    ], style = {'font-size': '14px', 'margin-bottom': '0px', 'margin-left': '0px', 'margin-right': '0px'}),
+
+                                    dbc.Modal([
+
+                                    dbc.ModalHeader([html.B("Radar Vial")]),
+
+                                    dbc.ModalBody([
+                                        
+                                        html.P(
+                                            'Cada año en promedio fallecen 8 y resultan con lesiones graves 159 personas en el municipio. En San Pedro Garza García reconocemos que las lesiones graves y fallecimientos ocasionados por hechos de tránsito no son “accidentes” y por lo tanto pueden ser evitadas a traves de educación, adecuaciones viales y aplicación de la ley.' 
+                                        ),
+
+                                        html.Br(),
+
+                                        html.P('Nuestro objetivo es alcanzar la meta de 0 fallecimientos y 0 lesiones graves a nivel municipal y para apoyar este esfuerzo es que desarrollamos la plataforma de Radar Vial.'),
+
+                                        html.Br(),
+
+                                        html.P('La plataforma de uso abierto visualiza los datos de hechos viales del 2015 a la fecha, proporcionados por la Secretaría de Seguridad Pública y procesados bimensualmente por el IMPLANG.'), 
+                                        
+                                        html.Br(), 
+                                        
+                                        html.P('La información que se presenta en esta plataforma es para uso solamente informativo. Aun y cuando buscamos publicar siempre la información mas precisa, existe la posiblilidad de error o de información incompleta.'),
+
+                                        html.Br(),
+
+                                        html.P('Última actualización: octubre 2021')
+
+                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                    ],
+                                    id="modal_inforadar",
+                                    centered=True,
+                                    is_open=False,
+                                    style={'font-family':'Arial'}
+                                ),  
 
                                 ]),
 
                             ], style = {'margin-bottom': '0px'}),
                             
-                        ], style={'background-color':'#BBC3C8'})
+                        ], style={'background-color':'#E2E2E2'})
                     ])
 
                 ]),
@@ -3342,6 +3381,16 @@ def render_hechosviales(tabs, boton_test):
 #-----------
 
 # CALLBACKS RESUMEN
+
+# RADAR VIAL - INICIO: MODAL INFO RADAR VIAL
+@app.callback(
+    Output("modal_inforadar", "is_open"),
+    [Input("open1_inforadar", "n_clicks")],
+    [State("modal_inforadar", "is_open")])
+def toggle_modal_tothv(open1_inforadar, modal_inforadar):
+    if open1_inforadar:
+        return not modal_inforadar
+    return modal_inforadar
 
 # RADAR VIAL - INICIO: MODAL HECHOS VIALES TOTALES
 @app.callback(
