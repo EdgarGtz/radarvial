@@ -150,7 +150,7 @@ tot_hv.update_xaxes(showgrid = False,
     title_text='', 
     ticktext=hvi['fecha'],
     ticklabelmode='period')
-tot_hv.update_yaxes(title_text='Hechos viales')
+#tot_hv.update_yaxes(visible= False)
 tot_hv.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     showlegend = False,
@@ -158,7 +158,8 @@ tot_hv.update_layout(hoverlabel = dict(font_size = 16),
     font=dict(
         family="Arial",
         size=16,
-        )
+        ),
+    yaxis_title = None
     )
 
 # GRAFICA PARA EXPAND
@@ -243,7 +244,8 @@ per_grav.update_layout(hoverlabel = dict(font_size = 16),
     font=dict(
         family="Arial",
         size=16,
-        )
+        ),
+    yaxis_title = None
     )
 
 # GRAFICA PARA EXPAND
@@ -1030,7 +1032,7 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['Radar Vial es una plataforma de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
+                                    html.P(['Radar Vial es la plataforma de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
 
                                         html.Br(),
 
@@ -1050,7 +1052,7 @@ def resumen():
 
                                     dbc.Modal([
 
-                                    dbc.ModalHeader([html.B("Radar Vial")]),
+                                    dbc.ModalHeader([html.P("Radar Vial", style = {'font-size': '18px', 'font-weight': 'bold', 'margin-bottom': '0px'})]),
 
                                     dbc.ModalBody([
                                         
@@ -1074,7 +1076,7 @@ def resumen():
 
                                         html.P('Última actualización: octubre 2021')
 
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+                                    ],style={'font-size':'100%'}),
 
                                     ],
                                     id="modal_inforadar",
@@ -1234,7 +1236,7 @@ def resumen():
                         dbc.CardBody([
 
                             html.Div([
-                                html.P(['Hechos Viales'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                                html.P(['Hechos Viales por Año'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
                             ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
 
                             html.Div([
@@ -1273,7 +1275,7 @@ def resumen():
                                                         'zoomIn2d', 'zoomOut2d', 'autoScale2d',
                                                         'resetScale2d', 'hoverClosestCartesian',
                                                         'hoverCompareCartesian', 'toggleSpikelines',
-                                                        'select2d',],
+                                                        'select2d', 'toImage'],
                                                         'displaylogo': False
                                                     }
                                                 )
@@ -1336,7 +1338,7 @@ def resumen():
                         dbc.CardBody([
 
                             html.Div([
-                                html.P(['Personas'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                                html.P(['Personas Lesionadas y Fallecidas'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
                             ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
 
                             html.Div([
@@ -1773,7 +1775,15 @@ def resumen():
 
                                     html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                        html.B('Diagnóstico de Seguridad Vial 2021'),
+                                        html.A(['Diagnóstico de Seguridad Vial 2021'], href = 'https://drive.google.com/drive/folders/13xM9nhAiNLOgrMx3eRMCKabn7qCnFff5', target = 'blank'),
+
+                                        # dbc.Button(
+                                        #     [html.B('Diagnóstico de Seguridad Vial 2021')], 
+                                        #     id="open1_diagnostico", 
+                                        #     n_clicks=0, 
+                                        #     style={'display':'inline-block', 'background-color':'transparent',
+                                        #         'border-color':'transparent', 'padding': '0px', 'margin': '0px', 'color': '#279FD7', 'font-size': '14px'}
+                                        # ),
                                         
                                         '.',
 
@@ -1783,7 +1793,7 @@ def resumen():
 
                             ], style = {'margin-bottom': '0px'}),
                             
-                        ], style={'background-color':'#BBC3C8'})
+                        ], style={'background-color':'#E2E2E2'})
                     ])
 
                 ]),

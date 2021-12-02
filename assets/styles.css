@@ -234,6 +234,17 @@ a.sidebar-link-movil.nav-link:focus
   margin-bottom: -10px; !important;
 }
 
+
+/*Boton cerrar*/
+.btn-close  {
+  background-color: transparent;
+  color: black !important;
+  /* margin-left: 70px; */
+  /* filter: invert(1) grayscale(100%) brightness(200%); */
+  /* width: 20.47px; */
+  /* height: 20.47px; */
+}
+
 /*Offcanvas */
 .offcanvas-body {
   padding: 0;
