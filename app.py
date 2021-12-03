@@ -1184,20 +1184,20 @@ def resumen():
 
                                     html.Div([
 
-                                        html.P('5', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '15px'}, className = 'd-flex justify-content-end'),
-                                        html.P('fallecidos en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '15px', 'padding-bottom': '0px'}),
+                                        html.P('5', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '30px'}, className = 'd-flex justify-content-end'),
+                                        html.P('fallecidos en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '30px', 'padding-bottom': '0px'}),
 
                                     ],style={'float':'right'},),
                                     
                                     html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
-                                        style={'float':'left', 'width':'35%', 'padding-left': '0px', 'margin-bottom': '0px', 'padding-bottom': '0px'},
+                                        style={'float':'left', 'padding-left': '30px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                             ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
                             
-                            html.P('38% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '15px', 'padding-top': '0px'}),                    
+                            html.P('38% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '30px', 'padding-top': '0px'}),                    
 
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
