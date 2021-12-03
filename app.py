@@ -1423,7 +1423,7 @@ def resumen():
                         dbc.CardBody([
 
                             html.Div([
-                                html.P(['Lesionados y fallecidos'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                                html.P(['Lesiones y Muertes por Tipo de Hecho Vial'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
                             ], style={'width':'95%','display':'inline-block'}),
 
                             html.Div([
@@ -1586,7 +1586,7 @@ def resumen():
                         dbc.CardBody([
 
                             html.Div([
-                                html.P(['Por día de la semana y hora'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                                html.P(['Tiempo del Día con Más Hechos Viales'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
                             ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
 
                             html.Div([
