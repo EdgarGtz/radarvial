@@ -112,6 +112,10 @@ twitter_img = base64.b64encode(open(twitter, 'rb').read()).decode('ascii')
 insta = 'assets/instagram.png' # replace with your own image
 insta_img = base64.b64encode(open(insta, 'rb').read()).decode('ascii')
 
+back = 'assets/back.png' # replace with your own image
+back_img = base64.b64encode(open(back, 'rb').read()).decode('ascii')
+
+
 #----------------------------------------------------------
 
 ## FIGURAS Y TABLAS
@@ -922,6 +926,16 @@ app.layout = html.Div([
 
                 dbc.Col([
 
+                    dbc.Button(
+                        [html.Img(src='data:image/png;base64,{}'.format(back_img),
+                                style = {'width': '15px', 'height': '15px'})], 
+                        id="boton_test", 
+                        n_clicks=0, 
+                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                        class_name = ''
+                    ),
+
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
                                 style={'float':'left', 'margin-right': '15px'}
@@ -932,15 +946,6 @@ app.layout = html.Div([
                     #     className='pl-3 pt-1 '
                     # ),
 
-                    dbc.Button(
-                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                style = {'width': '15px', 'height': '15px'})], 
-                        id="boton_test", 
-                        n_clicks=0, 
-                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                        class_name = 'expand-button'
-                    ),
 
                 ], class_name='d-flex align-items-center justify-content-center', style={'width': '100%'})
 
@@ -3347,19 +3352,38 @@ def mapa():
 @app.callback(
     Output('hechosviales_content', 'children'), 
     [Input('tabs', 'active_tab'),
-     Input('boton_test', 'n_clicks')]) 
+     Input('boton_test', 'n_clicks'),
+     # Input('boton_test2', 'n_clicks'),
+     ]) 
 def render_hechosviales(tabs, boton_test):
-    if tabs == 'resumen':
+    if tabs == 'resumen' and boton_test == 0:
         return resumen()
 
-    elif tabs == 'mapa':
+    elif tabs == 'mapa' and boton_test == 0:
         return mapa()
 
-    elif tabs == 'resumen' and boton_test != 0:
-        return mapa()
+    # elif tabs == 'resumen' and boton_test != 0:
+    #     return mapa()
+
+    elif tabs == 'mapa' and boton_test != 0:
+        return resumen()
 
     else:
         return resumen()
+
+@app.callback(
+    Output('boton_test', 'className'), 
+    [Input('tabs', 'active_tab'),
+     ]) 
+def render_boton_test(tabs):
+    if tabs == 'resumen':
+        return 'd-none'
+
+    elif tabs == 'mapa':
+        return 'expand-button'
+
+    else:
+        return 'expand-button'
 
 # CARGAR TABS
 # @app.callback(
