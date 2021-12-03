@@ -149,8 +149,9 @@ tot_hv.update_traces(name='',
 tot_hv.update_xaxes(showgrid = False, 
     title_text='', 
     ticktext=hvi['fecha'],
-    ticklabelmode='period')
-#tot_hv.update_yaxes(visible= False)
+    ticklabelmode='period',
+    fixedrange = True)
+tot_hv.update_yaxes(fixedrange = True)
 tot_hv.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     showlegend = False,
@@ -228,8 +229,9 @@ per_grav.update_traces(hovertemplate="<b>%{x}</b><br> %{y} personas")
 per_grav.update_xaxes(showgrid = False, 
     title_text='', 
     ticktext=df['fecha_ind'],
-    ticklabelmode='period')
-per_grav.update_yaxes(title_text='Personas')
+    ticklabelmode='period',
+    fixedrange = True)
+per_grav.update_yaxes(title_text='Personas', fixedrange = True)
 per_grav.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     legend=dict(
@@ -325,9 +327,10 @@ tot_prom.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
 tot_prom.update_xaxes(showgrid = False, 
     title_text='', 
     ticktext=df['mes'],
-    ticklabelmode='period'
+    ticklabelmode='period',
+    fixedrange = True
     )
-tot_prom.update_yaxes(title_text='Hechos viales')
+tot_prom.update_yaxes(title_text='Hechos viales', fixedrange = True)
 tot_prom.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     legend=dict(
@@ -425,7 +428,8 @@ heatmap = go.Figure(data=go.Heatmap(
    hoverongaps = False,
    colorscale='Blues'))
 heatmap.update_traces(hovertemplate="<b>%{x} a las %{y} horas:</b> <br>%{z} hechos viales")
-heatmap.update_yaxes(title_text='Horas')
+heatmap.update_yaxes(title_text='Horas', fixedrange = True)
+heatmap.update_xaxes(fixedrange = True)
 heatmap.update_layout(barmode='stack',
     hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
@@ -566,32 +570,35 @@ df = df.sort_values(by=['les_fall'], ascending=False)
 
 # GRAFICA
 lf_tipo_hv = px.bar(df,
-    x='tipo_accidente',
-    y=["Lesionados","Fallecidos"], 
+    y='tipo_accidente',
+    x=["Lesionados","Fallecidos"], 
     labels = {'tipo_accidente': ''}, 
-    template = 'plotly_white')
+    template = 'plotly_white',
+    orientation = 'h')
 lf_tipo_hv.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
 lf_tipo_hv.update_xaxes(showgrid = False, 
     title_text='', 
     ticktext=df['tipo_accidente'],
-    ticklabelmode='period')
-lf_tipo_hv.update_yaxes(title_text='Hechos viales')
+    ticklabelmode='period',
+    fixedrange = True)
+lf_tipo_hv.update_yaxes(fixedrange = True)
 lf_tipo_hv.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     margin = dict(t=00, l=00, r=00, b=00),
     legend=dict(
         orientation="h",
-        yanchor = "top",
-        y = 0.99,
-        xanchor = "right",
-        x = 0.99,
+        yanchor = "bottom",
+        y = -0.15,
+        xanchor = "left",
+        x = -0.7,
         itemclick = 'toggleothers',
         title=None
         ),
     font=dict(
         family="Arial",
         size=16,
-        )
+        ),
+    yaxis_title = None
     )
 
 # GRAFICA PARA EXPAND
@@ -649,8 +656,9 @@ top_c.update_layout(yaxis={'categoryorder':'total ascending'},
     )
 top_c.update_xaxes(showgrid = True,
     showline = True, 
-    title_text = '')
-top_c.update_yaxes(title_text = '')
+    title_text = '',
+    fixedrange = True)
+top_c.update_yaxes(title_text = '', fixedrange = True)
 top_c.update_traces(texttemplate = '<b>%{x}%</b>',
     textposition = 'inside',
     hovertemplate = None,
@@ -706,8 +714,9 @@ top_i.update_layout(yaxis={'categoryorder':'total ascending'},
     )
 top_i.update_xaxes(showgrid = True,
     showline = True, 
-    title_text = '')
-top_i.update_yaxes(title_text = '')
+    title_text = '',
+    fixedrange = True)
+top_i.update_yaxes(title_text = '', fixedrange = True)
 top_i.update_traces(texttemplate = '<b>%{x}%</b>',
     textposition = 'inside',
     hovertemplate = None,
@@ -1227,7 +1236,7 @@ def resumen():
 
             html.Br(),
 
-            # Hechos viales totales // Hechos viales promedio
+            # Hechos viales totales // Top Ubicaciones
             dbc.Row([
         
                 # Hechos viales
@@ -1298,33 +1307,11 @@ def resumen():
                             dcc.Graph(
                                 id = 'tot_hv',
                                 figure = tot_hv,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
+                                config = {
+                                    'displayModeBar': False,
                                     'displaylogo': False
-                                },
-                                #className = 'd-none d-lg-block'
+                                }
                             ),
-
-                            # dcc.Graph(
-                            #     id = 'tot_hv',
-                            #     figure = tot_hv,
-                            #     config={
-                            #         'modeBarButtonsToRemove':
-                            #         ['lasso2d', 'pan2d','zoom2d',
-                            #         'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                            #         'resetScale2d', 'hoverClosestCartesian',
-                            #         'hoverCompareCartesian', 'toggleSpikelines',
-                            #         'select2d',],
-                            #         'displaylogo': False
-                            #     },
-                            #     className = 'd-lg-none',
-                            #     style = {'width': '335px', 'height': '335px'}
-                            # )
 
                         ]),
 
@@ -1332,7 +1319,7 @@ def resumen():
 
                 ], lg=6, md=6, sm = 12),
 
-                # Personas
+                # Top Ubicaciones
                 dbc.Col([
 
                     dbc.Card([
@@ -1340,8 +1327,8 @@ def resumen():
                         dbc.CardBody([
 
                             html.Div([
-                                html.P(['Personas Lesionadas y Fallecidas'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+                                html.P(['Ubicaciones con más Hechos Viales'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                            ], style={'width':'95%','display':'inline-block'}),
 
                             html.Div([
 
@@ -1349,32 +1336,33 @@ def resumen():
                                     dbc.Button(
                                         [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
                                                 style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_personas", 
+                                        id="open1_topcalles", 
                                         n_clicks=0, 
                                         style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
                                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
                                         class_name = 'expand-button'
+
                                         ),
 
-                                    id="tooltip-target-personas",
+                                    id="tooltip-target-topcalles",
                                     style={"textDecoration": "underline", "cursor": "pointer"},
                                 ),
 
                                 dbc.Tooltip(
                                     "Ampliar vista",
-                                    target="tooltip-target-personas",
+                                    target="tooltip-target-topcalles",
                                     placement = 'top'
                                 ),
                                     
                                 dbc.Modal([
 
-                                    dbc.ModalHeader(html.B("Personas")),
+                                    dbc.ModalHeader(html.B("Top Calles")),
 
                                     dbc.ModalBody([
 
                                         dcc.Graph(
-                                            id = 'per_grav',
-                                            figure = per_grav_modal,
+                                            id = 'top_c',
+                                            figure = top_c_modal,
                                             config={
                                                 'modeBarButtonsToRemove':
                                                 ['lasso2d', 'pan2d','zoom2d',
@@ -1386,39 +1374,45 @@ def resumen():
                                             },
                                         )
                                     ],style={"textAlign":"justify",'font-size':'100%'}),
-
+                                    
                                     ],
-                                    id="modal_personas",
+                                    id="modal_topcalles",
                                     centered=True,
                                     size="xl",
                                     is_open=False,
                                     style={'font-family':'Arial'}
                                 ),
-                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
+                            ], style={'width':'4%', 'float': 'right'}, className = 'pr-3 d-none d-lg-block'),
 
                             html.Hr(style = {'margin-top': '0px'}),
 
+                            dbc.RadioItems(
+                                id = 'checklist_top',
+                                class_name = 'radio-group btn-group d-flex justify-content-center',
+                                label_class_name = 'btn btn-secondary',
+                                label_checked_class_name = 'active',
+                                value = 'top_c',
+                                options = [
+                                    {'label': 'Calles', 'value': 'top_c'},
+                                    {'label': 'Intersecciones', 'value': 'top_i'}
+                                ]
+                            ),
+
                             dcc.Graph(
-                                id = 'per_grav',
-                                figure = per_grav,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
+                                id = 'top_ubi',
+                                figure = {},
+                                config = {
+                                    'displayModeBar': False,
                                     'displaylogo': False
-                                },
+                                }
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
-
-                ], lg=6, md=6),
+                ], lg=6, md=6,),
 
             ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
             
-            # Personas // Por día de la semana
+            # Por Usuario // Personas
             dbc.Row([
 
                 # Lesionados y Fallecidos
@@ -1491,19 +1485,98 @@ def resumen():
                             dcc.Graph(
                                 id = 'lf_tipo_hv',
                                 figure = lf_tipo_hv,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
+                                config = {
+                                    'displayModeBar': False,
                                     'displaylogo': False
-                                },
+                                }
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
                 ], lg=6, md=6),
+
+                # Personas
+                dbc.Col([
+
+                    dbc.Card([
+
+                        dbc.CardBody([
+
+                            html.Div([
+                                html.P(['Personas Lesionadas y Fallecidas'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                            ], style={'width':'95%','display':'inline-block', 'margin-bottom': '0px'}),
+
+                            html.Div([
+
+                                html.Span(
+                                    dbc.Button(
+                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
+                                                style = {'width': '15px', 'height': '15px'})], 
+                                        id="open1_personas", 
+                                        n_clicks=0, 
+                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                                        class_name = 'expand-button'
+                                        ),
+
+                                    id="tooltip-target-personas",
+                                    style={"textDecoration": "underline", "cursor": "pointer"},
+                                ),
+
+                                dbc.Tooltip(
+                                    "Ampliar vista",
+                                    target="tooltip-target-personas",
+                                    placement = 'top'
+                                ),
+                                    
+                                dbc.Modal([
+
+                                    dbc.ModalHeader(html.B("Personas")),
+
+                                    dbc.ModalBody([
+
+                                        dcc.Graph(
+                                            id = 'per_grav',
+                                            figure = per_grav_modal,
+                                            config={
+                                                'modeBarButtonsToRemove':
+                                                ['lasso2d', 'pan2d','zoom2d',
+                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                                                'resetScale2d', 'hoverClosestCartesian',
+                                                'hoverCompareCartesian', 'toggleSpikelines',
+                                                'select2d',],
+                                                'displaylogo': False
+                                            },
+                                        )
+                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+
+                                    ],
+                                    id="modal_personas",
+                                    centered=True,
+                                    size="xl",
+                                    is_open=False,
+                                    style={'font-family':'Arial'}
+                                ),
+                            ], style={'width':'4%', 'float': 'right', 'margin-bottom': '0px', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
+
+                            html.Hr(style = {'margin-top': '0px'}),
+
+                            dcc.Graph(
+                                id = 'per_grav',
+                                figure = per_grav,
+                                config = {
+                                    'displayModeBar': False,
+                                    'displaylogo': False
+                                }
+                            )
+                        ]),
+                    ], style = {'margin-bottom': '20px'})
+
+                ], lg=6, md=6),
+
+            ], style = {'padding-left': '15px', 'padding-right': '15px'}),
+
+            # Día de la semana y hora
+            dbc.Row([
 
                 # Día de la semana y hora
                 dbc.Col([
@@ -1575,191 +1648,92 @@ def resumen():
                             dcc.Graph(
                                 id = 'heatmap',
                                 figure = heatmap,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
+                                config = {
+                                    'displayModeBar': False,
                                     'displaylogo': False
-                                },
+                                }
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
                 ], lg=6, md=6),
-
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}),
-
-            # Top Calles // Top Intersecciones
-            dbc.Row([
-
-                # Top Calles
-                dbc.Col([
-
-                    dbc.Card([
-
-                        dbc.CardBody([
-
-                            html.Div([
-                                html.P(['Top Calles'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block'}),
-
-                            html.Div([
-
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_topcalles", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
-
-                                        ),
-
-                                    id="tooltip-target-topcalles",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
-
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-topcalles",
-                                    placement = 'top'
-                                ),
-                                    
-                                dbc.Modal([
-
-                                    dbc.ModalHeader(html.B("Top Calles")),
-
-                                    dbc.ModalBody([
-
-                                        dcc.Graph(
-                                            id = 'top_c',
-                                            figure = top_c_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
-                                    
-                                    ],
-                                    id="modal_topcalles",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right'}, className = 'pr-3 d-none d-lg-block'),
-
-                            html.Hr(style = {'margin-top': '0px'}),
-
-                            dcc.Graph(
-                                id = 'top_c',
-                                figure = top_c,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
-                                    'displaylogo': False
-                                },
-                            )
-                        ]),
-                    ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6,),
 
                 # Top intersecciones
-                dbc.Col([
+                # dbc.Col([
 
-                    dbc.Card([
+                #     dbc.Card([
                         
-                        dbc.CardBody([
+                #         dbc.CardBody([
 
-                            html.Div([
-                                html.P(['Top Intersecciones'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                            ], style={'width':'95%','display':'inline-block'}),
+                #             html.Div([
+                #                 html.P(['Top Intersecciones'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
+                #             ], style={'width':'95%','display':'inline-block'}),
 
-                            html.Div([
+                #             html.Div([
 
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_topint", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
-                                        ),
+                #                 html.Span(
+                #                     dbc.Button(
+                #                         [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
+                #                                 style = {'width': '15px', 'height': '15px'})], 
+                #                         id="open1_topint", 
+                #                         n_clicks=0, 
+                #                         style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                #                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                #                         class_name = 'expand-button'
+                #                         ),
 
-                                    id="tooltip-target-topint",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
+                #                     id="tooltip-target-topint",
+                #                     style={"textDecoration": "underline", "cursor": "pointer"},
+                #                 ),
 
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-topint",
-                                    placement = 'top'
-                                ),
+                #                 dbc.Tooltip(
+                #                     "Ampliar vista",
+                #                     target="tooltip-target-topint",
+                #                     placement = 'top'
+                #                 ),
                                     
-                                dbc.Modal([
+                #                 dbc.Modal([
 
-                                    dbc.ModalHeader(html.B("Top Intersecciones")),
+                #                     dbc.ModalHeader(html.B("Top Intersecciones")),
 
-                                    dbc.ModalBody([
+                #                     dbc.ModalBody([
 
-                                        dcc.Graph(
-                                            id = 'top_i',
-                                            figure = top_i_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+                #                         dcc.Graph(
+                #                             id = 'top_i',
+                #                             figure = top_i_modal,
+                #                             config={
+                #                                 'modeBarButtonsToRemove':
+                #                                 ['lasso2d', 'pan2d','zoom2d',
+                #                                 'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                #                                 'resetScale2d', 'hoverClosestCartesian',
+                #                                 'hoverCompareCartesian', 'toggleSpikelines',
+                #                                 'select2d',],
+                #                                 'displaylogo': False
+                #                             },
+                #                         )
+                #                     ],style={"textAlign":"justify",'font-size':'100%'}),
                                     
-                                    ],
-                                    id="modal_topint",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
+                #                     ],
+                #                     id="modal_topint",
+                #                     centered=True,
+                #                     size="xl",
+                #                     is_open=False,
+                #                     style={'font-family':'Arial'}
+                #                 ),
+                #             ], style={'width':'4%', 'float': 'right', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
 
-                            html.Hr(style = {'margin-top': '0px'}),
+                #             html.Hr(style = {'margin-top': '0px'}),
 
-                            dcc.Graph(
-                                id = 'top_i',
-                                figure = top_i,
-                                config={
-                                    'modeBarButtonsToRemove':
-                                    ['lasso2d', 'pan2d','zoom2d',
-                                    'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                    'resetScale2d', 'hoverClosestCartesian',
-                                    'hoverCompareCartesian', 'toggleSpikelines',
-                                    'select2d',],
-                                    'displaylogo': False
-                                },
-                            )
-                        ]),
-                    ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
+                #             dcc.Graph(
+                #                 id = 'top_i',
+                #                 figure = top_i,
+                #                 config = {
+                #                     'displayModeBar': False,
+                #                     'displaylogo': False
+                #                 }
+                #             )
+                #         ]),
+                #     ], style = {'margin-bottom': '20px'})
+                # ], lg=6, md=6),
             ], style = {'padding-left': '15px', 'padding-right': '15px'}),
 
             # PÁRRAFO DIAGNÓSTICO
@@ -3483,6 +3457,21 @@ def toggle_modal_topint(open1_topint, modal_topint):
     if open1_topint:
         return not modal_topint
     return modal_topint
+
+# RADAR VIAL - INICIO: BOTONES TOP UBICACIONES
+@app.callback(
+    Output('top_ubi', 'figure'),
+    [Input('checklist_top', 'value')]
+)
+def toggle_top_ubi(value):
+
+    if value == 'top_c':
+        return top_c
+
+    elif value == 'top_i':
+        return top_i
+
+        
 
 #----------
 
