@@ -1762,7 +1762,7 @@ def resumen():
 
                                     html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                        html.A(['Diagnóstico de Seguridad Vial 2021'], href = 'https://drive.google.com/drive/folders/13xM9nhAiNLOgrMx3eRMCKabn7qCnFff5', target = 'blank'),
+                                        html.A(['Diagnóstico de Seguridad Vial 2020'], href = 'https://drive.google.com/file/d/1oeDpZptdogbqVefihVNnYG3cp6tiNAiL/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
 
                                         # dbc.Button(
                                         #     [html.B('Diagnóstico de Seguridad Vial 2021')], 
