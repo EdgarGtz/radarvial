@@ -1808,31 +1808,60 @@ app.layout = html.Div([
 
                                         dbc.Col([
 
-                                            dbc.Button(
-                                                html.Img(src='data:image/png;base64,{}'.format(insta_img), 
-                                                        style={'float':'right'},
-                                                        className="p-0 img-fluid"), 
-                                                id="instagram", 
-                                                n_clicks=0, 
-                                                style={'display':'inline-block',
-                                                        'float':'left','padding':'0', 'background-color':'transparent',
-                                                        'border-color':'transparent', 'margin-left': '45px'},
-                                                class_name='rounded-circle ml-4 pb-1'
-
+                                            html.A(
+                                                [
+                                                    html.Img(
+                                                        src='data:image/png;base64,{}'.format(insta_img),
+                                                        className="p-0 img-fluid"
+                                                    )
+                                                ],
+                                                href = 'https://www.instagram.com/implang_spgg/',
+                                                target = 'blank',
+                                                style={
+                                                    'margin-left': '45px'
+                                                }
                                             ),
 
-                                            dbc.Button(
-                                                html.Img(src='data:image/png;base64,{}'.format(twitter_img), 
-                                                        style={'float':'right'},
-                                                        className="p-0 img-fluid"), 
-                                                id="twitter", 
-                                                n_clicks=0, 
-                                                style={'display':'inline-block',
-                                                        'float':'left','padding':'0', 'background-color':'transparent',
-                                                        'border-color':'transparent', 'margin-right': '40px', 'margin-left': '35px'},
-                                                class_name='rounded-circle ml-4 pb-1'
-
+                                            html.A(
+                                                [
+                                                    html.Img(
+                                                        src='data:image/png;base64,{}'.format(twitter_img),
+                                                        className="p-0 img-fluid"
+                                                    )
+                                                ],
+                                                href = 'https://twitter.com/implang_spgg',
+                                                target = 'blank',
+                                                style={
+                                                    'margin-right': '40px',
+                                                    'margin-left': '35px'
+                                                }
                                             ),
+
+                                            # dbc.Button(
+                                            #     html.Img(src='data:image/png;base64,{}'.format(insta_img), 
+                                            #             style={'float':'right'},
+                                            #             className="p-0 img-fluid"), 
+                                            #     id="instagram", 
+                                            #     n_clicks=0, 
+                                            #     style={'display':'inline-block',
+                                            #             'float':'left','padding':'0', 'background-color':'transparent',
+                                            #             'border-color':'transparent', 'margin-left': '45px'},
+                                            #     class_name='rounded-circle ml-4 pb-1'
+
+                                            # ),
+
+                                            # dbc.Button(
+                                            #     html.Img(src='data:image/png;base64,{}'.format(twitter_img), 
+                                            #             style={'float':'right'},
+                                            #             className="p-0 img-fluid"), 
+                                            #     id="twitter", 
+                                            #     n_clicks=0, 
+                                            #     style={'display':'inline-block',
+                                            #             'float':'left','padding':'0', 'background-color':'transparent',
+                                            #             'border-color':'transparent', 'margin-right': '40px', 'margin-left': '35px'},
+                                            #     class_name='rounded-circle ml-4 pb-1'
+
+                                            # ),
 
                                             html.B("Comentarios sobre Radar Vial", style = {'font-size': '12px'}),
                                             html.Br(),
