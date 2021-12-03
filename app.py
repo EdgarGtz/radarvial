@@ -106,6 +106,12 @@ lesionado_img = base64.b64encode(open(lesionado, 'rb').read()).decode('ascii')
 fallecido = 'assets/fallecido.png' # replace with your own image
 fallecido_img = base64.b64encode(open(fallecido, 'rb').read()).decode('ascii')
 
+twitter = 'assets/twitter.png' # replace with your own image
+twitter_img = base64.b64encode(open(twitter, 'rb').read()).decode('ascii')
+
+insta = 'assets/instagram.png' # replace with your own image
+insta_img = base64.b64encode(open(insta, 'rb').read()).decode('ascii')
+
 #----------------------------------------------------------
 
 ## FIGURAS Y TABLAS
@@ -918,13 +924,13 @@ app.layout = html.Div([
 
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
-                                style={'width':'33px', 'height': '33px', 'float':'left', 'margin-right': '15px'}
+                                style={'float':'left', 'margin-right': '15px'}
                         ),
 
-                    html.H2('Radar Vial', 
-                        style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
-                        className='pl-3 pt-1 '
-                    ),
+                    # html.H2('Radar Vial', 
+                    #     style={'float':'left', 'font-weight':'normal', 'font-size':'24px', 'margin-right': '15px'}, 
+                    #     className='pl-3 pt-1 '
+                    # ),
 
                     dbc.Button(
                         [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
@@ -1122,20 +1128,20 @@ def resumen():
 
                                     html.Div([
 
-                                        html.P('3,920', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '15px'}, className = 'd-flex justify-content-end'),
-                                        html.P('hechos viales en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '15px', 'padding-bottom': '0px'}),
+                                        html.P('3,920', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                        html.P('hechos viales en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '25px', 'padding-bottom': '0px'}),
 
                                     ],style={'float':'right'},),
 
                                     html.Img(src='data:image/png;base64,{}'.format(hv_img), 
-                                        style={'float':'left', 'width':'35%', 'padding-left': '0px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-top': '0px'},
+                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                             ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
                             
-                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '15px', 'padding-top': '0px'}),                    
+                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '25px', 'padding-top': '0px'}),                    
 
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
@@ -1154,19 +1160,19 @@ def resumen():
 
                                     html.Div([
 
-                                        html.P('55', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '15px'}, className = 'd-flex justify-content-end'),
-                                        html.P('lesionados en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '15px'}),
+                                        html.P('55', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                        html.P('lesionados en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '25px'}),
 
                                     ],style={'float':'right'},),
                                     html.Img(src='data:image/png;base64,{}'.format(lesionado_img), 
-                                        style={'float':'left', 'width':'35%', 'padding-left': '0px', 'margin-bottom': '0px'},
+                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ]),
 
                             ]),
                             
-                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '15px'}),                    
+                            html.P('9% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '25px'}),                    
 
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
@@ -1184,20 +1190,20 @@ def resumen():
 
                                     html.Div([
 
-                                        html.P('5', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '30px'}, className = 'd-flex justify-content-end'),
-                                        html.P('fallecidos en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '30px', 'padding-bottom': '0px'}),
+                                        html.P('5', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                        html.P('fallecidos en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '25px', 'padding-bottom': '0px'}),
 
                                     ],style={'float':'right'},),
                                     
                                     html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
-                                        style={'float':'left', 'padding-left': '30px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
                                 ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                             ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
                             
-                            html.P('38% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '30px', 'padding-top': '0px'}),                    
+                            html.P('38% (2020)', style = {'float': 'right', 'margin-top': '0px', 'font-size': '12px', 'padding-right': '25px', 'padding-top': '0px'}),                    
 
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
@@ -1787,8 +1793,8 @@ def resumen():
 
                         dbc.Col([
 
-                            html.Img(src='assets/logo_spgg.png', style={'width':'128.33px', 'height': '70px', 'float':'left'}),
-                            html.Img(src='assets/implang_logo.png', style={'width':'121.7px', 'height': '49.2px', 'float':'right', 'margin-top': '15px'}),
+                            html.Img(src='assets/logo_spgg.png', style={'float':'left', 'margin-top': '25px', 'margin-left': '20px'}),
+                            html.Img(src='assets/implang_logo.png', style={'float':'right', 'margin-top': '27px', 'margin-right': '20px'}),
 
                         ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
 
@@ -1799,28 +1805,26 @@ def resumen():
                         dbc.Col([
 
                             dbc.Button(
-                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                html.Img(src='data:image/png;base64,{}'.format(insta_img), 
                                         style={'float':'right'},
                                         className="p-0 img-fluid"), 
                                 id="open_titulo", 
                                 n_clicks=0, 
                                 style={'display':'inline-block',
-                                        'float':'left','padding':'0', 
-                                        'width':'18px','background-color':'transparent',
+                                        'float':'left','padding':'0', 'background-color':'transparent',
                                         'border-color':'transparent', 'margin-left': '45px'},
                                 class_name='rounded-circle ml-4 pb-1'
 
                             ),
 
                             dbc.Button(
-                                html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
+                                html.Img(src='data:image/png;base64,{}'.format(twitter_img), 
                                         style={'float':'right'},
                                         className="p-0 img-fluid"), 
                                 id="open_titulo", 
                                 n_clicks=0, 
                                 style={'display':'inline-block',
-                                        'float':'left','padding':'0', 
-                                        'width':'18px','background-color':'transparent',
+                                        'float':'left','padding':'0', 'background-color':'transparent',
                                         'border-color':'transparent', 'margin-right': '40px', 'margin-left': '35px'},
                                 class_name='rounded-circle ml-4 pb-1'
 
