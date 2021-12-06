@@ -657,7 +657,7 @@ hvi_c = hvi_c.iloc[0:10,:]
 
 # TABLA
 top_c = pd.DataFrame()
-top_c['Calle'] = hvi_c['calle']
+top_c[''] = hvi_c['calle']
 top_c['Hechos Viales'] = hvi_c['hechos_viales']
 
 colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
@@ -671,12 +671,12 @@ top_c = go.Figure(
             align = 'center'
         ),
         cells = dict(
-            values = [top_c['Calle'], top_c['Hechos Viales']],
+            values = [top_c[''], top_c['Hechos Viales']],
             line_color = 'white',
             fill_color = ['white', colors],
             align = ['left', 'center'],
             font = dict(
-                color = ['black', 'white']
+                color = ['black', 'black']
             ),
             height = 30
         )
@@ -748,34 +748,35 @@ hvi_i = hvi_i.iloc[0:10,:]
 
 # TABLA
 top_i = pd.DataFrame()
-top_i['Intersección'] = hvi_i['interseccion']
+top_i[''] = hvi_i['interseccion']
 top_i['Hechos Viales'] = hvi_i['hechos_viales']
 
 colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
 
 top_i = go.Figure(
     data = go.Table(
-        columnwidth = [100, 50],
+        columnwidth = [120, 30],
         header = dict(
             values = list(top_i.columns),
             fill_color = 'white',
             align = 'center'
         ),
         cells = dict(
-            values = [top_i['Intersección'], top_i['Hechos Viales']],
-            line_color = [colors],
-            fill_color = [colors],
+            values = [top_i[''], top_i['Hechos Viales']],
+            line_color = 'white',
+            fill_color = ['white', colors],
             align = ['left', 'center'],
             font = dict(
-                color = 'white'
-            )
+                color = ['black', 'black']
+            ),
+            height = 30
         )
     )
 )
 
 top_i.update_layout(
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-    font = dict(family = 'Arial', size = 16)
+    font = dict(family = 'Arial', size = 14)
 )
 
 # GRAFICA
