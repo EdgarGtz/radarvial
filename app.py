@@ -674,6 +674,8 @@ lf_tipo_hv.add_trace(go.Bar(
     hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
 ))
 
+lf_tipo_hv.update_yaxes(fixedrange = True)
+lf_tipo_hv.update_xaxes(fixedrange = True)
 
 lf_tipo_hv.update_layout(
     yaxis={'categoryorder':'total ascending'},
@@ -1251,7 +1253,7 @@ app.layout = html.Div([
 
                                             ], style = {'margin-bottom': '0px'}),
                                             
-                                        ], style={'background-color':'#E2E2E2'})
+                                        ], style={'background-color':'#E2E2E2 50%'})
                                     ])
 
                                 ]),
