@@ -595,7 +595,9 @@ lf_tipo_hv.update_xaxes(showgrid = False,
     ticklabelmode='period',
     fixedrange = True)
 lf_tipo_hv.update_yaxes(fixedrange = True)
-lf_tipo_hv.update_layout(hoverlabel = dict(font_size = 16),
+lf_tipo_hv.update_layout(
+    yaxis={'categoryorder':'total ascending'},
+    hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     margin = dict(t=00, l=00, r=00, b=00),
     legend=dict(
@@ -709,31 +711,62 @@ hvi = pd.read_csv("assets/hechosviales_lite_completa.csv", encoding='ISO-8859-1'
 hvt = hvi.hechos_viales.sum()
 hvi_i = hvi.pivot_table(index="interseccion", values=["hechos_viales"], aggfunc=np.sum).fillna(0).reset_index().sort_values(by=['hechos_viales'], ascending=False)
 hvi_i = hvi_i.iloc[0:10,:]
-hvi_i['hechos_viales'] = ((hvi_i['hechos_viales']/hvt)*100).round(2)
+#hvi_i['hechos_viales'] = ((hvi_i['hechos_viales']/hvt)*100).round(2)
 
-# GRAFICA
-top_i = px.bar(hvi_i, x = "hechos_viales", y = "interseccion",
-    orientation = 'h',
-    template = 'plotly_white')
-top_i.update_layout(yaxis={'categoryorder':'total ascending'},
-    showlegend = False,
-    uniformtext_minsize = 8,
-    uniformtext_mode = 'hide',
-    margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-    font=dict(
-        family="Arial",
-        size=16,
+# TABLA
+top_i = pd.DataFrame()
+top_i['Intersección'] = hvi_i['interseccion']
+top_i['Hechos Viales'] = hvi_i['hechos_viales']
+
+colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
+
+top_i = go.Figure(
+    data = go.Table(
+        header = dict(
+            values = list(top_i.columns),
+            fill_color = 'white',
+            align = 'center'
+        ),
+        cells = dict(
+            values = [top_i['Intersección'], top_i['Hechos Viales']],
+            line_color = [colors],
+            fill_color = [colors],
+            align = 'center',
+            font = dict(
+                color = 'white'
+            )
         )
     )
-top_i.update_xaxes(showgrid = True,
-    showline = True, 
-    title_text = '',
-    fixedrange = True)
-top_i.update_yaxes(title_text = '', fixedrange = True)
-top_i.update_traces(texttemplate = '<b>%{x}%</b>',
-    textposition = 'inside',
-    hovertemplate = None,
-    hoverinfo = 'skip')
+)
+
+top_i.update_layout(
+    margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
+    font = dict(family = 'Arial', size = 16)
+)
+
+# GRAFICA
+# top_i = px.bar(hvi_i, x = "hechos_viales", y = "interseccion",
+#     orientation = 'h',
+#     template = 'plotly_white')
+# top_i.update_layout(yaxis={'categoryorder':'total ascending'},
+#     showlegend = False,
+#     uniformtext_minsize = 8,
+#     uniformtext_mode = 'hide',
+#     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
+#     font=dict(
+#         family="Arial",
+#         size=16,
+#         )
+#     )
+# top_i.update_xaxes(showgrid = True,
+#     showline = True, 
+#     title_text = '',
+#     fixedrange = True)
+# top_i.update_yaxes(title_text = '', fixedrange = True)
+# top_i.update_traces(texttemplate = '<b>%{x}%</b>',
+#     textposition = 'inside',
+#     hovertemplate = None,
+#     hoverinfo = 'skip')
 
 # GRAFICA PARA EXPAND
 top_i_modal = px.bar(hvi_i, x = "hechos_viales", y = "interseccion",
