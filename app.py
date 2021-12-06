@@ -1253,7 +1253,7 @@ app.layout = html.Div([
 
                                             ], style = {'margin-bottom': '0px'}),
                                             
-                                        ], style={'background-color':'#E2E2E2 51%'})
+                                        ], style={'background-color':'#E2E2E251'})
                                     ])
 
                                 ]),
@@ -1931,7 +1931,7 @@ app.layout = html.Div([
 
                                             ], style = {'margin-bottom': '0px'}),
                                             
-                                        ], style={'background-color':'#E2E2E2'})
+                                        ], style={'background-color':'#E2E2E251'})
                                     ])
 
                                 ]),
