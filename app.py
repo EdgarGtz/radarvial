@@ -233,18 +233,54 @@ df = pd.merge(hvi_l, hvi_f, on ='fecha', how ='left')
 df['fecha_ind'] = df.fecha .dt.strftime('%Y')
 
 # GRAFICA
-per_grav = px.bar(df,
-    x='fecha_ind',
-    y=["Lesionados","Fallecidos"], 
-    labels = {'fecha': ''}, 
-    template = 'plotly_white')
-per_grav.update_traces(hovertemplate="<b>%{x}</b><br> %{y} personas")
-per_grav.update_xaxes(showgrid = False, 
-    title_text='', 
-    ticktext=df['fecha_ind'],
-    ticklabelmode='period',
-    fixedrange = True)
-per_grav.update_yaxes(title_text='Personas', fixedrange = True)
+# per_grav = px.bar(df,
+#     x='fecha_ind',
+#     y=["Lesionados","Fallecidos"], 
+#     labels = {'fecha': ''}, 
+#     template = 'plotly_white')
+# per_grav.update_traces(hovertemplate="<b>%{x}</b><br> %{y} personas")
+# per_grav.update_xaxes(showgrid = False, 
+#     title_text='', 
+#     ticktext=df['fecha_ind'],
+#     ticklabelmode='period',
+#     fixedrange = True)
+# per_grav.update_yaxes(title_text='Personas', fixedrange = True)
+# per_grav.update_layout(hoverlabel = dict(font_size = 16),
+#     hoverlabel_align = 'right',
+#     legend=dict(
+#         orientation="h",
+#         yanchor="bottom",
+#         y=-0.2,
+#         x=0.3,
+#         itemclick = 'toggleothers',
+#         title=None
+#         ),
+#     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
+#     font=dict(
+#         family="Arial",
+#         size=16,
+#         ),
+#     yaxis_title = None
+#     )
+
+per_grav = go.Figure()
+
+per_grav.add_trace(go.Bar(
+    x = df['fecha_ind'],
+    y = df['Lesionados'],
+    name = 'Lesionados',
+    marker_color = '#F3BB46',
+    hovertemplate="<b>%{x}</b><br> %{y} personas"
+))
+
+per_grav.add_trace(go.Bar(
+    x = df['fecha_ind'],
+    y = df['Fallecidos'],
+    name = 'Fallecidos',
+    marker_color = '#DB4453',
+    hovertemplate="<b>%{x}</b><br> %{y} personas"
+))
+
 per_grav.update_layout(hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     legend=dict(
@@ -260,7 +296,9 @@ per_grav.update_layout(hoverlabel = dict(font_size = 16),
         family="Arial",
         size=16,
         ),
-    yaxis_title = None
+    yaxis_title = None,
+    template = 'plotly_white',
+    barmode = 'stack'
     )
 
 # GRAFICA PARA EXPAND
@@ -582,19 +620,61 @@ df['les_fall'] = df.Lesionados + df.Fallecidos
 df = df.sort_values(by=['les_fall'], ascending=False)
 
 # GRAFICA
-lf_tipo_hv = px.bar(df,
-    y='tipo_accidente',
-    x=["Lesionados","Fallecidos"], 
-    labels = {'tipo_accidente': ''}, 
-    template = 'plotly_white',
-    orientation = 'h')
-lf_tipo_hv.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
-lf_tipo_hv.update_xaxes(showgrid = False, 
-    title_text='', 
-    ticktext=df['tipo_accidente'],
-    ticklabelmode='period',
-    fixedrange = True)
-lf_tipo_hv.update_yaxes(fixedrange = True)
+# lf_tipo_hv = px.bar(df,
+#     y='tipo_accidente',
+#     x=["Lesionados","Fallecidos"], 
+#     labels = {'tipo_accidente': ''}, 
+#     template = 'plotly_white',
+#     orientation = 'h')
+# lf_tipo_hv.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
+# lf_tipo_hv.update_xaxes(showgrid = False, 
+#     title_text='', 
+#     ticktext=df['tipo_accidente'],
+#     ticklabelmode='period',
+#     fixedrange = True)
+# lf_tipo_hv.update_yaxes(fixedrange = True)
+# lf_tipo_hv.update_layout(
+#     yaxis={'categoryorder':'total ascending'},
+#     hoverlabel = dict(font_size = 16),
+#     hoverlabel_align = 'right',
+#     margin = dict(t=00, l=00, r=00, b=00),
+#     legend=dict(
+#         orientation="h",
+#         yanchor = "bottom",
+#         y = -0.15,
+#         xanchor = "left",
+#         x = -0.7,
+#         itemclick = 'toggleothers',
+#         title=None
+#         ),
+#     font=dict(
+#         family="Arial",
+#         size=16,
+#         ),
+#     yaxis_title = None
+#     )
+
+lf_tipo_hv = go.Figure()
+
+lf_tipo_hv.add_trace(go.Bar(
+    x = df['Lesionados'],
+    y = df['tipo_accidente'],
+    name = 'Lesionados',
+    orientation = 'h',
+    marker_color = '#F3BB46',
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+))
+
+lf_tipo_hv.add_trace(go.Bar(
+    x = df['Fallecidos'],
+    y = df['tipo_accidente'],
+    name = 'Fallecidos',
+    orientation = 'h',
+    marker_color = '#DB4453',
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+))
+
+
 lf_tipo_hv.update_layout(
     yaxis={'categoryorder':'total ascending'},
     hoverlabel = dict(font_size = 16),
@@ -613,7 +693,9 @@ lf_tipo_hv.update_layout(
         family="Arial",
         size=16,
         ),
-    yaxis_title = None
+    yaxis_title = None,
+    template = 'plotly_white',
+    barmode = 'stack'
     )
 
 # GRAFICA PARA EXPAND
