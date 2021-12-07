@@ -956,7 +956,7 @@ app.layout = html.Div([
 
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
-                                style={'width':'47px', 'height': '47px', 'float':'left', 'margin-right': '15px'}
+                                style={'width':'167.76px', 'height': '37px', 'float':'left', 'margin-right': '15px'}
                         ),
 
                     html.H2('Radar Vial', 
@@ -1120,7 +1120,7 @@ app.layout = html.Div([
 
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
-                                style={'float':'left', 'margin-right': '15px'}
+                                style={'float':'left', 'margin-right': '15px', 'width': '168px', 'height': '37px'}
                         ),
 
                     # html.H2('Radar Vial', 
