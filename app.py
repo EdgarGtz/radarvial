@@ -478,7 +478,7 @@ heatmap = go.Figure(data=go.Heatmap(
    y=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','18','19','20','21','22','23',], 
    hoverongaps = False,
    colorscale='Blues'))
-heatmap.update_traces(hovertemplate="<b>%{x} a las %{y} horas:</b> <br>%{z} hechos viales")
+heatmap.update_traces(hovertemplate="<b>%{x} a las %{y} horas")#:</b> <br>%{z} hechos viales")
 heatmap.update_yaxes(title_text='Horas', fixedrange = True)
 heatmap.update_xaxes(fixedrange = True)
 heatmap.update_layout(barmode='stack',
