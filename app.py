@@ -1310,7 +1310,7 @@ app.layout = html.Div([
                                                     ],style={'float':'right'},),
 
                                                     html.Img(src='data:image/png;base64,{}'.format(hv_img), 
-                                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                                        style={'width': '100px', 'height': '85px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                                         className="pl-3 pt-2 img-fluid"), 
 
                                                 ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
@@ -1341,7 +1341,7 @@ app.layout = html.Div([
 
                                                     ],style={'float':'right'},),
                                                     html.Img(src='data:image/png;base64,{}'.format(lesionado_img), 
-                                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                                        style={'width': '100px','height': '85px', 'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                                         className="pl-3 pt-2 img-fluid"), 
 
                                                 ]),
@@ -1372,7 +1372,7 @@ app.layout = html.Div([
                                                     ],style={'float':'right'},),
                                                     
                                                     html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
-                                                        style={'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                                        style={'width': '100px', 'height': '85px', 'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                                         className="pl-3 pt-2 img-fluid"), 
 
                                                 ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
