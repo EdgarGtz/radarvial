@@ -774,7 +774,7 @@ top_c = go.Figure(
             fill_color = ['white', colors],
             align = ['left', 'center'],
             font = dict(
-                color = ['black', 'black']
+                color = ['black', 'gray']
             ),
             height = 30
         )
