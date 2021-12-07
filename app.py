@@ -157,7 +157,8 @@ tot_hv = px.bar(hvi,
     labels = {'fecha': ''}, 
     template = 'plotly_white')
 tot_hv.update_traces(name='',
-    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales",
+    marker_color = '#4B89DC'
     )
 tot_hv.update_xaxes(showgrid = False, 
     title_text='', 
@@ -744,6 +745,19 @@ top_c = pd.DataFrame()
 top_c[''] = hvi_c['calle']
 top_c['Hechos Viales'] = hvi_c['hechos_viales']
 
+top_c[''] = [
+    'José Vasconcelos',
+    'Lázaro Cárdenas',
+    'Morones Prieto',
+    'Alfonso Reyes',
+    'Gómez Morín',
+    'Calzada del Valle',
+    'Díaz Ordaz',
+    'Calzada San Pedro',
+    'Corregidora',
+    'Humberto Lobo'
+]
+
 colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
 
 top_c = go.Figure(
@@ -834,6 +848,19 @@ hvi_i = hvi_i.iloc[0:10,:]
 top_i = pd.DataFrame()
 top_i[''] = hvi_i['interseccion']
 top_i['Hechos Viales'] = hvi_i['hechos_viales']
+
+top_i[''] = [
+    'Lázaro Cárdenas con Diego Rivera',
+    'Calzada Del Valle con Calzada San Pedro',
+    'Díaz Ordaz con Corregidora',
+    'Morones Prieto con Santa Bárbara',
+    'Lázaro Cárdenas con Pedro Ramírez Vázquez',
+    'Morones Prieto con Corregidora',
+    'Morones Prieto con Benito Juárez',
+    'Lázaro Cárdenas con Río Tamuin',
+    'José Vasconcelos con Gómez Morín',
+    'José Vasconcelos con Ricardo Margain'
+]
 
 colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
 
