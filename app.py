@@ -743,7 +743,7 @@ hvi_c = hvi_c.iloc[0:10,:]
 # TABLA
 top_c = pd.DataFrame()
 top_c[''] = hvi_c['calle']
-top_c['Hechos Viales'] = hvi_c['hechos_viales']
+top_c[' '] = hvi_c['hechos_viales']
 
 top_c[''] = [
     'José Vasconcelos',
@@ -758,7 +758,7 @@ top_c[''] = [
     'Humberto Lobo'
 ]
 
-colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
+colors = ['#4B89DC', '#5A91E1', '#689AE5', '#78A3E9', '#87ACED', '#97B6F0', '#A7C1F3', '#B7CBF6', '#C7D7F9', '#D8E2FB']
 
 top_c = go.Figure(
     data = go.Table(
@@ -769,12 +769,12 @@ top_c = go.Figure(
             align = 'center'
         ),
         cells = dict(
-            values = [top_c[''], top_c['Hechos Viales']],
+            values = [top_c[''], top_c[' ']],
             line_color = 'white',
             fill_color = ['white', colors],
             align = ['left', 'center'],
             font = dict(
-                color = ['black', 'gray']
+                color = ['black', 'black']
             ),
             height = 30
         )
@@ -847,7 +847,7 @@ hvi_i = hvi_i.iloc[0:10,:]
 # TABLA
 top_i = pd.DataFrame()
 top_i[''] = hvi_i['interseccion']
-top_i['Hechos Viales'] = hvi_i['hechos_viales']
+top_i[' '] = hvi_i['hechos_viales']
 
 top_i[''] = [
     'Lázaro Cárdenas con Diego Rivera',
@@ -862,7 +862,7 @@ top_i[''] = [
     'José Vasconcelos con Ricardo Margain'
 ]
 
-colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
+#colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
 
 top_i = go.Figure(
     data = go.Table(
@@ -873,7 +873,7 @@ top_i = go.Figure(
             align = 'center'
         ),
         cells = dict(
-            values = [top_i[''], top_i['Hechos Viales']],
+            values = [top_i[''], top_i[' ']],
             line_color = 'white',
             fill_color = ['white', colors],
             align = ['left', 'center'],
