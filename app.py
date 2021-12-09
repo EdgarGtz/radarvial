@@ -2002,7 +2002,8 @@ app.layout = html.Div([
                                                 [
                                                     html.Img(
                                                         src='data:image/png;base64,{}'.format(insta_img),
-                                                        className="p-0 img-fluid"
+                                                        className="p-0 img-fluid",
+                                                        style = {'width': '20px', 'height': '20px'}
                                                     )
                                                 ],
                                                 href = 'https://www.instagram.com/implang_spgg/',
@@ -2016,7 +2017,8 @@ app.layout = html.Div([
                                                 [
                                                     html.Img(
                                                         src='data:image/png;base64,{}'.format(twitter_img),
-                                                        className="p-0 img-fluid"
+                                                        className="p-0 img-fluid",
+                                                        style = {'width': '20px', 'height': '20px'}
                                                     )
                                                 ],
                                                 href = 'https://twitter.com/implang_spgg',
