@@ -478,7 +478,19 @@ heatmap = go.Figure(data=go.Heatmap(
    x=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
    y=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','18','19','20','21','22','23',], 
    hoverongaps = False,
-   colorscale='Blues'))
+   colorscale = [
+       [0.0, '#D8E2FB'],
+       [0.1, '#C7D7F9'],
+       [0.2, '#B7CBF6'],
+       [0.3, '#A7C1F3'],
+       [0.4, '#97B6F0'],
+       [0.5, '#87ACED'],
+       [0.6, '#78A3E9'],
+       [0.7, '#689AE5'],
+       [0.8, '#5A91E1'],
+       [0.9, '#4B89DC'],
+       [1.0, '#4B89DC']
+   ]))
 heatmap.update_traces(hovertemplate="<b>%{x} a las %{y} horas")#:</b> <br>%{z} hechos viales")
 heatmap.update_yaxes(title_text='Horas', fixedrange = True)
 heatmap.update_xaxes(fixedrange = True)
