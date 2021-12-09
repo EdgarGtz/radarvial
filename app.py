@@ -1393,32 +1393,27 @@ app.layout = html.Div([
 
                                 dbc.Col([
 
-                                    dbc.Card([
-
-                                        dbc.Button(
-                                            [html.Img(src='data:image/png;base64,{}'.format(mapa_foto_img), className='img-fluid')], 
+                                    dbc.Button(
+                                            [html.Img(src='data:image/png;base64,{}'.format(mapa_foto_img), 
+                                            className='img-fluid',
+                                            style = {'width': '355px', 'height': '315px', 'position': 'relative', 'z-index': '1'}),
+                                            ], 
                                             id="boton_mapa", 
                                             n_clicks=0, 
-                                            style={'border-color':'black'}
-                                        ),
-
-                                        # dbc.CardImg(
-                                        #     src='assets/mapa_foto.png', 
-                                        #     top = True, 
-                                        #     class_name = 'img-fluid'
-                                        # ),
-
-                                        #dbc.CardImgOverlay(
-
-                                            dbc.CardBody(
-                                                  [
-                                                      html.P('Ver Datos en Mapa Interactivo', className = 'd-flex justify-content-center align-content-center', style = {'padding-top': '30px', 'font-size': '40px'})
-                                                  ],
-                                                  className = 'd-flex justify-content-center align-content-center'
-                                              )
-                                          #)
-                                    ], style = {'height': '335px'}, className = 'd-flex justify-content-center align-content-center')
-
+                                            style={'border-color':'gray', 'background-color': 'white'}
+                                    ),
+                                    
+                                    html.P(
+                                        [html.P('Ver Datos', style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                        html.P('en Mapa', style = {'margin-bottom': '0px', 'margin-top': '0px', 'padding-top': '0px', 'padding-bottom': '0px'}),
+                                        html.P('Interactivo', style = {'margin-bottom': '0px', 'margin-top': '0px', 'padding-top': '0px', 'padding-bottom': '0px'})], 
+                                        className = 'texto_boton_mapa',
+                                        style = {
+                                            'font-size': '40px', 
+                                            'font-weight': 'bold',
+                                            'color': 'white'
+                                        }
+                                    )
                                 ]),
 
                             ], className='mx-0'),

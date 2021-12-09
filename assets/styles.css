@@ -305,3 +305,10 @@ button:focus { outline: none !important; box-shadow: none !important; }
   width: 50px;
   height: 50px;
 }
+
+.texto_boton_mapa {
+  position: absolute;
+  z-index: 5;
+  bottom: 76.5%;
+  left: 25%;
+}
