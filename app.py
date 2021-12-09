@@ -1396,7 +1396,7 @@ app.layout = html.Div([
                                     dbc.Button(
                                             [html.Img(src='data:image/png;base64,{}'.format(mapa_foto_img), 
                                             className='img-fluid',
-                                            style = {'width': '355px', 'height': '315px', 'position': 'relative', 'z-index': '1'}),
+                                            style = {'width': '355px', 'height': '315px', 'position': 'relative', 'z-index': '1', 'border-radius': '2%'}),
                                             ], 
                                             id="boton_mapa", 
                                             n_clicks=0, 
