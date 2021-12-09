@@ -166,7 +166,11 @@ tot_hv.update_xaxes(showgrid = False,
     ticklabelmode='period',
     fixedrange = True)
 tot_hv.update_yaxes(fixedrange = True)
-tot_hv.update_layout(hoverlabel = dict(font_size = 16),
+tot_hv.update_layout(
+    hoverlabel = dict(
+        font_size = 16,
+        bgcolor = 'white'
+    ),
     hoverlabel_align = 'right',
     showlegend = False,
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
