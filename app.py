@@ -2057,7 +2057,7 @@ app.layout = html.Div([
 
                                             html.B("Comentarios sobre Radar Vial", style = {'font-size': '12px'}),
                                             html.Br(),
-                                            html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '155px', 'font-size': '12px'})
+                                            html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
 
                                         ])
 
