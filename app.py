@@ -1987,8 +1987,8 @@ app.layout = html.Div([
 
                                         dbc.Col([
 
-                                            html.Img(src='assets/logo_spgg.png', style={'float':'left', 'margin-top': '25px', 'margin-left': '20px'}),
-                                            html.Img(src='assets/implang_logo.png', style={'float':'right', 'margin-top': '27px', 'margin-right': '20px'}),
+                                            html.Img(src='assets/logo_spgg.png', style={'float':'left', 'margin-top': '25px', 'margin-left': '20px', 'width': '108px', 'height': '35px'}),
+                                            html.Img(src='assets/implang_logo.png', style={'float':'right', 'margin-top': '27px', 'margin-right': '20px', 'width': '80px', 'height': '29.32px'}),
 
                                         ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
 
