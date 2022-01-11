@@ -312,3 +312,9 @@ button:focus { outline: none !important; box-shadow: none !important; }
   bottom: 76.5%;
   left: 25%;
 }
+
+.indicadores_small_nuevo {
+  position: absolute;
+  top: 80%;
+  z-index: 5;
+}
