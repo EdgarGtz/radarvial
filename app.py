@@ -2807,7 +2807,7 @@ app.layout = html.Div([
                                         className = 'img-fluid',
                                         style = {'width': '75%', 'height': '75%'}),
                                         #'Filtros',
-                                        color = 'light',
+                                        color = 'dark',
                                         class_name = 'filtros_small',
                                         id = 'collapse-filtros-movil',
                                         n_clicks = 0
