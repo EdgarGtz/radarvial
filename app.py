@@ -1443,7 +1443,7 @@ def resumen():
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
-                ], lg = 3, md = 12, sm = 12),
+                ], lg = 4, md = 12, sm = 12),
 
                 dbc.Col([
 
@@ -1474,9 +1474,10 @@ def resumen():
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
-                ], lg = 3, md = 12, sm = 12),
+                ], lg = 4, md = 12, sm = 12),
 
                 dbc.Col([
+
                     dbc.Card([
 
                         dbc.CardBody([
@@ -1505,7 +1506,7 @@ def resumen():
                         ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'})
                     ], style = {'margin-bottom': '15px'})
 
-                ], lg = 3, md = 12, sm = 12),
+                ], lg = 4, md = 12, sm = 12),
             
             ], className='mx-0'),
 
