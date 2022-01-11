@@ -2937,7 +2937,7 @@ def mapa():
                             ]),
                         ],
 
-                        class_name = 'indicadores_small_nuevo d-flex flex-nowrap',
+                        class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
                         style = {'white-space': 'nowrap', 'overflow-x': 'auto', 'overflow-y': 'hidden'}
                     ),
 
