@@ -2830,27 +2830,49 @@ app.layout = html.Div([
 
                                                 dbc.CardBody([
 
-                                                    html.Div([
+                                                    dbc.Row([
 
-                                                        html.P([
-                                                            'Hechos Viales Totales'
-                                                        ], 
-                                                        style = {
-                                                            'font-size': '18px', 
-                                                            'font-weight': 'bold',
-                                                            'margin-bottom': '5px'
-                                                            }
-                                                        )
-                                                    ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                                        dbc.Col([
+                                                            
+                                                            html.Div([
 
-                                                    html.Table([
+                                                                html.Table([
 
-                                                            html.Tr([
-                                                                #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
-                                                                html.Th(id = 'hv_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-                                                            ], style = {'border': '0px'}),
+                                                                    html.Tr([
+                                                                    #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
+                                                                    html.Th(id = 'hv_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '24px'}),
+                                                                    ], style = {'border': '0px'}),
+                                                                ], style = {'border': '0px'}),
+                                                                html.P('hechos viales', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '15px', 'padding-bottom': '0px'}),
+                                                            ], style = {'float': 'right'}),
 
-                                                    ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
+                                                            html.Img(src='data:image/png;base64,{}'.format(hv_img), 
+                                                            style={'width': '50px', 'height': '50px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                                            className="pl-3 pt-2 img-fluid"),
+                                                        ])
+                                                    ])
+
+                                                    # html.Div([
+
+                                                    #     html.P([
+                                                    #         'Hechos Viales Totales'
+                                                    #     ], 
+                                                    #     style = {
+                                                    #         'font-size': '18px', 
+                                                    #         'font-weight': 'bold',
+                                                    #         'margin-bottom': '5px'
+                                                    #         }
+                                                    #     )
+                                                    # ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                                                    # html.Table([
+
+                                                    #         html.Tr([
+                                                    #             #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
+                                                    #             html.Th(id = 'hv_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '24px'}),
+                                                    #         ], style = {'border': '0px'}),
+
+                                                    # ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
                                                 
                                                 ], style = {'padding': '0px', 'margin': '10px'})
 
