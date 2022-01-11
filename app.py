@@ -2816,7 +2816,11 @@ def mapa():
 
                 ],lg=8, md=8, style={'float': 'left'}),
 
+                html.Br()
+
             ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name = 'd-none d-lg-block'),
+
+            html.Br(),
 
             # Mapa y filtros MÓVIL
             dbc.Row([
@@ -3675,7 +3679,9 @@ def mapa():
 
             # ], class_name = 'd-lg-none')
 
-        ], className = '', id='mapicha', style = {'padding': '0px', 'margin': '0px'})
+        ], className = '', id='mapicha', style = {'padding': '0px', 'margin': '0px'}),
+
+        html.Br()
 
     ], className = 'w-100 h-100', style = {'padding': '0px', 'margin': '0px'})
 
