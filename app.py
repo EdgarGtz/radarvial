@@ -3156,6 +3156,8 @@ def mapa():
 
                                     ], style = {'border': '0px', 'float': 'right'}),
 
+                                    html.Br(),
+
                                     html.Div([
 
                                         html.P([
