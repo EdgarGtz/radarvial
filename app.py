@@ -1531,161 +1531,6 @@ app.layout = html.Div([
         # TITULO
         html.Span([
 
-            # TITULO DESKTOP
-            # dbc.Row([
-
-            #     dbc.Col([
-
-            #         html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
-            #                     className="pt-0",
-            #                     style={'width':'167.76px', 'height': '37px', 'float':'left', 'margin-right': '15px'}
-            #             ),
-
-            #         html.H2('Radar Vial', 
-            #             style={'float':'left', 'font-weight':'normal', 'font-size':'28px', 'margin-right': '15px'}, 
-            #             className='pl-3 pt-1'
-            #         ),
-
-            #         # MODAL
-            #         # html.Div([
-
-            #         #     # BOTÓN
-            #         #     html.Span(
-            #         #         dbc.Button(
-            #         #             html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
-            #         #                     style={'float':'right'},
-            #         #                     className="p-0 img-fluid"), 
-            #         #             id="open_titulo", 
-            #         #             n_clicks=0, 
-            #         #             style={'display':'inline-block',
-            #         #                     'float':'left','padding':'0', 
-            #         #                     'width':'18px','background-color':'transparent',
-            #         #                     'border-color':'transparent'},
-            #         #             class_name='rounded-circle ml-4 pb-1'
-
-            #         #         ),
-
-            #         #         id="tooltip-sidebar-titulo",
-            #         #     ),
-
-            #         #     # TOOLTIP
-            #         #     dbc.Tooltip(
-            #         #         "Más información",
-            #         #         target="tooltip-sidebar-titulo",
-            #         #         placement = 'auto'
-            #         #     ),
-
-            #         #     # CONTENIDO MODAL
-            #         #     dbc.Modal([
-
-            #         #         dbc.ModalHeader(html.B("Radar Vial")),
-
-            #         #         dbc.ModalBody([
-                            
-            #         #             dbc.Row([
-
-            #         #                 dbc.Col(['Datos de hechos viales del 2015 en adelante proporcionados por la Secretaría de Seguridad Pública y procesados mensualmente por el IMPLANG.',
-            #         #                     html.I(' Última actualización: Septiembre 2021')
-            #         #                     ]),
-
-            #         #             ]),
-
-            #         #             html.Br(),
-
-            #         #             dbc.Row([
-
-            #         #                 dbc.Col([
-                                    
-            #         #                     html.Div([
-
-            #         #                         html.Span(
-                                                
-            #         #                             html.Button([
-            #         #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #         #                                         style={'width':'8%','float':'left'},
-            #         #                                         className="pt-1"),
-            #         #                                 html.B("Descargar Excel"),
-            #         #                                 ], 
-            #         #                                 id="btn_csv",
-            #         #                                 className="btn",
-            #         #                                 n_clicks=None,
-            #         #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #         #                             ),
-
-            #         #                             id="tooltip-target-descbd",
-            #         #                         ),
-
-            #         #                         dbc.Tooltip(
-            #         #                             "Descarga toda la base de datos",
-            #         #                             target="tooltip-target-descbd",
-            #         #                         ),
-
-                                            
-            #         #                         Download(id="download-dataframe-csv")
-            #         #                     ], className='d-flex justify-content-center'),
-
-            #         #                 ], lg=4, md=4),
-
-            #         #                 dbc.Col([
-
-            #         #                     html.Div([
-
-            #         #                         html.Span(
-
-            #         #                             html.Button([
-            #         #                                 html.Img(src='data:image/png;base64,{}'.format(encoded_img3), 
-            #         #                                         style={'width':'8%','float':'left'},
-            #         #                                         className="pt-1"),
-            #         #                                 html.B("Descargar SHP"),
-            #         #                                 ], 
-            #         #                                 id="btn_shp",
-            #         #                                 className="btn",
-            #         #                                 n_clicks=None,
-            #         #                                 style={'float':'right','background-color':'#BBC3C8','color':'white'}
-            #         #                             ),
-                                                        
-
-            #         #                             id="tooltip-target-shp",
-            #         #                         ),
-
-            #         #                         dbc.Tooltip(
-            #         #                             "Descarga toda la base de datos en SHP",
-            #         #                             target="tooltip-target-shp",
-            #         #                         ),
-
-            #         #                         Download(id="download-dataframe-shp")
-            #         #                     ], className='d-flex justify-content-center')
-
-            #         #                 ], lg=4, md=4)
-
-            #         #             ], class_name='d-flex justify-content-center'),
-
-            #         #         ],style={"textAlign":"justify",'font-size':'100%'}),
-
-            #         #         dbc.ModalFooter([
-                                
-            #         #             dbc.Button(
-            #         #                 "Cerrar", 
-            #         #                 id="close_titulo", 
-            #         #                 class_name="ml-auto btn btn-secondary", 
-            #         #                 n_clicks=0
-            #         #             )
-            #         #         ]),
-
-            #         #         ],
-            #         #         id="modal_titulo",
-            #         #         centered=True,
-            #         #         size="lg",
-            #         #         is_open=False,
-            #         #         style={'font-family':'Arial'}
-            #         #     ),
-            #         # ]),
-
-            #     ], class_name='d-flex align-items-center justify-content-center', style={'width':'100%'}),
-
-            # ], class_name='m-0 pt-3 w-50 d-none d-lg-block'), 
-
-            # TITULO MOVIL
             dbc.Row([
 
                 dbc.Col([
@@ -1708,25 +1553,6 @@ app.layout = html.Div([
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
             ], class_name='m-0 pt-3 w-100 d-block'),
-
-            # TITULO MD
-            # dbc.Row([
-
-            #     dbc.Col([
-
-            #         html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
-            #                     className="pt-0",
-            #                     style={'width':'40px', 'height': '40px', 'float':'left', 'margin-right': '15px'}
-            #             ),
-
-            #         html.H2('Radar Vial', 
-            #             style={'float':'left', 'font-weight':'normal', 'font-size':'25px', 'margin-right': '15px'}, 
-            #             className='pl-3 pt-1 '
-            #         ),
-
-            #     ], class_name='d-flex align-items-center', style={'padding-left':'60px'})
-
-            # ], style={'position':'absolute','left':'1px','top':'10px',}, class_name='m-0 pt-3 w-100 d-none d-md-block d-lg-none')
 
         ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
 
@@ -1843,32 +1669,6 @@ app.layout = html.Div([
                             }
                         ),
 
-                        # dbc.Button(
-                        #     html.Img(src='data:image/png;base64,{}'.format(insta_img), 
-                        #             style={'float':'right'},
-                        #             className="p-0 img-fluid"), 
-                        #     id="instagram", 
-                        #     n_clicks=0, 
-                        #     style={'display':'inline-block',
-                        #             'float':'left','padding':'0', 'background-color':'transparent',
-                        #             'border-color':'transparent', 'margin-left': '45px'},
-                        #     class_name='rounded-circle ml-4 pb-1'
-
-                        # ),
-
-                        # dbc.Button(
-                        #     html.Img(src='data:image/png;base64,{}'.format(twitter_img), 
-                        #             style={'float':'right'},
-                        #             className="p-0 img-fluid"), 
-                        #     id="twitter", 
-                        #     n_clicks=0, 
-                        #     style={'display':'inline-block',
-                        #             'float':'left','padding':'0', 'background-color':'transparent',
-                        #             'border-color':'transparent', 'margin-right': '40px', 'margin-left': '35px'},
-                        #     class_name='rounded-circle ml-4 pb-1'
-
-                        # ),
-
                         html.B("Comentarios sobre Radar Vial", style = {'font-size': '12px'}),
                         html.Br(),
                         html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
@@ -1924,31 +1724,31 @@ def resumen():
 
                                     dbc.Modal([
 
-                                    dbc.ModalHeader([html.P("Radar Vial", style = {'font-size': '18px', 'font-weight': 'bold', 'margin-bottom': '0px'})]),
+                                        dbc.ModalHeader([html.P("Radar Vial", style = {'font-size': '18px', 'font-weight': 'bold', 'margin-bottom': '0px'})]),
 
-                                    dbc.ModalBody([
-                                        
-                                        html.P(
-                                            'Cada año en promedio fallecen 8 y resultan con lesiones graves 159 personas en el municipio. En San Pedro Garza García reconocemos que las lesiones graves y fallecimientos ocasionados por hechos de tránsito no son “accidentes” y por lo tanto pueden ser evitadas a traves de educación, adecuaciones viales y aplicación de la ley.' 
-                                        ),
+                                        dbc.ModalBody([
+                                            
+                                            html.P(
+                                                'Cada año en promedio fallecen 8 y resultan con lesiones graves 159 personas en el municipio. En San Pedro Garza García reconocemos que las lesiones graves y fallecimientos ocasionados por hechos de tránsito no son “accidentes” y por lo tanto pueden ser evitadas a traves de educación, adecuaciones viales y aplicación de la ley.' 
+                                            ),
 
-                                        html.Br(),
+                                            html.Br(),
 
-                                        html.P('Nuestro objetivo es alcanzar la meta de 0 fallecimientos y 0 lesiones graves a nivel municipal y para apoyar este esfuerzo es que desarrollamos la plataforma de Radar Vial.'),
+                                            html.P('Nuestro objetivo es alcanzar la meta de 0 fallecimientos y 0 lesiones graves a nivel municipal y para apoyar este esfuerzo es que desarrollamos la plataforma de Radar Vial.'),
 
-                                        html.Br(),
+                                            html.Br(),
 
-                                        html.P('La plataforma de uso abierto visualiza los datos de hechos viales del 2015 a la fecha, proporcionados por la Secretaría de Seguridad Pública y procesados bimensualmente por el IMPLANG.'), 
-                                        
-                                        html.Br(), 
-                                        
-                                        html.P('La información que se presenta en esta plataforma es para uso solamente informativo. Aun y cuando buscamos publicar siempre la información mas precisa, existe la posiblilidad de error o de información incompleta.'),
+                                            html.P('La plataforma de uso abierto visualiza los datos de hechos viales del 2015 a la fecha, proporcionados por la Secretaría de Seguridad Pública y procesados bimensualmente por el IMPLANG.'), 
+                                            
+                                            html.Br(), 
+                                            
+                                            html.P('La información que se presenta en esta plataforma es para uso solamente informativo. Aun y cuando buscamos publicar siempre la información mas precisa, existe la posiblilidad de error o de información incompleta.'),
 
-                                        html.Br(),
+                                            html.Br(),
 
-                                        html.P('Última actualización: octubre 2021')
+                                            html.P('Última actualización: octubre 2021')
 
-                                    ],style={'font-size':'100%'}),
+                                        ],style={'font-size':'100%'}),
 
                                     ],
                                     id="modal_inforadar",
@@ -2069,36 +1869,6 @@ def resumen():
                 ], lg = 4, md = 12, sm = 12),
             
             ], className='mx-0'),
-
-            # # BOTON MAPA
-            # dbc.Row([
-
-            #     dbc.Col([
-
-            #         dbc.Button(
-            #                 [html.Img(src='data:image/png;base64,{}'.format(mapa_foto_img), 
-            #                 className='img-fluid',
-            #                 style = {'width': '355px', 'height': '315px', 'position': 'relative', 'z-index': '1', 'border-radius': '2%'}),
-            #                 ], 
-            #                 id="boton_mapa", 
-            #                 n_clicks=0, 
-            #                 style={'border-color':'gray', 'background-color': 'white'}
-            #         ),
-                    
-            #         html.P(
-            #             [html.P('Ver Datos', style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
-            #             html.P('en Mapa', style = {'margin-bottom': '0px', 'margin-top': '0px', 'padding-top': '0px', 'padding-bottom': '0px'}),
-            #             html.P('Interactivo', style = {'margin-bottom': '0px', 'margin-top': '0px', 'padding-top': '0px', 'padding-bottom': '0px'})], 
-            #             className = 'texto_boton_mapa',
-            #             style = {
-            #                 'font-size': '40px', 
-            #                 'font-weight': 'bold',
-            #                 'color': 'white'
-            #             }
-            #         )
-            #     ]),
-
-            # ], className='mx-0'),
 
             html.Br(),
 
@@ -2523,83 +2293,6 @@ def resumen():
                     ], style = {'margin-bottom': '20px'})
                 ], lg=6, md=6),
 
-                # Top intersecciones
-                # dbc.Col([
-
-                #     dbc.Card([
-                        
-                #         dbc.CardBody([
-
-                #             html.Div([
-                #                 html.P(['Top Intersecciones'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
-                #             ], style={'width':'95%','display':'inline-block'}),
-
-                #             html.Div([
-
-                #                 html.Span(
-                #                     dbc.Button(
-                #                         [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                #                                 style = {'width': '15px', 'height': '15px'})], 
-                #                         id="open1_topint", 
-                #                         n_clicks=0, 
-                #                         style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                #                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                #                         class_name = 'expand-button'
-                #                         ),
-
-                #                     id="tooltip-target-topint",
-                #                     style={"textDecoration": "underline", "cursor": "pointer"},
-                #                 ),
-
-                #                 dbc.Tooltip(
-                #                     "Ampliar vista",
-                #                     target="tooltip-target-topint",
-                #                     placement = 'top'
-                #                 ),
-                                    
-                #                 dbc.Modal([
-
-                #                     dbc.ModalHeader(html.B("Top Intersecciones")),
-
-                #                     dbc.ModalBody([
-
-                #                         dcc.Graph(
-                #                             id = 'top_i',
-                #                             figure = top_i_modal,
-                #                             config={
-                #                                 'modeBarButtonsToRemove':
-                #                                 ['lasso2d', 'pan2d','zoom2d',
-                #                                 'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                #                                 'resetScale2d', 'hoverClosestCartesian',
-                #                                 'hoverCompareCartesian', 'toggleSpikelines',
-                #                                 'select2d',],
-                #                                 'displaylogo': False
-                #                             },
-                #                         )
-                #                     ],style={"textAlign":"justify",'font-size':'100%'}),
-                                    
-                #                     ],
-                #                     id="modal_topint",
-                #                     centered=True,
-                #                     size="xl",
-                #                     is_open=False,
-                #                     style={'font-family':'Arial'}
-                #                 ),
-                #             ], style={'width':'4%', 'float': 'right', 'margin-top': '2px'}, className = 'pr-3 d-none d-lg-block'),
-
-                #             html.Hr(style = {'margin-top': '0px'}),
-
-                #             dcc.Graph(
-                #                 id = 'top_i',
-                #                 figure = top_i,
-                #                 config = {
-                #                     'displayModeBar': False,
-                #                     'displaylogo': False
-                #                 }
-                #             )
-                #         ]),
-                #     ], style = {'margin-bottom': '20px'})
-                # ], lg=6, md=6),
             ], style = {'padding-left': '15px', 'padding-right': '15px'}),
 
             # PÁRRAFO DIAGNÓSTICO
@@ -2618,14 +2311,6 @@ def resumen():
                                     html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
                                         html.A(['Diagnóstico de Seguridad Vial 2020'], href = 'https://drive.google.com/file/d/1oeDpZptdogbqVefihVNnYG3cp6tiNAiL/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
-
-                                        # dbc.Button(
-                                        #     [html.B('Diagnóstico de Seguridad Vial 2021')], 
-                                        #     id="open1_diagnostico", 
-                                        #     n_clicks=0, 
-                                        #     style={'display':'inline-block', 'background-color':'transparent',
-                                        #         'border-color':'transparent', 'padding': '0px', 'margin': '0px', 'color': '#279FD7', 'font-size': '14px'}
-                                        # ),
                                         
                                         '.',
 
@@ -3397,17 +3082,6 @@ def mapa():
                         id = 'collapse-filtros-movil',
                         n_clicks = 0
                     ),
-
-                    # dbc.Button(
-                    #     html.Img(src = 'data:image/png;base64,{}'.format(encoded_img6),
-                    #     className = 'img-fluid',
-                    #     style = {'width': '75%', 'height': '75%'}),
-                    #     #'Indicadores',
-                    #     color = 'light',
-                    #     class_name = 'indicadores_small',
-                    #     id = 'collapse-indicadores-movil',
-                    #     n_clicks = 0
-                    # ),
 
                     dbc.CardGroup(
                         [
