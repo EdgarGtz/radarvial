@@ -1870,8 +1870,6 @@ def resumen():
             
             ], className='mx-0'),
 
-            html.Br(),
-
             # Hechos viales totales // Top Ubicaciones
             dbc.Row([
         
@@ -3061,11 +3059,7 @@ def mapa():
 
                 ],lg=8, md=8, style={'float': 'left'}),
 
-                html.Br()
-
             ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name = 'd-none d-lg-block'),
-
-            html.Br(),
 
             # MAPA E INDICADORES MOVIL
             dbc.Row([
