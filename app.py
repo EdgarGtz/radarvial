@@ -3115,7 +3115,7 @@ def mapa():
                                 
                                 ], style = {'padding': '0px', 'margin': '10px'})
 
-                            ]),
+                            ], style = {'width': '9rem'}),
 
                             # LESIONADOS
                             dbc.Card([
@@ -3147,7 +3147,7 @@ def mapa():
 
                                 ], style = {'padding': '0px', 'margin': '10px'})
                             
-                            ]),
+                            ], style = {'width': '9rem'}),
 
                             # FALLECIDOS
                             dbc.Card([
@@ -3179,7 +3179,7 @@ def mapa():
 
                                 ], style = {'padding': '0px', 'margin': '10px'})
 
-                            ]),
+                            ], style = {'width': '9rem'}),
                         ],
 
                         class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
