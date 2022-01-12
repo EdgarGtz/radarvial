@@ -3059,6 +3059,8 @@ def mapa():
 
                 ],lg=8, md=8, style={'float': 'left'}),
 
+                dbc.Row(),
+
             ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name = 'd-none d-lg-block'),
 
             # MAPA E INDICADORES MOVIL
@@ -3091,6 +3093,8 @@ def mapa():
                                             ], style = {'border': '0px'}),
 
                                     ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
+
+                                    html.Br(),
 
                                     html.Div([
 
@@ -3125,6 +3129,8 @@ def mapa():
                                             ], style = {'border': '0px'}),
 
                                     ], style = {'border': '0px', 'float': 'right'}),
+
+                                    html.Br(),
 
                                     html.Div([
 
