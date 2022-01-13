@@ -1545,7 +1545,7 @@ app.layout = html.Div([
                                 style = {'width': '30px', 'height': '30px'})], 
                         id="boton_mapa", 
                         n_clicks=0, 
-                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                        style={'display':'inline-block','padding':'2px 10px 0 0', 'background-color':'transparent',
                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
                         class_name = ''
                     ),
@@ -1557,7 +1557,7 @@ app.layout = html.Div([
 
                         id="boton_resumen", 
                         n_clicks=0, 
-                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                        style={'display':'inline-block','padding':'2px 10px 0 0', 'background-color':'transparent',
                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
                         class_name = ''
                     ),
@@ -3410,41 +3410,21 @@ def mapa():
 def render_tabs(boton_mapa, boton_resumen):
 
     if boton_mapa == 0:
-
-        print("escenario 1")
-        print(boton_mapa, "mapa")
-        print(boton_resumen, "resumen")
-
         return 'resumen'
 
     elif boton_mapa == 1 and boton_resumen == 1:
-
-        print('escenario 3')
-        print(boton_resumen, "resumen")
 
         return 'resumen'
 
     elif boton_mapa == 1:
 
-        print("escenario 2")
-        print(boton_mapa, "mapa")
-        print(boton_resumen, "resumen")
-
         return 'mapa'
 
     elif boton_mapa == 2 and boton_resumen == 2:
 
-        print("escenario 5")
-        print(boton_mapa, "mapa")
-        print(boton_resumen, "resumen")
-
         return 'resumen'
 
     elif boton_mapa == 2:
-
-        print('escenario 4')
-        print(boton_mapa, "mapa")
-        print(boton_resumen, "resumen")
 
         return 'mapa'
 
