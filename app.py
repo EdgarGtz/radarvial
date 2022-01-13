@@ -1541,13 +1541,25 @@ app.layout = html.Div([
                         ),
 
                     dbc.Button(
-                        [html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
+                        [html.Img(src='data:image/png;base64,{}'.format(mapa_icon_img),
                                 style = {'width': '30px', 'height': '30px'})], 
-                        id="boton_back", 
+                        id="boton_mapa", 
                         n_clicks=0, 
                         style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
                                 'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                        class_name = 'p-0'
+                        class_name = ''
+                    ),
+
+                    dbc.Button(
+                        
+                        [html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
+                                style = {'width': '30px', 'height': '30px'})], 
+
+                        id="boton_resumen", 
+                        n_clicks=0, 
+                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                        class_name = ''
                     ),
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
@@ -1566,6 +1578,7 @@ app.layout = html.Div([
                     dbc.CardHeader(
 
                         dbc.Tabs([
+
                             dbc.Tab(label='Resumen', 
                                     tab_id='resumen', 
                                     label_style={'color':'#BBC3C8','border-top':'0px','border-bottom':'0px',
@@ -1591,7 +1604,7 @@ app.layout = html.Div([
                         ],
                         id='tabs',
                         active_tab="resumen",
-                        class_name='d-flex flex-nowrap', #overflow-scroll'
+                        class_name='d-flex flex-nowrap d-sm-none', #overflow-scroll'
                         style = {'font-size': '16px'}
                         ),
                         style={'background-color':'white', 'white-space': 'nowrap', 'overflow-x': 'auto',
@@ -1602,8 +1615,8 @@ app.layout = html.Div([
 
                     dbc.CardBody([
                     
-                        html.Div(id="hechosviales_content"),#, style = {'margin': '0px', 'padding': '0px'}, className = 'h-100'),
-                        # html.Div(id="hechosviales_content_movil", className='d-block d-sm-none')
+                        html.Div(id="app_content"),#, style = {'margin': '0px', 'padding': '0px'}, className = 'h-100'),
+                        # html.Div(id="app_content", className='d-block d-sm-none')
 
                         # RESUMEN
                         html.Div([
@@ -3388,14 +3401,127 @@ def mapa():
 
 # CALLBACKS HEADER
 
+# UPDATEAR TABS 1
+@app.callback(
+    Output('tabs', 'active_tab'), 
+    [Input('boton_mapa', 'n_clicks'),
+     Input('boton_resumen', 'n_clicks')
+     ]) 
+def render_tabs(boton_mapa, boton_resumen):
+
+    if boton_mapa == 0:
+
+        print("escenario 1")
+        print(boton_mapa, "mapa")
+        print(boton_resumen, "resumen")
+
+        return 'resumen'
+
+    elif boton_mapa == 1 and boton_resumen == 1:
+
+        print('escenario 3')
+        print(boton_resumen, "resumen")
+
+        return 'resumen'
+
+    elif boton_mapa == 1:
+
+        print("escenario 2")
+        print(boton_mapa, "mapa")
+        print(boton_resumen, "resumen")
+
+        return 'mapa'
+
+    elif boton_mapa == 2 and boton_resumen == 2:
+
+        print("escenario 5")
+        print(boton_mapa, "mapa")
+        print(boton_resumen, "resumen")
+
+        return 'resumen'
+
+    elif boton_mapa == 2:
+
+        print('escenario 4')
+        print(boton_mapa, "mapa")
+        print(boton_resumen, "resumen")
+
+        return 'mapa'
+
+    elif boton_mapa == 3 and boton_resumen == 3:
+
+        return 'resumen'
+
+    elif boton_mapa == 3:
+
+        return 'mapa'
+
+    elif boton_mapa == 4 and boton_resumen == 4:
+
+        return 'resumen'
+
+    elif boton_mapa == 4:
+
+        return 'mapa'
+
+    elif boton_mapa == 5 and boton_resumen == 5:
+
+        return 'resumen'
+
+    elif boton_mapa == 5:
+
+        return 'mapa'
+
+    elif boton_mapa == 6 and boton_resumen == 6:
+
+        return 'resumen'
+
+    elif boton_mapa == 6:
+
+        return 'mapa'
+
+    elif boton_mapa == 7 and boton_resumen == 7:
+
+        return 'resumen'
+
+    elif boton_mapa == 7:
+
+        return 'mapa'
+
+    elif boton_mapa == 8 and boton_resumen == 8:
+
+        return 'resumen'
+
+    elif boton_mapa == 8:
+
+        return 'mapa'
+
+    elif boton_mapa == 9 and boton_resumen == 9:
+
+        return 'resumen'
+
+    elif boton_mapa == 9:
+
+        return 'mapa'
+
+    elif boton_mapa == 10 and boton_resumen == 10:
+
+        return 'resumen'
+
+    elif boton_mapa == 10:
+
+        return 'mapa'
+
+    else:
+        'resumen'
+    
+
 # CARGAR CONTENIDO TABS
 @app.callback(
-    Output('hechosviales_content', 'children'), 
-    [Input('tabs', 'active_tab'),
-     # Input('boton_test2', 'n_clicks'),
-     ]) 
-def render_hechosviales(tabs):
-    if tabs == 'resumen':
+    Output('app_content', 'children'), 
+    [Input('tabs', 'active_tab')]) 
+def render_app(tabs):
+    if tabs == 'resumen':  
         return resumen()
 
     elif tabs == 'mapa':
@@ -3404,13 +3530,21 @@ def render_hechosviales(tabs):
     else:
         return resumen()
 
+ # VER O ESCONDER BOTÓN
+@app.callback(
+    [Output('boton_mapa', 'className'), 
+     Output('boton_resumen', 'className')], 
+    [Input('tabs', 'active_tab'),
+     ]) 
+def render_boton_test(tabs):
+    if tabs == 'resumen':
+        return 'expand-button', 'd-none'
 
-# CARGAR TABS
-# @app.callback(
-#     Output('hechosviales_content', 'children'), 
-#     [Input('tabs', 'active_tab')])
-# def get_hechosviales(tab):
-#     return render_hechosviales(tab)
+    elif tabs == 'mapa':
+        return 'd-none', 'expand-button'
+
+    else:
+        return 'expand-button', 'd-none'
 
 #-----------
 
