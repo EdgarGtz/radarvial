@@ -62,8 +62,6 @@ px.set_mapbox_access_token(mapbox_access_token)
 
 ## IMAGENES
 
-radar_img = "https://cdn-icons-png.flaticon.com/512/188/188595.png"
-
 img1 = 'assets/down-arrow.png' # replace with your own image
 encoded_img1 = base64.b64encode(open(img1, 'rb').read()).decode('ascii')
 
@@ -73,8 +71,11 @@ encoded_img2 = base64.b64encode(open(img2, 'rb').read()).decode('ascii')
 img3 = 'assets/descargar.png' # replace with your own image
 encoded_img3 = base64.b64encode(open(img3, 'rb').read()).decode('ascii')
 
-img4 = 'assets/radarvial_logo_bn.png' # replace with your own image
+img4 = 'assets/vision_cero.png' # replace with your own image
 encoded_img4 = base64.b64encode(open(img4, 'rb').read()).decode('ascii')
+
+sp = 'assets/logo_sp.jpg' # replace with your own image
+encoded_sp = base64.b64encode(open(sp, 'rb').read()).decode('ascii')
 
 img5 = 'assets/boton_filtros_movil.png' # replace with your own image
 encoded_img5 = base64.b64encode(open(img5, 'rb').read()).decode('ascii')
@@ -1535,9 +1536,14 @@ app.layout = html.Div([
 
                 dbc.Col([
 
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_sp), 
+                                className="pt-0",
+                                style={'float':'left', 'margin-right': '15px','height': '37px'}
+                        ),
+
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
-                                style={'float':'left', 'margin-right': '15px', 'width': '168px', 'height': '37px'}
+                                style={'float':'left', 'height': '37px'}
                         ),
 
                     dbc.Button(
@@ -1603,7 +1609,7 @@ app.layout = html.Div([
 
                         ],
                         id='tabs',
-                        active_tab="resumen",
+                        active_tab="mapa",
                         class_name='d-flex flex-nowrap d-sm-none', #overflow-scroll'
                         style = {'font-size': '16px'}
                         ),
@@ -3532,7 +3538,7 @@ def render_tabs(boton_mapa, boton_resumen):
         return 'mapa'
 
     else:
-        'resumen'
+        'mapa'
     
 
 # CARGAR CONTENIDO TABS
