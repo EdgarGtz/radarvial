@@ -314,7 +314,17 @@ button:focus { outline: none !important; box-shadow: none !important; }
 }
 
 .indicadores_small_nuevo {
+  /* position: absolute;
+  top: 65%;
+  z-index: 5; */
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container_indicadores {
   position: absolute;
   top: 65%;
   z-index: 5;
+  width: 100%;
 }

@@ -3098,7 +3098,9 @@ def mapa():
                         n_clicks = 0
                     ),
 
-                    dbc.CardGroup(
+                    html.Div([
+
+                        dbc.CardGroup(
                         [
                             # HECHOS VIALES
                             dbc.Card([
@@ -3147,7 +3149,7 @@ def mapa():
                                 
                                 ], style = {'padding': '0px', 'margin': '10px'})
 
-                            ], style = {'width': '15rem'}),
+                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
 
                             # LESIONADOS
                             dbc.Card([
@@ -3192,7 +3194,7 @@ def mapa():
 
                                 ], style = {'padding': '0px', 'margin': '10px'})
                             
-                            ], style = {'width': '15rem'}),
+                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
 
                             # FALLECIDOS
                             dbc.Card([
@@ -3237,12 +3239,15 @@ def mapa():
 
                                 ], style = {'padding': '0px', 'margin': '10px'})
 
-                            ], style = {'width': '15rem'}),
+                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
                         ],
 
                         class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
-                        style = {'white-space': 'nowrap', 'overflow-x': 'auto', 'overflow-y': 'hidden'}
+                        style = {'white-space': 'nowrap', 'overflow-x': 'scroll'}
                     ),
+
+                    ], className = 'container_indicadores'),
+
 
                     # MAPA
                     dcc.Graph(
@@ -3251,7 +3256,7 @@ def mapa():
                         config={
                             'displayModeBar': False
                         },
-                        style={'position':'relative', 'z-index':'1'},
+                        style={'position':'relative', 'z-index':'1', 'overflow-x': 'hidden', 'overflow-y': 'hidden'},
                         className = 'vh-100'
                     ),
 
