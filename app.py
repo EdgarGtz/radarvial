@@ -3098,155 +3098,166 @@ def mapa():
                         n_clicks = 0
                     ),
 
-                    html.Div([
-
-                        dbc.CardGroup(
-                        [
-                            # HECHOS VIALES
-                            dbc.Card([
-
-                                dbc.CardBody([
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                # html.Img(src='data:image/png;base64,{}'.format(hv_img), 
-                                                # style={'width': '75px', 'height': '60px','float':'left', 'padding-left': '10px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '0px'},
-                                                # className="pl-3 pt-2 img-fluid"),
-
-                                                html.Table([
-
-                                                        html.Tr([
-                                                            html.Th(id = 'hv_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                                                        ], style = {'border': '0px'}),
-
-                                                ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                                            ])
-                                        ])
-                                    ]),
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                html.P([
-                                                    'Hechos Viales'
-                                                ], 
-                                                style = {
-                                                    'font-size': '10px', 
-                                                    'font-weight': 'normal',
-                                                    'margin-bottom': '5px'
-                                                    }
-                                                )
-                                            ], style={'margin-bottom': '0px', 'padding-bottom': '10px', 'float': 'right', 'margin-top': '0px', 'padding-top': '0px'}),
-                                        ])
-                                    ])              
-                                
-                                ], style = {'padding': '0px', 'margin': '10px'})
-
-                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-
-                            # LESIONADOS
-                            dbc.Card([
-
-                                dbc.CardBody([
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                html.Table([
-
-                                                        html.Tr([
-                                                            html.Th(id = 'hv_les_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                                                        ], style = {'border': '0px'}),
-
-                                                ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                                            ])
-                                        ])
-                                    ]),
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                html.P([
-                                                    'Lesionados'
-                                                ], 
-                                                style = {
-                                                    'font-size': '10px', 
-                                                    'font-weight': 'normal',
-                                                    'margin-bottom': '5px'
-                                                    }
-                                                )
-                                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
-                                        ])
-                                    ])
-
-                                ], style = {'padding': '0px', 'margin': '10px'})
-                            
-                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-
-                            # FALLECIDOS
-                            dbc.Card([
-
-                                dbc.CardBody([
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                html.Table([
-
-                                                        html.Tr([
-                                                            html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                                                        ], style = {'border': '0px'}),
-
-                                                ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                                            ])
-                                        ])
-                                    ]),
-
-                                    dbc.Row([
-
-                                        dbc.Col([
-
-                                            html.Div([
-
-                                                html.P([
-                                                    'Fallecidos'
-                                                ], 
-                                                style = {
-                                                    'font-size': '10px', 
-                                                    'font-weight': 'normal',
-                                                    'margin-bottom': '5px'
-                                                    }
-                                                )
-                                            ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
-                                        ])
-                                    ])
-
-                                ], style = {'padding': '0px', 'margin': '10px'})
-
-                            ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-                        ],
-
-                        class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
-                        style = {'white-space': 'nowrap', 'overflow-x': 'scroll'}
+                    dbc.Button(
+                        html.Img(src = 'data:image/png;base64,{}'.format(encoded_img6),
+                            className = 'img-fluid',
+                            style = {'width': '75%', 'height': '75%'}),
+                        #'Indicadores',
+                        color = 'light',
+                        class_name = 'indicadores_small',
+                        id = 'collapse-indicadores-movil',
+                        n_clicks = 0
                     ),
 
-                    ], className = 'container_indicadores'),
+                    # html.Div([
+
+                    #     dbc.CardGroup(
+                    #     [
+                    #         # HECHOS VIALES
+                    #         dbc.Card([
+
+                    #             dbc.CardBody([
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             # html.Img(src='data:image/png;base64,{}'.format(hv_img), 
+                    #                             # style={'width': '75px', 'height': '60px','float':'left', 'padding-left': '10px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '0px'},
+                    #                             # className="pl-3 pt-2 img-fluid"),
+
+                    #                             html.Table([
+
+                    #                                     html.Tr([
+                    #                                         html.Th(id = 'hv_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
+                    #                                     ], style = {'border': '0px'}),
+
+                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
+                    #                         ])
+                    #                     ])
+                    #                 ]),
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             html.P([
+                    #                                 'Hechos Viales'
+                    #                             ], 
+                    #                             style = {
+                    #                                 'font-size': '10px', 
+                    #                                 'font-weight': 'normal',
+                    #                                 'margin-bottom': '5px'
+                    #                                 }
+                    #                             )
+                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '10px', 'float': 'right', 'margin-top': '0px', 'padding-top': '0px'}),
+                    #                     ])
+                    #                 ])              
+                                
+                    #             ], style = {'padding': '0px', 'margin': '10px'})
+
+                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
+
+                    #         # LESIONADOS
+                    #         dbc.Card([
+
+                    #             dbc.CardBody([
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             html.Table([
+
+                    #                                     html.Tr([
+                    #                                         html.Th(id = 'hv_les_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
+                    #                                     ], style = {'border': '0px'}),
+
+                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
+                    #                         ])
+                    #                     ])
+                    #                 ]),
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             html.P([
+                    #                                 'Lesionados'
+                    #                             ], 
+                    #                             style = {
+                    #                                 'font-size': '10px', 
+                    #                                 'font-weight': 'normal',
+                    #                                 'margin-bottom': '5px'
+                    #                                 }
+                    #                             )
+                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
+                    #                     ])
+                    #                 ])
+
+                    #             ], style = {'padding': '0px', 'margin': '10px'})
+                            
+                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
+
+                    #         # FALLECIDOS
+                    #         dbc.Card([
+
+                    #             dbc.CardBody([
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             html.Table([
+
+                    #                                     html.Tr([
+                    #                                         html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
+                    #                                     ], style = {'border': '0px'}),
+
+                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
+                    #                         ])
+                    #                     ])
+                    #                 ]),
+
+                    #                 dbc.Row([
+
+                    #                     dbc.Col([
+
+                    #                         html.Div([
+
+                    #                             html.P([
+                    #                                 'Fallecidos'
+                    #                             ], 
+                    #                             style = {
+                    #                                 'font-size': '10px', 
+                    #                                 'font-weight': 'normal',
+                    #                                 'margin-bottom': '5px'
+                    #                                 }
+                    #                             )
+                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
+                    #                     ])
+                    #                 ])
+
+                    #             ], style = {'padding': '0px', 'margin': '10px'})
+
+                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
+                    #     ],
+
+                    #     class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
+                    #     style = {'white-space': 'nowrap', 'overflow-x': 'scroll'}
+                    # ),
+
+                    # ], className = 'container_indicadores'),
 
 
                     # MAPA
@@ -3292,150 +3303,150 @@ def mapa():
                 ], class_name = 'd-lg-none')
             ], class_name = 'd-lg-none'),
 
-            # dbc.Row([
+            dbc.Row([
 
-            #     dbc.Col([
+                dbc.Col([
 
-            #         dbc.Offcanvas([
+                    dbc.Offcanvas([
 
-            #             # # INDICADOR HECHOS VIALES
-            #             # dbc.Card([
+                        # INDICADOR HECHOS VIALES
+                        dbc.Card([
 
-            #             #     dbc.CardBody([
+                            dbc.CardBody([
 
-            #             #         html.Div([
+                                html.Div([
 
-            #             #             html.P([
-            #             #                 'Hechos Viales Totales'
-            #             #             ], 
-            #             #             style = {
-            #             #                 'font-size': '18px', 
-            #             #                 'font-weight': 'bold',
-            #             #                 'margin-bottom': '5px'
-            #             #                 }
-            #             #             )
-            #             #         ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    html.P([
+                                        'Hechos Viales Totales'
+                                    ], 
+                                    style = {
+                                        'font-size': '18px', 
+                                        'font-weight': 'bold',
+                                        'margin-bottom': '5px'
+                                        }
+                                    )
+                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
-            #             #         html.Table([
+                                html.Table([
 
-            #             #                 html.Tr([
-            #             #                     #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
-            #             #                     html.Th(id = 'hv_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-            #             #                 ], style = {'border': '0px'}),
+                                        html.Tr([
+                                            #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
+                                            html.Th(id = 'hv_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                        ], style = {'border': '0px'}),
 
-            #             #         ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
+                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
                             
-            #             #     ], style = {'padding': '0px', 'margin': '10px'})
+                            ], style = {'padding': '0px', 'margin': '10px'})
 
-            #             # ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
+                        ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
 
-            #             # html.Br(),
+                        html.Br(),
 
-            #             # # INDICADOR LESIONADOS
-            #             # dbc.Card([
+                        # INDICADOR LESIONADOS
+                        dbc.Card([
 
-            #             #     dbc.CardBody([
+                            dbc.CardBody([
 
-            #             #         html.Div([
+                                html.Div([
 
-            #             #             html.P([
-            #             #                 'Lesionados'
-            #             #             ], 
-            #             #             style = {
-            #             #                 'font-size': '18px', 
-            #             #                 'font-weight': 'bold',
-            #             #                 'margin-bottom': '5px'
-            #             #                 }
-            #             #             )
-            #             #         ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    html.P([
+                                        'Lesionados'
+                                    ], 
+                                    style = {
+                                        'font-size': '18px', 
+                                        'font-weight': 'bold',
+                                        'margin-bottom': '5px'
+                                        }
+                                    )
+                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
-            #             #         html.Table([
+                                html.Table([
 
-            #             #                 html.Tr([
-            #             #                     #html.Th('Lesionados: ', style={'font-weight':'normal', 'border': '0px'}),
-            #             #                     html.Th(id = 'hv_les_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-            #             #                 ], style = {'border': '0px'}),
+                                        html.Tr([
+                                            #html.Th('Lesionados: ', style={'font-weight':'normal', 'border': '0px'}),
+                                            html.Th(id = 'hv_les_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                        ], style = {'border': '0px'}),
 
-            #             #         ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
+                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
 
-            #             #     ], style = {'padding': '0px', 'margin': '10px'})
+                            ], style = {'padding': '0px', 'margin': '10px'})
                             
-            #             # ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
+                        ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
 
-            #             # html.Br(),
+                        html.Br(),
 
-            #             # # INDICADOR FALLECIDOS
-            #             # dbc.Card([
+                        # INDICADOR FALLECIDOS
+                        dbc.Card([
 
-            #             #     dbc.CardBody([
+                            dbc.CardBody([
 
-            #             #         html.Div([
+                                html.Div([
 
-            #             #             html.P([
-            #             #                 'Fallecidos'
-            #             #             ], 
-            #             #             style = {
-            #             #                 'font-size': '18px', 
-            #             #                 'font-weight': 'bold',
-            #             #                 'margin-bottom': '5px'
-            #             #                 }
-            #             #             )
-            #             #         ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    html.P([
+                                        'Fallecidos'
+                                    ], 
+                                    style = {
+                                        'font-size': '18px', 
+                                        'font-weight': 'bold',
+                                        'margin-bottom': '5px'
+                                        }
+                                    )
+                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
-            #             #         html.Table([
+                                html.Table([
 
-            #             #                 html.Tr([
-            #             #                     #html.Th('Fallecidos: ', style={'font-weight':'normal', 'border': '0px'}),
-            #             #                     html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-            #             #                 ], style = {'border': '0px'}),
+                                        html.Tr([
+                                            #html.Th('Fallecidos: ', style={'font-weight':'normal', 'border': '0px'}),
+                                            html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
+                                        ], style = {'border': '0px'}),
 
-            #             #         ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
+                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
 
-            #             #     ], style = {'padding': '0px', 'margin': '10px'})
+                            ], style = {'padding': '0px', 'margin': '10px'})
 
-            #             # ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'}),
+                        ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'}),
 
-            #             # dbc.Card([
+                        # dbc.Card([
 
-            #             #     dbc.CardBody([
+                        #     dbc.CardBody([
 
-            #             #         # dcc.Store(id='mapa_data_top_movil'),
+                        #         # dcc.Store(id='mapa_data_top_movil'),
 
-            #             #         # dcc.Graph(
-            #             #         #     id = 'tabla_mapa_top_movil',
-            #             #         #     figure = {},
-            #             #         #     config={
-            #             #         #             'modeBarButtonsToRemove':
-            #             #         #             ['lasso2d', 'pan2d',
-            #             #         #             'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-            #             #         #             'resetScale2d', 'hoverClosestCartesian',
-            #             #         #             'hoverCompareCartesian', 'toggleSpikelines',
-            #             #         #             'select2d',],
-            #             #         #             'displaylogo': False
-            #             #         #         },
-            #             #         # )
+                        #         # dcc.Graph(
+                        #         #     id = 'tabla_mapa_top_movil',
+                        #         #     figure = {},
+                        #         #     config={
+                        #         #             'modeBarButtonsToRemove':
+                        #         #             ['lasso2d', 'pan2d',
+                        #         #             'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                        #         #             'resetScale2d', 'hoverClosestCartesian',
+                        #         #             'hoverCompareCartesian', 'toggleSpikelines',
+                        #         #             'select2d',],
+                        #         #             'displaylogo': False
+                        #         #         },
+                        #         # )
 
-            #             #     ], style = {'padding': '0px', 'margin': '10px', 'white-space': 'nowrap', 'overflow-x': 'auto'},
-            #             #     class_name = 'd-flex flex-nowrap')
+                        #     ], style = {'padding': '0px', 'margin': '10px', 'white-space': 'nowrap', 'overflow-x': 'auto'},
+                        #     class_name = 'd-flex flex-nowrap')
 
-            #             # ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
+                        # ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
 
-            #         ], 
-            #         placement = 'bottom', 
-            #         close_button = False, 
-            #         style = {
-            #             'padding-top': '5px', 
-            #             'padding-left': '5px', 
-            #             'padding-right': '5px', 
-            #             'margin': '0px', 
-            #             'background-color': '#F8F9FB',
-            #             'height': '400px'
-            #         }, 
-            #         id = 'indicadores-movil', is_open = False)
+                    ], 
+                    placement = 'bottom', 
+                    close_button = False, 
+                    style = {
+                        'padding-top': '5px', 
+                        'padding-left': '5px', 
+                        'padding-right': '5px', 
+                        'margin': '0px', 
+                        'background-color': '#F8F9FB',
+                        'height': '400px'
+                    }, 
+                    id = 'indicadores-movil', is_open = False)
 
-            #     ], class_name = 'd-lg-none')
+                ], class_name = 'd-lg-none')
 
-            # ], class_name = 'd-lg-none')
+            ], class_name = 'd-lg-none')
 
         ], className = '', id='mapicha', style = {'padding': '0px', 'margin': '0px'}),
 
