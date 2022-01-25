@@ -13,7 +13,7 @@ from dash_extensions.snippets import send_file
 from dash_extensions.snippets import send_data_frame
 
 
-app = dash.Dash(__name__, title='Radar Vial',
+app = dash.Dash(__name__, title='Seguridad Vial',
                 #
 				external_stylesheets = [dbc.themes.BOOTSTRAP],
 				meta_tags=[{'name': 'viewport',
@@ -1040,7 +1040,7 @@ tab1_content = dbc.Card(
     
     ], style = {'padding': '0px', 'margin': '10px'}),
     
-    className="mt-3",
+    className="mt-3"
 )
 
 # FILTROS HECHOS VIALES
@@ -1512,10 +1512,15 @@ tab3_content = dbc.Card(
 # TABS
 tabs = dbc.Tabs(
     [
-        dbc.Tab(tab1_content, label="fecha"),
-        dbc.Tab(tab2_content, label="hv"),
-        dbc.Tab(tab3_content, label="más"),
-    ]
+        dbc.Tab(tab1_content, label="Fechas", tab_id="fecha", className='custom-tab',),
+        dbc.Tab(tab2_content, label="Hechos Viales", tab_id="hv", className='custom-tab'),
+        dbc.Tab(tab3_content, label="Búsqueda", tab_id="mas", className='custom-tab'),
+    ],
+    id='tabs_filtros_movil',
+    active_tab='mas',
+    # class_name='d-flex flex-nowrap', #overflow-scroll'
+    # style = {'font-size': '16px'}
+
 )
 
 
@@ -1610,12 +1615,12 @@ app.layout = html.Div([
                         ],
                         id='tabs',
                         active_tab="mapa",
-                        class_name='d-flex flex-nowrap d-sm-none', #overflow-scroll'
+                        class_name='d-flex flex-nowrap', #overflow-scroll'
                         style = {'font-size': '16px'}
                         ),
-                        style={'background-color':'white', 'white-space': 'nowrap', 'overflow-x': 'auto',
-                        'overflow-y': 'hidden', 'height': '44px', 'box-shadow': '0 8px 6px -6px rgba(0, 0, 0, 0.15)'},
-                        class_name='d-flex flex-nowrap' #overflow-auto'
+                    style={'background-color':'white', 'white-space': 'nowrap', 'overflow-x': 'auto',
+                    'overflow-y': 'hidden', 'height': '44px', 'box-shadow': '0 8px 6px -6px rgba(0, 0, 0, 0.15)'},
+                    class_name='d-flex flex-nowrap d-none' #overflow-auto'
                     
                     ),
 
@@ -1633,7 +1638,7 @@ app.layout = html.Div([
 
                 ], style={'border':'none'}, color = '#F8F9FB'), lg=12, class_name='p-0'
 
-            ), justify = 'center', class_name='m-0'
+            ), justify = 'center', class_name='m-0 p-0'
 
         ),
 
@@ -1651,7 +1656,7 @@ app.layout = html.Div([
 
                     ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
 
-                ]),
+                ], class_name='m-0 p-0'),
 
                 dbc.Row([
 
@@ -1688,17 +1693,17 @@ app.layout = html.Div([
                             }
                         ),
 
-                        html.B("Comentarios sobre Radar Vial", style = {'font-size': '12px'}),
+                        html.B("Comentarios sobre Seguridad Vial", style = {'font-size': '12px'}),
                         html.Br(),
                         html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
 
                     ])
 
-                ], style = {'padding-top': '25px'}),
+                ], style = {'padding-top': '25px'}, class_name='m-0 p-0'),
 
             ])
 
-        ], style={'background-color': '#000', 'color':'white'})
+        ], style={'background-color': '#000', 'color':'white'}, class_name='m-0 p-0')
 
 ], style={'font-family':'Arial'})
 
@@ -1743,7 +1748,7 @@ def resumen():
 
                                     dbc.Modal([
 
-                                        dbc.ModalHeader([html.P("Radar Vial", style = {'font-size': '18px', 'font-weight': 'bold', 'margin-bottom': '0px'})]),
+                                        dbc.ModalHeader([html.P("Seguridad Vial", style = {'font-size': '18px', 'font-weight': 'bold', 'margin-bottom': '0px'})]),
 
                                         dbc.ModalBody([
                                             
@@ -1753,7 +1758,7 @@ def resumen():
 
                                             html.Br(),
 
-                                            html.P('Nuestro objetivo es alcanzar la meta de 0 fallecimientos y 0 lesiones graves a nivel municipal y para apoyar este esfuerzo es que desarrollamos la plataforma de Radar Vial.'),
+                                            html.P('Nuestro objetivo es alcanzar la meta de 0 fallecimientos y 0 lesiones graves a nivel municipal y para apoyar este esfuerzo es que desarrollamos la plataforma de Seguridad Vial.'),
 
                                             html.Br(),
 
@@ -1785,7 +1790,7 @@ def resumen():
 
                 ]),
 
-            ], className='mx-0'),
+            ], className='mx-0 p-0'),
 
             html.Br(),
 
@@ -1887,7 +1892,7 @@ def resumen():
 
                 ], lg = 4, md = 12, sm = 12),
             
-            ], className='mx-0'),
+            ], className='mx-0 p-0'),
 
             # Hechos viales totales // Top Ubicaciones
             dbc.Row([
@@ -2063,7 +2068,7 @@ def resumen():
                     ], style = {'margin-bottom': '20px'})
                 ], lg=6, md=6,),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}),
+            ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name='m-0'),
             
             # Por Usuario // Personas
             dbc.Row([
@@ -2226,7 +2231,7 @@ def resumen():
 
                 ], lg=6, md=6),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}),
+            ], style = {'padding-left': '15px', 'padding-right': '15px'}, class_name='m-0'),
 
             # Día de la semana y hora
             dbc.Row([
@@ -2310,7 +2315,7 @@ def resumen():
                     ], style = {'margin-bottom': '20px'})
                 ], lg=6, md=6),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}),
+            ], style = {'padding-left': '15px', 'padding-right': '15px'}, class_name='m-0'),
 
             # PÁRRAFO DIAGNÓSTICO
             dbc.Row([
@@ -2342,7 +2347,7 @@ def resumen():
 
                 ]),
 
-            ], className='mx-0'),
+            ], className='mx-0 p-0'),
 
             html.Br(),
 
@@ -3261,15 +3266,20 @@ def mapa():
 
 
                     # MAPA
-                    dcc.Graph(
-                        id = 'mapa_interac_movil',
-                        figure = {},
-                        config={
-                            'displayModeBar': False
-                        },
-                        style={'position':'relative', 'z-index':'1', 'overflow-x': 'hidden', 'overflow-y': 'hidden'},
-                        className = 'vh-100'
-                    ),
+                    dcc.Loading(
+
+                        dcc.Graph(
+                            id = 'mapa_interac_movil',
+                            figure = {},
+                            config={
+                                'displayModeBar': False
+                            },
+                            style={'position':'relative', 'z-index':'1', 'overflow-x': 'hidden', 'overflow-y': 'hidden'},
+                            className = 'vh-100 pt-4'
+                        ),
+
+                    color="#636EFA", 
+                    type="cube"),
 
                 ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
@@ -3303,6 +3313,7 @@ def mapa():
                 ], class_name = 'd-lg-none')
             ], class_name = 'd-lg-none'),
 
+            # INDICADORES MOVIL
             dbc.Row([
 
                 dbc.Col([
@@ -3450,7 +3461,7 @@ def mapa():
 
         ], className = '', id='mapicha', style = {'padding': '0px', 'margin': '0px'}),
 
-        html.Br()
+        html.Br(className='d-none d-lg-block d-xl-none')
 
     ], className = 'w-100 h-100', style = {'padding': '0px', 'margin': '0px'})
 
@@ -3470,88 +3481,88 @@ def mapa():
      ]) 
 def render_tabs(boton_mapa, boton_resumen):
 
-    if boton_mapa == 0:
-        return 'resumen'
+    if boton_resumen == 0:
+        return 'mapa'
 
-    elif boton_mapa == 1 and boton_resumen == 1:
-
-        return 'resumen'
-
-    elif boton_mapa == 1:
+    elif boton_resumen == 1 and boton_mapa == 1:
 
         return 'mapa'
 
-    elif boton_mapa == 2 and boton_resumen == 2:
+    elif boton_resumen == 1:
 
         return 'resumen'
 
-    elif boton_mapa == 2:
+    elif boton_resumen == 2 and boton_mapa == 2:
 
         return 'mapa'
 
-    elif boton_mapa == 3 and boton_resumen == 3:
+    elif boton_resumen == 2:
 
         return 'resumen'
 
-    elif boton_mapa == 3:
+    elif boton_resumen == 3 and boton_mapa == 3:
 
         return 'mapa'
 
-    elif boton_mapa == 4 and boton_resumen == 4:
+    elif boton_resumen == 3:
 
         return 'resumen'
 
-    elif boton_mapa == 4:
+    elif boton_resumen == 4 and boton_mapa == 4:
 
         return 'mapa'
 
-    elif boton_mapa == 5 and boton_resumen == 5:
+    elif boton_resumen == 4:
 
         return 'resumen'
 
-    elif boton_mapa == 5:
+    elif boton_resumen == 5 and boton_mapa == 5:
 
         return 'mapa'
 
-    elif boton_mapa == 6 and boton_resumen == 6:
+    elif boton_resumen == 5:
 
         return 'resumen'
 
-    elif boton_mapa == 6:
+    elif boton_resumen == 6 and boton_mapa == 6:
 
         return 'mapa'
 
-    elif boton_mapa == 7 and boton_resumen == 7:
+    elif boton_resumen == 6:
 
         return 'resumen'
 
-    elif boton_mapa == 7:
+    elif boton_resumen == 7 and boton_mapa == 7:
 
         return 'mapa'
 
-    elif boton_mapa == 8 and boton_resumen == 8:
+    elif boton_resumen == 7:
 
         return 'resumen'
 
-    elif boton_mapa == 8:
+    elif boton_resumen == 8 and boton_mapa == 8:
 
         return 'mapa'
 
-    elif boton_mapa == 9 and boton_resumen == 9:
+    elif boton_resumen == 8:
 
         return 'resumen'
 
-    elif boton_mapa == 9:
+    elif boton_resumen == 9 and boton_mapa == 9:
 
         return 'mapa'
 
-    elif boton_mapa == 10 and boton_resumen == 10:
+    elif boton_resumen == 9:
 
         return 'resumen'
 
-    elif boton_mapa == 10:
+    elif boton_resumen == 10 and boton_mapa == 10:
 
         return 'mapa'
+
+    elif boton_resumen == 10:
+
+        return 'resumen'
 
     else:
         'mapa'
@@ -3562,14 +3573,20 @@ def render_tabs(boton_mapa, boton_resumen):
     Output('app_content', 'children'), 
     [Input('tabs', 'active_tab')]) 
 def render_app(tabs):
-    if tabs == 'resumen':  
-        return resumen()
+    # if tabs == 'resumen':  
+    #     return resumen()
 
-    elif tabs == 'mapa':
+    # elif tabs == 'mapa':
+    #     return mapa()
+
+    if tabs == 'mapa':  
         return mapa()
 
-    else:
+    elif tabs == 'resumen':
         return resumen()
+
+    else:
+        return mapa()
 
  # VER O ESCONDER BOTÓN
 @app.callback(
@@ -3586,6 +3603,109 @@ def render_boton_test(tabs):
 
     else:
         return 'expand-button', 'd-none'
+
+
+
+# @app.callback(
+#     Output('tabs_filtros_movil', 'active_tab'), 
+#     [Input('boton_filtro_1', 'n_clicks'),
+#      Input('boton_filtro_2', 'n_clicks'),
+#      Input('boton_filtro_3', 'n_clicks')
+#      ]) 
+# def render_tabs_filtros_movil(boton_filtro_1, boton_filtro_2, boton_filtro_3):
+
+#     if boton_filtro_1 == 1:
+#         return 'fecha'
+
+#     elif boton_filtro_2 == 1:
+#         return 'hv'
+
+#     elif boton_filtro_3 == 1:
+#         return 'mas'
+
+#     elif boton_filtro_1 == 2:
+#         return 'fecha'
+
+#     elif boton_filtro_2 == 2:
+#         return 'hv'
+
+#     elif boton_filtro_3 == 2:
+#         return 'mas'
+
+#     elif boton_filtro_1 == 3:
+#         return 'fecha'
+
+#     elif boton_filtro_2 == 3:
+#         return 'hv'
+
+#     elif boton_filtro_3 == 3:
+#         return 'mas'
+
+    # elif boton_filtro_1 == 4:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 4:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 4:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 5:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 5:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 5:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 6:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 6:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 6:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 7:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 7:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 7:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 8:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 8:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 8:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 9:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 9:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 9:
+    #     return 'mas'
+
+    # elif boton_filtro_1 == 10:
+    #     return 'fecha'
+
+    # elif boton_filtro_2 == 10:
+    #     return 'hv'
+
+    # elif boton_filtro_3 == 10:
+    #     return 'mas'
+
+    # else:
+    #     return 'fecha'
 
 #-----------
 
