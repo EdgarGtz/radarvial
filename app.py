@@ -1756,7 +1756,7 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['Radar Vial es la plataforma de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
+                                    html.P(['Seguridad Vial es la plataforma de visualización de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
 
                                         html.Br(),
 
@@ -1813,7 +1813,7 @@ def resumen():
 
                             ], style = {'margin-bottom': '0px'}),
                             
-                        ], style={'background-color':'#E2E2E251'})
+                        ], style={'background-color':'rgba(226, 226, 226, 0.51)'})
                     ])
 
                 ]),
