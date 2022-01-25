@@ -1093,10 +1093,10 @@ tab2_content = dbc.Card(
                         id="tooltip-target-sev-movil",
                     ),
 
-                    dbc.Tooltip(
-                        "Más información",
-                        target="tooltip-target-sev-movil",
-                    ),
+                    # dbc.Tooltip(
+                    #     "Más información",
+                    #     target="tooltip-target-sev-movil",
+                    # ),
                         
                     dbc.Modal([
 
@@ -1172,10 +1172,10 @@ tab2_content = dbc.Card(
                         style={"textDecoration": "underline", "cursor": "pointer"},
                     ),
 
-                    dbc.Tooltip(
-                        "Más información",
-                        target="tooltip-target-usaf-movil"
-                    ),
+                    # dbc.Tooltip(
+                    #     "Más información",
+                    #     target="tooltip-target-usaf-movil"
+                    # ),
                 
                     dbc.Modal([
 
@@ -1253,10 +1253,10 @@ tab2_content = dbc.Card(
                         style={"textDecoration": "underline", "cursor": "pointer"},
                     ),
 
-                    dbc.Tooltip(
-                        "Más información",
-                        target="tooltip-target-thv-movil",
-                    ),
+                    # dbc.Tooltip(
+                    #     "Más información",
+                    #     target="tooltip-target-thv-movil",
+                    # ),
                         
                     dbc.Modal([
 
@@ -1356,10 +1356,10 @@ tab3_content = dbc.Card(
                 id="tooltip-target-afres-movil",
             ),
 
-            dbc.Tooltip(
-                "Más información",
-                target="tooltip-target-afres-movil",
-            ),
+            # dbc.Tooltip(
+            #     "Más información",
+            #     target="tooltip-target-afres-movil",
+            # ),
                 
             dbc.Modal([
 
