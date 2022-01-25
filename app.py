@@ -74,8 +74,8 @@ encoded_img3 = base64.b64encode(open(img3, 'rb').read()).decode('ascii')
 img4 = 'assets/vision_cero.png' # replace with your own image
 encoded_img4 = base64.b64encode(open(img4, 'rb').read()).decode('ascii')
 
-sp = 'assets/logo_sp.jpg' # replace with your own image
-encoded_sp = base64.b64encode(open(sp, 'rb').read()).decode('ascii')
+# sp = 'assets/logo_sp.jpg' # replace with your own image
+# encoded_sp = base64.b64encode(open(sp, 'rb').read()).decode('ascii')
 
 img5 = 'assets/boton_filtros_movil.png' # replace with your own image
 encoded_img5 = base64.b64encode(open(img5, 'rb').read()).decode('ascii')
@@ -1541,41 +1541,69 @@ app.layout = html.Div([
 
                 dbc.Col([
 
-                    html.Img(src='data:image/png;base64,{}'.format(encoded_sp), 
-                                className="pt-0",
-                                style={'float':'left', 'margin-right': '15px','height': '37px'}
-                        ),
+                    # html.Img(src='data:image/png;base64,{}'.format(encoded_sp), 
+                    #             className="pt-0",
+                    #             style={'float':'left', 'margin-right': '0px','height': '37px'}
+                    #     ),
 
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
-                                style={'float':'left', 'height': '37px'}
+                                style={'float':'left', 'height': '37px', 'margin-left': '0px', 'padding-left': '0px'}
                         ),
 
                     dbc.Button(
-                        [html.Img(src='data:image/png;base64,{}'.format(mapa_icon_img),
-                                style = {'width': '30px', 'height': '30px'})], 
+                        
+                        [
+                            html.Img(src='data:image/png;base64,{}'.format(mapa_icon_img),
+                                style = {'width': '16px', 'height': '16px', 'float': 'left', 'margin-top': '3px'}),
+                            
+                            html.P(
+                                'Ir a mapa', 
+                                style = {
+                                    'float': 'left', 
+                                    'padding-top': '2px', 
+                                    'padding-left': '35px', 
+                                    'font-size': '14px', 
+                                    'font-weight': 'bold'
+                                }
+                            )
+                        ], 
+
                         id="boton_mapa", 
                         n_clicks=0, 
-                        style={'display':'inline-block','padding':'2px 10px 0 0', 'background-color':'transparent',
-                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                        style={'display':'inline-block','padding':'8px 0px 0px 15px', 'background-color':'#5E5E5E',
+                                'border-color':'#5E5E5E', 'width': '155px', 'height': '36px'},
                         class_name = ''
                     ),
 
                     dbc.Button(
                         
-                        [html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
-                                style = {'width': '30px', 'height': '30px'})], 
+                        [
+                            html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
+                                style = {'width': '16px', 'height': '16px', 'float': 'left', 'margin-top': '3px'}),
+                            
+                            html.P(
+                                'Ir a resumen', 
+                                style = {
+                                    'float': 'left', 
+                                    'padding-top': '2px', 
+                                    'padding-left': '25px', 
+                                    'font-size': '14px', 
+                                    'font-weight': 'bold'
+                                }
+                            )
+                        ], 
 
                         id="boton_resumen", 
                         n_clicks=0, 
-                        style={'display':'inline-block','padding':'2px 10px 0 0', 'background-color':'transparent',
-                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                        style={'display':'inline-block','padding':'8px 0px 0px 15px', 'background-color':'#5E5E5E',
+                                'border-color':'#5E5E5E', 'width': '155px', 'height': '36px'},
                         class_name = ''
                     ),
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
-            ], class_name='m-0 pt-3 w-100 d-block'),
+            ], class_name='m-0 pt-3 w-100 d-block', style = {'margin-bottom': '10px', 'padding-bottom': '10px'}),
 
         ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
 
@@ -3108,7 +3136,7 @@ def mapa():
                             className = 'img-fluid',
                             style = {'width': '75%', 'height': '75%'}),
                         #'Indicadores',
-                        color = 'light',
+                        color = 'dark',
                         class_name = 'indicadores_small',
                         id = 'collapse-indicadores-movil',
                         n_clicks = 0
@@ -3275,7 +3303,7 @@ def mapa():
                                 'displayModeBar': False
                             },
                             style={'position':'relative', 'z-index':'1', 'overflow-x': 'hidden', 'overflow-y': 'hidden'},
-                            className = 'vh-100 pt-4'
+                            className = 'vh-100'
                         ),
 
                     color="#636EFA", 

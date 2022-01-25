@@ -300,7 +300,7 @@ button:focus { outline: none !important; box-shadow: none !important; }
 .indicadores_small {
   position: absolute;
   right: 5%;
-  top: 63%;
+  top: 65%;
   z-index: 5;
   border-radius: 50%;
   width: 60px;
