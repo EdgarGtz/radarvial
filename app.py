@@ -110,13 +110,13 @@ res_graf_img = base64.b64encode(open(res_graf, 'rb').read()).decode('ascii')
 mapa_icon = 'assets/mapa_icon.png' # replace with your own image
 mapa_icon_img = base64.b64encode(open(mapa_icon, 'rb').read()).decode('ascii')
 
-hv_gris = 'assets/hv_gris.png' # replace with your own image
+hv_gris = 'assets/hv_gris2.png' # replace with your own image
 hv_gris_img = base64.b64encode(open(hv_gris, 'rb').read()).decode('ascii')
 
-lesionado_gris = 'assets/lesionado_gris.png' # replace with your own image
+lesionado_gris = 'assets/lesionado_gris2.png' # replace with your own image
 lesionado_gris_img = base64.b64encode(open(lesionado_gris, 'rb').read()).decode('ascii')
 
-fallecido_gris = 'assets/fallecido_gris.png' # replace with your own image
+fallecido_gris = 'assets/fallecido_gris2.png' # replace with your own image
 fallecido_gris_img = base64.b64encode(open(fallecido_gris, 'rb').read()).decode('ascii')
 
 
@@ -1851,7 +1851,7 @@ def resumen():
 
                                     ],style={'float':'right'},),
 
-                                    html.Img(src='data:image/png;base64,{}'.format(hv_img), 
+                                    html.Img(src='data:image/png;base64,{}'.format(hv_gris_img), 
                                         style={'width': '100px', 'height': '85px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
@@ -1882,7 +1882,7 @@ def resumen():
                                         html.P('lesionados en el 2021', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '25px'}),
 
                                     ],style={'float':'right'},),
-                                    html.Img(src='data:image/png;base64,{}'.format(lesionado_img), 
+                                    html.Img(src='data:image/png;base64,{}'.format(lesionado_gris_img), 
                                         style={'width': '100px','height': '85px', 'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
@@ -1914,7 +1914,7 @@ def resumen():
 
                                     ],style={'float':'right'},),
                                     
-                                    html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
+                                    html.Img(src='data:image/png;base64,{}'.format(fallecido_gris_img), 
                                         style={'width': '100px', 'height': '85px', 'float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
                                         className="pl-3 pt-2 img-fluid"), 
 
