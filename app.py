@@ -3353,29 +3353,26 @@ def mapa():
 
                             dbc.CardBody([
 
-                                html.Div([
+                                dbc.Row([
 
-                                    html.P([
-                                        'Hechos Viales Totales'
-                                    ], 
-                                    style = {
-                                        'font-size': '18px', 
-                                        'font-weight': 'bold',
-                                        'margin-bottom': '5px'
-                                        }
-                                    )
-                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    dbc.Col([
 
-                                html.Table([
+                                        html.Div([
 
-                                        html.Tr([
-                                            #html.Th('Hechos Viales ', style={'font-weight':'normal', 'border': '0px'}),
-                                            html.Th(id = 'hv_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-                                        ], style = {'border': '0px'}),
+                                            html.P(id = 'hv_totales_movil', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                            html.P('hechos viales', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '0px', 'padding-bottom': '0px'}),
 
-                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')                            
-                            
-                            ], style = {'padding': '0px', 'margin': '10px'})
+                                        ],style={'float':'right'},),
+
+                                        html.Img(src='data:image/png;base64,{}'.format(hv_img), 
+                                            style={'width': '100px', 'height': '85px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                            className="pl-3 pt-2 img-fluid"), 
+
+                                    ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                                ], style = {'margin-bottom': '0px', 'padding-bottom': '25px'}),
+
+                            ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                         ], style = {'margin-top': '15px', 'margin-left': '20px', 'margin-right': '20px'}),
 
@@ -3386,29 +3383,26 @@ def mapa():
 
                             dbc.CardBody([
 
-                                html.Div([
+                                dbc.Row([
 
-                                    html.P([
-                                        'Lesionados'
-                                    ], 
-                                    style = {
-                                        'font-size': '18px', 
-                                        'font-weight': 'bold',
-                                        'margin-bottom': '5px'
-                                        }
-                                    )
-                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    dbc.Col([
 
-                                html.Table([
+                                        html.Div([
 
-                                        html.Tr([
-                                            #html.Th('Lesionados: ', style={'font-weight':'normal', 'border': '0px'}),
-                                            html.Th(id = 'hv_les_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-                                        ], style = {'border': '0px'}),
+                                            html.P(id = 'hv_les_totales_movil', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                            html.P('lesionados', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '0px', 'padding-bottom': '0px'}),
 
-                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
+                                        ],style={'float':'right'},),
 
-                            ], style = {'padding': '0px', 'margin': '10px'})
+                                        html.Img(src='data:image/png;base64,{}'.format(lesionado_img), 
+                                            style={'width': '100px', 'height': '85px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                            className="pl-3 pt-2 img-fluid"), 
+
+                                    ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                                ], style = {'margin-bottom': '0px', 'padding-bottom': '25px'}),
+                                 
+                            ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
                             
                         ], style = {'margin-top': '0px', 'margin-left': '20px', 'margin-right': '20px'}),
 
@@ -3419,29 +3413,26 @@ def mapa():
 
                             dbc.CardBody([
 
-                                html.Div([
+                                dbc.Row([
 
-                                    html.P([
-                                        'Fallecidos'
-                                    ], 
-                                    style = {
-                                        'font-size': '18px', 
-                                        'font-weight': 'bold',
-                                        'margin-bottom': '5px'
-                                        }
-                                    )
-                                ], style={'margin-bottom': '0px', 'padding-bottom': '0px'}),
+                                    dbc.Col([
 
-                                html.Table([
+                                        html.Div([
 
-                                        html.Tr([
-                                            #html.Th('Fallecidos: ', style={'font-weight':'normal', 'border': '0px'}),
-                                            html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'normal', 'border': '0px', 'font-size': '24px'}),
-                                        ], style = {'border': '0px'}),
+                                            html.P(id = 'hv_fall_totales_movil', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
+                                            html.P('fallecidos', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '0px', 'padding-bottom': '0px'}),
 
-                                ], style = {'border': '0px'}, className = 'd-flex justify-content-center')
+                                        ],style={'float':'right'},),
 
-                            ], style = {'padding': '0px', 'margin': '10px'})
+                                        html.Img(src='data:image/png;base64,{}'.format(fallecido_img), 
+                                            style={'width': '100px', 'height': '85px','float':'left', 'padding-left': '25px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '5px'},
+                                            className="pl-3 pt-2 img-fluid"), 
+
+                                    ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
+
+                                ], style = {'margin-bottom': '0px', 'padding-bottom': '25px'}),
+
+                            ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                         ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'}),
 
