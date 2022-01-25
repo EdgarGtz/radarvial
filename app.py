@@ -6568,7 +6568,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales)  #'con Lesionados: {:,.0f}'.format(hv_les_totales)
        
     # HECHOS VIALES LESIONADOS -- Afectados -- Todos (M/F)
 
@@ -6621,7 +6621,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv_afect_edad_tveh.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales) #'con Lesionados: {:,.0f}'.format(hv_les_totales)
     
     # HECHOS VIALES LESIONADOS -- Responsables -- Todos (M/F)
 
@@ -6674,7 +6674,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv_resp_edad_tveh.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales) #'con Lesionados: {:,.0f}'.format(hv_les_totales)
 
 
     # ----------------
@@ -6722,7 +6722,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales) #'con Lesionados: {:,.0f}'.format(hv_les_totales)
     
     # HECHOS VIALES LESIONADOS -- Afectados -- Masculino o Femenino
 
@@ -6778,7 +6778,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv_afect_edad_sexo_tveh.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales) #'con Lesionados: {:,.0f}'.format(hv_les_totales)
     
     # HECHOS VIALES LESIONADOS -- Responsables -- Masculino o Femenino
 
@@ -6834,7 +6834,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_les_totales = hv_les_usu_thv_resp_edad_sexo_tveh.tipo_accidente.count()
 
-        return 'con Lesionados: {:,.0f}'.format(hv_les_totales)
+        return '{:,.0f}'.format(hv_les_totales) #'con Lesionados: {:,.0f}'.format(hv_les_totales)
 
 
 
@@ -6882,7 +6882,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_usu_thv.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
    
     # HECHOS VIALES FALLECIDOS -- Afectados -- Todos (M/F)
 
@@ -6935,7 +6935,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_thv_afect_usu_edad_tveh.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
 
     # HECHOS VIALES FALLECIDOS -- Responsables
 
@@ -6988,7 +6988,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_usu_thv_resp_edad.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
 
 
     # ----------------
@@ -7036,7 +7036,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_usu_thv.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
 
     # HECHOS VIALES FALLECIDOS -- Afectados -- Todos (M/F)
 
@@ -7092,7 +7092,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_thv_afect_usu_edad_sexo_tveh.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
     
     # HECHOS VIALES FALLECIDOS -- Responsables
     elif checklist_dias_movil != [] and hv_graves_opciones_movil == 'fallecidos' and hv_afres_opciones_movil == 'responsables' and hv_sexo_opciones_movil != 'todos':
@@ -7146,7 +7146,7 @@ def render_hv_totales_movil(start_date, end_date, slider_hora_movil, checklist_d
         # Total de hechos viales
         hv_fall_totales = hv_fall_thv_resp_usu_edad_sexo_tveh.tipo_accidente.count()
 
-        return 'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
+        return '{:,.0f}'.format(hv_fall_totales) #'con Fallecidos: {:,.0f}'.format(hv_fall_totales)
 
     # -------------------------------------------
 
