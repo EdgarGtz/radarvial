@@ -1512,9 +1512,9 @@ tab3_content = dbc.Card(
 # TABS
 tabs = dbc.Tabs(
     [
-        dbc.Tab(tab1_content, label="Fechas", tab_id="fecha", className='custom-tab',),
-        dbc.Tab(tab2_content, label="Hechos Viales", tab_id="hv", className='custom-tab'),
-        dbc.Tab(tab3_content, label="Búsqueda", tab_id="mas", className='custom-tab'),
+        dbc.Tab(tab1_content, label="📅", tab_id="fecha", className='custom-tab',),
+        dbc.Tab(tab2_content, label="💥", tab_id="hv", className='custom-tab'),
+        dbc.Tab(tab3_content, label="🔎", tab_id="mas", className='custom-tab'),
     ],
     id='tabs_filtros_movil',
     active_tab='mas',
