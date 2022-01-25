@@ -1550,11 +1550,6 @@ app.layout = html.Div([
 
                 dbc.Col([
 
-                    # html.Img(src='data:image/png;base64,{}'.format(encoded_sp), 
-                    #             className="pt-0",
-                    #             style={'float':'left', 'margin-right': '0px','height': '37px'}
-                    #     ),
-
                     html.Img(src='data:image/png;base64,{}'.format(encoded_img4), 
                                 className="pt-0",
                                 style={'float':'left', 'height': '37px', 'margin-left': '0px', 'padding-left': '0px'}
