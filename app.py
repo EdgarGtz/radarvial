@@ -3369,7 +3369,7 @@ def mapa():
                                         html.Div([
 
                                             html.P(id = 'hv_totales_movil', style = {'font-weight': 'bold', 'font-size': '44px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'padding-right': '25px'}, className = 'd-flex justify-content-end'),
-                                            html.P('hechos totales', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '0px', 'padding-bottom': '0px'}),
+                                            html.P('hechos viales', style = {'margin-top': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'padding-right': '0px', 'padding-bottom': '0px'}),
 
                                         ],style={'float':'right'},),
 
