@@ -3146,157 +3146,6 @@ def mapa():
                         n_clicks = 0
                     ),
 
-                    # html.Div([
-
-                    #     dbc.CardGroup(
-                    #     [
-                    #         # HECHOS VIALES
-                    #         dbc.Card([
-
-                    #             dbc.CardBody([
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             # html.Img(src='data:image/png;base64,{}'.format(hv_img), 
-                    #                             # style={'width': '75px', 'height': '60px','float':'left', 'padding-left': '10px', 'margin-bottom': '0px', 'padding-bottom': '0px', 'margin-top': '0px'},
-                    #                             # className="pl-3 pt-2 img-fluid"),
-
-                    #                             html.Table([
-
-                    #                                     html.Tr([
-                    #                                         html.Th(id = 'hv_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                    #                                     ], style = {'border': '0px'}),
-
-                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                    #                         ])
-                    #                     ])
-                    #                 ]),
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             html.P([
-                    #                                 'Hechos Viales'
-                    #                             ], 
-                    #                             style = {
-                    #                                 'font-size': '10px', 
-                    #                                 'font-weight': 'normal',
-                    #                                 'margin-bottom': '5px'
-                    #                                 }
-                    #                             )
-                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '10px', 'float': 'right', 'margin-top': '0px', 'padding-top': '0px'}),
-                    #                     ])
-                    #                 ])              
-                                
-                    #             ], style = {'padding': '0px', 'margin': '10px'})
-
-                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-
-                    #         # LESIONADOS
-                    #         dbc.Card([
-
-                    #             dbc.CardBody([
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             html.Table([
-
-                    #                                     html.Tr([
-                    #                                         html.Th(id = 'hv_les_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                    #                                     ], style = {'border': '0px'}),
-
-                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                    #                         ])
-                    #                     ])
-                    #                 ]),
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             html.P([
-                    #                                 'Lesionados'
-                    #                             ], 
-                    #                             style = {
-                    #                                 'font-size': '10px', 
-                    #                                 'font-weight': 'normal',
-                    #                                 'margin-bottom': '5px'
-                    #                                 }
-                    #                             )
-                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
-                    #                     ])
-                    #                 ])
-
-                    #             ], style = {'padding': '0px', 'margin': '10px'})
-                            
-                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-
-                    #         # FALLECIDOS
-                    #         dbc.Card([
-
-                    #             dbc.CardBody([
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             html.Table([
-
-                    #                                     html.Tr([
-                    #                                         html.Th(id = 'hv_fall_totales_movil', style={'font-weight':'bold', 'border': '0px', 'font-size': '31px'}),
-                    #                                     ], style = {'border': '0px'}),
-
-                    #                             ], style = {'border': '0px', 'float': 'right'}),# className = 'd-flex justify-content-center')
-                    #                         ])
-                    #                     ])
-                    #                 ]),
-
-                    #                 dbc.Row([
-
-                    #                     dbc.Col([
-
-                    #                         html.Div([
-
-                    #                             html.P([
-                    #                                 'Fallecidos'
-                    #                             ], 
-                    #                             style = {
-                    #                                 'font-size': '10px', 
-                    #                                 'font-weight': 'normal',
-                    #                                 'margin-bottom': '5px'
-                    #                                 }
-                    #                             )
-                    #                         ], style={'margin-bottom': '0px', 'padding-bottom': '0px', 'float': 'right'}),
-                    #                     ])
-                    #                 ])
-
-                    #             ], style = {'padding': '0px', 'margin': '10px'})
-
-                    #         ], style = {'width': '15rem', 'flex': '0 0 auto'}),
-                    #     ],
-
-                    #     class_name = 'indicadores_small_nuevo d-flex flex-nowrap overflow-scroll',
-                    #     style = {'white-space': 'nowrap', 'overflow-x': 'scroll'}
-                    # ),
-
-                    # ], className = 'container_indicadores'),
-
-
                     # MAPA
                     dcc.Loading(
 
@@ -3305,7 +3154,7 @@ def mapa():
                             figure = {},
                             config={
                                 'displayModeBar': False
-                            },
+                                },
                             style={'position':'relative', 'z-index':'1', 'overflow-x': 'hidden', 'overflow-y': 'hidden'},
                             className = 'vh-100'
                         ),
@@ -3439,31 +3288,6 @@ def mapa():
                             ], style = {'margin-bottom': '0px', 'padding-bottom': '0px'}),
 
                         ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'}),
-
-                        # dbc.Card([
-
-                        #     dbc.CardBody([
-
-                        #         # dcc.Store(id='mapa_data_top_movil'),
-
-                        #         # dcc.Graph(
-                        #         #     id = 'tabla_mapa_top_movil',
-                        #         #     figure = {},
-                        #         #     config={
-                        #         #             'modeBarButtonsToRemove':
-                        #         #             ['lasso2d', 'pan2d',
-                        #         #             'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                        #         #             'resetScale2d', 'hoverClosestCartesian',
-                        #         #             'hoverCompareCartesian', 'toggleSpikelines',
-                        #         #             'select2d',],
-                        #         #             'displaylogo': False
-                        #         #         },
-                        #         # )
-
-                        #     ], style = {'padding': '0px', 'margin': '10px', 'white-space': 'nowrap', 'overflow-x': 'auto'},
-                        #     class_name = 'd-flex flex-nowrap')
-
-                        # ], style = {'margin-bottom': '10px', 'margin-left': '20px', 'margin-right': '20px'})
 
                     ], 
                     placement = 'bottom', 
@@ -17030,6 +16854,17 @@ def toggle_modal_sev(open1_sev, close1_sev, modal_sev):
         return not modal_sev
     return modal_sev
 
+# RADAR VIAL - MAPA: MODAL GRAVEDAD MOVIL
+@app.callback(
+    Output("modal_sev_movil", "is_open"),
+    [Input("open1_sev_movil", "n_clicks"), 
+    Input("close1_sev_movil", "n_clicks")],
+    [State("modal_sev_movil", "is_open")],)
+def toggle_modal_sev_movil(open1_sev_movil, close1_sev_movil, modal_sev_movil):
+    if open1_sev_movil or close1_sev_movil:
+        return not modal_sev_movil
+    return modal_sev_movil
+
 # RADAR VIAL - MAPA: MODAL USUARIO
 @app.callback(
     Output("modal_usaf", "is_open"),
@@ -17040,6 +16875,17 @@ def toggle_modal_usaf(open1_usaf, close1_usaf, modal_usaf):
     if open1_usaf or close1_usaf:
         return not modal_usaf
     return modal_usaf
+
+# RADAR VIAL - MAPA: MODAL USUARIO MOVIL
+@app.callback(
+    Output("modal_usaf_movil", "is_open"),
+    [Input("open1_usaf_movil", "n_clicks"), 
+    Input("close1_usaf_movil", "n_clicks")],
+    [State("modal_usaf_movil", "is_open")],)
+def toggle_modal_usaf_movil(open1_usaf_movil, close1_usaf_movil, modal_usaf_movil):
+    if open1_usaf_movil or close1_usaf_movil:
+        return not modal_usaf_movil
+    return modal_usaf_movil
 
 # RADAR VIAL - MAPA: MODAL TIPO DE HECHOS VIAL
 @app.callback(
@@ -17052,6 +16898,17 @@ def toggle_modal_thv(open1_thv, close1_thv, modal_thv):
         return not modal_thv
     return modal_thv
 
+# RADAR VIAL - MAPA: MODAL TIPO DE HECHOS VIAL MOVIL
+@app.callback(
+    Output("modal_thv_movil", "is_open"),
+    [Input("open1_thv_movil", "n_clicks"), 
+    Input("close1_thv_movil", "n_clicks")],
+    [State("modal_thv_movil", "is_open")],)
+def toggle_modal_thv_movil(open1_thv_movil, close1_thv_movil, modal_thv_movil):
+    if open1_thv_movil or close1_thv_movil:
+        return not modal_thv_movil
+    return modal_thv_movil
+
 # RADAR VIAL - MAPA: MODAL AFECTADO O RESPONSABLE 
 @app.callback(
     Output("modal_afres", "is_open"),
@@ -17062,6 +16919,17 @@ def toggle_modal_afres(open1_afres, close1_afres, modal_afres):
     if open1_afres or close1_afres:
         return not modal_afres
     return modal_afres
+
+# RADAR VIAL - MAPA: MODAL AFECTADO O RESPONSABLE MOVIL
+@app.callback(
+    Output("modal_afres_movil", "is_open"),
+    [Input("open1_afres_movil", "n_clicks"), 
+    Input("close1_afres_movil", "n_clicks")],
+    [State("modal_afres_movil", "is_open")],)
+def toggle_modal_afres_movil(open1_afres_movil, close1_afres_movil, modal_afres_movil):
+    if open1_afres_movil or close1_afres_movil:
+        return not modal_afres_movil
+    return modal_afres_movil
 
 # COLLAPSE FILTROS MOVIL
 @app.callback(
