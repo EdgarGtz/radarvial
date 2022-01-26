@@ -189,24 +189,29 @@ tot_hv_modal = px.bar(hvi,
     labels = {'fecha': ''}, 
     template = 'plotly_white')
 tot_hv_modal.update_traces(name='',
-    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales",
+    marker_color = '#4B89DC'
     )
 tot_hv_modal.update_xaxes(showgrid = False, 
     title_text='', 
     ticktext=hvi['fecha'],
-    ticklabelmode='period')
-tot_hv_modal.update_yaxes(title_text='Hechos viales')
-tot_hv_modal.update_layout(hoverlabel = dict(font_size = 16),
+    ticklabelmode='period',
+    fixedrange = True)
+tot_hv_modal.update_yaxes(fixedrange = True)
+tot_hv_modal.update_layout(
+    hoverlabel = dict(
+        font_size = 16,
+        bgcolor = 'white'
+    ),
     hoverlabel_align = 'right',
     showlegend = False,
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-    height = 600,
     font=dict(
         family="Arial",
         size=16,
-        )
+        ),
+    yaxis_title = None
     )
-
 #-------------
 
 # PERSONAS
@@ -517,15 +522,27 @@ heatmap_modal = go.Figure(data=go.Heatmap(
    x=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
    y=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','18','19','20','21','22','23',], 
    hoverongaps = False,
-   colorscale='Blues'))
-heatmap_modal.update_traces(hovertemplate="<b>%{x} a las %{y} horas:</b> <br>%{z} hechos viales")
+   colorscale = [
+       [0.0, '#D8E2FB'],
+       [0.1, '#C7D7F9'],
+       [0.2, '#B7CBF6'],
+       [0.3, '#A7C1F3'],
+       [0.4, '#97B6F0'],
+       [0.5, '#87ACED'],
+       [0.6, '#78A3E9'],
+       [0.7, '#689AE5'],
+       [0.8, '#5A91E1'],
+       [0.9, '#4B89DC'],
+       [1.0, '#4B89DC']
+   ]))
+heatmap_modal.update_traces(hovertemplate="<b>%{x} a las %{y} horas")#:</b> <br>%{z} hechos viales")
+heatmap_modal.update_yaxes(title_text='Horas', fixedrange = True)
+heatmap_modal.update_xaxes(fixedrange = True)
 heatmap_modal.update_layout(barmode='stack',
     hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
     plot_bgcolor='white',
-    #margin = dict(t=30, l=10, r=10, b=30))
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-    height = 550,
     font=dict(
         family="Arial",
         size=16,
@@ -638,39 +655,6 @@ df['les_fall'] = df.Lesionados + df.Fallecidos
 df = df.sort_values(by=['les_fall'], ascending=False)
 
 # GRAFICA
-# lf_tipo_hv = px.bar(df,
-#     y='tipo_accidente',
-#     x=["Lesionados","Fallecidos"], 
-#     labels = {'tipo_accidente': ''}, 
-#     template = 'plotly_white',
-#     orientation = 'h')
-# lf_tipo_hv.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
-# lf_tipo_hv.update_xaxes(showgrid = False, 
-#     title_text='', 
-#     ticktext=df['tipo_accidente'],
-#     ticklabelmode='period',
-#     fixedrange = True)
-# lf_tipo_hv.update_yaxes(fixedrange = True)
-# lf_tipo_hv.update_layout(
-#     yaxis={'categoryorder':'total ascending'},
-#     hoverlabel = dict(font_size = 16),
-#     hoverlabel_align = 'right',
-#     margin = dict(t=00, l=00, r=00, b=00),
-#     legend=dict(
-#         orientation="h",
-#         yanchor = "bottom",
-#         y = -0.15,
-#         xanchor = "left",
-#         x = -0.7,
-#         itemclick = 'toggleothers',
-#         title=None
-#         ),
-#     font=dict(
-#         family="Arial",
-#         size=16,
-#         ),
-#     yaxis_title = None
-#     )
 
 lf_tipo_hv = go.Figure()
 
@@ -703,9 +687,9 @@ lf_tipo_hv.update_layout(
     legend=dict(
         orientation="h",
         yanchor = "bottom",
-        y = -0.15,
+        y = -0.20,
         xanchor = "left",
-        x = -0.7,
+        x = -0.3,
         itemclick = 'toggleothers',
         title=None
         ),
@@ -719,33 +703,50 @@ lf_tipo_hv.update_layout(
     )
 
 # GRAFICA PARA EXPAND
-lf_tipo_hv_modal = px.bar(df,
-    x='tipo_accidente',
-    y=["Lesionados","Fallecidos"], 
-    labels = {'tipo_accidente': ''}, 
-    template = 'plotly_white')
-lf_tipo_hv_modal.update_traces(hovertemplate="<b>%{x}</b><br> %{y} hechos viales")
-lf_tipo_hv_modal.update_xaxes(showgrid = False, 
-    title_text='', 
-    ticktext=df['tipo_accidente'],
-    ticklabelmode='period')
-lf_tipo_hv_modal.update_yaxes(title_text='Hechos viales')
-lf_tipo_hv_modal.update_layout(hoverlabel = dict(font_size = 16),
+lf_tipo_hv_modal = go.Figure()
+
+lf_tipo_hv_modal.add_trace(go.Bar(
+    x = df['Lesionados'],
+    y = df['tipo_accidente'],
+    name = 'Lesionados',
+    orientation = 'h',
+    marker_color = '#F3BB46',
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+))
+
+lf_tipo_hv_modal.add_trace(go.Bar(
+    x = df['Fallecidos'],
+    y = df['tipo_accidente'],
+    name = 'Fallecidos',
+    orientation = 'h',
+    marker_color = '#DB4453',
+    hovertemplate="<b>%{x}</b><br> %{y} hechos viales"
+))
+
+lf_tipo_hv_modal.update_yaxes(fixedrange = True)
+lf_tipo_hv_modal.update_xaxes(fixedrange = True)
+
+lf_tipo_hv_modal.update_layout(
+    yaxis={'categoryorder':'total ascending'},
+    hoverlabel = dict(font_size = 16),
     hoverlabel_align = 'right',
+    margin = dict(t=00, l=00, r=00, b=00),
     legend=dict(
         orientation="h",
-        yanchor="bottom",
-        y=-0.4,
-        x=0.3,
+        yanchor = "bottom",
+        y = -0.20,
+        xanchor = "left",
+        x = 0.0,
         itemclick = 'toggleothers',
         title=None
         ),
-    margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-    height = 550,
     font=dict(
         family="Arial",
         size=16,
-        )
+        ),
+    yaxis_title = None,
+    template = 'plotly_white',
+    barmode = 'stack'
     )
 
 
@@ -802,30 +803,6 @@ top_c.update_layout(
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
     font = dict(family = 'Arial', size = 16)
 )
-
-# # GRAFICA
-# top_c = px.bar(hvi_c, x = "hechos_viales", y = "calle",
-#     orientation = 'h',
-#     template = 'plotly_white')
-# top_c.update_layout(yaxis={'categoryorder':'total ascending'},
-#     showlegend = False,
-#     uniformtext_minsize = 8,
-#     uniformtext_mode = 'hide',
-#     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-#     font=dict(
-#         family="Arial",
-#         size=16,
-#         )
-#     )
-# top_c.update_xaxes(showgrid = True,
-#     showline = True, 
-#     title_text = '',
-#     fixedrange = True)
-# top_c.update_yaxes(title_text = '', fixedrange = True)
-# top_c.update_traces(texttemplate = '<b>%{x}%</b>',
-#     textposition = 'inside',
-#     hovertemplate = None,
-#     hoverinfo = 'skip')
 
 # GRAFICA PARA EXPAND
 top_c_modal = px.bar(hvi_c, x = "hechos_viales", y = "calle",
@@ -906,30 +883,6 @@ top_i.update_layout(
     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
     font = dict(family = 'Arial', size = 14)
 )
-
-# GRAFICA
-# top_i = px.bar(hvi_i, x = "hechos_viales", y = "interseccion",
-#     orientation = 'h',
-#     template = 'plotly_white')
-# top_i.update_layout(yaxis={'categoryorder':'total ascending'},
-#     showlegend = False,
-#     uniformtext_minsize = 8,
-#     uniformtext_mode = 'hide',
-#     margin = dict(t = 0, l = 0, r = 0, b = 0, pad = 0),
-#     font=dict(
-#         family="Arial",
-#         size=16,
-#         )
-#     )
-# top_i.update_xaxes(showgrid = True,
-#     showline = True, 
-#     title_text = '',
-#     fixedrange = True)
-# top_i.update_yaxes(title_text = '', fixedrange = True)
-# top_i.update_traces(texttemplate = '<b>%{x}%</b>',
-#     textposition = 'inside',
-#     hovertemplate = None,
-#     hoverinfo = 'skip')
 
 # GRAFICA PARA EXPAND
 top_i_modal = px.bar(hvi_i, x = "hechos_viales", y = "interseccion",
@@ -2020,59 +1973,59 @@ def resumen():
                                 html.P(['Ubicaciones con más Hechos Viales'], style = {'font-size': '18px', 'margin-top': '5px', 'font-weight': 'bold'})
                             ], style={'width':'95%','display':'inline-block'}),
 
-                            html.Div([
+                            # html.Div([
 
-                                html.Span(
-                                    dbc.Button(
-                                        [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
-                                                style = {'width': '15px', 'height': '15px'})], 
-                                        id="open1_topcalles", 
-                                        n_clicks=0, 
-                                        style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
-                                                'border-color':'transparent', 'width': '30px', 'height': '30px'},
-                                        class_name = 'expand-button'
+                            #     html.Span(
+                            #         dbc.Button(
+                            #             [html.Img(src='data:image/png;base64,{}'.format(encoded_img7),
+                            #                     style = {'width': '15px', 'height': '15px'})], 
+                            #             id="open1_topcalles", 
+                            #             n_clicks=0, 
+                            #             style={'display':'inline-block','padding':'2px', 'background-color':'transparent',
+                            #                     'border-color':'transparent', 'width': '30px', 'height': '30px'},
+                            #             class_name = 'expand-button'
 
-                                        ),
+                            #             ),
 
-                                    id="tooltip-target-topcalles",
-                                    style={"textDecoration": "underline", "cursor": "pointer"},
-                                ),
+                            #         id="tooltip-target-topcalles",
+                            #         style={"textDecoration": "underline", "cursor": "pointer"},
+                            #     ),
 
-                                dbc.Tooltip(
-                                    "Ampliar vista",
-                                    target="tooltip-target-topcalles",
-                                    placement = 'top'
-                                ),
+                            #     dbc.Tooltip(
+                            #         "Ampliar vista",
+                            #         target="tooltip-target-topcalles",
+                            #         placement = 'top'
+                            #     ),
                                     
-                                dbc.Modal([
+                            #     dbc.Modal([
 
-                                    dbc.ModalHeader(html.B("Top Calles")),
+                            #         dbc.ModalHeader(html.B("Top Calles")),
 
-                                    dbc.ModalBody([
+                            #         dbc.ModalBody([
 
-                                        dcc.Graph(
-                                            id = 'top_c',
-                                            figure = top_c_modal,
-                                            config={
-                                                'modeBarButtonsToRemove':
-                                                ['lasso2d', 'pan2d','zoom2d',
-                                                'zoomIn2d', 'zoomOut2d', 'autoScale2d',
-                                                'resetScale2d', 'hoverClosestCartesian',
-                                                'hoverCompareCartesian', 'toggleSpikelines',
-                                                'select2d',],
-                                                'displaylogo': False
-                                            },
-                                        )
-                                    ],style={"textAlign":"justify",'font-size':'100%'}),
+                            #             dcc.Graph(
+                            #                 id = 'top_c',
+                            #                 figure = top_c_modal,
+                            #                 config={
+                            #                     'modeBarButtonsToRemove':
+                            #                     ['lasso2d', 'pan2d','zoom2d',
+                            #                     'zoomIn2d', 'zoomOut2d', 'autoScale2d',
+                            #                     'resetScale2d', 'hoverClosestCartesian',
+                            #                     'hoverCompareCartesian', 'toggleSpikelines',
+                            #                     'select2d',],
+                            #                     'displaylogo': False
+                            #                 },
+                            #             )
+                            #         ],style={"textAlign":"justify",'font-size':'100%'}),
                                     
-                                    ],
-                                    id="modal_topcalles",
-                                    centered=True,
-                                    size="xl",
-                                    is_open=False,
-                                    style={'font-family':'Arial'}
-                                ),
-                            ], style={'width':'4%', 'float': 'right'}, className = 'pr-3 d-none d-lg-block'),
+                            #         ],
+                            #         id="modal_topcalles",
+                            #         centered=True,
+                            #         size="xl",
+                            #         is_open=False,
+                            #         style={'font-family':'Arial'}
+                            #     ),
+                            # ], style={'width':'4%', 'float': 'right'}, className = 'pr-3 d-none d-lg-block'),
 
                             html.Hr(style = {'margin-top': '0px'}),
 
@@ -2527,7 +2480,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id = 'tooltip-target-sev'), 
                                                     id="open1_sev", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2538,12 +2492,12 @@ def mapa():
 
                                                 ),
 
-                                                id="tooltip-target-sev",
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-sev",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
@@ -2578,7 +2532,7 @@ def mapa():
                                             ),
 
                                             html.P(' Gravedad',
-                                                style={'width':'90%','float':'left'}, className='pl-1'),
+                                                style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -2604,7 +2558,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-usaf",), 
                                                     id="open1_usaf", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2615,13 +2570,14 @@ def mapa():
 
                                                 ),
 
-                                                id="tooltip-target-usaf",
                                                 style={"textDecoration": "underline", "cursor": "pointer"},
+
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
-                                                target="tooltip-target-usaf"
+                                                target="tooltip-target-usaf",
+                                                placement = 'top'
                                             ),
                                         
                                             dbc.Modal([
@@ -2656,7 +2612,7 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Usuario', style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P(' Usuario', style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -2684,7 +2640,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-thv",), 
                                                     id="open1_thv", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2695,13 +2652,14 @@ def mapa():
 
                                                 ),
 
-                                                id="tooltip-target-thv",
                                                 style={"textDecoration": "underline", "cursor": "pointer"},
+
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-thv",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
@@ -2744,7 +2702,7 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Tipo de hecho vial', style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P(' Tipo de hecho vial', style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -2804,7 +2762,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-afres",), 
                                                     id="open1_afres", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2815,12 +2774,12 @@ def mapa():
 
                                                     ),
 
-                                                id="tooltip-target-afres",
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-afres",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
@@ -2859,7 +2818,7 @@ def mapa():
                                             ),
 
                                             html.P(' Afectado o responsable',
-                                                style={'width':'90%','float':'left'}, className='pl-1'),
+                                                style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
