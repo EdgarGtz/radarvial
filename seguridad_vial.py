@@ -2422,7 +2422,7 @@ def resumen():
 
                                     html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                        html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1KhLhEdEyJju6mbXflA5LmjZ3kbyGFwFr/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
+                                        html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1CpaFy7nRt2Hr8wxe1Pe_Oz49TybIIVFf/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
                                         
                                         '.',
 
@@ -2476,7 +2476,7 @@ def mapa():
 
                                             html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                                html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1KhLhEdEyJju6mbXflA5LmjZ3kbyGFwFr/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
+                                                html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1CpaFy7nRt2Hr8wxe1Pe_Oz49TybIIVFf/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
                                                 
                                                 '.',
 
