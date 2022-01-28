@@ -2623,7 +2623,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-sev",), 
                                                     id="open1_sev", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2634,12 +2635,13 @@ def mapa():
 
                                                 ),
 
-                                                id="tooltip-target-sev",
+                                                
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-sev",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
