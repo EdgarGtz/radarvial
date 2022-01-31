@@ -1590,19 +1590,19 @@ app.layout = html.Div([
 
                     html.Img(src='data:image/png;base64,{}'.format(spgg_logo_img), 
                                 className="pt-0",
-                                style={'float':'left', 'height': '9vh', 'margin-left': '0px', 'padding-left': '0px'}
+                                style={'float':'left', 'width': '108px', 'height': '55px', 'margin-left': '0px', 'padding-left': '0px'}
                     ),
 
                     html.Img(src='data:image/png;base64,{}'.format(implang_img), 
                                 className="pt-0",
-                                style={'float':'left', 'height': '8vh', 'margin-left': '0px', 'padding-left': '0px'}
+                                style={'float':'left', 'width': '80px', 'height': '39.32px', 'margin-left': '0px', 'padding-left': '0px'}
                     ),
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
-            ], class_name='m-0 pt-1 w-100 d-block', style = {'margin-bottom': '10px', 'padding-bottom': '7px', 'height':'8vh','padding-left':'10px'}),
+            ], class_name='m-0 pt-1 w-100 d-block', style = {'padding-left':'10px'}),
 
-        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%', 'height':'8vh'}),
+        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
 
         html.Span([
 
@@ -1610,7 +1610,7 @@ app.layout = html.Div([
 
                 dbc.Col([
 
-                    html.P(html.B("Seguridad Vial"), style = {'font-size': '24px', 'padding-top': '15px'}),
+                    html.P(html.B("Seguridad Vial"), style = {'font-size': '24px'}),
 
                     dbc.Button(
                         
@@ -1664,9 +1664,9 @@ app.layout = html.Div([
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
-            ], class_name='m-0 pt-3 w-100 d-block', style = {'margin-bottom': '10px', 'padding-bottom': '8px', 'height':'8vh','padding-left':'10px'}),
+            ], class_name='m-0 pt-3 w-100 d-block', style = {'padding-left':'10px'}),
 
-        ], className='d-flex align-items-center justify-content-center pb-2', style = {'width': '100%', 'height':'10vh'}),
+        ], className='d-flex align-items-center justify-content-center pb-2', style = {'width': '100%'}),
 
 
         # Tabs
@@ -1741,8 +1741,8 @@ app.layout = html.Div([
 
                     dbc.Col([
 
-                        html.Img(src='assets/logo_spgg.png', style={'float':'left', 'margin-top': '25px', 'margin-left': '20px', 'width': '108px', 'height': '35px'}),
-                        html.Img(src='assets/implang_logo.png', style={'float':'right', 'margin-top': '27px', 'margin-right': '20px', 'width': '80px', 'height': '29.32px'}),
+                        html.Img(src='assets/logo_spgg.png', style={'float':'left', 'padding-left': '0px', 'margin-top': '15px', 'margin-left': '0px', 'width': '108px', 'height': '35px'}),
+                        html.Img(src='assets/implang_logo.png', style={'float':'right', 'padding-right': '0px', 'margin-top': '17px', 'margin-right': '0px', 'width': '80px', 'height': '29.32px'}),
 
                     ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
 
@@ -1789,7 +1789,7 @@ app.layout = html.Div([
 
                     ])
 
-                ], style = {'padding-top': '25px'}, class_name='m-0 p-0'),
+                ], style = {'margin-top': '25px'}),
 
             ])
 
@@ -1818,7 +1818,7 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['La plataforma de visualización de hechos viales del municipio de San Pedro que utilizamos con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
+                                    html.P(['La plataforma Seguridad Vial del municipio de San Pedro, se utiliza con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
 
                                         html.Br(),
 
@@ -1852,7 +1852,7 @@ def resumen():
 
                                             html.Br(),
 
-                                            html.P('La plataforma de uso abierto visualiza los datos de hechos viales del 2015 a octubre 2021, proporcionados por la Secretaría de Seguridad Pública y procesados bimensualmente por el IMPLANG.'), 
+                                            html.P('La plataforma de uso abierto visualiza los datos de hechos viales del 2015 a 2021, proporcionados por la Secretaría de Seguridad Pública y procesados por el IMPLANG.'), 
                                             
                                             html.Br(), 
                                             
@@ -1860,7 +1860,7 @@ def resumen():
 
                                             html.Br(),
 
-                                            html.P('Última actualización: octubre 2021')
+                                            html.P('Última actualización: diciembre 2021')
 
                                         ],style={'font-size':'100%'}),
 
@@ -3258,7 +3258,7 @@ def mapa():
                         ),
 
                     color="#636EFA", 
-                    type="cube"),
+                    type="default"),
 
                 ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
