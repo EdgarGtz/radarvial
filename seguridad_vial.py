@@ -1600,9 +1600,9 @@ app.layout = html.Div([
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
-            ], class_name='m-0 pt-1 w-100 d-block', style = {'padding-left':'10px'}),
+            ], class_name='m-0 pt-1 w-100 d-block', style = {'padding-left':'10px', 'padding-bottom': '0px', 'margin-bottom': '0px'}),
 
-        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%'}),
+        ], className='d-flex align-items-center justify-content-center', style = {'width': '100%', 'padding-bottom': '0px', 'margin-bottom': '0px'}),
 
         html.Span([
 
@@ -1616,13 +1616,13 @@ app.layout = html.Div([
                         
                         [
                             html.Img(src='data:image/png;base64,{}'.format(mapa_icon_img),
-                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '3px'}),
+                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '0px'}),
                             
                             html.P(
                                 'Ir a mapa', 
                                 style = {
                                     'float': 'left', 
-                                    'padding-top': '2px', 
+                                    'padding-top': '0px', 
                                     'padding-left': '35px', 
                                     'font-size': '12px', 
                                     'font-weight': 'bold'
@@ -1641,13 +1641,13 @@ app.layout = html.Div([
                         
                         [
                             html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
-                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '3px'}),
+                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '0px'}),
                             
                             html.P(
                                 'Ir a resumen', 
                                 style = {
                                     'float': 'left', 
-                                    'padding-top': '2px', 
+                                    'padding-top': '0px', 
                                     'padding-left': '25px', 
                                     'font-size': '12px', 
                                     'font-weight': 'bold'
@@ -1664,9 +1664,9 @@ app.layout = html.Div([
 
                 ], class_name='d-flex align-items-center justify-content-between', style={'width': '100%'})
 
-            ], class_name='m-0 pt-3 w-100 d-block', style = {'padding-left':'10px'}),
+            ], class_name='m-0 pt-3 w-100 d-block', style = {'padding-left':'10px', 'padding-bottom': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'margin-top': '0px'}),
 
-        ], className='d-flex align-items-center justify-content-center pb-2', style = {'width': '100%'}),
+        ], className='d-flex align-items-center justify-content-center pb-2', style = {'width': '100%', 'padding-bottom': '0px', 'margin-bottom': '0px', 'padding-top': '0px', 'margin-top': '0px'}),
 
 
         # Tabs
@@ -2156,9 +2156,9 @@ def resumen():
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6,),
+                ], lg=6, md=6, sm = 12),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name='m-0'),
+            ], style = { 'padding-top': '10px'}, class_name='m-0'),
             
             # Por Usuario // Personas
             dbc.Row([
@@ -2240,7 +2240,7 @@ def resumen():
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
+                ], lg=6, md=6, sm = 12),
 
                 # Personas
                 dbc.Col([
@@ -2319,9 +2319,9 @@ def resumen():
                         ]),
                     ], style = {'margin-bottom': '20px'})
 
-                ], lg=6, md=6),
+                ], lg=6, md=6, sm = 12),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}, class_name='m-0'),
+            ], style = {}, class_name='m-0'),
 
             # Día de la semana y hora
             dbc.Row([
@@ -2403,9 +2403,9 @@ def resumen():
                             )
                         ]),
                     ], style = {'margin-bottom': '20px'})
-                ], lg=6, md=6),
+                ], lg=6, md=6, sm = 12),
 
-            ], style = {'padding-left': '15px', 'padding-right': '15px'}, class_name='m-0'),
+            ], style = {}, class_name='m-0'),
 
             # PÁRRAFO DIAGNÓSTICO
             dbc.Row([
@@ -3258,7 +3258,8 @@ def mapa():
                         ),
 
                     color="#636EFA", 
-                    type="default"),
+                    type="default",
+                    className = 'loading-mapa'),
 
                 ], class_name = 'w-100 h-100 d-lg-none', style = {'padding': '0px', 'margin': '0px'})
 
