@@ -17083,5 +17083,5 @@ def render_collapse_button_bavan(n, is_open):
 
 
 if __name__ == '__main__':
-	# app.run_server(debug=True)
-    app.run_server(host='0.0.0.0', port=8090, debug=False)
+	app.run_server(debug=True)
+    #app.run_server(host='0.0.0.0', port=8090, debug=False)
