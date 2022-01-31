@@ -1134,8 +1134,8 @@ tab2_content = dbc.Card(
                         style={'font-family':'Arial'}
                     ),
 
-                    html.P(' Gravedad',
-                        style={'width':'90%','float':'left'}, className='pl-1'),
+                    html.P('Gravedad',
+                        style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                 ]),
 
@@ -1214,7 +1214,7 @@ tab2_content = dbc.Card(
                         style={'font-family':'Arial'}
                     ),
 
-                    html.P(' Usuario', style={'width':'90%','float':'left'}, className='pl-1'),
+                    html.P('Usuario', style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                 ]),
 
@@ -1303,7 +1303,7 @@ tab2_content = dbc.Card(
                         style={'font-family':'Arial'}
                     ),
 
-                    html.P(' Tipo de hecho vial', style={'width':'90%','float':'left'}, className='pl-1'),
+                    html.P('Tipo de hecho vial', style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                 ]),
 
@@ -1401,8 +1401,8 @@ tab3_content = dbc.Card(
                 style={'font-family':'Arial'}
             ),
 
-            html.P(' Afectado o responsable',
-                style={'width':'90%','float':'left'}, className='pl-1'),
+            html.P('Afectado o responsable',
+                style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
         ]),
 
@@ -1610,13 +1610,13 @@ app.layout = html.Div([
 
                 dbc.Col([
 
-                    html.H1(html.B("Seguridad Vial")),
+                    html.P(html.B("Seguridad Vial"), style = {'font-size': '24px', 'padding-top': '15px'}),
 
                     dbc.Button(
                         
                         [
                             html.Img(src='data:image/png;base64,{}'.format(mapa_icon_img),
-                                style = {'width': '16px', 'height': '16px', 'float': 'left', 'margin-top': '3px'}),
+                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '3px'}),
                             
                             html.P(
                                 'Ir a mapa', 
@@ -1624,7 +1624,7 @@ app.layout = html.Div([
                                     'float': 'left', 
                                     'padding-top': '2px', 
                                     'padding-left': '35px', 
-                                    'font-size': '14px', 
+                                    'font-size': '12px', 
                                     'font-weight': 'bold'
                                 }
                             )
@@ -1633,7 +1633,7 @@ app.layout = html.Div([
                         id="boton_mapa", 
                         n_clicks=0, 
                         style={'display':'inline-block','padding':'8px 0px 0px 15px', 'background-color':'#5E5E5E',
-                                'border-color':'#5E5E5E', 'width': '155px', 'height': '36px'},
+                                'border-color':'#5E5E5E', 'width': '140px', 'height': '30px'},
                         class_name = ''
                     ),
 
@@ -1641,7 +1641,7 @@ app.layout = html.Div([
                         
                         [
                             html.Img(src='data:image/png;base64,{}'.format(res_graf_img),
-                                style = {'width': '16px', 'height': '16px', 'float': 'left', 'margin-top': '3px'}),
+                                style = {'width': '14px', 'height': '14px', 'float': 'left', 'margin-top': '3px'}),
                             
                             html.P(
                                 'Ir a resumen', 
@@ -1649,7 +1649,7 @@ app.layout = html.Div([
                                     'float': 'left', 
                                     'padding-top': '2px', 
                                     'padding-left': '25px', 
-                                    'font-size': '14px', 
+                                    'font-size': '12px', 
                                     'font-weight': 'bold'
                                 }
                             )
@@ -1658,7 +1658,7 @@ app.layout = html.Div([
                         id="boton_resumen", 
                         n_clicks=0, 
                         style={'display':'inline-block','padding':'8px 0px 0px 15px', 'background-color':'#5E5E5E',
-                                'border-color':'#5E5E5E', 'width': '155px', 'height': '36px'},
+                                'border-color':'#5E5E5E', 'width': '140px', 'height': '30px'},
                         class_name = ''
                     ),
 
@@ -3298,6 +3298,26 @@ def mapa():
                 dbc.Col([
 
                     dbc.Offcanvas([
+
+                        dbc.Row([
+
+                            dbc.Col([
+
+                                html.P(
+                                    'Datos según los filtros seleccionados',
+                                    style = {
+                                        'background-color': '#FFFFFF',
+                                        'padding': '15px 13px 10px 0px',
+                                        'font-size': '18px',
+                                        'box-shadow': '0px 1px 6px rgba(0, 0, 0, 0.25)',
+                                        'width': '414px',
+                                        'height': '66px',
+                                    },
+                                    className = 'd-flex justify-content-center'
+                                )
+
+                            ])
+                        ]),
 
                         # INDICADOR HECHOS VIALES
                         dbc.Card([
