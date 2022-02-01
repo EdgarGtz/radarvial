@@ -1732,68 +1732,7 @@ app.layout = html.Div([
 
         ),
 
-        # FOOTER
-        dbc.Row([
-
-            dbc.Col([
-
-                dbc.Row([
-
-                    dbc.Col([
-
-                        html.Img(src='assets/logo_spgg.png', style={'float':'left', 'padding-left': '0px', 'margin-top': '15px', 'margin-left': '0px', 'width': '108px', 'height': '35px'}),
-                        html.Img(src='assets/implang_logo.png', style={'float':'right', 'padding-right': '0px', 'margin-top': '17px', 'margin-right': '0px', 'width': '80px', 'height': '29.32px'}),
-
-                    ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
-
-                ], class_name='m-0 p-0'),
-
-                dbc.Row([
-
-                    dbc.Col([
-
-                        html.A(
-                            [
-                                html.Img(
-                                    src='data:image/png;base64,{}'.format(insta_img),
-                                    className="p-0 img-fluid",
-                                    style = {'width': '20px', 'height': '20px'}
-                                )
-                            ],
-                            href = 'https://www.instagram.com/implang_spgg/',
-                            target = 'blank',
-                            style={
-                                'margin-left': '45px'
-                            }
-                        ),
-
-                        html.A(
-                            [
-                                html.Img(
-                                    src='data:image/png;base64,{}'.format(twitter_img),
-                                    className="p-0 img-fluid",
-                                    style = {'width': '20px', 'height': '20px'}
-                                )
-                            ],
-                            href = 'https://twitter.com/implang_spgg',
-                            target = 'blank',
-                            style={
-                                'margin-right': '40px',
-                                'margin-left': '35px'
-                            }
-                        ),
-
-                        html.B("Comentarios sobre Seguridad Vial", style = {'font-size': '12px'}),
-                        html.Br(),
-                        html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
-
-                    ])
-
-                ], style = {'margin-top': '25px'}),
-
-            ])
-
-        ], style={'background-color': '#000', 'color':'white'}, class_name='m-0 p-0')
+        
 
 ], style={'font-family':'Arial'})
 
@@ -2441,6 +2380,69 @@ def resumen():
 
             html.Br(),
 
+            # FOOTER
+            dbc.Row([
+
+                dbc.Col([
+
+                    dbc.Row([
+
+                        dbc.Col([
+
+                            html.Img(src='assets/logo_spgg.png', style={'float':'left', 'padding-left': '0px', 'margin-top': '15px', 'margin-left': '0px', 'width': '108px', 'height': '35px'}),
+                            html.Img(src='assets/implang_logo.png', style={'float':'right', 'padding-right': '0px', 'margin-top': '17px', 'margin-right': '0px', 'width': '80px', 'height': '29.32px'}),
+
+                        ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
+
+                    ], class_name='m-0 p-0'),
+
+                    dbc.Row([
+
+                        dbc.Col([
+
+                            html.A(
+                                [
+                                    html.Img(
+                                        src='data:image/png;base64,{}'.format(insta_img),
+                                        className="p-0 img-fluid",
+                                        style = {'width': '20px', 'height': '20px'}
+                                    )
+                                ],
+                                href = 'https://www.instagram.com/implang_spgg/',
+                                target = 'blank',
+                                style={
+                                    'margin-left': '45px'
+                                }
+                            ),
+
+                            html.A(
+                                [
+                                    html.Img(
+                                        src='data:image/png;base64,{}'.format(twitter_img),
+                                        className="p-0 img-fluid",
+                                        style = {'width': '20px', 'height': '20px'}
+                                    )
+                                ],
+                                href = 'https://twitter.com/implang_spgg',
+                                target = 'blank',
+                                style={
+                                    'margin-right': '40px',
+                                    'margin-left': '35px'
+                                }
+                            ),
+
+                            html.B("Comentarios sobre Seguridad Vial", style = {'font-size': '12px'}),
+                            html.Br(),
+                            html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
+
+                        ])
+
+                    ], style = {'margin-top': '25px'}),
+
+                ])
+
+            ], style={'background-color': '#000', 'color':'white'}, class_name='m-0 p-0')
+
         ], style={'background-color': '#fafafa'}) 
 
 # LAYOUT MAPA
@@ -2675,8 +2677,8 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Gravedad',
-                                                style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P('Gravedad',
+                                                style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -2702,7 +2704,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-usaf"), 
                                                     id="open1_usaf", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2712,14 +2715,14 @@ def mapa():
                                                     class_name='rounded-circle'
 
                                                 ),
-
-                                                id="tooltip-target-usaf",
+                                                
                                                 style={"textDecoration": "underline", "cursor": "pointer"},
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
-                                                target="tooltip-target-usaf"
+                                                target="tooltip-target-usaf",
+                                                placement = 'top'
                                             ),
                                         
                                             dbc.Modal([
@@ -2754,7 +2757,14 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Usuario', style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P(
+                                                'Usuario', 
+                                                style={
+                                                    'width':'90%',
+                                                    'float':'left',
+                                                    'padding-left': '10px'
+                                                },
+                                             className='pl-1'),
 
                                         ]),
 
@@ -2782,7 +2792,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-thv"), 
                                                     id="open1_thv", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2793,13 +2804,13 @@ def mapa():
 
                                                 ),
 
-                                                id="tooltip-target-thv",
                                                 style={"textDecoration": "underline", "cursor": "pointer"},
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-thv",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
@@ -2842,7 +2853,7 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Tipo de hecho vial', style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P('Tipo de hecho vial', style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -2902,7 +2913,8 @@ def mapa():
                                                 dbc.Button(
                                                     html.Img(src='data:image/png;base64,{}'.format(encoded_img2), 
                                                             style={'float':'right'},
-                                                            className="p-0 img-fluid"), 
+                                                            className="p-0 img-fluid",
+                                                            id="tooltip-target-afres"), 
                                                     id="open1_afres", 
                                                     n_clicks=0, 
                                                     style={'display':'inline-block',
@@ -2913,12 +2925,12 @@ def mapa():
 
                                                     ),
 
-                                                id="tooltip-target-afres",
                                             ),
 
                                             dbc.Tooltip(
                                                 "Más información",
                                                 target="tooltip-target-afres",
+                                                placement = 'top'
                                             ),
                                                 
                                             dbc.Modal([
@@ -2956,8 +2968,8 @@ def mapa():
                                                 style={'font-family':'Arial'}
                                             ),
 
-                                            html.P(' Afectado o responsable',
-                                                style={'width':'90%','float':'left'}, className='pl-1'),
+                                            html.P('Afectado o responsable',
+                                                style={'width':'90%','float':'left', 'padding-left': '10px'}, className='pl-1'),
 
                                         ]),
 
@@ -3427,7 +3439,70 @@ def mapa():
 
         ], className = '', id='mapicha', style = {'padding': '0px', 'margin': '0px'}),
 
-        html.Br(className='d-none d-lg-block d-xl-none')
+        html.Br(className='d-none d-lg-block d-xl-none'),
+
+        # FOOTER
+        dbc.Row([
+
+            dbc.Col([
+
+                dbc.Row([
+
+                        dbc.Col([
+
+                            html.Img(src='assets/logo_spgg.png', style={'float':'left', 'padding-left': '0px', 'margin-top': '15px', 'margin-left': '0px', 'width': '108px', 'height': '35px'}),
+                            html.Img(src='assets/implang_logo.png', style={'float':'right', 'padding-right': '0px', 'margin-top': '17px', 'margin-right': '0px', 'width': '80px', 'height': '29.32px'}),
+
+                        ], style={'padding-left': '15px'}),#, className='d-lg-flex justify-content-between my-3'),
+
+                    ], class_name='m-0 p-0'),
+
+                dbc.Row([
+
+                        dbc.Col([
+
+                            html.A(
+                                [
+                                    html.Img(
+                                        src='data:image/png;base64,{}'.format(insta_img),
+                                        className="p-0 img-fluid",
+                                        style = {'width': '20px', 'height': '20px'}
+                                    )
+                                ],
+                                href = 'https://www.instagram.com/implang_spgg/',
+                                target = 'blank',
+                                style={
+                                    'margin-left': '45px'
+                                }
+                            ),
+
+                            html.A(
+                                [
+                                    html.Img(
+                                        src='data:image/png;base64,{}'.format(twitter_img),
+                                        className="p-0 img-fluid",
+                                        style = {'width': '20px', 'height': '20px'}
+                                    )
+                                ],
+                                href = 'https://twitter.com/implang_spgg',
+                                target = 'blank',
+                                style={
+                                    'margin-right': '40px',
+                                    'margin-left': '35px'
+                                }
+                            ),
+
+                            html.B("Comentarios sobre Seguridad Vial", style = {'font-size': '12px'}),
+                            html.Br(),
+                            html.P("movilidad@sanpedro.gob.mx", style = {'margin-left': '160px', 'font-size': '12px'})
+
+                        ])
+
+                    ], style = {'margin-top': '25px'}),
+
+            ])
+
+        ], style={'background-color': '#000', 'color':'white'}, class_name='d-none d-lg-block m-0 p-0')
 
     ], className = 'w-100 h-100', style = {'padding': '0px', 'margin': '0px'})
 
