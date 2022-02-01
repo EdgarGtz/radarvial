@@ -1569,7 +1569,7 @@ tabs = dbc.Tabs(
                                                         'background-color': '#5E5E5E'},
                                     label_class_name='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1', 
                                     active_label_class_name ='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1'),
-                                    
+
     ],
     id='tabs_filtros_movil',
     active_tab='fecha',
@@ -11630,7 +11630,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -11723,7 +11723,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -11816,7 +11816,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -11901,7 +11901,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -11994,7 +11994,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -12087,7 +12087,7 @@ def render_mapa_interac(start_date, end_date, slider_hora, checklist_dias, hv_gr
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac.update_traces(marker_color="#c6cc14",
+        mapa_interac.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13330,7 +13330,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13423,7 +13423,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13516,7 +13516,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13601,7 +13601,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13694,7 +13694,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
@@ -13787,7 +13787,7 @@ def render_mapa_interac_movil(start_date, end_date, slider_hora_movil, checklist
             ),
             margin = dict(t=0, l=0, r=0, b=0)
         )
-        mapa_interac_movil.update_traces(marker_color="#c6cc14",
+        mapa_interac_movil.update_traces(marker_color="#ffc107",
             unselected_marker_opacity=1,
             hovertemplate = "<br><b>%{customdata[2]}</b> <br>Hechos Viales con Lesionados: %{marker.size}<br>Lesionados: %{customdata[0]} <br>Fallecidos:%{customdata[1]}")
         
