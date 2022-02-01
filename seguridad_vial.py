@@ -11,6 +11,7 @@ from datetime import datetime as dt
 from dash_extensions import Download
 from dash_extensions.snippets import send_file
 from dash_extensions.snippets import send_data_frame
+import json
 
 
 app = dash.Dash(__name__, title='Seguridad Vial - San Pedro Garza García',
@@ -1509,15 +1510,15 @@ tab3_content = dbc.Card(
             style={'display':'inline-block'}
         ),
 
-        html.Br(),
-        html.Br(),
+        # html.Br(),
+        # html.Br(),
 
-        html.P([
-            html.I([
-                html.B('Nota:'),
-                ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
-                ])
-        ]),
+        # html.P([
+        #     html.I([
+        #         html.B('Nota:'),
+        #         ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
+        #         ])
+        # ]),
 
     ], style = {'padding': '0px', 'margin': '10px'}),
     className="mt-3",
@@ -1532,41 +1533,48 @@ tabs = dbc.Tabs(
             tab_id="fecha",
             label_style={'color':'#BBC3C8','border-top':'0px','border-bottom':'0px',
                                                 'border-left':'0px','border-right':'0px', 'padding-right': '0px',
-                                                'padding-left': '0px', 'margin-left': '.60rem','width':'10vh','text-align':'center'},
-                                    active_label_style={'color': '#000000', 'border-bottom': '3px solid #000000',
+                                                'padding-left': '0px', 'margin-left': '50px', 'margin-right': '0px', 'margin-top': '15px',
+                                                'width':'60px', 'height': '60px','text-align':'center',
+                                                'border-radius': '50%', 'background-color': 'rgba(187, 195, 200, 0.2)'},
+                                    active_label_style={'color': '#000000', #'border-bottom': '3px solid #000000',
                                                         'border-top':'0px', 'border-left':'0px', 'border-right':'0px',
-                                                        'padding-right': '0px', 'margin-left': '.60rem'},
-                                    label_class_name='pl-0 pr-0 pb-3 mb-1', 
-                                    active_label_class_name ='pl-0 pr-0 pb-3 mb-1'),
+                                                        'background-color': '#5E5E5E'},
+                                    label_class_name='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1', 
+                                    active_label_class_name ='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1'),
         dbc.Tab(
             tab2_content, 
             label="💥", 
             tab_id="hv",
             label_style={'color':'#BBC3C8','border-top':'0px','border-bottom':'0px',
                                                 'border-left':'0px','border-right':'0px', 'padding-right': '0px',
-                                                'padding-left': '0px', 'margin-left': '.60rem','width':'10vh','text-align':'center'},
-                                    active_label_style={'color': '#000000', 'border-bottom': '3px solid #000000',
+                                                'padding-left': '0px', 'margin-left': '60px', 'margin-right': '0px', 'margin-top': '15px',
+                                                'width':'60px', 'height': '60px','text-align':'center',
+                                                'border-radius': '50%', 'background-color': 'rgba(187, 195, 200, 0.2)'},
+                                    active_label_style={'color': '#000000', #'border-bottom': '3px solid #000000',
                                                         'border-top':'0px', 'border-left':'0px', 'border-right':'0px',
-                                                        'padding-right': '0px', 'margin-left': '.60rem'},
-                                    label_class_name='pl-0 pr-0 pb-3 mb-1', 
-                                    active_label_class_name ='pl-0 pr-0 pb-3 mb-1'),
+                                                        'background-color': '#5E5E5E'},
+                                    label_class_name='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1', 
+                                    active_label_class_name ='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1'),
         dbc.Tab(
             tab3_content, 
             label="🔎", 
             tab_id="mas",
             label_style={'color':'#BBC3C8','border-top':'0px','border-bottom':'0px',
                                                 'border-left':'0px','border-right':'0px', 'padding-right': '0px',
-                                                'padding-left': '0px', 'margin-left': '.60rem','width':'10vh','text-align':'center'},
-                                    active_label_style={'color': '#000000', 'border-bottom': '3px solid #000000',
+                                                'padding-left': '0px', 'margin-left': '60px', 'margin-right': '0px', 'margin-top': '15px',
+                                                'width':'60px', 'height': '60px','text-align':'center',
+                                                'border-radius': '50%', 'background-color': 'rgba(187, 195, 200, 0.2)'},
+                                    active_label_style={'color': '#000000', #'border-bottom': '3px solid #000000',
                                                         'border-top':'0px', 'border-left':'0px', 'border-right':'0px',
-                                                        'padding-right': '0px', 'margin-left': '.60rem'},
-                                    label_class_name='pl-0 pr-0 pb-3 mb-1', 
-                                    active_label_class_name ='pl-0 pr-0 pb-3 mb-1'),
+                                                        'background-color': '#5E5E5E'},
+                                    label_class_name='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1', 
+                                    active_label_class_name ='d-flex align-items-center justify-content-center pl-0 pr-0 pb-3 mb-1'),
+                                    
     ],
     id='tabs_filtros_movil',
     active_tab='fecha',
-    class_name='d-flex justify-content-between pb-2', #overflow-scroll' d-flex flex-nowrap
-    # style = {'font-size': '16px'}
+    #class_name='d-flex justify-content-between pb-2', #overflow-scroll' d-flex flex-nowrap
+    style = {'background-color': 'white', 'height': '100px', 'box-shadow': '0px 1px 6px rgba(0, 0, 0, 0.25)'}
 
 )
 
@@ -1610,7 +1618,7 @@ app.layout = html.Div([
 
                 dbc.Col([
 
-                    html.P(html.B("Seguridad Vial"), style = {'font-size': '24px'}),
+                    html.P(html.B("Seguridad Vial"), style = {'font-size': '24px', 'padding-bottom': '0px', 'margin-bottom': '0px'}),
 
                     dbc.Button(
                         
@@ -1757,7 +1765,7 @@ def resumen():
 
                                 dbc.Col([
 
-                                    html.P(['La plataforma Seguridad Vial del municipio de San Pedro, se utiliza con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
+                                    html.P(['La plataforma de Seguridad Vial del municipio de San Pedro se utiliza con el objetivo de reducir el número de fallecimientos y lesiones graves ocasionados por hechos de tránsito a cero.',
 
                                         html.Br(),
 
@@ -3074,14 +3082,14 @@ def mapa():
                                         ),
 
                                         html.Br(),
-                                        html.Br(),
+                                        # html.Br(),
 
-                                        html.P([
-                                            html.I([
-                                                html.B('Nota:'),
-                                                ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
-                                                ])
-                                        ]),
+                                        # html.P([
+                                        #     html.I([
+                                        #         html.B('Nota:'),
+                                        #         ' Los filtros de "sexo", "edad" y "tipo de vehículo" se activan al seleccionar "Afectados" o "Responsables".'
+                                        #         ])
+                                        # ]),
 
                                     ]),
                                     id="collapse_hora",
@@ -3212,6 +3220,7 @@ def mapa():
                                             'select2d',],
                                             'displaylogo': False
                                         },
+                                    style = {'padding-bottom': '0px', 'margin-bottom': '0px'}
                                 ),
 
                             color="#636EFA", 
@@ -3219,13 +3228,15 @@ def mapa():
 
                         ],
 
-                        style={'padding':'0px'},),
+                        style={'padding':'0px', 'margin-bottom': '0px'},),
 
-                    ], class_name='tarjeta_map'), 
+                    ], class_name='tarjeta_map', style = {'padding-bottom': '0px', 'margin-bottom': '0px'}), 
 
                 ],lg=8, md=8, style={'float': 'left'}),
 
                 dbc.Row(),
+
+                html.Br()
 
             ], style = {'padding-left': '15px', 'padding-right': '15px', 'padding-top': '10px'}, class_name = 'd-none d-lg-block'),
 
@@ -3317,7 +3328,7 @@ def mapa():
                             dbc.Col([
 
                                 html.P(
-                                    'Datos según los filtros seleccionados',
+                                    'Datos de acuerdo a los filtros seleccionados',
                                     style = {
                                         'background-color': '#FFFFFF',
                                         'padding': '15px 13px 10px 0px',
