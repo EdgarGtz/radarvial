@@ -877,9 +877,9 @@ tab1_content = dbc.Card(
             dcc.DatePickerRange(
                 id = 'calendario_movil',
                 min_date_allowed = dt(2015, 1, 1),
-                max_date_allowed = dt(2021, 10, 31),
+                max_date_allowed = dt(2021, 12, 31),
                 start_date = dt(2015, 1, 1),
-                end_date = dt(2021, 10, 31),
+                end_date = dt(2021, 12, 31),
                 first_day_of_week = 1,
                 className="d-flex justify-content-center",
                 style = {
@@ -2255,7 +2255,7 @@ def resumen():
 
                                     html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                        html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1CpaFy7nRt2Hr8wxe1Pe_Oz49TybIIVFf/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
+                                        html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1a7UB6kxB8WWlGAhQiJ2v_NEn9sqdFE6X/view', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
                                         
                                         '.',
 
@@ -2372,7 +2372,7 @@ def mapa():
 
                                             html.P(['Conoce más sobre el estado de seguridad vial en el municipio descargando el ',
 
-                                                html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1CpaFy7nRt2Hr8wxe1Pe_Oz49TybIIVFf/view?usp=sharing', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
+                                                html.A(['Diagnóstico de Seguridad Vial 2015 - 2021'], href = 'https://drive.google.com/file/d/1a7UB6kxB8WWlGAhQiJ2v_NEn9sqdFE6X/view', target = 'blank', style = {'text-decoration': 'None', 'color': '#279FD7', 'font-weight': 'bold'}),
                                                 
                                                 '.',
 
@@ -2422,9 +2422,9 @@ def mapa():
                                             dcc.DatePickerRange(
                                                 id = 'calendario',
                                                 min_date_allowed = dt(2015, 1, 1),
-                                                max_date_allowed = dt(2021, 10, 31),
+                                                max_date_allowed = dt(2021, 12, 31),
                                                 start_date = dt(2015, 1, 1),
-                                                end_date = dt(2021, 10, 31),
+                                                end_date = dt(2021, 12, 31),
                                                 first_day_of_week = 1,
                                                 className="d-flex justify-content-center"
                                             ),
