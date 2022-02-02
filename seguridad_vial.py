@@ -807,16 +807,16 @@ top_i[''] = hvi_i['interseccion']
 top_i[' '] = hvi_i['hechos_viales']
 
 top_i[''] = [
-    'Lázaro Cárdenas con Diego Rivera',
     'Calzada Del Valle con Calzada San Pedro',
+    'Lázaro Cárdenas con Diego Rivera',
     'Díaz Ordaz con Corregidora',
     'Morones Prieto con Santa Bárbara',
-    'Lázaro Cárdenas con Pedro Ramírez Vázquez',
     'Morones Prieto con Corregidora',
+    'Lázaro Cárdenas con Pedro Ramírez Vázquez',
     'Morones Prieto con Benito Juárez',
     'Lázaro Cárdenas con Río Tamuin',
-    'José Vasconcelos con Gómez Morín',
-    'José Vasconcelos con Ricardo Margain'
+    'José Vasconcelos con Ricardo Margain',
+    'José Vasconcelos con Gómez Morín'
 ]
 
 #colors = ['rgb(8,48,107)', 'rgb(8,81,156)', 'rgb(33,113,181)', 'rgb(66,146,198)', 'rgb(107,174,214)', 'rgb(158,202,225)', 'rgb(198,219,239)', 'rgb(222,235,247)', 'rgb(247,251,255)']
